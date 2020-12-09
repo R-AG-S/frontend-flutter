@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/utilities/constants.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -7,7 +8,7 @@ class SplashScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          color: mainTextColor,
+          color: mainBgColor,
           child: Center(
             child: Text(
               'Pay Up',
