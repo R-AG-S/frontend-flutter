@@ -13,6 +13,7 @@ dependencies:
   font_awesome_flutter: ^8.10.1
   google_fonts:
   flutter_screenutil:
+  flutter_launcher_icons: ^0.8.1
 
 dev_dependencies:
   flutter_test:
