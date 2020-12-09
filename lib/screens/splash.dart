@@ -10,14 +10,21 @@ class SplashScreen extends StatelessWidget {
         body: Container(
           color: mainBgColor,
           child: Center(
-            child: Text(
-              'Pay Up',
-              style: GoogleFonts.montserrat(
-                letterSpacing: 0.5,
-                fontSize: 35,
-                color: whiteColor,
-                fontWeight: FontWeight.w400,
-              ),
+            child: Column(
+              children: [
+                FaIcon(
+                  
+                )
+                Text(
+                  'Pay Up',
+                  style: GoogleFonts.montserrat(
+                    letterSpacing: 0.5,
+                    fontSize: 35,
+                    color: whiteColor,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
