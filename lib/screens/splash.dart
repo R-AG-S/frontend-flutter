@@ -14,7 +14,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               children: [
                 FaIcon(
-                  FontAwesomeIcons.car,
+                  FontAwesomeIcons.babyCarriage,
                   color: whiteColor,
                   size: 32,
                 ),
