@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -9,11 +10,10 @@ class SplashScreen extends StatelessWidget {
           color: mainTextColor,
           child: Center(
             child: Text(
-              'MECL',
-              style: TextStyle(
-                fontFamily: 'Bambino',
+              'Pay Up',
+              style: GoogleFonts.montserrat(
                 letterSpacing: 0.5,
-                fontSize: ScreenUtil().setSp(90),
+                fontSize: 35,
                 color: mainBgColor,
                 fontWeight: FontWeight.w400,
               ),
