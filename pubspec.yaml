@@ -27,3 +27,10 @@ flutter:
   uses-material-design: true
   assets:
     - images/
+  fonts:
+    - family: KumbhSans
+      fonts:
+        - asset: fonts/KumbhSans-Bold.ttf
+    - family: Bambino
+      fonts:
+        - asset: fonts/Bambino-Bold.ttf
