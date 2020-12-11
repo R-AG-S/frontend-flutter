@@ -43,7 +43,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 children: [
                   Center(
                     child: Text(
-                      'Sign up to TikTok',
+                      'Sign up to PayUp',
                       style: GoogleFonts.raleway(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
