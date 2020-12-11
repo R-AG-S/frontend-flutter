@@ -13,7 +13,9 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('images/icon.png'),
+                Image(
+                  image: AssetImage('images/icon.png'),
+                ),
                 Text(
                   'PayUp',
                   style: GoogleFonts.montserrat(
