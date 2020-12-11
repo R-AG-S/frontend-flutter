@@ -51,68 +51,79 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                   ),
-                  Center(
-                    child: Text(
-                      '''Create a profile, follow other accounts, make your
-own videos, and more.''',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.raleway(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: fadeTextColor,
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Center(
+                      child: Text(
+                        '''Car Pool with friends. It's always fun!!!''',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.raleway(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: mainTextColor,
+                        ),
                       ),
                     ),
                   ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: 50,
+                          bottom: 8,
+                          left: 8,
+                          right: 8,
+                        ),
+                        child: SignInButton(
+                          Buttons.Email,
+                          padding: EdgeInsets.symmetric(
+                              vertical: height * 0.02, horizontal: width * 0.1),
+                          text: "Log in with Email",
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'email');
+                          },
+                          elevation: 5,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SignInButton(
+                          Buttons.Facebook,
+                          padding: EdgeInsets.symmetric(
+                              vertical: height * 0.02, horizontal: width * 0.1),
+                          text: "Log in with Facebook",
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'profile');
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SignInButton(
+                          Buttons.Google,
+                          padding: EdgeInsets.symmetric(
+                              vertical: height * 0.01, horizontal: width * 0.1),
+                          text: "Log in with Google",
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'profile');
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SignInButton(
+                          Buttons.Twitter,
+                          padding: EdgeInsets.symmetric(
+                              vertical: height * 0.02, horizontal: width * 0.1),
+                          text: "Log in with Twitter",
+                          onPressed: () {},
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SignInButton(
-                    Buttons.Email,
-                    padding: EdgeInsets.symmetric(
-                        vertical: height * 0.02, horizontal: width * 0.1),
-                    text: "Sign up with Email",
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'signin1');
-                    },
-                    elevation: 5,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SignInButton(
-                    Buttons.Facebook,
-                    padding: EdgeInsets.symmetric(
-                        vertical: height * 0.02, horizontal: width * 0.1),
-                    text: "Sign up with Facebook",
-                    onPressed: () {},
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SignInButton(
-                    Buttons.Google,
-                    padding: EdgeInsets.symmetric(
-                        vertical: height * 0.01, horizontal: width * 0.1),
-                    text: "Sign up with Google",
-                    onPressed: () {},
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SignInButton(
-                    Buttons.Twitter,
-                    padding: EdgeInsets.symmetric(
-                        vertical: height * 0.02, horizontal: width * 0.1),
-                    text: "Sign up with Twitter",
-                    onPressed: () {},
-                  ),
-                ),
-              ],
             ),
             Align(
               alignment: Alignment.bottomCenter,
