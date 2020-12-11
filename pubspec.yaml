@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
   font_awesome_flutter: ^8.10.1
-  sign_button: ^1.0.0
+  flutter_signin_button: ^1.1.0
   google_fonts:
   flutter_screenutil:
   flutter_launcher_icons: ^0.8.1
