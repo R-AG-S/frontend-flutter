@@ -72,7 +72,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.only(
+                          top: 50,
+                          bottom: 8,
+                          left: 8,
+                          right: 8,
+                        ),
                         child: SignInButton(
                           Buttons.Email,
                           padding: EdgeInsets.symmetric(
