@@ -91,18 +91,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: SignInButton(
-                          Buttons.Facebook,
-                          padding: EdgeInsets.symmetric(
-                              vertical: height * 0.02, horizontal: width * 0.1),
-                          text: "Log in with Facebook",
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'profile');
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SignInButton(
                           Buttons.Google,
                           padding: EdgeInsets.symmetric(
                               vertical: height * 0.01, horizontal: width * 0.1),
