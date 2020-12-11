@@ -37,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
               padding:
