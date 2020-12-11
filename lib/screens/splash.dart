@@ -13,8 +13,11 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image(
-                  image: AssetImage('images/icon.png'),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Image(
+                    image: AssetImage('images/icon.png'),
+                  ),
                 ),
                 Text(
                   'PayUp',
