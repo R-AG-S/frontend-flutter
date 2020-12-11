@@ -34,6 +34,7 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
               padding:

@@ -17,7 +17,6 @@ class _LoginScreenState extends State<LoginScreen> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: mainBgColor,
         resizeToAvoidBottomInset: false,
         resizeToAvoidBottomPadding: false,
         floatingActionButton: Padding(
