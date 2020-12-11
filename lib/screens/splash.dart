@@ -14,11 +14,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FaIcon(
-                  FontAwesomeIcons.babyCarriage,
-                  color: whiteColor,
-                  size: 32,
-                ),
+                Image.asset('images/icon.png'),
                 Text(
                   'PayUp',
                   style: GoogleFonts.montserrat(
