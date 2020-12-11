@@ -100,16 +100,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SignInButton(
-                          Buttons.Twitter,
-                          padding: EdgeInsets.symmetric(
-                              vertical: height * 0.02, horizontal: width * 0.1),
-                          text: "Log in with Twitter",
-                          onPressed: () {},
-                        ),
-                      ),
                     ],
                   ),
                 ],
