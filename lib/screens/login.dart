@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/screens/register.dart';
 import 'package:payup/utilities/constants.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -137,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onTap: () {
                         Navigator.of(context).pushReplacement(
                           CupertinoPageRoute<bool>(
-                            builder: (BuildContext context) => SignIn(),
+                            builder: (BuildContext context) => SignInScreen(),
                           ),
                         );
                       },
