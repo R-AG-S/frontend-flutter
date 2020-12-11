@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/screens/login.dart';
 import 'package:payup/utilities/constants.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -133,7 +134,7 @@ own videos, and more.''',
                       onTap: () {
                         Navigator.of(context).pushReplacement(
                           CupertinoPageRoute<bool>(
-                            builder: (BuildContext context) => Login(),
+                            builder: (BuildContext context) => LoginScreen(),
                           ),
                         );
                       },
