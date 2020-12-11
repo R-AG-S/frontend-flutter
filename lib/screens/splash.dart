@@ -15,6 +15,7 @@ class SplashScreen extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.1,
+                    vertical: 25,
                   ),
                   child: Image(
                     image: AssetImage('images/image.png'),
