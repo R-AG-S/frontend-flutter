@@ -12,6 +12,7 @@ class SplashScreen extends StatelessWidget {
           color: mainBgColor,
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FaIcon(
                   FontAwesomeIcons.babyCarriage,
