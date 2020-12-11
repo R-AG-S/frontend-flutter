@@ -53,14 +53,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  Center(
-                    child: Text(
-                      '''Car Pool with friends. It's always fun!!!''',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.raleway(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: fadeTextColor,
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Center(
+                      child: Text(
+                        '''Car Pool with friends. It's always fun!!!''',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.raleway(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: mainTextColor,
+                        ),
                       ),
                     ),
                   ),
