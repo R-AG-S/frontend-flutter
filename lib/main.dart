@@ -23,6 +23,7 @@ class _MainAppState extends State<MainApp> {
       initialRoute: 'splash',
       routes: {
         'splash': (context) => SplashScreen(),
+        'login': (context) => LoginScreen(),
       },
     );
   }
