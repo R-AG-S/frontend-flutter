@@ -4,7 +4,6 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/screens/register.dart';
 import 'package:payup/utilities/constants.dart';
-import 'package:sign_button/create_button.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
