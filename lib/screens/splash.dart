@@ -22,10 +22,9 @@ class SplashScreen extends StatelessWidget {
                 Text(
                   'PayUp',
                   style: GoogleFonts.montserrat(
-                    letterSpacing: 0.5,
                     fontSize: 35,
                     color: whiteColor,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
               ],
