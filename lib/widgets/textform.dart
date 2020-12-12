@@ -6,10 +6,12 @@ class TextFormWidget extends StatelessWidget {
     @required this.firstNameController,
     @required this.type,
     @required this.obscure,
+    @required this.hint,
   });
   final TextEditingController firstNameController;
   final TextInputType type;
   final bool obscure;
+  final String hint;
 
   @override
   Widget build(BuildContext context) {
