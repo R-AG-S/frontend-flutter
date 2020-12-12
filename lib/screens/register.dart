@@ -66,40 +66,121 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: 50,
-                          bottom: 8,
-                          left: 8,
-                          right: 8,
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 35,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 50,
+                            bottom: 8,
+                            // left: MediaQuery.of(context).size.width * 0.1,
+                            // right: MediaQuery.of(context).size.width * 0.1,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'ACCOUNT INFORMATION',
+                                style: GoogleFonts.openSans(
+                                  color: darkFadeTextColor,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 8,
+                                ),
+                                child: TextFormWidget(
+                                  hint: 'Email',
+                                  firstNameController: _emailController,
+                                  type: TextInputType.emailAddress,
+                                  obscure: false,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 8,
+                                ),
+                                child: TextFormWidget(
+                                  hint: 'Password',
+                                  firstNameController: _passwordController,
+                                  type: TextInputType.visiblePassword,
+                                  obscure: true,
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pushReplacement(
+                                    CupertinoPageRoute<bool>(
+                                      builder: (BuildContext context) =>
+                                          SignInScreen(),
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  '''Forgot your password?''',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.openSans(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: blueColor,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        child: SignInButton(
-                          Buttons.Email,
-                          padding: EdgeInsets.symmetric(
-                              vertical: height * 0.02, horizontal: width * 0.1),
-                          text: "Log in with Email",
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'email');
-                          },
-                          elevation: 5,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SignInButton(
+                        SignInButton(
                           Buttons.Google,
                           padding: EdgeInsets.symmetric(
-                              vertical: height * 0.01, horizontal: width * 0.1),
+                            vertical: height * 0.01,
+                            horizontal: width * 0.15,
+                          ),
                           text: "Log in with Google",
                           onPressed: () {
-                            Navigator.pushNamed(context, 'profile');
+                            // Navigator.pushNamed(context, 'profile');
                           },
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 12,
+                          ),
+                          child: ButtonTheme(
+                            minWidth: width,
+                            height: 50.0,
+                            child: RaisedButton(
+                              color: whiteColor,
+                              child: isWaiting
+                                  ? Container(
+                                      height: 40,
+                                      width: 40,
+                                      padding: EdgeInsets.all(8),
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                                mainTextColor),
+                                      ),
+                                    )
+                                  : Text(
+                                      'Log In',
+                                      style: GoogleFonts.openSans(
+                                        fontSize: 18,
+                                        color: mainTextColor,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                              onPressed: isWaiting ? null : () {},
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
