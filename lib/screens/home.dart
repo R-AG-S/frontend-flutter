@@ -36,16 +36,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (index == 0) {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundColor: whiteColor,
-                        child: Icon(
-                          FontAwesomeIcons.facebookMessenger,
-                          color: darkFadeTextColor,
+                    child: Column(
+                      children: [
+                        GestureDetector(
+                          onTap: () {},
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundColor: whiteColor,
+                            child: Icon(
+                              FontAwesomeIcons.facebookMessenger,
+                              color: darkFadeTextColor,
+                            ),
+                          ),
                         ),
-                      ),
+                        Divider(
+                          color: cardBgColor,
+                          thickness: 2.5,
+                        ),
+                      ],
                     ),
                   );
                 } else {
