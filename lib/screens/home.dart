@@ -78,6 +78,9 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () {},
           ),
           SlideAction(
+            child: Container(
+              padding: EdgeInsets.all(5),
+            ),
             color: whiteColor,
             onTap: () {},
           ),
