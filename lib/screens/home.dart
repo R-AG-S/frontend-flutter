@@ -30,56 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: <Widget>[
           SlideAction(
-            child: Container(
-              constraints: BoxConstraints(
-                minWidth: 250,
-              ),
-              width: 250,
-              color: slideCardColor,
-              padding: EdgeInsets.all(5),
-              child: Container(
-                constraints: BoxConstraints(
-                  minWidth: 250,
-                ),
-                width: 250,
-                decoration: BoxDecoration(
-                  color: whiteColor,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
-                  ),
-                ),
-                child: Scaffold(
-                  backgroundColor: whiteColor,
-                  extendBodyBehindAppBar: true,
-                  appBar: AppBar(
-                    backgroundColor: whiteColor,
-                    elevation: 0,
-                    title: Text('Room Name'),
-                    iconTheme: IconThemeData(color: whiteColor),
-                    actions: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          right: 5,
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            // Navigator.of(context).push(_createRoute());
-                          },
-                          child: Icon(
-                            FontAwesomeIcons.ellipsisV,
-                            color: mainTextColor,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            color: whiteColor,
-            onTap: () {},
-          ),
-          SlideAction(
             child: ListView.builder(
               padding: const EdgeInsets.all(8),
               itemCount: 20,
@@ -127,54 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
             color: slideCardColor,
             onTap: () {},
           ),
-          Slidable(
-              child: Container(
-                constraints: BoxConstraints(
-                  minWidth: 250,
-                ),
-                width: 250,
-                color: slideCardColor,
-                padding: EdgeInsets.all(5),
-                child: Container(
-                  constraints: BoxConstraints(
-                    minWidth: 250,
-                  ),
-                  width: 250,
-                  decoration: BoxDecoration(
-                    color: whiteColor,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5),
-                    ),
-                  ),
-                  child: Scaffold(
-                    backgroundColor: whiteColor,
-                    extendBodyBehindAppBar: true,
-                    appBar: AppBar(
-                      backgroundColor: whiteColor,
-                      elevation: 0,
-                      title: Text('Room Name'),
-                      iconTheme: IconThemeData(color: whiteColor),
-                      actions: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                            right: 5,
-                          ),
-                          child: GestureDetector(
-                            onTap: () {
-                              // Navigator.of(context).push(_createRoute());
-                            },
-                            child: Icon(
-                              FontAwesomeIcons.ellipsisV,
-                              color: mainTextColor,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              actionPane: null)
         ],
       ),
     );
