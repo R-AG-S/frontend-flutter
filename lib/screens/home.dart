@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,64 +18,84 @@ class _HomeScreenState extends State<HomeScreen> {
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.20,
         child: Scaffold(
-          appBar: AppBar(
-            leading: null,
-            automaticallyImplyLeading: false,
+            appBar: AppBar(
+              leading: null,
+              automaticallyImplyLeading: false,
+              backgroundColor: whiteColor,
+              elevation: 0,
+              title: Text(
+                'Room Name',
+                style: GoogleFonts.raleway(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  color: mainTextColor,
+                ),
+              ),
+              iconTheme: IconThemeData(color: whiteColor),
+              actions: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    right: 10,
+                    left: 10,
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigator.of(context).push(_createRoute());
+                    },
+                    child: Icon(
+                      FontAwesomeIcons.play,
+                      color: mainTextColor,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    right: 20,
+                    left: 10,
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigator.of(context).push(_createRoute());
+                    },
+                    child: Icon(
+                      FontAwesomeIcons.rss,
+                      color: mainTextColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             backgroundColor: whiteColor,
-            elevation: 0,
-            title: Text(
-              'Room Name',
-              style: GoogleFonts.raleway(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                color: mainTextColor,
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  FlutterMap(
+                    options: new MapOptions(
+                      center: LatLng(51.5, -0.09),
+                      zoom: 13.0,
+                    ),
+                    layers: [
+                      new TileLayerOptions(
+                          urlTemplate:
+                              "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c']),
+                      new MarkerLayerOptions(
+                        markers: [
+                          new Marker(
+                            width: 80.0,
+                            height: 80.0,
+                            point: LatLng(51.5, -0.09),
+                            builder: (ctx) => new Container(
+                              child: new FlutterLogo(),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
               ),
-            ),
-            iconTheme: IconThemeData(color: whiteColor),
-            actions: [
-              Padding(
-                padding: EdgeInsets.only(
-                  right: 10,
-                  left: 10,
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    // Navigator.of(context).push(_createRoute());
-                  },
-                  child: Icon(
-                    FontAwesomeIcons.play,
-                    color: mainTextColor,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  right: 20,
-                  left: 10,
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    // Navigator.of(context).push(_createRoute());
-                  },
-                  child: Icon(
-                    FontAwesomeIcons.rss,
-                    color: mainTextColor,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          backgroundColor: whiteColor,
-          body: ListTile(
-            leading: CircleAvatar(
-              backgroundColor: Colors.indigoAccent,
-              child: Text('3'),
-              foregroundColor: Colors.white,
-            ),
-            title: Text('Tile n°3'),
-            subtitle: Text('SlidableDrawerDelegate'),
-          ),
-        ),
+            )),
         actions: <Widget>[
           SlideAction(
             child: ListView.builder(
