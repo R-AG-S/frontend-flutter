@@ -21,6 +21,7 @@ class TextFormWidget extends StatelessWidget {
       maxLength: 50,
       obscureText: obscure,
       decoration: InputDecoration(
+        hintText: hint,
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.all(
