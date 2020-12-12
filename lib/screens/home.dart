@@ -96,23 +96,28 @@ class _HomeScreenState extends State<HomeScreen> {
                     Radius.circular(5),
                   ),
                 ),
-                child: Scaffold(appBar: AppBar(
-              iconTheme: IconThemeData(color: bottomNavbarColor),
-              actions: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    right: ScreenUtil().setSp(40),
+                child: Scaffold(
+                  appBar: AppBar(
+                    title: Text('Room Name'),
+                    iconTheme: IconThemeData(color: whiteColor),
+                    actions: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          right: 5,
+                        ),
+                        child: GestureDetector(
+                          onTap: () {
+                            // Navigator.of(context).push(_createRoute());
+                          },
+                          child: Icon(
+                            FontAwesomeIcons.ellipsisV,
+                            color: mainTextColor,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(_createRoute());
-                    },
-                    child: Icon(
-                      FontAwesomeIcons.shoppingCart,
-                      size: ScreenUtil().setSp(45),
-                      color: mainTextColor,
-                    ),
-                  ),
+                ),
               ),
             ),
             color: whiteColor,
