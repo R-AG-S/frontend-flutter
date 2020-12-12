@@ -130,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.raleway(
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w600,
                                   color: blueColor,
                                 ),
                               ),
