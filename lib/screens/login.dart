@@ -50,47 +50,15 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   Center(
-                      child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Email',
-                        style: GoogleFonts.openSans(
-                          color: mainBgColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
-                        ),
+                    child: Text(
+                      'Sign up to PayUp',
+                      style: GoogleFonts.raleway(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        color: mainTextColor,
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 8,
-                        ),
-                        child: TextFormWidget(
-                          firstNameController: _emailController,
-                          type: TextInputType.emailAddress,
-                          obscure: false,
-                        ),
-                      ),
-                      Text(
-                        'Password',
-                        style: GoogleFonts.openSans(
-                          color: mainBgColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 8,
-                        ),
-                        child: TextFormWidget(
-                          firstNameController: _passwordController,
-                          type: TextInputType.visiblePassword,
-                          obscure: true,
-                        ),
-                      ),
-                    ],
-                  )),
+                    ),
+                  ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Center(
@@ -115,15 +83,46 @@ class _LoginScreenState extends State<LoginScreen> {
                           left: 8,
                           right: 8,
                         ),
-                        child: SignInButton(
-                          Buttons.Email,
-                          padding: EdgeInsets.symmetric(
-                              vertical: height * 0.02, horizontal: width * 0.1),
-                          text: "Log in with Email",
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'email');
-                          },
-                          elevation: 5,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Email',
+                              style: GoogleFonts.openSans(
+                                color: mainBgColor,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 8,
+                              ),
+                              child: TextFormWidget(
+                                firstNameController: _emailController,
+                                type: TextInputType.emailAddress,
+                                obscure: false,
+                              ),
+                            ),
+                            Text(
+                              'Password',
+                              style: GoogleFonts.openSans(
+                                color: mainBgColor,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 8,
+                              ),
+                              child: TextFormWidget(
+                                firstNameController: _passwordController,
+                                type: TextInputType.visiblePassword,
+                                obscure: true,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Padding(
