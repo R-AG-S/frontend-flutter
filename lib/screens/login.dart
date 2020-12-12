@@ -4,11 +4,16 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/screens/register.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/widgets/textform.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
+
+final TextEditingController _emailController = TextEditingController();
+final TextEditingController _passwordController = TextEditingController();
+final GlobalKey<ScaffoldState> _loginscaffoldKey = GlobalKey();
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
