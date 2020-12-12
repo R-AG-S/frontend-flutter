@@ -32,7 +32,7 @@ class TextFormWidget extends StatelessWidget {
           horizontal: 15,
         ),
         filled: true,
-        fillColor: cardBgColor,
+        fillColor: Color(0xFF202225),
         counterText: '',
       ),
     );
