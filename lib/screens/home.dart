@@ -28,10 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: <Widget>[
-          IconSlideAction(
-            caption: 'Archive',
+          SlideAction(
+            child: super,
             color: Colors.blue,
-            icon: Icons.archive,
             onTap: () {},
           ),
           IconSlideAction(
