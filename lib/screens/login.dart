@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Text(
                                 '''Forgot your password?''',
                                 textAlign: TextAlign.center,
-                                style: GoogleFonts.raleway(
+                                style: GoogleFonts.openSans(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                   color: blueColor,
