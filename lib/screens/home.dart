@@ -39,11 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GestureDetector(
                       onTap: () {},
                       child: CircleAvatar(
-                        radius: 35,
-                        backgroundColor: darkFadeTextColor,
+                        radius: 30,
+                        backgroundColor: whiteColor,
                         child: Icon(
-                          FontAwesomeIcons.home,
-                          color: whiteColor,
+                          FontAwesomeIcons.facebookMessenger,
+                          color: darkFadeTextColor,
                         ),
                       ),
                     ),
@@ -54,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GestureDetector(
                       onTap: () {},
                       child: CircleAvatar(
-                        radius: 35,
-                        backgroundColor: slideCardColor,
+                        radius: 25,
+                        backgroundColor: whiteColor,
                         backgroundImage: NetworkImage(
                           'https://picsum.photos/id/${index + 30}/300/300',
                         ),
