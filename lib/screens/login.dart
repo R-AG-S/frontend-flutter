@@ -86,37 +86,23 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Email',
-                              style: GoogleFonts.openSans(
-                                color: mainTextColor,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                              ),
-                            ),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                 vertical: 8,
                               ),
                               child: TextFormWidget(
+                                hint: 'Email',
                                 firstNameController: _emailController,
                                 type: TextInputType.emailAddress,
                                 obscure: false,
                               ),
                             ),
-                            Text(
-                              'Password',
-                              style: GoogleFonts.openSans(
-                                color: mainTextColor,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                              ),
-                            ),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                 vertical: 8,
                               ),
                               child: TextFormWidget(
+                                hint: 'Password',
                                 firstNameController: _passwordController,
                                 type: TextInputType.visiblePassword,
                                 obscure: true,
