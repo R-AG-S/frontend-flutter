@@ -36,11 +36,13 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: CircleAvatar(
-                    radius: 25,
-                    backgroundColor: Colors.indigoAccent,
-                    child: Text(index.toString()),
-                    foregroundColor: Colors.white,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(100.0),
+                    child: Image.network(
+                      'https://picsum.photos/id/{$index}/200/300',
+                      height: 30.0,
+                      width: 30.0,
+                    ),
                   ),
                 );
               },
