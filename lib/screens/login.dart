@@ -152,30 +152,34 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
                       ),
-                      RaisedButton(
-                        padding: EdgeInsets.symmetric(
-                            vertical: height * 0.01, horizontal: width * 0.12),
-                        color: whiteColor,
-                        child: isWaiting
-                            ? Container(
-                                height: 40,
-                                width: 40,
-                                padding: EdgeInsets.all(8),
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                      mainTextColor),
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: RaisedButton(
+                          padding: EdgeInsets.symmetric(
+                              vertical: height * 0.015,
+                              horizontal: width * 0.34),
+                          color: whiteColor,
+                          child: isWaiting
+                              ? Container(
+                                  height: 40,
+                                  width: 40,
+                                  padding: EdgeInsets.all(8),
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        mainTextColor),
+                                  ),
+                                )
+                              : Text(
+                                  'Log In',
+                                  style: GoogleFonts.openSans(
+                                    fontSize: 18,
+                                    color: mainTextColor,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              )
-                            : Text(
-                                'Log In',
-                                style: GoogleFonts.openSans(
-                                  fontSize: 18,
-                                  color: mainTextColor,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                        onPressed: isWaiting ? null : () {},
+                          onPressed: isWaiting ? null : () {},
+                        ),
                       ),
                     ],
                   ),
