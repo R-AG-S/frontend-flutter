@@ -152,27 +152,31 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
                       ),
-                      FlatButton(
-                          child: isWaiting
-                              ? Container(
-                                  height: 40,
-                                  width: 40,
-                                  padding: EdgeInsets.all(8),
-                                  child: CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                        mainTextColor),
-                                  ),
-                                )
-                              : Text(
-                                  'Log In',
-                                  style: GoogleFonts.openSans(
-                                    fontSize: 18,
-                                    color: mainTextColor,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                      RaisedButton(
+                        padding: EdgeInsets.symmetric(
+                            vertical: height * 0.01, horizontal: width * 0.12),
+                        color: whiteColor,
+                        child: isWaiting
+                            ? Container(
+                                height: 40,
+                                width: 40,
+                                padding: EdgeInsets.all(8),
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      mainTextColor),
                                 ),
-                          onPressed: isWaiting ? null : () {}),
+                              )
+                            : Text(
+                                'Log In',
+                                style: GoogleFonts.openSans(
+                                  fontSize: 18,
+                                  color: mainTextColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                        onPressed: isWaiting ? null : () {},
+                      ),
                     ],
                   ),
                 ],
