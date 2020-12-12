@@ -74,90 +74,91 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: 50,
-                          bottom: 8,
-                          left: MediaQuery.of(context).size.width * 0.1,
-                          right: MediaQuery.of(context).size.width * 0.1,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'ACCOUNT INFORMATION',
-                              style: GoogleFonts.openSans(
-                                color: darkFadeTextColor,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: 8,
-                              ),
-                              child: TextFormWidget(
-                                hint: 'Email',
-                                firstNameController: _emailController,
-                                type: TextInputType.emailAddress,
-                                obscure: false,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: 8,
-                              ),
-                              child: TextFormWidget(
-                                hint: 'Password',
-                                firstNameController: _passwordController,
-                                type: TextInputType.visiblePassword,
-                                obscure: true,
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).pushReplacement(
-                                  CupertinoPageRoute<bool>(
-                                    builder: (BuildContext context) =>
-                                        SignInScreen(),
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                '''Forgot your password?''',
-                                textAlign: TextAlign.center,
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 35,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 50,
+                            bottom: 8,
+                            // left: MediaQuery.of(context).size.width * 0.1,
+                            // right: MediaQuery.of(context).size.width * 0.1,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'ACCOUNT INFORMATION',
                                 style: GoogleFonts.openSans(
-                                  fontSize: 12,
+                                  color: darkFadeTextColor,
                                   fontWeight: FontWeight.w600,
-                                  color: blueColor,
+                                  fontSize: 12,
                                 ),
                               ),
-                            ),
-                          ],
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 8,
+                                ),
+                                child: TextFormWidget(
+                                  hint: 'Email',
+                                  firstNameController: _emailController,
+                                  type: TextInputType.emailAddress,
+                                  obscure: false,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 8,
+                                ),
+                                child: TextFormWidget(
+                                  hint: 'Password',
+                                  firstNameController: _passwordController,
+                                  type: TextInputType.visiblePassword,
+                                  obscure: true,
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pushReplacement(
+                                    CupertinoPageRoute<bool>(
+                                      builder: (BuildContext context) =>
+                                          SignInScreen(),
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  '''Forgot your password?''',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.openSans(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: blueColor,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SignInButton(
+                        SignInButton(
                           Buttons.Google,
                           padding: EdgeInsets.symmetric(
-                              vertical: height * 0.01,
-                              horizontal: width * 0.12),
+                            vertical: height * 0.01,
+                            horizontal: width * 0.15,
+                          ),
                           text: "Log in with Google",
                           onPressed: () {
-                            Navigator.pushNamed(context, 'profile');
+                            // Navigator.pushNamed(context, 'profile');
                           },
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: RaisedButton(
+                        RaisedButton(
                           padding: EdgeInsets.symmetric(
-                              vertical: height * 0.015,
-                              horizontal: width * 0.34),
+                            vertical: height * 0.015,
+                          ),
+                          // horizontal: width * 0.34),
                           color: whiteColor,
                           child: isWaiting
                               ? Container(
@@ -180,8 +181,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                           onPressed: isWaiting ? null : () {},
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
