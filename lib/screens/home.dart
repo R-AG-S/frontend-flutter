@@ -77,10 +77,8 @@ class _HomeScreenState extends State<HomeScreen> {
             color: slideCardColor,
             onTap: () {},
           ),
-          IconSlideAction(
-            caption: 'Share',
+          SlideAction(
             color: whiteColor,
-            icon: Icons.share,
             onTap: () {},
           ),
         ],
