@@ -183,7 +183,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                              onPressed: isWaiting ? null : () {},
+                              onPressed: isWaiting
+                                  ? null
+                                  : () {
+                                      Navigator.pushNamed(context, 'home');
+                                    },
                             ),
                           ),
                         ),
