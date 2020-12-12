@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:payup/screens/home.dart';
 import 'package:payup/screens/login.dart';
 import 'package:payup/screens/splash.dart';
 
@@ -25,6 +26,7 @@ class _MainAppState extends State<MainApp> {
       routes: {
         'splash': (context) => SplashScreen(),
         'login': (context) => LoginScreen(),
+        'home': (context) => HomeScreen(),
       },
     );
   }
