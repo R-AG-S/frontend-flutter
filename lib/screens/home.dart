@@ -91,33 +91,35 @@ class _HomeScreenState extends State<HomeScreen> {
                   //     MarkerLayerOptions(markers: markers)
                   //   ],
                   // ),
-                 Container(
-                height: 300,
-                alignment: Alignment.centerLeft,
-                child:FlutterMap(
-                    options: new MapOptions(
-                      center: LatLng(51.5, -0.09),
-                      zoom: 13.0,
-                    ),
-                    layers: [
-                      new TileLayerOptions(
+                  Container(
+                    height: 300,
+                    alignment: Alignment.centerLeft,
+                    child: FlutterMap(
+                      options: new MapOptions(
+                        center: LatLng(51.5, -0.09),
+                        zoom: 2.0,
+                      ),
+                      layers: [
+                        new TileLayerOptions(
                           urlTemplate:
                               "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                          subdomains: ['a', 'b', 'c'],),
-                      new MarkerLayerOptions(
-                        markers: [
-                          new Marker(
-                            width: 80.0,
-                            height: 80.0,
-                            point: LatLng(51.5, -0.09),
-                            builder: (ctx) => new Container(
-                              child: new FlutterLogo(),
+                          subdomains: ['a', 'b', 'c'],
+                        ),
+                        new MarkerLayerOptions(
+                          markers: [
+                            new Marker(
+                              width: 80.0,
+                              height: 80.0,
+                              point: LatLng(51.5, -0.09),
+                              builder: (ctx) => new Container(
+                                child: new FlutterLogo(),
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),)
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             )),
