@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.25,
         child: Scaffold(
+          backgroundColor: fadeTextColor,
           body: Container(
             color: Colors.white,
             child: ListTile(
