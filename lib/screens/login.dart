@@ -159,8 +159,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             vertical: 12,
                           ),
                           child: ButtonTheme(
-                            minWidth: 200.0,
-                            height: 100.0,
+                            minWidth: width,
+                            height: 50.0,
                             child: RaisedButton(
                               color: whiteColor,
                               child: isWaiting
