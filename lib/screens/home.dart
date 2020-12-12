@@ -44,14 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             radius: 30,
                             backgroundColor: whiteColor,
                             child: Icon(
-                              FontAwesomeIcons.facebookMessenger,
+                              FontAwesomeIcons.plus,
                               color: darkFadeTextColor,
                             ),
                           ),
                         ),
                         Divider(
-                          color: cardBgColor,
-                          thickness: 2.5,
+                          color: darkFadeTextColor,
+                          thickness: 0.5,
                         ),
                       ],
                     ),
