@@ -146,7 +146,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             vertical: height * 0.01,
                             horizontal: width * 0.15,
                           ),
-                          text: "Log in with Google",
+                          text: "Sign in with Google",
                           onPressed: () {
                             // Navigator.pushNamed(context, 'profile');
                           },
@@ -173,7 +173,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                       ),
                                     )
                                   : Text(
-                                      'Log In',
+                                      'Sign In',
                                       style: GoogleFonts.openSans(
                                         fontSize: 18,
                                         color: mainTextColor,
