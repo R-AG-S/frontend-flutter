@@ -29,8 +29,16 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: <Widget>[
           SlideAction(
-            child: CircularProgressIndicator(
-              backgroundColor: Colors.green,
+            child: ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: cartData.length,
+              itemBuilder: (BuildContext context, int index) {
+                return CircleAvatar(
+                  backgroundColor: Colors.indigoAccent,
+                  child: Text('3'),
+                  foregroundColor: Colors.white,
+                );
+              },
             ),
             color: Colors.blue,
             onTap: () {},
