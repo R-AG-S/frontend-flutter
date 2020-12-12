@@ -89,9 +89,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             Text(
                               'ACCOUNT INFORMATION',
                               style: GoogleFonts.openSans(
-                                color: mainBgColor,
+                                color: mainTextColor,
                                 fontWeight: FontWeight.w600,
-                                fontSize: 14,
+                                fontSize: 12,
                               ),
                             ),
                             Padding(
