@@ -116,6 +116,25 @@ class _LoginScreenState extends State<LoginScreen> {
                                 obscure: true,
                               ),
                             ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pushReplacement(
+                                  CupertinoPageRoute<bool>(
+                                    builder: (BuildContext context) =>
+                                        SignInScreen(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                '''Forgot your password?''',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.raleway(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: redColor,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
