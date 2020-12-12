@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+bool isWaiting = false;
 final TextEditingController _emailController = TextEditingController();
 final TextEditingController _passwordController = TextEditingController();
 final GlobalKey<ScaffoldState> _loginscaffoldKey = GlobalKey();
@@ -152,9 +153,26 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       FlatButton(
-                        onPressed: () {},
-                        child: Text('Login'),
-                      ),
+                          child: isWaiting
+                              ? Container(
+                                  height: 40,
+                                  width: 40,
+                                  padding: EdgeInsets.all(8),
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        mainTextColor),
+                                  ),
+                                )
+                              : Text(
+                                  'Log In',
+                                  style: GoogleFonts.openSans(
+                                    fontSize: 18,
+                                    color: mainTextColor,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                          onPressed: isWaiting ? null : () {}),
                     ],
                   ),
                 ],
