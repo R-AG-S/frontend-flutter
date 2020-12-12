@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
-import 'package:location/location.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -13,79 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  LocationData _currentLocation;
-  MapController _mapController;
-
-  bool _liveUpdate = true;
-  bool _permission = false;
-
-  String _serviceError = '';
-
-  final Location _locationService = Location();
-
-  @override
-  void initState() {
-    super.initState();
-    _mapController = MapController();
-    initLocationService();
-  }
-
-  void initLocationService() async {
-    await _locationService.changeSettings(
-      accuracy: LocationAccuracy.HIGH,
-      interval: 1000,
-    );
-
-    LocationData location;
-    bool serviceEnabled;
-    bool serviceRequestResult;
-
-    try {
-      serviceEnabled = await _locationService.serviceEnabled();
-
-      if (serviceEnabled) {
-        var permission = await _locationService.requestPermission();
-        _permission = permission == PermissionStatus.GRANTED;
-
-        if (_permission) {
-          location = await _locationService.getLocation();
-          _currentLocation = location;
-          _locationService
-              .onLocationChanged()
-              .listen((LocationData result) async {
-            if (mounted) {
-              setState(() {
-                _currentLocation = result;
-
-                // If Live Update is enabled, move map center
-                if (_liveUpdate) {
-                  _mapController.move(
-                      LatLng(_currentLocation.latitude,
-                          _currentLocation.longitude),
-                      _mapController.zoom);
-                }
-              });
-            }
-          });
-        }
-      } else {
-        serviceRequestResult = await _locationService.requestService();
-        if (serviceRequestResult) {
-          initLocationService();
-          return;
-        }
-      }
-    } on PlatformException catch (e) {
-      print(e);
-      if (e.code == 'PERMISSION_DENIED') {
-        _serviceError = e.message;
-      } else if (e.code == 'SERVICE_STATUS_ERROR') {
-        _serviceError = e.message;
-      }
-      location = null;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -144,6 +71,26 @@ class _HomeScreenState extends State<HomeScreen> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
+                  // FlutterMap(
+                  //   mapController: _mapController,
+                  //   options: MapOptions(
+                  //     center: LatLng(
+                  //         currentLatLng.latitude, currentLatLng.longitude),
+                  //     zoom: 5.0,
+                  //   ),
+                  //   layers: [
+                  //     TileLayerOptions(
+                  //       urlTemplate:
+                  //           'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  //       subdomains: ['a', 'b', 'c'],
+                  //       // For example purposes. It is recommended to use
+                  //       // TileProvider with a caching and retry strategy, like
+                  //       // NetworkTileProvider or CachedNetworkTileProvider
+                  //       tileProvider: NonCachingNetworkTileProvider(),
+                  //     ),
+                  //     MarkerLayerOptions(markers: markers)
+                  //   ],
+                  // ),
                   FlutterMap(
                     options: new MapOptions(
                       center: LatLng(51.5, -0.09),
@@ -152,8 +99,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     layers: [
                       new TileLayerOptions(
                           urlTemplate:
-                              "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                          subdomains: ['a', 'b', 'c']),
+                              "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c'],),
                       new MarkerLayerOptions(
                         markers: [
                           new Marker(
