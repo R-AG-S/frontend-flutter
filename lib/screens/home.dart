@@ -33,11 +33,14 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(8),
               itemCount: 20,
               itemBuilder: (BuildContext context, int index) {
-                return CircleAvatar(
-                  radius: 35,
-                  backgroundColor: Colors.indigoAccent,
-                  child: Text('3'),
-                  foregroundColor: Colors.white,
+                return Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircleAvatar(
+                    radius: 35,
+                    backgroundColor: Colors.indigoAccent,
+                    child: Text(index.toString()),
+                    foregroundColor: Colors.white,
+                  ),
                 );
               },
             ),
