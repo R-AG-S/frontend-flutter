@@ -44,15 +44,47 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   Center(
-                    child: Text(
-                      'Log in to PayUp',
-                      style: GoogleFonts.raleway(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: mainTextColor,
+                      child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Email',
+                        style: GoogleFonts.openSans(
+                          color: mainBgColor,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                        ),
                       ),
-                    ),
-                  ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 8,
+                        ),
+                        child: TextFormWidget(
+                          firstNameController: _emailController,
+                          type: TextInputType.emailAddress,
+                          obscure: false,
+                        ),
+                      ),
+                      Text(
+                        'Password',
+                        style: GoogleFonts.openSans(
+                          color: mainBgColor,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 8,
+                        ),
+                        child: TextFormWidget(
+                          firstNameController: _passwordController,
+                          type: TextInputType.visiblePassword,
+                          obscure: true,
+                        ),
+                      ),
+                    ],
+                  )),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Center(
