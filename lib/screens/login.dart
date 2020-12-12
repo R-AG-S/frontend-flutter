@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
               size: 26.0,
               color: mainTextColor,
             ),
-            backgroundColor: mainBgColor,
+            backgroundColor: whiteColor,
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
