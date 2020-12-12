@@ -79,10 +79,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SlideAction(
             child: Container(
+              constraints: BoxConstraints(
+                minWidth: 250,
+              ),
               width: 250,
               color: slideCardColor,
               padding: EdgeInsets.all(5),
               child: Container(
+                constraints: BoxConstraints(
+                  minWidth: 250,
+                ),
                 width: 250,
                 decoration: BoxDecoration(
                   color: whiteColor,
