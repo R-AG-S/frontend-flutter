@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,21 +18,46 @@ class _HomeScreenState extends State<HomeScreen> {
         actionExtentRatio: 0.20,
         child: Scaffold(
           appBar: AppBar(
+            leading: null,
+            automaticallyImplyLeading: false,
             backgroundColor: whiteColor,
             elevation: 0,
-            title: Text('Room Name'),
+            title: Text(
+              'Room Name',
+              style: GoogleFonts.raleway(
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                color: mainTextColor,
+              ),
+            ),
             iconTheme: IconThemeData(color: whiteColor),
             actions: [
               Padding(
                 padding: EdgeInsets.only(
-                  right: 5,
+                  right: 10,
+                  left: 10,
                 ),
                 child: GestureDetector(
                   onTap: () {
                     // Navigator.of(context).push(_createRoute());
                   },
                   child: Icon(
-                    FontAwesomeIcons.ellipsisV,
+                    FontAwesomeIcons.play,
+                    color: mainTextColor,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  right: 20,
+                  left: 10,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    // Navigator.of(context).push(_createRoute());
+                  },
+                  child: Icon(
+                    FontAwesomeIcons.rss,
                     color: mainTextColor,
                   ),
                 ),
