@@ -16,7 +16,28 @@ class _HomeScreenState extends State<HomeScreen> {
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.20,
         child: Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            backgroundColor: whiteColor,
+            elevation: 0,
+            title: Text('Room Name'),
+            iconTheme: IconThemeData(color: whiteColor),
+            actions: [
+              Padding(
+                padding: EdgeInsets.only(
+                  right: 5,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    // Navigator.of(context).push(_createRoute());
+                  },
+                  child: Icon(
+                    FontAwesomeIcons.ellipsisV,
+                    color: mainTextColor,
+                  ),
+                ),
+              ),
+            ],
+          ),
           backgroundColor: whiteColor,
           body: ListTile(
             leading: CircleAvatar(
