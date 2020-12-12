@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
       onTap: () => _showSnackBar('Delete'),
     ),
   ],
-);
+),
     );
   }
 }
