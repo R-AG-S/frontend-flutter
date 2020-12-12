@@ -29,7 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: <Widget>[
           SlideAction(
-            child: super,
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.green,
+            ),
             color: Colors.blue,
             onTap: () {},
           ),
@@ -37,20 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
             caption: 'Share',
             color: Colors.indigo,
             icon: Icons.share,
-            onTap: () {},
-          ),
-        ],
-        secondaryActions: <Widget>[
-          IconSlideAction(
-            caption: 'More',
-            color: Colors.black45,
-            icon: Icons.more_horiz,
-            onTap: () {},
-          ),
-          IconSlideAction(
-            caption: 'Delete',
-            color: Colors.red,
-            icon: Icons.delete,
             onTap: () {},
           ),
         ],
