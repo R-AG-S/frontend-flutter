@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:payup/utilities/constants.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             ),
-            color: Colors.blue,
+            color: lightFadeText,
             onTap: () {},
           ),
           IconSlideAction(
