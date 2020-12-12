@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:payup/utilities/constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,6 +36,20 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: 20,
               itemBuilder: (BuildContext context, int index) {
                 if (index == 0) {
+                  return Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: CircleAvatar(
+                        radius: 35,
+                        backgroundColor: darkFadeTextColor,
+                        child: Icon(
+                          FontAwesomeIcons.home,
+                          color: mainBgColor,
+                        ),
+                      ),
+                    ),
+                  );
                 } else {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
@@ -43,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: CircleAvatar(
                         radius: 35,
                         backgroundImage: NetworkImage(
-                          'https://picsum.photos/id/$index/300/300',
+                          'https://picsum.photos/id/${index + 30}/300/300',
                         ),
                       ),
                     ),
