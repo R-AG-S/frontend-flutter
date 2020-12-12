@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Slidable(
         actionPane: SlidableDrawerActionPane(),
-        actionExtentRatio: 0.25,
+        actionExtentRatio: 0.20,
         child: Scaffold(
           appBar: AppBar(),
           backgroundColor: whiteColor,
