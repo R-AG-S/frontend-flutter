@@ -34,18 +34,21 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(8),
               itemCount: 20,
               itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: CircleAvatar(
-                      radius: 35,
-                      backgroundImage: NetworkImage(
-                        'https://picsum.photos/id/$index/300/300',
+                if (index == 0) {
+                } else {
+                  return Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: CircleAvatar(
+                        radius: 35,
+                        backgroundImage: NetworkImage(
+                          'https://picsum.photos/id/$index/300/300',
+                        ),
                       ),
                     ),
-                  ),
-                );
+                  );
+                }
               },
             ),
             color: lightFadeText,
