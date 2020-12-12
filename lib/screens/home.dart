@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.25,
         child: Scaffold(
-          backgroundColor: lightFadeText,
+          backgroundColor: whiteColor,
           body: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.indigoAccent,
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         backgroundColor: darkFadeTextColor,
                         child: Icon(
                           FontAwesomeIcons.home,
-                          color: mainBgColor,
+                          color: whiteColor,
                         ),
                       ),
                     ),
@@ -55,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onTap: () {},
                       child: CircleAvatar(
                         radius: 35,
+                        backgroundColor: slideCardColor,
                         backgroundImage: NetworkImage(
                           'https://picsum.photos/id/${index + 30}/300/300',
                         ),
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               },
             ),
-            color: lightFadeText,
+            color: slideCardColor,
             onTap: () {},
           ),
           IconSlideAction(
