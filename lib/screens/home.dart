@@ -81,6 +81,14 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               color: slideCardColor,
               padding: EdgeInsets.all(5),
+              child: Container(
+                color: whiteColor,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
+                ),
+              ),
             ),
             color: whiteColor,
             onTap: () {},
