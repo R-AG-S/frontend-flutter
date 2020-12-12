@@ -130,7 +130,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: SignInButton(
                           Buttons.Google,
                           padding: EdgeInsets.symmetric(
-                              vertical: height * 0.01, horizontal: width * 0.1),
+                              vertical: height * 0.01,
+                              horizontal: width * 0.12),
                           text: "Log in with Google",
                           onPressed: () {
                             Navigator.pushNamed(context, 'profile');
