@@ -86,6 +86,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            Text(
+                              'ACCOUNT INFORMATION',
+                              style: GoogleFonts.openSans(
+                                color: mainBgColor,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                              ),
+                            ),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                 vertical: 8,
