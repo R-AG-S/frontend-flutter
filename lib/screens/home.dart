@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 return Padding(
                   padding: EdgeInsets.all(8.0),
                   child: CircleAvatar(
-                    radius: 35,
+                    radius: 25,
                     backgroundColor: Colors.indigoAccent,
                     child: Text(index.toString()),
                     foregroundColor: Colors.white,
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           IconSlideAction(
             caption: 'Share',
-            color: Colors.indigo,
+            color: whiteColor,
             icon: Icons.share,
             onTap: () {},
           ),
