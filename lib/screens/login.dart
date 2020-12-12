@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Icon(
               Icons.help_outline_rounded,
               size: 26.0,
-              color: mainTextColor,
+              color: fadeTextColor,
             ),
             backgroundColor: whiteColor,
           ),

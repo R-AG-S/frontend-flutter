@@ -27,7 +27,7 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Icon(
               Icons.help_outline_rounded,
               size: 26.0,
-              color: mainTextColor,
+              color: fadeTextColor,
             ),
             backgroundColor: whiteColor,
           ),
