@@ -154,32 +154,38 @@ class _LoginScreenState extends State<LoginScreen> {
                             // Navigator.pushNamed(context, 'profile');
                           },
                         ),
-                        RaisedButton(
+                        Padding(
                           padding: EdgeInsets.symmetric(
-                            vertical: height * 0.015,
+                            vertical: 12,
                           ),
-                          // horizontal: width * 0.34),
-                          color: whiteColor,
-                          child: isWaiting
-                              ? Container(
-                                  height: 40,
-                                  width: 40,
-                                  padding: EdgeInsets.all(8),
-                                  child: CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                        mainTextColor),
-                                  ),
-                                )
-                              : Text(
-                                  'Log In',
-                                  style: GoogleFonts.openSans(
-                                    fontSize: 18,
-                                    color: mainTextColor,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                          onPressed: isWaiting ? null : () {},
+                          child: ButtonTheme(
+                            minWidth: 200.0,
+                            height: 100.0,
+                            child: RaisedButton(
+                              color: whiteColor,
+                              child: isWaiting
+                                  ? Container(
+                                      height: 40,
+                                      width: 40,
+                                      padding: EdgeInsets.all(8),
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                                mainTextColor),
+                                      ),
+                                    )
+                                  : Text(
+                                      'Log In',
+                                      style: GoogleFonts.openSans(
+                                        fontSize: 18,
+                                        color: mainTextColor,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                              onPressed: isWaiting ? null : () {},
+                            ),
+                          ),
                         ),
                       ],
                     ),
