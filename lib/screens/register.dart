@@ -4,11 +4,16 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/screens/login.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/widgets/textform.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
   _SignInScreenState createState() => _SignInScreenState();
 }
+
+bool isWaiting = false;
+final TextEditingController _emailController = TextEditingController();
+final TextEditingController _passwordController = TextEditingController();
 
 class _SignInScreenState extends State<SignInScreen> {
   @override
