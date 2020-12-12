@@ -94,6 +94,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
+                      ),
                       height: 300,
                       alignment: Alignment.centerLeft,
                       child: FlutterMap(
