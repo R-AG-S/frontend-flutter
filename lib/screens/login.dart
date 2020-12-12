@@ -151,6 +151,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
                       ),
+                      FlatButton(
+                        onPressed: () {},
+                        child: Text('Login'),
+                      ),
                     ],
                   ),
                 ],
