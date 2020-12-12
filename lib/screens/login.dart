@@ -80,8 +80,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: EdgeInsets.only(
                           top: 50,
                           bottom: 8,
-                          left: 8,
-                          right: 8,
+                          left: MediaQuery.of(context).size.width * 0.1,
+                          right: MediaQuery.of(context).size.width * 0.1,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Text(
                               'Email',
                               style: GoogleFonts.openSans(
-                                color: mainBgColor,
+                                color: mainTextColor,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16,
                               ),
@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Text(
                               'Password',
                               style: GoogleFonts.openSans(
-                                color: mainBgColor,
+                                color: mainTextColor,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16,
                               ),
