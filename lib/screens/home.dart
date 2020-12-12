@@ -91,7 +91,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   //     MarkerLayerOptions(markers: markers)
                   //   ],
                   // ),
-                  FlutterMap(
+                 Container(
+                height: 300,
+                alignment: Alignment.centerLeft,
+                child:FlutterMap(
                     options: new MapOptions(
                       center: LatLng(51.5, -0.09),
                       zoom: 13.0,
@@ -114,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ],
-                  )
+                  ),)
                 ],
               ),
             )),
