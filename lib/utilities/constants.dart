@@ -7,3 +7,4 @@ final Color fadeTextColor = Color(0xFF8B8A8F);
 final Color darkFadeTextColor = Color(0xFF60606A);
 final Color lightFadeText = Colors.white70;
 final Color redColor = Color(0xFFFE2C55);
+final Color cardColor = Color(0xFFD1D2D3);
