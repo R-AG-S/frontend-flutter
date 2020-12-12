@@ -39,9 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(100.0),
                     child: Image.network(
-                      'https://picsum.photos/id/{$index}/200/300',
-                      height: 30.0,
-                      width: 30.0,
+                      'https://picsum.photos/id/$index/300/300',
+                      height: 100.0,
+                      width: 100.0,
                     ),
                   ),
                 );
