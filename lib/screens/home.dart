@@ -13,16 +13,18 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Slidable(
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.25,
-        child: Container(
-          color: Colors.white,
-          child: ListTile(
-            leading: CircleAvatar(
-              backgroundColor: Colors.indigoAccent,
-              child: Text('3'),
-              foregroundColor: Colors.white,
+        child: Scaffold(
+          body: Container(
+            color: Colors.white,
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.indigoAccent,
+                child: Text('3'),
+                foregroundColor: Colors.white,
+              ),
+              title: Text('Tile n°3'),
+              subtitle: Text('SlidableDrawerDelegate'),
             ),
-            title: Text('Tile n°3'),
-            subtitle: Text('SlidableDrawerDelegate'),
           ),
         ),
         actions: <Widget>[
