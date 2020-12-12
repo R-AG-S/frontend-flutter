@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:payup/utilities/constants.dart';
 
@@ -10,6 +12,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushNamed(context, 'navigation');
+    });
   }
 
   @override
