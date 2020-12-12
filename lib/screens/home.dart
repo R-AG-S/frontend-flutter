@@ -31,9 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
           SlideAction(
             child: ListView.builder(
               padding: const EdgeInsets.all(8),
-              itemCount: cartData.length,
+              itemCount: 20,
               itemBuilder: (BuildContext context, int index) {
                 return CircleAvatar(
+                  radius: 35,
                   backgroundColor: Colors.indigoAccent,
                   child: Text('3'),
                   foregroundColor: Colors.white,
