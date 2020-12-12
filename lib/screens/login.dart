@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Center(
                     child: Text(
-                      'Sign up to PayUp',
+                      'Log In to PayUp',
                       style: GoogleFonts.raleway(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
