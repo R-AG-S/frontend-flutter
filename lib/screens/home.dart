@@ -154,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 radius: 25,
                                 backgroundColor: whiteColor,
                                 child: Icon(
-                                  FontAwesomeIcons.rss,
+                                  FontAwesomeIcons.shareAlt,
                                   color: mainTextColor,
                                 ),
                               ),
