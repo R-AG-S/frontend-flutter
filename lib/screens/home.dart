@@ -50,37 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           //   elevation: 0,
           //   iconTheme: IconThemeData(color: whiteColor),
           //   actions: [
-          //     Padding(
-          //       padding: EdgeInsets.only(
-          //         right: 10,
-          //         left: 10,
-          //       ),
-          //       child: GestureDetector(
-          //         onTap: () {
-          //           // Navigator.of(context).push(_createRoute());
-          //         },
-          //         child: Icon(
-          //           FontAwesomeIcons.play,
-          //           size: 22,
-          //           color: mainTextColor,
-          //         ),
-          //       ),
-          //     ),
-          //     Padding(
-          //       padding: EdgeInsets.only(
-          //         right: 20,
-          //         left: 10,
-          //       ),
-          //       child: GestureDetector(
-          //         onTap: () {
-          //           // Navigator.of(context).push(_createRoute());
-          //         },
-          //         child: Icon(
-          //           FontAwesomeIcons.rss,
-          //           color: mainTextColor,
-          //         ),
-          //       ),
-          //     ),
+          //
           //   ],
           // ),
           backgroundColor: whiteColor,
@@ -149,7 +119,39 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.min,
-                        children: [],
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              right: 10,
+                              left: 10,
+                            ),
+                            child: GestureDetector(
+                              onTap: () {
+                                // Navigator.of(context).push(_createRoute());
+                              },
+                              child: Icon(
+                                FontAwesomeIcons.play,
+                                size: 22,
+                                color: mainTextColor,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              right: 20,
+                              left: 10,
+                            ),
+                            child: GestureDetector(
+                              onTap: () {
+                                // Navigator.of(context).push(_createRoute());
+                              },
+                              child: Icon(
+                                FontAwesomeIcons.rss,
+                                color: mainTextColor,
+                              ),
+                            ),
+                          ),
+                        ],
                       )
                     ],
                   )
