@@ -166,19 +166,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: whiteColor,
-                  border: Border.all(
-                    color: mainTextColor,
-                  ),
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.vertical(),
-                ),
-                padding: EdgeInsets.symmetric(
-                  vertical: 15,
-                  horizontal: 25,
-                ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
