@@ -203,49 +203,60 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     ],
                   ),
-                  SingleChildScrollView(
-                    child: ListView.builder(
-                      itemCount: 5,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 8,
-                          ),
-                          child: Card(
-                            color: cardBlueColor,
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    CircleAvatar(
-                                      radius: 25,
-                                      backgroundColor: whiteColor,
-                                      backgroundImage: NetworkImage(
-                                        'https://picsum.photos/id/${40}/300/300',
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
-                                    Text(
-                                      'Room Name',
-                                      style: GoogleFonts.lato(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w800,
-                                        color: mainTextColor,
-                                      ),
-                                    )
-                                  ],
-                                )
-                              ],
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.345,
+                    ),
+                    child: Container(
+                      height: 100,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: EdgeInsets.only(
+                              left: 15,
+                              bottom: 8,
                             ),
-                          ),
-                        );
-                      },
+                            child: Card(
+                              color: cardBlueColor,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 15,
+                                      ),
+                                      CircleAvatar(
+                                        radius: 25,
+                                        backgroundColor: whiteColor,
+                                        backgroundImage: NetworkImage(
+                                          'https://picsum.photos/id/${index + 40}/300/300',
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 15,
+                                      ),
+                                      Text(
+                                        'User Name $index',
+                                        style: GoogleFonts.lato(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w800,
+                                          color: whiteColor,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 15,
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   )
                 ],
