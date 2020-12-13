@@ -131,75 +131,37 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(
-                              right: 10,
-                              left: 10,
+                      Padding(
+                        padding: EdgeInsets.only(
+                          right: 20,
+                          left: 10,
+                        ),
+                        child: GestureDetector(
+                          onTap: () {
+                            // Navigator.of(context).push(_createRoute());
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 1,
+                                  color: Colors.black26,
+                                  spreadRadius: 2,
+                                ),
+                              ],
                             ),
-                            child: GestureDetector(
-                              onTap: () {
-                                // Navigator.of(context).push(_createRoute());
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 1,
-                                      color: Colors.black26,
-                                      spreadRadius: 2,
-                                    ),
-                                  ],
-                                ),
-                                child: CircleAvatar(
-                                  radius: 25,
-                                  backgroundColor: whiteColor,
-                                  child: Icon(
-                                    FontAwesomeIcons.play,
-                                    size: 22,
-                                    color: mainTextColor,
-                                  ),
-                                ),
+                            child: CircleAvatar(
+                              radius: 25,
+                              backgroundColor: whiteColor,
+                              child: Icon(
+                                FontAwesomeIcons.shareAlt,
+                                color: mainTextColor,
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                              right: 20,
-                              left: 10,
-                            ),
-                            child: GestureDetector(
-                              onTap: () {
-                                // Navigator.of(context).push(_createRoute());
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 1,
-                                      color: Colors.black26,
-                                      spreadRadius: 2,
-                                    ),
-                                  ],
-                                ),
-                                child: CircleAvatar(
-                                  radius: 25,
-                                  backgroundColor: whiteColor,
-                                  child: Icon(
-                                    FontAwesomeIcons.shareAlt,
-                                    color: mainTextColor,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       )
                     ],
                   ),
