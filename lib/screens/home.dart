@@ -304,7 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Text(
                                   'Insights',
                                   style: GoogleFonts.josefinSans(
-                                    fontSize: 16,
+                                    fontSize: 18,
                                     color: bottomTextColor,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -312,51 +312,28 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(5.0),
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.9,
-                                  padding: EdgeInsets.all(20),
-                                  decoration: BoxDecoration(
-                                    color: whiteColor,
-                                    border: Border.all(
-                                      color: Colors.blue,
-                                      width: 1,
-                                      style: BorderStyle.solid,
-                                    ),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(10),
-                                    ),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      CircularPercentIndicator(
-                                        radius: 100.0,
-                                        lineWidth: 10.0,
-                                        percent: 0.8,
-                                        center: Text(
-                                          'Loading',
-                                          style: GoogleFonts.josefinSans(
-                                            fontSize: 16,
-                                            color: bottomTextColor,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                        circularStrokeCap:
-                                            CircularStrokeCap.round,
-                                        backgroundColor: whiteColor,
-                                        maskFilter:
-                                            MaskFilter.blur(BlurStyle.solid, 0),
-                                        linearGradient: LinearGradient(
-                                          begin: Alignment.topCenter,
-                                          end: Alignment.bottomCenter,
-                                          colors: [
-                                            Colors.orange,
-                                            Colors.yellow
-                                          ],
-                                        ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Insights',
+                                      style: GoogleFonts.josefinSans(
+                                        fontSize: 16,
+                                        color: bottomTextColor,
+                                        fontWeight: FontWeight.w600,
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    LinearPercentIndicator(
+                                      percent: 0.8,
+                                      backgroundColor: whiteColor,
+                                      maskFilter:
+                                          MaskFilter.blur(BlurStyle.solid, 0),
+                                      linearGradient: LinearGradient(
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                        colors: [Colors.orange, Colors.yellow],
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
