@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.20,
         child: Scaffold(
+          extendBodyBehindAppBar: true,
           appBar: AppBar(
             leading: Padding(
               padding: EdgeInsets.all(15.0),
@@ -57,13 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             automaticallyImplyLeading: false,
-            backgroundColor: whiteColor,
+            backgroundColor: Colors.transparent,
             elevation: 2,
             title: Text(
               'Room Name',
               style: GoogleFonts.openSans(
                 fontSize: 18,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w800,
                 color: mainTextColor,
               ),
             ),
