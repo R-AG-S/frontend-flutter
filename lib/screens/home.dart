@@ -42,132 +42,113 @@ class _HomeScreenState extends State<HomeScreen> {
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.20,
         child: Scaffold(
-            appBar: AppBar(
-              leading: Padding(
-                padding: EdgeInsets.all(15.0),
+          appBar: AppBar(
+            leading: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: GestureDetector(
+                onTap: () => _slidableKey.currentState.renderingMode ==
+                        SlidableRenderingMode.none
+                    ? _slidableKey.currentState.open()
+                    : _slidableKey.currentState.close(),
+                child: FaIcon(
+                  FontAwesomeIcons.bars,
+                  color: mainTextColor,
+                ),
+              ),
+            ),
+            automaticallyImplyLeading: false,
+            backgroundColor: whiteColor,
+            elevation: 2,
+            title: Text(
+              'Room Name',
+              style: GoogleFonts.openSans(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: mainTextColor,
+              ),
+            ),
+            iconTheme: IconThemeData(color: whiteColor),
+            actions: [
+              Padding(
+                padding: EdgeInsets.only(
+                  right: 10,
+                  left: 10,
+                ),
                 child: GestureDetector(
-                  onTap: () => _slidableKey.currentState.renderingMode ==
-                          SlidableRenderingMode.none
-                      ? _slidableKey.currentState.open()
-                      : _slidableKey.currentState.close(),
-                  child: FaIcon(
-                    FontAwesomeIcons.bars,
+                  onTap: () {
+                    // Navigator.of(context).push(_createRoute());
+                  },
+                  child: Icon(
+                    FontAwesomeIcons.play,
+                    size: 22,
                     color: mainTextColor,
                   ),
                 ),
               ),
-              automaticallyImplyLeading: false,
-              backgroundColor: whiteColor,
-              elevation: 2,
-              title: Text(
-                'Room Name',
-                style: GoogleFonts.openSans(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: mainTextColor,
+              Padding(
+                padding: EdgeInsets.only(
+                  right: 20,
+                  left: 10,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    // Navigator.of(context).push(_createRoute());
+                  },
+                  child: Icon(
+                    FontAwesomeIcons.rss,
+                    color: mainTextColor,
+                  ),
                 ),
               ),
-              iconTheme: IconThemeData(color: whiteColor),
-              actions: [
+            ],
+          ),
+          backgroundColor: whiteColor,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
                 Padding(
-                  padding: EdgeInsets.only(
-                    right: 10,
-                    left: 10,
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(_createRoute());
-                    },
-                    child: Icon(
-                      FontAwesomeIcons.play,
-                      size: 22,
-                      color: mainTextColor,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    right: 20,
-                    left: 10,
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(_createRoute());
-                    },
-                    child: Icon(
-                      FontAwesomeIcons.rss,
-                      color: mainTextColor,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            backgroundColor: whiteColor,
-            body: SingleChildScrollView(
-              child: Column(
-                children: [
-                  // FlutterMap(
-                  //   mapController: _mapController,
-                  //   options: MapOptions(
-                  //     center: LatLng(
-                  //         currentLatLng.latitude, currentLatLng.longitude),
-                  //     zoom: 5.0,
-                  //   ),
-                  //   layers: [
-                  //     TileLayerOptions(
-                  //       urlTemplate:
-                  //           'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  //       subdomains: ['a', 'b', 'c'],
-                  //       // For example purposes. It is recommended to use
-                  //       // TileProvider with a caching and retry strategy, like
-                  //       // NetworkTileProvider or CachedNetworkTileProvider
-                  //       tileProvider: NonCachingNetworkTileProvider(),
-                  //     ),
-                  //     MarkerLayerOptions(markers: markers)
-                  //   ],
-                  // ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
                       ),
-                      height: 350,
-                      alignment: Alignment.centerLeft,
-                      child: FlutterMap(
-                        options: new MapOptions(
-                          center: LatLng(userLat, userLong),
-                          zoom: 15.0,
+                    ),
+                    height: 350,
+                    alignment: Alignment.centerLeft,
+                    child: FlutterMap(
+                      options: new MapOptions(
+                        center: LatLng(userLat, userLong),
+                        zoom: 15.0,
+                      ),
+                      layers: [
+                        new TileLayerOptions(
+                          urlTemplate:
+                              "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c'],
                         ),
-                        layers: [
-                          new TileLayerOptions(
-                            urlTemplate:
-                                "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                            subdomains: ['a', 'b', 'c'],
-                          ),
-                          new MarkerLayerOptions(
-                            markers: [
-                              new Marker(
-                                width: 80.0,
-                                height: 80.0,
-                                point: LatLng(userLat, userLong),
-                                builder: (ctx) => new Container(
-                                  child: Container(
-                                    color: Colors.transparent,
-                                  ),
+                        new MarkerLayerOptions(
+                          markers: [
+                            new Marker(
+                              width: 80.0,
+                              height: 80.0,
+                              point: LatLng(userLat, userLong),
+                              builder: (ctx) => new Container(
+                                child: Container(
+                                  color: Colors.transparent,
                                 ),
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  )
-                ],
-              ),
-            )),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
         actions: <Widget>[
           SlideAction(
             child: ListView.builder(
