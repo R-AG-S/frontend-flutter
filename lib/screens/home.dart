@@ -213,8 +213,35 @@ class _HomeScreenState extends State<HomeScreen> {
                             vertical: 8,
                           ),
                           child: Card(
+                            color: cardBlueColor,
                             child: Column(
-                              children: [],
+                              children: [
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    CircleAvatar(
+                                      radius: 25,
+                                      backgroundColor: whiteColor,
+                                      backgroundImage: NetworkImage(
+                                        'https://picsum.photos/id/${40}/300/300',
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 15,
+                                    ),
+                                    Text(
+                                      'Room Name',
+                                      style: GoogleFonts.lato(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w800,
+                                        color: mainTextColor,
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
                             ),
                           ),
                         );
