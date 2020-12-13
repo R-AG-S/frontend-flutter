@@ -530,20 +530,52 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : Container(),
                 isExpanded
-                    ? FlatButton(
-                        minWidth: MediaQuery.of(context).size.width,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
+                    ? Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 25,
+                          vertical: 8,
                         ),
-                        height: 50,
-                        color: Color(0xFFBDBDBD),
-                        onPressed: () {},
-                        child: Text(
-                          'Out of Stock',
-                          style: GoogleFonts.openSans(
-                            fontSize: ScreenUtil().setSp(55),
-                            fontWeight: FontWeight.w900,
-                            color: mainBgColor,
+                        child: FlatButton(
+                          minWidth: MediaQuery.of(context).size.width,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          height: 50,
+                          color: blueColor,
+                          onPressed: () {},
+                          child: Text(
+                            'Driver',
+                            style: GoogleFonts.openSans(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              color: mainBgColor,
+                            ),
+                          ),
+                        ),
+                      )
+                    : Container(),
+                isExpanded
+                    ? Padding(
+                        padding: EdgeInsets.only(
+                          left: 25,
+                          right: 25,
+                          bottom: 8,
+                        ),
+                        child: FlatButton(
+                          minWidth: MediaQuery.of(context).size.width,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          height: 50,
+                          color: blueColor,
+                          onPressed: () {},
+                          child: Text(
+                            'Passenger',
+                            style: GoogleFonts.openSans(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              color: mainBgColor,
+                            ),
                           ),
                         ),
                       )
