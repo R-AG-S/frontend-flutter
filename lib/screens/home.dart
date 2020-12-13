@@ -238,13 +238,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                       SizedBox(
                                         width: 15,
                                       ),
-                                      Text(
-                                        'User Name $index',
-                                        style: GoogleFonts.lato(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w800,
-                                          color: whiteColor,
-                                        ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'User Name $index',
+                                            style: GoogleFonts.lato(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w800,
+                                              color: whiteColor,
+                                            ),
+                                          ),
+                                          Text(
+                                            'User Name $index',
+                                            style: GoogleFonts.lato(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w800,
+                                              color: whiteColor,
+                                            ),
+                                          )
+                                        ],
                                       ),
                                       SizedBox(
                                         width: 15,
