@@ -31,10 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  final SlidableController slidableController = SlidableController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Slidable(
+        controller: slidableController,
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.20,
         child: Scaffold(
@@ -42,6 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: Padding(
                 padding: EdgeInsets.all(15.0),
                 child: GestureDetector(
+                  onTap: () => Slidable.of(context)?.renderingMode ==
+                          SlidableRenderingMode.none
+                      ? Slidable.of(context)?.open()
+                      : Slidable.of(context)?.close(),
                   child: FaIcon(
                     FontAwesomeIcons.bars,
                     color: mainTextColor,
