@@ -304,6 +304,160 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       )
                     : Container(),
+                isExpanded
+                    ? Padding(
+                        padding: EdgeInsets.only(top: 5, left: 15, right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: mainBgColor,
+                                border: Border.all(
+                                  color: Colors.white,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                              padding: EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Calls Completed',
+                                    style: GoogleFonts.josefinSans(
+                                      fontSize: 16,
+                                      color: lightFadeText,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Container(
+                                      padding: EdgeInsets.all(20),
+                                      decoration: BoxDecoration(
+                                        color: mainBgColor,
+                                        border: Border.all(
+                                          color: Colors.blue,
+                                          width: 1,
+                                          style: BorderStyle.solid,
+                                        ),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          CircularPercentIndicator(
+                                            radius: 80.0,
+                                            lineWidth: 10.0,
+                                            percent: 0,
+                                            center: Text(
+                                              'Loading',
+                                              style: GoogleFonts.josefinSans(
+                                                fontSize: 16,
+                                                color: lightFadeText,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            circularStrokeCap:
+                                                CircularStrokeCap.round,
+                                            backgroundColor: mainBgColor,
+                                            maskFilter: MaskFilter.blur(
+                                                BlurStyle.solid, 3),
+                                            linearGradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: [
+                                                Colors.orange,
+                                                Colors.yellow
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: mainBgColor,
+                                border: Border.all(
+                                  color: Colors.white,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                              padding: EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Task Assigned',
+                                    style: GoogleFonts.josefinSans(
+                                      fontSize: 16,
+                                      color: lightFadeText,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Container(
+                                      padding: EdgeInsets.all(20),
+                                      decoration: BoxDecoration(
+                                        color: mainBgColor,
+                                        border: Border.all(
+                                          color: Colors.blue,
+                                          width: 1,
+                                          style: BorderStyle.solid,
+                                        ),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          CircularPercentIndicator(
+                                            radius: 80.0,
+                                            lineWidth: 10.0,
+                                            percent: 0,
+                                            center: Text(
+                                              'Loading',
+                                              style: GoogleFonts.josefinSans(
+                                                fontSize: 16,
+                                                color: subTextColor,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            circularStrokeCap:
+                                                CircularStrokeCap.round,
+                                            backgroundColor: mainAdminColor,
+                                            maskFilter: MaskFilter.blur(
+                                                BlurStyle.solid, 3),
+                                            linearGradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: [
+                                                Colors.orange,
+                                                Colors.yellow
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    : Container(),
               ],
             ),
           ),
