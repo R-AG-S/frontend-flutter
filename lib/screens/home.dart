@@ -529,6 +529,25 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       )
                     : Container(),
+                isExpanded
+                    ? FlatButton(
+                        minWidth: MediaQuery.of(context).size.width,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                        height: 50,
+                        color: Color(0xFFBDBDBD),
+                        onPressed: () {},
+                        child: Text(
+                          'Out of Stock',
+                          style: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(55),
+                            fontWeight: FontWeight.w900,
+                            color: mainBgColor,
+                          ),
+                        ),
+                      )
+                    : Container(),
               ],
             ),
           ),
