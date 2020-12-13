@@ -98,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: EdgeInsets.all(15.0),
@@ -108,10 +109,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ? _slidableKey.currentState.open()
                                   : _slidableKey.currentState.close(),
                           child: CircleAvatar(
-                            radius: 50,
+                            radius: 25,
                             backgroundColor: whiteColor,
                             child: Icon(
-                              FontAwesomeIcons.plus,
+                              FontAwesomeIcons.bars,
                               color: darkFadeTextColor,
                             ),
                           ),
@@ -129,10 +130,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               onTap: () {
                                 // Navigator.of(context).push(_createRoute());
                               },
-                              child: Icon(
-                                FontAwesomeIcons.play,
-                                size: 22,
-                                color: mainTextColor,
+                              child: CircleAvatar(
+                                radius: 25,
+                                backgroundColor: whiteColor,
+                                child: Icon(
+                                  FontAwesomeIcons.play,
+                                  size: 22,
+                                  color: mainTextColor,
+                                ),
                               ),
                             ),
                           ),
@@ -145,9 +150,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               onTap: () {
                                 // Navigator.of(context).push(_createRoute());
                               },
-                              child: Icon(
-                                FontAwesomeIcons.rss,
-                                color: mainTextColor,
+                              child: CircleAvatar(
+                                radius: 25,
+                                backgroundColor: whiteColor,
+                                child: Icon(
+                                  FontAwesomeIcons.rss,
+                                  color: mainTextColor,
+                                ),
                               ),
                             ),
                           ),
