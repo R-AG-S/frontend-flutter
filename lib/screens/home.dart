@@ -253,22 +253,22 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               width: 15,
                             ),
-                            CircleAvatar(
-                              radius: 25,
-                              backgroundColor: whiteColor,
-                              backgroundImage: NetworkImage(
-                                'https://picsum.photos/id/${40}/300/300',
-                              ),
-                            ),
-                            SizedBox(
-                              width: 15,
-                            ),
+                            // CircleAvatar(
+                            //   radius: 25,
+                            //   backgroundColor: whiteColor,
+                            //   backgroundImage: NetworkImage(
+                            //     'https://picsum.photos/id/${40}/300/300',
+                            //   ),
+                            // ),
+                            // SizedBox(
+                            //   width: 15,
+                            // ),
                             Text(
                               'Room Name',
-                              style: GoogleFonts.lato(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w800,
-                                color: mainTextColor,
+                              style: GoogleFonts.openSans(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w600,
+                                color: bottomTextColor,
                               ),
                             )
                           ],
@@ -297,29 +297,30 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: EdgeInsets.only(
-                                  left: 15,
-                                ),
-                                child: Text(
-                                  'Insights',
-                                  style: GoogleFonts.josefinSans(
-                                    fontSize: 18,
-                                    color: bottomTextColor,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                              Text(
+                                'Insights',
+                                style: GoogleFonts.josefinSans(
+                                  fontSize: 18,
+                                  color: bottomTextColor,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(5.0),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 15,
+                                ),
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
-                                      'Insights',
-                                      style: GoogleFonts.josefinSans(
-                                        fontSize: 16,
-                                        color: bottomTextColor,
-                                        fontWeight: FontWeight.w600,
+                                    Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'Quantity',
+                                        style: GoogleFonts.josefinSans(
+                                          fontSize: 16,
+                                          color: bottomTextColor,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                       ),
                                     ),
                                     LinearPercentIndicator(
@@ -328,8 +329,40 @@ class _HomeScreenState extends State<HomeScreen> {
                                       maskFilter:
                                           MaskFilter.blur(BlurStyle.solid, 0),
                                       linearGradient: LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
+                                        begin: Alignment.centerLeft,
+                                        end: Alignment.centerRight,
+                                        colors: [Colors.orange, Colors.yellow],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 15,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'Value',
+                                        style: GoogleFonts.josefinSans(
+                                          fontSize: 16,
+                                          color: bottomTextColor,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    LinearPercentIndicator(
+                                      percent: 0.4,
+                                      backgroundColor: whiteColor,
+                                      maskFilter:
+                                          MaskFilter.blur(BlurStyle.solid, 0),
+                                      linearGradient: LinearGradient(
+                                        begin: Alignment.centerLeft,
+                                        end: Alignment.centerRight,
                                         colors: [Colors.orange, Colors.yellow],
                                       ),
                                     ),
