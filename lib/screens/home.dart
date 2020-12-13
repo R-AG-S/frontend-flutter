@@ -327,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Calls Completed',
+                                    'Topic Main',
                                     style: GoogleFonts.josefinSans(
                                       fontSize: 16,
                                       color: darkFadeTextColor,
@@ -352,7 +352,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Column(
                                         children: [
                                           CircularPercentIndicator(
-                                            radius: 80.0,
+                                            radius: 100.0,
                                             lineWidth: 10.0,
                                             percent: 0.8,
                                             center: Text(
@@ -367,7 +367,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 CircularStrokeCap.round,
                                             backgroundColor: whiteColor,
                                             maskFilter: MaskFilter.blur(
-                                                BlurStyle.solid, 3),
+                                                BlurStyle.solid, 0),
                                             linearGradient: LinearGradient(
                                               begin: Alignment.topCenter,
                                               end: Alignment.bottomCenter,
@@ -399,10 +399,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Task Assigned',
+                                    'Topic Main',
                                     style: GoogleFonts.josefinSans(
                                       fontSize: 16,
-                                      color: lightFadeText,
+                                      color: darkFadeTextColor,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
@@ -424,14 +424,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Column(
                                         children: [
                                           CircularPercentIndicator(
-                                            radius: 80.0,
+                                            radius: 100.0,
                                             lineWidth: 10.0,
-                                            percent: 0,
+                                            percent: 0.8,
                                             center: Text(
                                               'Loading',
                                               style: GoogleFonts.josefinSans(
                                                 fontSize: 16,
-                                                color: lightFadeText,
+                                                color: darkFadeTextColor,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                             ),
@@ -439,7 +439,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 CircularStrokeCap.round,
                                             backgroundColor: whiteColor,
                                             maskFilter: MaskFilter.blur(
-                                                BlurStyle.solid, 3),
+                                                BlurStyle.solid, 0),
                                             linearGradient: LinearGradient(
                                               begin: Alignment.topCenter,
                                               end: Alignment.bottomCenter,
