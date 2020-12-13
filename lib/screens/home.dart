@@ -52,11 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ? _slidableKey.currentState.open()
                     : _slidableKey.currentState.close(),
                 child: CircleAvatar(
-                  radius: 30,
+                  radius: 50,
                   backgroundColor: whiteColor,
-                  child: FaIcon(
-                    FontAwesomeIcons.bars,
-                    color: mainTextColor,
+                  child: Icon(
+                    FontAwesomeIcons.plus,
+                    color: darkFadeTextColor,
                   ),
                 ),
               ),
@@ -64,14 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
             automaticallyImplyLeading: false,
             backgroundColor: Colors.transparent,
             elevation: 0,
-            title: Text(
-              'Room Name',
-              style: GoogleFonts.lato(
-                fontSize: 18,
-                fontWeight: FontWeight.w800,
-                color: mainTextColor,
-              ),
-            ),
             iconTheme: IconThemeData(color: whiteColor),
             actions: [
               Padding(
