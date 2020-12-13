@@ -27,8 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
   _getLocation() async {
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
-    userLat = position.latitude;
-    userLong = position.longitude;
+    setState(() {
+      userLat = position.latitude;
+      userLong = position.longitude;
+    });
   }
 
   @override
@@ -122,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: FlutterMap(
                         options: new MapOptions(
                           center: LatLng(userLat, userLong),
-                          zoom: 2.0,
+                          zoom: 15.0,
                         ),
                         layers: [
                           new TileLayerOptions(
