@@ -43,62 +43,62 @@ class _HomeScreenState extends State<HomeScreen> {
         actionExtentRatio: 0.20,
         child: Scaffold(
           extendBodyBehindAppBar: true,
-          appBar: AppBar(
-            leading: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: GestureDetector(
-                onTap: () => _slidableKey.currentState.renderingMode ==
-                        SlidableRenderingMode.none
-                    ? _slidableKey.currentState.open()
-                    : _slidableKey.currentState.close(),
-                child: CircleAvatar(
-                  radius: 50,
-                  backgroundColor: whiteColor,
-                  child: Icon(
-                    FontAwesomeIcons.plus,
-                    color: darkFadeTextColor,
-                  ),
-                ),
-              ),
-            ),
-            automaticallyImplyLeading: false,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            iconTheme: IconThemeData(color: whiteColor),
-            actions: [
-              Padding(
-                padding: EdgeInsets.only(
-                  right: 10,
-                  left: 10,
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    // Navigator.of(context).push(_createRoute());
-                  },
-                  child: Icon(
-                    FontAwesomeIcons.play,
-                    size: 22,
-                    color: mainTextColor,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  right: 20,
-                  left: 10,
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    // Navigator.of(context).push(_createRoute());
-                  },
-                  child: Icon(
-                    FontAwesomeIcons.rss,
-                    color: mainTextColor,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // appBar: AppBar(
+          //   leading: Padding(
+          //     padding: EdgeInsets.all(15.0),
+          //     child: GestureDetector(
+          //       onTap: () => _slidableKey.currentState.renderingMode ==
+          //               SlidableRenderingMode.none
+          //           ? _slidableKey.currentState.open()
+          //           : _slidableKey.currentState.close(),
+          //       child: CircleAvatar(
+          //         radius: 50,
+          //         backgroundColor: whiteColor,
+          //         child: Icon(
+          //           FontAwesomeIcons.plus,
+          //           color: darkFadeTextColor,
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          //   automaticallyImplyLeading: false,
+          //   backgroundColor: Colors.transparent,
+          //   elevation: 0,
+          //   iconTheme: IconThemeData(color: whiteColor),
+          //   actions: [
+          //     Padding(
+          //       padding: EdgeInsets.only(
+          //         right: 10,
+          //         left: 10,
+          //       ),
+          //       child: GestureDetector(
+          //         onTap: () {
+          //           // Navigator.of(context).push(_createRoute());
+          //         },
+          //         child: Icon(
+          //           FontAwesomeIcons.play,
+          //           size: 22,
+          //           color: mainTextColor,
+          //         ),
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: EdgeInsets.only(
+          //         right: 20,
+          //         left: 10,
+          //       ),
+          //       child: GestureDetector(
+          //         onTap: () {
+          //           // Navigator.of(context).push(_createRoute());
+          //         },
+          //         child: Icon(
+          //           FontAwesomeIcons.rss,
+          //           color: mainTextColor,
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           backgroundColor: whiteColor,
           body: Column(
             children: [
