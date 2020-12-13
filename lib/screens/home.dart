@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     height: isExpanded
                         ? MediaQuery.of(context).size.height * 0.6
-                        : MediaQuery.of(context).size.height,
+                        : MediaQuery.of(context).size.height * 0.969,
                     child: FlutterMap(
                       options: new MapOptions(
                         center: LatLng(userLat, userLong),
@@ -173,7 +173,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.45,
+                      top: isExpanded
+                          ? MediaQuery.of(context).size.height * 0.45
+                          : MediaQuery.of(context).size.height * 0.8,
                     ),
                     child: Container(
                       height: 100,
@@ -243,93 +245,99 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 15,
-                    ),
-                    CircleAvatar(
-                      radius: 25,
-                      backgroundColor: whiteColor,
-                      backgroundImage: NetworkImage(
-                        'https://picsum.photos/id/${40}/300/300',
-                      ),
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      'Room Name',
-                      style: GoogleFonts.lato(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w800,
-                        color: mainTextColor,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: cardBlueColor,
-                    border: Border.all(
-                      color: cardBlueColor,
-                    ),
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5.0),
-                    ),
-                  ),
-                  child: FlatButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Check Stats',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: whiteColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemCount: 10,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
+              isExpanded
+                  ? Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
+                          SizedBox(
+                            width: 15,
+                          ),
                           CircleAvatar(
                             radius: 25,
                             backgroundColor: whiteColor,
                             backgroundImage: NetworkImage(
-                              'https://picsum.photos/id/${index + 30}/300/300',
+                              'https://picsum.photos/id/${40}/300/300',
                             ),
                           ),
                           SizedBox(
                             width: 15,
                           ),
                           Text(
-                            'User ${index + 30}',
+                            'Room Name',
                             style: GoogleFonts.lato(
-                              fontSize: 14,
+                              fontSize: 18,
                               fontWeight: FontWeight.w800,
                               color: mainTextColor,
                             ),
                           )
                         ],
                       ),
-                    );
-                  },
-                ),
-              ),
+                    )
+                  : Container(),
+              isExpanded
+                  ? Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: cardBlueColor,
+                          border: Border.all(
+                            color: cardBlueColor,
+                          ),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5.0),
+                          ),
+                        ),
+                        child: FlatButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Check Stats',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: whiteColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  : Container(),
+              isExpanded
+                  ? Flexible(
+                      child: ListView.builder(
+                        padding: const EdgeInsets.all(8),
+                        itemCount: 10,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundColor: whiteColor,
+                                  backgroundImage: NetworkImage(
+                                    'https://picsum.photos/id/${index + 30}/300/300',
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Text(
+                                  'User ${index + 30}',
+                                  style: GoogleFonts.lato(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w800,
+                                    color: mainTextColor,
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  : Container(),
             ],
           ),
         ),
