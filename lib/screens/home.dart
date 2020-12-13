@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 double userLat = 0.0;
 double userLong = 0.0;
+bool isExpanded = false;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -64,7 +65,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         Radius.circular(20),
                       ),
                     ),
-                    height: MediaQuery.of(context).size.height * 0.6,
+                    height: isExpanded
+                        ? MediaQuery.of(context).size.height * 0.6
+                        : MediaQuery.of(context).size.height,
                     child: FlutterMap(
                       options: new MapOptions(
                         center: LatLng(userLat, userLong),
@@ -156,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               radius: 25,
                               backgroundColor: whiteColor,
                               child: Icon(
-                                FontAwesomeIcons.shareAlt,
+                                FontAwesomeIcons.expand,
                                 color: mainTextColor,
                               ),
                             ),
