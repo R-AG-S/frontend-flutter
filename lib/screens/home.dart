@@ -335,7 +335,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(5.0),
                                     child: Container(
                                       padding: EdgeInsets.all(20),
                                       decoration: BoxDecoration(
@@ -407,7 +407,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(5.0),
                                     child: Container(
                                       padding: EdgeInsets.all(20),
                                       decoration: BoxDecoration(
