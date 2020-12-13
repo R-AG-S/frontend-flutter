@@ -154,7 +154,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 80.0,
                                 point: LatLng(userLat, userLong),
                                 builder: (ctx) => new Container(
-                                  child: CircularProgressIndicator(),
+                                  child: Container(
+                                    color: Colors.transparent,
+                                  ),
                                 ),
                               ),
                             ],
