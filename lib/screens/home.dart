@@ -174,6 +174,43 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
+              Container(
+                decoration: BoxDecoration(
+                  color: mainBgColor,
+                  border: Border.all(
+                    color: mainTextColor,
+                  ),
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.vertical(),
+                ),
+                padding: EdgeInsets.symmetric(
+                  vertical: 15,
+                  horizontal: 25,
+                ),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.green[700],
+                    border: Border.all(
+                      color: Colors.green[700],
+                    ),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5.0),
+                    ),
+                  ),
+                  child: FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Check Stats',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: mainBgColor,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
