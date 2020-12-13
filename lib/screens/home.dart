@@ -141,6 +141,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: GestureDetector(
                           onTap: () {
+                            setState(() {
+                              isExpanded = isExpanded ? false : true;
+                            });
                             // Navigator.of(context).push(_createRoute());
                           },
                           child: Container(
