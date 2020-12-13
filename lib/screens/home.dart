@@ -136,6 +136,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               builder: (ctx) => new Container(
                                 child: Container(
                                   color: Colors.transparent,
+                                  child: Icon(
+                                    FontAwesomeIcons.mapMarkerAlt,
+                                    color: redColor,
+                                  ),
                                 ),
                               ),
                             ),
