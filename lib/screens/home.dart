@@ -43,252 +43,252 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: slidableController,
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.20,
-        secondaryActions: [
-          Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  left: 15,
-                  right: 15,
-                  top: 5,
-                ),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: whiteColor,
-                    border: Border.all(
-                      color: Colors.white,
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                  ),
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Insights',
-                        style: GoogleFonts.josefinSans(
-                          fontSize: 18,
-                          color: bottomTextColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 15,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                'Quantity',
-                                style: GoogleFonts.josefinSans(
-                                  fontSize: 16,
-                                  color: bottomTextColor,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                            LinearPercentIndicator(
-                              percent: 0.8,
-                              backgroundColor: whiteColor,
-                              maskFilter: MaskFilter.blur(BlurStyle.solid, 0),
-                              linearGradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [Colors.orange, Colors.yellow],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 15,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                'Value',
-                                style: GoogleFonts.josefinSans(
-                                  fontSize: 16,
-                                  color: bottomTextColor,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                            LinearPercentIndicator(
-                              percent: 0.4,
-                              backgroundColor: whiteColor,
-                              maskFilter: MaskFilter.blur(BlurStyle.solid, 0),
-                              linearGradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [Colors.orange, Colors.yellow],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(top: 15, left: 10, right: 10, bottom: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: whiteColor,
-                        border: Border.all(
-                          color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      padding: EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Topic Main',
-                            style: GoogleFonts.josefinSans(
-                              fontSize: 16,
-                              color: bottomTextColor,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Container(
-                              padding: EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                                color: whiteColor,
-                                border: Border.all(
-                                  color: Colors.blue,
-                                  width: 1,
-                                  style: BorderStyle.solid,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              child: Column(
-                                children: [
-                                  CircularPercentIndicator(
-                                    radius: 100.0,
-                                    lineWidth: 10.0,
-                                    percent: 0.8,
-                                    center: Text(
-                                      'Loading',
-                                      style: GoogleFonts.josefinSans(
-                                        fontSize: 16,
-                                        color: bottomTextColor,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    circularStrokeCap: CircularStrokeCap.round,
-                                    backgroundColor: whiteColor,
-                                    maskFilter:
-                                        MaskFilter.blur(BlurStyle.solid, 0),
-                                    linearGradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [Colors.orange, Colors.yellow],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: whiteColor,
-                        border: Border.all(
-                          color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      padding: EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Topic Main',
-                            style: GoogleFonts.josefinSans(
-                              fontSize: 16,
-                              color: bottomTextColor,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Container(
-                              padding: EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                                color: whiteColor,
-                                border: Border.all(
-                                  color: Colors.blue,
-                                  width: 1,
-                                  style: BorderStyle.solid,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              child: Column(
-                                children: [
-                                  CircularPercentIndicator(
-                                    radius: 100.0,
-                                    lineWidth: 10.0,
-                                    percent: 0.8,
-                                    center: Text(
-                                      'Loading',
-                                      style: GoogleFonts.josefinSans(
-                                        fontSize: 16,
-                                        color: bottomTextColor,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    circularStrokeCap: CircularStrokeCap.round,
-                                    backgroundColor: whiteColor,
-                                    maskFilter:
-                                        MaskFilter.blur(BlurStyle.solid, 0),
-                                    linearGradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [Colors.orange, Colors.yellow],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ],
+        // secondaryActions: [
+        //   Column(
+        //     children: [
+        //       Padding(
+        //         padding: EdgeInsets.only(
+        //           left: 15,
+        //           right: 15,
+        //           top: 5,
+        //         ),
+        //         child: Container(
+        //           width: MediaQuery.of(context).size.width,
+        //           decoration: BoxDecoration(
+        //             color: whiteColor,
+        //             border: Border.all(
+        //               color: Colors.white,
+        //             ),
+        //             borderRadius: BorderRadius.all(
+        //               Radius.circular(10),
+        //             ),
+        //           ),
+        //           padding: EdgeInsets.all(10),
+        //           child: Column(
+        //             crossAxisAlignment: CrossAxisAlignment.start,
+        //             children: [
+        //               Text(
+        //                 'Insights',
+        //                 style: GoogleFonts.josefinSans(
+        //                   fontSize: 18,
+        //                   color: bottomTextColor,
+        //                   fontWeight: FontWeight.w600,
+        //                 ),
+        //               ),
+        //               Padding(
+        //                 padding: const EdgeInsets.symmetric(
+        //                   vertical: 15,
+        //                 ),
+        //                 child: Column(
+        //                   crossAxisAlignment: CrossAxisAlignment.start,
+        //                   children: [
+        //                     Padding(
+        //                       padding: EdgeInsets.all(8.0),
+        //                       child: Text(
+        //                         'Quantity',
+        //                         style: GoogleFonts.josefinSans(
+        //                           fontSize: 16,
+        //                           color: bottomTextColor,
+        //                           fontWeight: FontWeight.w600,
+        //                         ),
+        //                       ),
+        //                     ),
+        //                     LinearPercentIndicator(
+        //                       percent: 0.8,
+        //                       backgroundColor: whiteColor,
+        //                       maskFilter: MaskFilter.blur(BlurStyle.solid, 0),
+        //                       linearGradient: LinearGradient(
+        //                         begin: Alignment.centerLeft,
+        //                         end: Alignment.centerRight,
+        //                         colors: [Colors.orange, Colors.yellow],
+        //                       ),
+        //                     ),
+        //                   ],
+        //                 ),
+        //               ),
+        //               Padding(
+        //                 padding: const EdgeInsets.symmetric(
+        //                   vertical: 15,
+        //                 ),
+        //                 child: Column(
+        //                   crossAxisAlignment: CrossAxisAlignment.start,
+        //                   children: [
+        //                     Padding(
+        //                       padding: EdgeInsets.all(8.0),
+        //                       child: Text(
+        //                         'Value',
+        //                         style: GoogleFonts.josefinSans(
+        //                           fontSize: 16,
+        //                           color: bottomTextColor,
+        //                           fontWeight: FontWeight.w600,
+        //                         ),
+        //                       ),
+        //                     ),
+        //                     LinearPercentIndicator(
+        //                       percent: 0.4,
+        //                       backgroundColor: whiteColor,
+        //                       maskFilter: MaskFilter.blur(BlurStyle.solid, 0),
+        //                       linearGradient: LinearGradient(
+        //                         begin: Alignment.centerLeft,
+        //                         end: Alignment.centerRight,
+        //                         colors: [Colors.orange, Colors.yellow],
+        //                       ),
+        //                     ),
+        //                   ],
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ),
+        //       ),
+        //       Padding(
+        //         padding:
+        //             EdgeInsets.only(top: 15, left: 10, right: 10, bottom: 15),
+        //         child: Row(
+        //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //           children: [
+        //             Container(
+        //               decoration: BoxDecoration(
+        //                 color: whiteColor,
+        //                 border: Border.all(
+        //                   color: Colors.white,
+        //                 ),
+        //                 borderRadius: BorderRadius.all(
+        //                   Radius.circular(10),
+        //                 ),
+        //               ),
+        //               padding: EdgeInsets.all(10),
+        //               child: Column(
+        //                 crossAxisAlignment: CrossAxisAlignment.center,
+        //                 children: [
+        //                   Text(
+        //                     'Topic Main',
+        //                     style: GoogleFonts.josefinSans(
+        //                       fontSize: 16,
+        //                       color: bottomTextColor,
+        //                       fontWeight: FontWeight.w600,
+        //                     ),
+        //                   ),
+        //                   Padding(
+        //                     padding: const EdgeInsets.all(5.0),
+        //                     child: Container(
+        //                       padding: EdgeInsets.all(20),
+        //                       decoration: BoxDecoration(
+        //                         color: whiteColor,
+        //                         border: Border.all(
+        //                           color: Colors.blue,
+        //                           width: 1,
+        //                           style: BorderStyle.solid,
+        //                         ),
+        //                         borderRadius: BorderRadius.all(
+        //                           Radius.circular(10),
+        //                         ),
+        //                       ),
+        //                       child: Column(
+        //                         children: [
+        //                           CircularPercentIndicator(
+        //                             radius: 100.0,
+        //                             lineWidth: 10.0,
+        //                             percent: 0.8,
+        //                             center: Text(
+        //                               'Loading',
+        //                               style: GoogleFonts.josefinSans(
+        //                                 fontSize: 16,
+        //                                 color: bottomTextColor,
+        //                                 fontWeight: FontWeight.w600,
+        //                               ),
+        //                             ),
+        //                             circularStrokeCap: CircularStrokeCap.round,
+        //                             backgroundColor: whiteColor,
+        //                             maskFilter:
+        //                                 MaskFilter.blur(BlurStyle.solid, 0),
+        //                             linearGradient: LinearGradient(
+        //                               begin: Alignment.topCenter,
+        //                               end: Alignment.bottomCenter,
+        //                               colors: [Colors.orange, Colors.yellow],
+        //                             ),
+        //                           ),
+        //                         ],
+        //                       ),
+        //                     ),
+        //                   ),
+        //                 ],
+        //               ),
+        //             ),
+        //             Container(
+        //               decoration: BoxDecoration(
+        //                 color: whiteColor,
+        //                 border: Border.all(
+        //                   color: Colors.white,
+        //                 ),
+        //                 borderRadius: BorderRadius.all(
+        //                   Radius.circular(10),
+        //                 ),
+        //               ),
+        //               padding: EdgeInsets.all(10),
+        //               child: Column(
+        //                 crossAxisAlignment: CrossAxisAlignment.center,
+        //                 children: [
+        //                   Text(
+        //                     'Topic Main',
+        //                     style: GoogleFonts.josefinSans(
+        //                       fontSize: 16,
+        //                       color: bottomTextColor,
+        //                       fontWeight: FontWeight.w600,
+        //                     ),
+        //                   ),
+        //                   Padding(
+        //                     padding: const EdgeInsets.all(5.0),
+        //                     child: Container(
+        //                       padding: EdgeInsets.all(20),
+        //                       decoration: BoxDecoration(
+        //                         color: whiteColor,
+        //                         border: Border.all(
+        //                           color: Colors.blue,
+        //                           width: 1,
+        //                           style: BorderStyle.solid,
+        //                         ),
+        //                         borderRadius: BorderRadius.all(
+        //                           Radius.circular(10),
+        //                         ),
+        //                       ),
+        //                       child: Column(
+        //                         children: [
+        //                           CircularPercentIndicator(
+        //                             radius: 100.0,
+        //                             lineWidth: 10.0,
+        //                             percent: 0.8,
+        //                             center: Text(
+        //                               'Loading',
+        //                               style: GoogleFonts.josefinSans(
+        //                                 fontSize: 16,
+        //                                 color: bottomTextColor,
+        //                                 fontWeight: FontWeight.w600,
+        //                               ),
+        //                             ),
+        //                             circularStrokeCap: CircularStrokeCap.round,
+        //                             backgroundColor: whiteColor,
+        //                             maskFilter:
+        //                                 MaskFilter.blur(BlurStyle.solid, 0),
+        //                             linearGradient: LinearGradient(
+        //                               begin: Alignment.topCenter,
+        //                               end: Alignment.bottomCenter,
+        //                               colors: [Colors.orange, Colors.yellow],
+        //                             ),
+        //                           ),
+        //                         ],
+        //                       ),
+        //                     ),
+        //                   ),
+        //                 ],
+        //               ),
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ],
         child: Scaffold(
           extendBodyBehindAppBar: true,
           backgroundColor: bottomColor,
@@ -304,7 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       height: isExpanded
-                          ? MediaQuery.of(context).size.height * 0.6
+                          ? MediaQuery.of(context).size.height * 0.74
                           : MediaQuery.of(context).size.height * 0.969,
                       child: FlutterMap(
                         options: new MapOptions(
@@ -412,7 +412,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Padding(
                       padding: EdgeInsets.only(
                         top: isExpanded
-                            ? MediaQuery.of(context).size.height * 0.45
+                            ? MediaQuery.of(context).size.height * 0.58
                             : MediaQuery.of(context).size.height * 0.8,
                       ),
                       child: Container(
