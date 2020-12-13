@@ -205,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.345,
+                      top: MediaQuery.of(context).size.height * 0.45,
                     ),
                     child: Container(
                       height: 100,
@@ -239,6 +239,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         width: 15,
                                       ),
                                       Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'User Name $index',
@@ -249,7 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                           ),
                                           Text(
-                                            'User Name $index',
+                                            'User Details',
                                             style: GoogleFonts.lato(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w800,
