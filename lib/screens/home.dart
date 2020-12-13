@@ -6,6 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -306,13 +307,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     : Container(),
                 isExpanded
                     ? Padding(
-                        padding: EdgeInsets.only(top: 5, left: 15, right: 15),
+                        padding: EdgeInsets.only(
+                            top: 15, left: 10, right: 10, bottom: 15),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: mainBgColor,
+                                color: whiteColor,
                                 border: Border.all(
                                   color: Colors.white,
                                 ),
@@ -328,6 +330,78 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'Calls Completed',
                                     style: GoogleFonts.josefinSans(
                                       fontSize: 16,
+                                      color: darkFadeTextColor,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Container(
+                                      padding: EdgeInsets.all(20),
+                                      decoration: BoxDecoration(
+                                        color: whiteColor,
+                                        border: Border.all(
+                                          color: Colors.blue,
+                                          width: 1,
+                                          style: BorderStyle.solid,
+                                        ),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          CircularPercentIndicator(
+                                            radius: 80.0,
+                                            lineWidth: 10.0,
+                                            percent: 0.8,
+                                            center: Text(
+                                              'Loading',
+                                              style: GoogleFonts.josefinSans(
+                                                fontSize: 16,
+                                                color: darkFadeTextColor,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            circularStrokeCap:
+                                                CircularStrokeCap.round,
+                                            backgroundColor: whiteColor,
+                                            maskFilter: MaskFilter.blur(
+                                                BlurStyle.solid, 3),
+                                            linearGradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: [
+                                                Colors.orange,
+                                                Colors.yellow
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: whiteColor,
+                                border: Border.all(
+                                  color: Colors.white,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                              padding: EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Task Assigned',
+                                    style: GoogleFonts.josefinSans(
+                                      fontSize: 16,
                                       color: lightFadeText,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -337,7 +411,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Container(
                                       padding: EdgeInsets.all(20),
                                       decoration: BoxDecoration(
-                                        color: mainBgColor,
+                                        color: whiteColor,
                                         border: Border.all(
                                           color: Colors.blue,
                                           width: 1,
@@ -363,79 +437,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                             circularStrokeCap:
                                                 CircularStrokeCap.round,
-                                            backgroundColor: mainBgColor,
-                                            maskFilter: MaskFilter.blur(
-                                                BlurStyle.solid, 3),
-                                            linearGradient: LinearGradient(
-                                              begin: Alignment.topCenter,
-                                              end: Alignment.bottomCenter,
-                                              colors: [
-                                                Colors.orange,
-                                                Colors.yellow
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: mainBgColor,
-                                border: Border.all(
-                                  color: Colors.white,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              padding: EdgeInsets.all(10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Task Assigned',
-                                    style: GoogleFonts.josefinSans(
-                                      fontSize: 16,
-                                      color: lightFadeText,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Container(
-                                      padding: EdgeInsets.all(20),
-                                      decoration: BoxDecoration(
-                                        color: mainBgColor,
-                                        border: Border.all(
-                                          color: Colors.blue,
-                                          width: 1,
-                                          style: BorderStyle.solid,
-                                        ),
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(10),
-                                        ),
-                                      ),
-                                      child: Column(
-                                        children: [
-                                          CircularPercentIndicator(
-                                            radius: 80.0,
-                                            lineWidth: 10.0,
-                                            percent: 0,
-                                            center: Text(
-                                              'Loading',
-                                              style: GoogleFonts.josefinSans(
-                                                fontSize: 16,
-                                                color: subTextColor,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                            ),
-                                            circularStrokeCap:
-                                                CircularStrokeCap.round,
-                                            backgroundColor: mainAdminColor,
+                                            backgroundColor: whiteColor,
                                             maskFilter: MaskFilter.blur(
                                                 BlurStyle.solid, 3),
                                             linearGradient: LinearGradient(
@@ -456,7 +458,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                      ),
+                      )
                     : Container(),
               ],
             ),
