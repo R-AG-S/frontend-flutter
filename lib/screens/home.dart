@@ -105,50 +105,71 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           backgroundColor: whiteColor,
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
+          body: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
                   ),
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  child: FlutterMap(
-                    options: new MapOptions(
-                      center: LatLng(userLat, userLong),
-                      zoom: 15.0,
+                ),
+                height: MediaQuery.of(context).size.height * 0.6,
+                child: FlutterMap(
+                  options: new MapOptions(
+                    center: LatLng(userLat, userLong),
+                    zoom: 15.0,
+                  ),
+                  layers: [
+                    new TileLayerOptions(
+                      urlTemplate:
+                          "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                      subdomains: ['a', 'b', 'c'],
                     ),
-                    layers: [
-                      new TileLayerOptions(
-                        urlTemplate:
-                            "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                        subdomains: ['a', 'b', 'c'],
-                      ),
-                      new MarkerLayerOptions(
-                        markers: [
-                          new Marker(
-                            width: 80.0,
-                            height: 80.0,
-                            point: LatLng(userLat, userLong),
-                            builder: (ctx) => new Container(
-                              child: Container(
-                                color: Colors.transparent,
-                                child: Icon(
-                                  FontAwesomeIcons.mapMarkerAlt,
-                                  color: redColor,
-                                ),
+                    new MarkerLayerOptions(
+                      markers: [
+                        new Marker(
+                          width: 80.0,
+                          height: 80.0,
+                          point: LatLng(userLat, userLong),
+                          builder: (ctx) => new Container(
+                            child: Container(
+                              color: Colors.transparent,
+                              child: Icon(
+                                FontAwesomeIcons.mapMarkerAlt,
+                                color: redColor,
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+              Flexible(
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  itemCount: 4,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 20,
+                          backgroundColor: whiteColor,
+                          child: Icon(
+                            FontAwesomeIcons.plus,
+                            color: darkFadeTextColor,
+                          ),
+                        ),
+                        Text(
+                          'User',
+                        )
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         ),
         actions: <Widget>[
