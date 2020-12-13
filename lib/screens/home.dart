@@ -44,23 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           extendBodyBehindAppBar: true,
           // appBar: AppBar(
-          //   leading: Padding(
-          //     padding: EdgeInsets.all(15.0),
-          //     child: GestureDetector(
-          //       onTap: () => _slidableKey.currentState.renderingMode ==
-          //               SlidableRenderingMode.none
-          //           ? _slidableKey.currentState.open()
-          //           : _slidableKey.currentState.close(),
-          //       child: CircleAvatar(
-          //         radius: 50,
-          //         backgroundColor: whiteColor,
-          //         child: Icon(
-          //           FontAwesomeIcons.plus,
-          //           color: darkFadeTextColor,
-          //         ),
-          //       ),
-          //     ),
-          //   ),
+          //   leading: 
           //   automaticallyImplyLeading: false,
           //   backgroundColor: Colors.transparent,
           //   elevation: 0,
@@ -102,44 +86,69 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: whiteColor,
           body: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                ),
-                height: MediaQuery.of(context).size.height * 0.6,
-                child: FlutterMap(
-                  options: new MapOptions(
-                    center: LatLng(userLat, userLong),
-                    zoom: 15.0,
-                  ),
-                  layers: [
-                    new TileLayerOptions(
-                      urlTemplate:
-                          "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      subdomains: ['a', 'b', 'c'],
+              Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
-                    new MarkerLayerOptions(
-                      markers: [
-                        new Marker(
-                          width: 80.0,
-                          height: 80.0,
-                          point: LatLng(userLat, userLong),
-                          builder: (ctx) => new Container(
-                            child: Container(
-                              color: Colors.transparent,
-                              child: Icon(
-                                FontAwesomeIcons.mapMarkerAlt,
-                                color: redColor,
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    child: FlutterMap(
+                      options: new MapOptions(
+                        center: LatLng(userLat, userLong),
+                        zoom: 15.0,
+                      ),
+                      layers: [
+                        new TileLayerOptions(
+                          urlTemplate:
+                              "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c'],
+                        ),
+                        new MarkerLayerOptions(
+                          markers: [
+                            new Marker(
+                              width: 80.0,
+                              height: 80.0,
+                              point: LatLng(userLat, userLong),
+                              builder: (ctx) => new Container(
+                                child: Container(
+                                  color: Colors.transparent,
+                                  child: Icon(
+                                    FontAwesomeIcons.mapMarkerAlt,
+                                    color: redColor,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                  Row(
+                    children: [
+Padding(
+          //     padding: EdgeInsets.all(15.0),
+          //     child: GestureDetector(
+          //       onTap: () => _slidableKey.currentState.renderingMode ==
+          //               SlidableRenderingMode.none
+          //           ? _slidableKey.currentState.open()
+          //           : _slidableKey.currentState.close(),
+          //       child: CircleAvatar(
+          //         radius: 50,
+          //         backgroundColor: whiteColor,
+          //         child: Icon(
+          //           FontAwesomeIcons.plus,
+          //           color: darkFadeTextColor,
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+                    ],
+                  )
+                ],
               ),
               Flexible(
                 child: ListView.builder(
