@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: Padding(
                 padding: EdgeInsets.all(15.0),
                 child: GestureDetector(
-                  onTap: () => Slidable.of(context)?.renderingMode ==
+                  onTap: () => _slidableKey.currentState.renderingMode ==
                           SlidableRenderingMode.none
                       ? _slidableKey.currentState.open()
                       : _slidableKey.currentState.close(),
