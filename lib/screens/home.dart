@@ -39,10 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
         actionExtentRatio: 0.20,
         child: Scaffold(
             appBar: AppBar(
-              leading: GestureDetector(
-                child: FaIcon(
-                  Icons.menu_rounded,
-                  color: mainTextColor,
+              leading: Padding(
+                padding: EdgeInsets.all(15.0),
+                child: GestureDetector(
+                  child: FaIcon(
+                    FontAwesomeIcons.bars,
+                    color: mainTextColor,
+                  ),
                 ),
               ),
               automaticallyImplyLeading: false,
