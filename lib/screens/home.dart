@@ -166,39 +166,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              Flexible(
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemCount: 10,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundColor: whiteColor,
-                            backgroundImage: NetworkImage(
-                              'https://picsum.photos/id/${index + 30}/300/300',
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Text(
-                            'User ${index + 30}',
-                            style: GoogleFonts.lato(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w800,
-                              color: mainTextColor,
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
               Container(
                 decoration: BoxDecoration(
                   color: whiteColor,
@@ -234,6 +201,39 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Flexible(
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: whiteColor,
+                            backgroundImage: NetworkImage(
+                              'https://picsum.photos/id/${index + 30}/300/300',
+                            ),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            'User ${index + 30}',
+                            style: GoogleFonts.lato(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w800,
+                              color: mainTextColor,
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  },
                 ),
               ),
             ],
