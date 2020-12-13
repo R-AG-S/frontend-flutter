@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           extendBodyBehindAppBar: true,
           // appBar: AppBar(
-          //   leading: 
+          //   leading:
           //   automaticallyImplyLeading: false,
           //   backgroundColor: Colors.transparent,
           //   elevation: 0,
@@ -129,23 +129,28 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Row(
                     children: [
-Padding(
-          //     padding: EdgeInsets.all(15.0),
-          //     child: GestureDetector(
-          //       onTap: () => _slidableKey.currentState.renderingMode ==
-          //               SlidableRenderingMode.none
-          //           ? _slidableKey.currentState.open()
-          //           : _slidableKey.currentState.close(),
-          //       child: CircleAvatar(
-          //         radius: 50,
-          //         backgroundColor: whiteColor,
-          //         child: Icon(
-          //           FontAwesomeIcons.plus,
-          //           color: darkFadeTextColor,
-          //         ),
-          //       ),
-          //     ),
-          //   ),
+                      Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: GestureDetector(
+                          onTap: () =>
+                              _slidableKey.currentState.renderingMode ==
+                                      SlidableRenderingMode.none
+                                  ? _slidableKey.currentState.open()
+                                  : _slidableKey.currentState.close(),
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundColor: whiteColor,
+                            child: Icon(
+                              FontAwesomeIcons.plus,
+                              color: darkFadeTextColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [],
+                      )
                     ],
                   )
                 ],
