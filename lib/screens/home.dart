@@ -16,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 
 double userLat = 0.0;
 double userLong = 0.0;
-StreamSubscription<Position> _positionStreamSubscription;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
