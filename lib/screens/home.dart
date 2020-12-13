@@ -206,7 +206,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   SingleChildScrollView(
                     child: ListView.builder(
                       itemCount: 5,
-                      itemBuilder: (BuildContext context, int index) {},
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8,),child: ,);
+                      },
                     ),
                   )
                 ],
