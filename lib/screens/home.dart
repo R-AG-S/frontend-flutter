@@ -198,11 +198,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                       SizedBox(
                                         width: 15,
                                       ),
-                                      CircleAvatar(
-                                        radius: 25,
-                                        backgroundColor: whiteColor,
-                                        backgroundImage: NetworkImage(
-                                          'https://picsum.photos/id/${index + 40}/300/300',
+                                      Container(
+                                        height: 50,
+                                        width: 50,
+                                        decoration: BoxDecoration(
+                                          color: whiteColor,
+                                          image: DecorationImage(
+                                            image: NetworkImage(
+                                              'https://picsum.photos/id/${index + 40}/300/300',
+                                            ),
+                                          ),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
                                         ),
                                       ),
                                       SizedBox(
@@ -277,7 +285,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   : Container(),
               isExpanded
                   ? Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 25,
+                      ),
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
