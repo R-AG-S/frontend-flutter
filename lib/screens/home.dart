@@ -202,6 +202,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       )
                     ],
+                  ),
+                  SingleChildScrollView(
+                    child: ListView.builder(
+                      itemCount: 5,
+                      itemBuilder: (BuildContext context, int index) {},
+                    ),
                   )
                 ],
               ),
