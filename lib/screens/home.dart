@@ -44,311 +44,268 @@ class _HomeScreenState extends State<HomeScreen> {
         actionExtentRatio: 0.20,
         child: Scaffold(
           extendBodyBehindAppBar: true,
-          // appBar: AppBar(
-          //   leading:
-          //   automaticallyImplyLeading: false,
-          //   backgroundColor: Colors.transparent,
-          //   elevation: 0,
-          //   iconTheme: IconThemeData(color: whiteColor),
-          //   actions: [
-          //
-          //   ],
-          // ),
-          backgroundColor: whiteColor,
-          body: Column(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20),
-                      ),
-                    ),
-                    height: isExpanded
-                        ? MediaQuery.of(context).size.height * 0.6
-                        : MediaQuery.of(context).size.height * 0.969,
-                    child: FlutterMap(
-                      options: new MapOptions(
-                        center: LatLng(userLat, userLong),
-                        zoom: 20.0,
-                      ),
-                      layers: [
-                        new TileLayerOptions(
-                          urlTemplate:
-                              "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                          subdomains: ['a', 'b', 'c'],
+          backgroundColor: slideCardColor,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
                         ),
-                        new MarkerLayerOptions(
-                          markers: [
-                            new Marker(
-                              width: 80.0,
-                              height: 80.0,
-                              point: LatLng(userLat, userLong),
-                              builder: (ctx) => new Container(
-                                child: Container(
-                                  color: Colors.transparent,
-                                  child: Icon(
-                                    FontAwesomeIcons.mapMarkerAlt,
-                                    color: redColor,
+                      ),
+                      height: isExpanded
+                          ? MediaQuery.of(context).size.height * 0.6
+                          : MediaQuery.of(context).size.height * 0.969,
+                      child: FlutterMap(
+                        options: new MapOptions(
+                          center: LatLng(userLat, userLong),
+                          zoom: 20.0,
+                        ),
+                        layers: [
+                          new TileLayerOptions(
+                            urlTemplate:
+                                "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                            subdomains: ['a', 'b', 'c'],
+                          ),
+                          new MarkerLayerOptions(
+                            markers: [
+                              new Marker(
+                                width: 80.0,
+                                height: 80.0,
+                                point: LatLng(userLat, userLong),
+                                builder: (ctx) => new Container(
+                                  child: Container(
+                                    color: Colors.transparent,
+                                    child: Icon(
+                                      FontAwesomeIcons.mapMarkerAlt,
+                                      color: redColor,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(15.0),
-                        child: GestureDetector(
-                          onTap: () =>
-                              _slidableKey.currentState.renderingMode ==
-                                      SlidableRenderingMode.none
-                                  ? _slidableKey.currentState.open()
-                                  : _slidableKey.currentState.close(),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 1,
-                                  color: Colors.black26,
-                                  spreadRadius: 2,
-                                )
-                              ],
-                            ),
-                            child: CircleAvatar(
-                              radius: 25,
-                              backgroundColor: whiteColor,
-                              child: Icon(
-                                FontAwesomeIcons.bars,
-                                color: darkFadeTextColor,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: GestureDetector(
+                            onTap: () =>
+                                _slidableKey.currentState.renderingMode ==
+                                        SlidableRenderingMode.none
+                                    ? _slidableKey.currentState.open()
+                                    : _slidableKey.currentState.close(),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 1,
+                                    color: Colors.black26,
+                                    spreadRadius: 2,
+                                  )
+                                ],
+                              ),
+                              child: CircleAvatar(
+                                radius: 25,
+                                backgroundColor: whiteColor,
+                                child: Icon(
+                                  FontAwesomeIcons.bars,
+                                  color: darkFadeTextColor,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          right: 20,
-                          left: 10,
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isExpanded = isExpanded ? false : true;
-                            });
-                            // Navigator.of(context).push(_createRoute());
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 1,
-                                  color: Colors.black26,
-                                  spreadRadius: 2,
+                        Padding(
+                          padding: EdgeInsets.only(
+                            right: 20,
+                            left: 10,
+                          ),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                isExpanded = isExpanded ? false : true;
+                              });
+                              // Navigator.of(context).push(_createRoute());
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 1,
+                                    color: Colors.black26,
+                                    spreadRadius: 2,
+                                  ),
+                                ],
+                              ),
+                              child: CircleAvatar(
+                                radius: 25,
+                                backgroundColor: whiteColor,
+                                child: Icon(
+                                  FontAwesomeIcons.expand,
+                                  color: mainTextColor,
                                 ),
-                              ],
+                              ),
                             ),
-                            child: CircleAvatar(
+                          ),
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: isExpanded
+                            ? MediaQuery.of(context).size.height * 0.45
+                            : MediaQuery.of(context).size.height * 0.8,
+                      ),
+                      child: Container(
+                        height: 100,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                left: 15,
+                                bottom: 8,
+                              ),
+                              child: Card(
+                                color: cardBlueColor,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Container(
+                                          height: 50,
+                                          width: 50,
+                                          decoration: BoxDecoration(
+                                            color: whiteColor,
+                                            image: DecorationImage(
+                                              image: NetworkImage(
+                                                'https://picsum.photos/id/${index + 40}/300/300',
+                                              ),
+                                            ),
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(10),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'User Name $index',
+                                              style: GoogleFonts.lato(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w800,
+                                                color: whiteColor,
+                                              ),
+                                            ),
+                                            Text(
+                                              'User Details',
+                                              style: GoogleFonts.lato(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w800,
+                                                color: whiteColor,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                isExpanded
+                    ? Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 15,
+                            ),
+                            CircleAvatar(
                               radius: 25,
                               backgroundColor: whiteColor,
-                              child: Icon(
-                                FontAwesomeIcons.expand,
+                              backgroundImage: NetworkImage(
+                                'https://picsum.photos/id/${40}/300/300',
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              'Room Name',
+                              style: GoogleFonts.lato(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w800,
                                 color: mainTextColor,
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    : Container(),
+                isExpanded
+                    ? Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 25,
+                        ),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            color: cardBlueColor,
+                            border: Border.all(
+                              color: cardBlueColor,
+                            ),
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5.0),
+                            ),
+                          ),
+                          child: FlatButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Check Stats',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: whiteColor,
                               ),
                             ),
                           ),
                         ),
                       )
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: isExpanded
-                          ? MediaQuery.of(context).size.height * 0.45
-                          : MediaQuery.of(context).size.height * 0.8,
-                    ),
-                    child: Container(
-                      height: 100,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 5,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: EdgeInsets.only(
-                              left: 15,
-                              bottom: 8,
-                            ),
-                            child: Card(
-                              color: cardBlueColor,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    children: [
-                                      SizedBox(
-                                        width: 15,
-                                      ),
-                                      Container(
-                                        height: 50,
-                                        width: 50,
-                                        decoration: BoxDecoration(
-                                          color: whiteColor,
-                                          image: DecorationImage(
-                                            image: NetworkImage(
-                                              'https://picsum.photos/id/${index + 40}/300/300',
-                                            ),
-                                          ),
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(10),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 15,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'User Name $index',
-                                            style: GoogleFonts.lato(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w800,
-                                              color: whiteColor,
-                                            ),
-                                          ),
-                                          Text(
-                                            'User Details',
-                                            style: GoogleFonts.lato(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w800,
-                                              color: whiteColor,
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 15,
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              isExpanded
-                  ? Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 15,
-                          ),
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundColor: whiteColor,
-                            backgroundImage: NetworkImage(
-                              'https://picsum.photos/id/${40}/300/300',
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Text(
-                            'Room Name',
-                            style: GoogleFonts.lato(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w800,
-                              color: mainTextColor,
-                            ),
-                          )
-                        ],
-                      ),
-                    )
-                  : Container(),
-              isExpanded
-                  ? Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 25,
-                      ),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          color: cardBlueColor,
-                          border: Border.all(
-                            color: cardBlueColor,
-                          ),
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(5.0),
-                          ),
-                        ),
-                        child: FlatButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Check Stats',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: whiteColor,
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  : Container(),
-              isExpanded
-                  ? Flexible(
-                      child: ListView.builder(
-                        padding: const EdgeInsets.all(8),
-                        itemCount: 10,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 25,
-                                  backgroundColor: whiteColor,
-                                  backgroundImage: NetworkImage(
-                                    'https://picsum.photos/id/${index + 30}/300/300',
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Text(
-                                  'User ${index + 30}',
-                                  style: GoogleFonts.lato(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w800,
-                                    color: mainTextColor,
-                                  ),
-                                )
-                              ],
-                            ),
-                          );
-                        },
-                      ),
-                    )
-                  : Container(),
-            ],
+                    : Container(),
+              ],
+            ),
           ),
         ),
         actions: <Widget>[
