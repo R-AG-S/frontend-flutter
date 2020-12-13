@@ -277,6 +277,57 @@ class _HomeScreenState extends State<HomeScreen> {
                     : Container(),
                 isExpanded
                     ? Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 25,
+                          vertical: 8,
+                        ),
+                        child: FlatButton(
+                          minWidth: MediaQuery.of(context).size.width,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          height: 50,
+                          color: blueColor,
+                          onPressed: () {},
+                          child: Text(
+                            'Driver',
+                            style: GoogleFonts.openSans(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              color: whiteColor,
+                            ),
+                          ),
+                        ),
+                      )
+                    : Container(),
+                isExpanded
+                    ? Padding(
+                        padding: EdgeInsets.only(
+                          left: 25,
+                          right: 25,
+                          bottom: 8,
+                        ),
+                        child: FlatButton(
+                          minWidth: MediaQuery.of(context).size.width,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          height: 50,
+                          color: blueColor,
+                          onPressed: () {},
+                          child: Text(
+                            'Passenger',
+                            style: GoogleFonts.openSans(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              color: whiteColor,
+                            ),
+                          ),
+                        ),
+                      )
+                    : Container(),
+                isExpanded
+                    ? Padding(
                         padding: EdgeInsets.only(
                           left: 15,
                           right: 15,
@@ -526,57 +577,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ],
-                        ),
-                      )
-                    : Container(),
-                isExpanded
-                    ? Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 25,
-                          vertical: 8,
-                        ),
-                        child: FlatButton(
-                          minWidth: MediaQuery.of(context).size.width,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          height: 50,
-                          color: blueColor,
-                          onPressed: () {},
-                          child: Text(
-                            'Driver',
-                            style: GoogleFonts.openSans(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900,
-                              color: mainBgColor,
-                            ),
-                          ),
-                        ),
-                      )
-                    : Container(),
-                isExpanded
-                    ? Padding(
-                        padding: EdgeInsets.only(
-                          left: 25,
-                          right: 25,
-                          bottom: 8,
-                        ),
-                        child: FlatButton(
-                          minWidth: MediaQuery.of(context).size.width,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          height: 50,
-                          color: blueColor,
-                          onPressed: () {},
-                          child: Text(
-                            'Passenger',
-                            style: GoogleFonts.openSans(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900,
-                              color: mainBgColor,
-                            ),
-                          ),
                         ),
                       )
                     : Container(),
