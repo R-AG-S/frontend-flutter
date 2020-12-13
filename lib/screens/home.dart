@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: FlutterMap(
                       options: new MapOptions(
                         center: LatLng(userLat, userLong),
-                        zoom: 15.0,
+                        zoom: 20.0,
                       ),
                       layers: [
                         new TileLayerOptions(
@@ -205,8 +205,33 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              Row(
-                children: [],
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 15,
+                    ),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundColor: whiteColor,
+                      backgroundImage: NetworkImage(
+                        'https://picsum.photos/id/${40}/300/300',
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Text(
+                      'Room Name',
+                      style: GoogleFonts.lato(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                        color: mainTextColor,
+                      ),
+                    )
+                  ],
+                ),
               ),
               Padding(
                 padding: EdgeInsets.all(8.0),
