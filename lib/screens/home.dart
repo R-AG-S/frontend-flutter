@@ -44,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           extendBodyBehindAppBar: true,
           appBar: AppBar(
-            shadowColor: whiteColor,
             leading: Padding(
               padding: EdgeInsets.all(15.0),
               child: GestureDetector(
@@ -63,8 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             automaticallyImplyLeading: false,
-            backgroundColor: whiteColor,
-            elevation: 5,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
             title: Text(
               'Room Name',
               style: GoogleFonts.lato(
