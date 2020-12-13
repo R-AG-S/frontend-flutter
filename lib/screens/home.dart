@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         layers: [
                           new TileLayerOptions(
                             urlTemplate:
-                                "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                                "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
                             subdomains: ['a', 'b', 'c'],
                           ),
                           new MarkerLayerOptions(
@@ -152,9 +152,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               new Marker(
                                 width: 80.0,
                                 height: 80.0,
-                                point: LatLng(51.5, -0.09),
+                                point: LatLng(userLat, userLong),
                                 builder: (ctx) => new Container(
-                                  child: new FlutterLogo(),
+                                  child: CircularProgressIndicator(),
                                 ),
                               ),
                             ],
