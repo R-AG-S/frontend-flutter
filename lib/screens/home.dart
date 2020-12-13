@@ -207,7 +207,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.builder(
                       itemCount: 5,
                       itemBuilder: (BuildContext context, int index) {
-                        return Padding(padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8,),child: ,);
+                        return Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 8,
+                          ),
+                          child: Card(
+                            child: Column(
+                              children: [],
+                            ),
+                          ),
+                        );
                       },
                     ),
                   )
