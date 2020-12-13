@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 
 double userLat = 0.0;
 double userLong = 0.0;
-bool isExpanded = false;
+bool isExpanded = true;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -330,7 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'Topic Main',
                                     style: GoogleFonts.josefinSans(
                                       fontSize: 16,
-                                      color: darkFadeTextColor,
+                                      color: bottomTextColor,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
@@ -359,7 +359,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               'Loading',
                                               style: GoogleFonts.josefinSans(
                                                 fontSize: 16,
-                                                color: darkFadeTextColor,
+                                                color: bottomTextColor,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                             ),
@@ -402,7 +402,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'Topic Main',
                                     style: GoogleFonts.josefinSans(
                                       fontSize: 16,
-                                      color: darkFadeTextColor,
+                                      color: bottomTextColor,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
@@ -431,7 +431,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               'Loading',
                                               style: GoogleFonts.josefinSans(
                                                 fontSize: 16,
-                                                color: darkFadeTextColor,
+                                                color: bottomTextColor,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                             ),
