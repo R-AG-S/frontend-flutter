@@ -52,9 +52,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         SlidableRenderingMode.none
                     ? _slidableKey.currentState.open()
                     : _slidableKey.currentState.close(),
-                child: FaIcon(
-                  FontAwesomeIcons.bars,
-                  color: mainTextColor,
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: whiteColor,
+                  child: FaIcon(
+                    FontAwesomeIcons.bars,
+                    color: mainTextColor,
+                  ),
                 ),
               ),
             ),
@@ -63,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
             elevation: 5,
             title: Text(
               'Room Name',
-              style: GoogleFonts.openSans(
+              style: GoogleFonts.lato(
                 fontSize: 18,
                 fontWeight: FontWeight.w800,
                 color: mainTextColor,
@@ -167,6 +171,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Text(
                             'User ${index + 30}',
+                            style: GoogleFonts.lato(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w800,
+                              color: mainTextColor,
+                            ),
                           )
                         ],
                       ),
@@ -176,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: mainBgColor,
+                  color: whiteColor,
                   border: Border.all(
                     color: mainTextColor,
                   ),
@@ -205,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       'Check Stats',
                       style: TextStyle(
                         fontSize: 18,
-                        color: mainBgColor,
+                        color: whiteColor,
                       ),
                     ),
                   ),
