@@ -1,6 +1,4 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -41,15 +39,20 @@ class _HomeScreenState extends State<HomeScreen> {
         actionExtentRatio: 0.20,
         child: Scaffold(
             appBar: AppBar(
-              leading: null,
+              leading: GestureDetector(
+                child: FaIcon(
+                  Icons.menu_rounded,
+                  color: mainTextColor,
+                ),
+              ),
               automaticallyImplyLeading: false,
               backgroundColor: whiteColor,
               elevation: 0,
               title: Text(
                 'Room Name',
-                style: GoogleFonts.raleway(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
+                style: GoogleFonts.openSans(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
                   color: mainTextColor,
                 ),
               ),
