@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actionExtentRatio: 0.20,
         child: Scaffold(
           extendBodyBehindAppBar: true,
-          backgroundColor: slideCardColor,
+          backgroundColor: bottomColor,
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -181,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 bottom: 8,
                               ),
                               child: Card(
-                                color: cardBlueColor,
+                                color: whiteColor,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -214,18 +214,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                           children: [
                                             Text(
                                               'User Name $index',
-                                              style: GoogleFonts.lato(
+                                              style: GoogleFonts.openSans(
                                                 fontSize: 18,
-                                                fontWeight: FontWeight.w800,
-                                                color: whiteColor,
+                                                fontWeight: FontWeight.w400,
+                                                color: mainTextColor,
                                               ),
                                             ),
                                             Text(
                                               'User Details',
-                                              style: GoogleFonts.lato(
+                                              style: GoogleFonts.openSans(
                                                 fontSize: 12,
-                                                fontWeight: FontWeight.w800,
-                                                color: whiteColor,
+                                                fontWeight: FontWeight.w400,
+                                                color: mainTextColor,
                                               ),
                                             )
                                           ],

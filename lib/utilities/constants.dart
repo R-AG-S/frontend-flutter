@@ -11,3 +11,4 @@ final Color cardColor = Color(0xFFD1D2D3);
 final Color blueColor = Color(0xFF7289DA);
 final Color slideCardColor = Color(0xFFE3E5E8);
 final Color cardBlueColor = Color(0xFF43b581);
+final Color bottomColor = Color(0xFFf7f8fc);
