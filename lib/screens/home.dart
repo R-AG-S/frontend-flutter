@@ -108,12 +108,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                       SlidableRenderingMode.none
                                   ? _slidableKey.currentState.open()
                                   : _slidableKey.currentState.close(),
-                          child: CircleAvatar(
-                            radius: 25,
-                            backgroundColor: whiteColor,
-                            child: Icon(
-                              FontAwesomeIcons.bars,
-                              color: darkFadeTextColor,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 1,
+                                  color: Colors.black26,
+                                  spreadRadius: 2,
+                                )
+                              ],
+                            ),
+                            child: CircleAvatar(
+                              radius: 25,
+                              backgroundColor: whiteColor,
+                              child: Icon(
+                                FontAwesomeIcons.bars,
+                                color: darkFadeTextColor,
+                              ),
                             ),
                           ),
                         ),
@@ -130,13 +143,26 @@ class _HomeScreenState extends State<HomeScreen> {
                               onTap: () {
                                 // Navigator.of(context).push(_createRoute());
                               },
-                              child: CircleAvatar(
-                                radius: 25,
-                                backgroundColor: whiteColor,
-                                child: Icon(
-                                  FontAwesomeIcons.play,
-                                  size: 22,
-                                  color: mainTextColor,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 1,
+                                      color: Colors.black26,
+                                      spreadRadius: 2,
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  radius: 25,
+                                  backgroundColor: whiteColor,
+                                  child: Icon(
+                                    FontAwesomeIcons.play,
+                                    size: 22,
+                                    color: mainTextColor,
+                                  ),
                                 ),
                               ),
                             ),
@@ -150,12 +176,25 @@ class _HomeScreenState extends State<HomeScreen> {
                               onTap: () {
                                 // Navigator.of(context).push(_createRoute());
                               },
-                              child: CircleAvatar(
-                                radius: 25,
-                                backgroundColor: whiteColor,
-                                child: Icon(
-                                  FontAwesomeIcons.shareAlt,
-                                  color: mainTextColor,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 1,
+                                      color: Colors.black26,
+                                      spreadRadius: 2,
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  radius: 25,
+                                  backgroundColor: whiteColor,
+                                  child: Icon(
+                                    FontAwesomeIcons.shareAlt,
+                                    color: mainTextColor,
+                                  ),
                                 ),
                               ),
                             ),
