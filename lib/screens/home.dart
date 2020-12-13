@@ -31,11 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  GlobalKey<SlidableState> _slidableKey = GlobalKey();
   final SlidableController slidableController = SlidableController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Slidable(
+        key: _slidableKey,
         controller: slidableController,
         actionPane: SlidableDrawerActionPane(),
         actionExtentRatio: 0.20,
@@ -46,8 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: GestureDetector(
                   onTap: () => Slidable.of(context)?.renderingMode ==
                           SlidableRenderingMode.none
-                      ? Slidable.of(context)?.open()
-                      : Slidable.of(context)?.close(),
+                      ? _slidableKey.currentState.open()
+                      : _slidableKey.currentState.close(),
                   child: FaIcon(
                     FontAwesomeIcons.bars,
                     color: mainTextColor,
