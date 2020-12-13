@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               automaticallyImplyLeading: false,
               backgroundColor: whiteColor,
-              elevation: 0,
+              elevation: 2,
               title: Text(
                 'Room Name',
                 style: GoogleFonts.openSans(
@@ -69,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: Icon(
                       FontAwesomeIcons.play,
+                      size: 22,
                       color: mainTextColor,
                     ),
                   ),
