@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
@@ -12,7 +14,24 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+double userLat = 0.0;
+double userLong = 0.0;
+StreamSubscription<Position> _positionStreamSubscription;
+
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    _getLocation();
+    super.initState();
+  }
+
+  _getLocation() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    userLat = position.latitude;
+    userLong = position.longitude;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -92,18 +111,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   //   ],
                   // ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(15.0),
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
                       ),
-                      height: 300,
+                      height: 350,
                       alignment: Alignment.centerLeft,
                       child: FlutterMap(
                         options: new MapOptions(
-                          center: LatLng(51.5, -0.09),
+                          center: Geolocator.getCurrentPosition(),
                           zoom: 2.0,
                         ),
                         layers: [
