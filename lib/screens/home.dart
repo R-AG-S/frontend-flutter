@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       alignment: Alignment.centerLeft,
                       child: FlutterMap(
                         options: new MapOptions(
-                          center: Geolocator.getCurrentPosition(),
+                          center: LatLng(userLat, userLong),
                           zoom: 2.0,
                         ),
                         layers: [
