@@ -44,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           extendBodyBehindAppBar: true,
           appBar: AppBar(
+            shadowColor: whiteColor,
             leading: Padding(
               padding: EdgeInsets.all(15.0),
               child: GestureDetector(
@@ -58,8 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             automaticallyImplyLeading: false,
-            backgroundColor: Colors.transparent,
-            elevation: 2,
+            backgroundColor: whiteColor,
+            elevation: 5,
             title: Text(
               'Room Name',
               style: GoogleFonts.openSans(
@@ -107,47 +108,43 @@ class _HomeScreenState extends State<HomeScreen> {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20),
-                      ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
                     ),
-                    height: 350,
-                    alignment: Alignment.centerLeft,
-                    child: FlutterMap(
-                      options: new MapOptions(
-                        center: LatLng(userLat, userLong),
-                        zoom: 15.0,
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.6,
+                  child: FlutterMap(
+                    options: new MapOptions(
+                      center: LatLng(userLat, userLong),
+                      zoom: 15.0,
+                    ),
+                    layers: [
+                      new TileLayerOptions(
+                        urlTemplate:
+                            "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        subdomains: ['a', 'b', 'c'],
                       ),
-                      layers: [
-                        new TileLayerOptions(
-                          urlTemplate:
-                              "https://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                          subdomains: ['a', 'b', 'c'],
-                        ),
-                        new MarkerLayerOptions(
-                          markers: [
-                            new Marker(
-                              width: 80.0,
-                              height: 80.0,
-                              point: LatLng(userLat, userLong),
-                              builder: (ctx) => new Container(
-                                child: Container(
-                                  color: Colors.transparent,
-                                  child: Icon(
-                                    FontAwesomeIcons.mapMarkerAlt,
-                                    color: redColor,
-                                  ),
+                      new MarkerLayerOptions(
+                        markers: [
+                          new Marker(
+                            width: 80.0,
+                            height: 80.0,
+                            point: LatLng(userLat, userLong),
+                            builder: (ctx) => new Container(
+                              child: Container(
+                                color: Colors.transparent,
+                                child: Icon(
+                                  FontAwesomeIcons.mapMarkerAlt,
+                                  color: redColor,
                                 ),
                               ),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],
