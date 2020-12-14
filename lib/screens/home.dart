@@ -124,7 +124,32 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Row(
-                              children: [],
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      FontAwesomeIcons.userFriends,
+                                      color: darkFadeTextColor,
+                                      size: 18,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 10,
+                                      ),
+                                      child: Text(
+                                        'Members Count 12',
+                                        style: GoogleFonts.openSans(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: darkFadeTextColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             )
                           ],
                         ),
