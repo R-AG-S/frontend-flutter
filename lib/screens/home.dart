@@ -196,6 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       vertical: 15,
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         CircularKeys(
                           courseName: 'Option 1',
@@ -606,7 +607,7 @@ class CircularKeys extends StatelessWidget {
             shapeRadius: BorderRadius.circular(0),
             child: Icon(
               iconData,
-              size: 35,
+              size: 18,
             ),
             callback: () {},
             increaseHeightBy: MediaQuery.of(context).size.height * 0.02,
