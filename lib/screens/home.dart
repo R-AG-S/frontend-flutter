@@ -20,6 +20,7 @@ List secondaryKeys = [
   FontAwesomeIcons.cog,
   FontAwesomeIcons.edit,
 ];
+final int dataCount = 5;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -423,8 +424,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 100,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: 5,
+                          itemCount: dataCount,
                           itemBuilder: (BuildContext context, int index) {
+                            if (index == dataCount) {
+                              return SizedBox(
+                                width: 15,
+                              );
+                            }
                             return Padding(
                               padding: EdgeInsets.only(
                                 left: 15,
