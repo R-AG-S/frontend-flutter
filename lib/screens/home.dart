@@ -199,18 +199,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         CircularKeys(
-                          courseName: 'Option 1',
+                          courseName: 'Logs',
                           gradientKey: gradient0,
                           iconData: FontAwesomeIcons.info,
                         ),
                         CircularKeys(
                           courseName: 'Option 2',
-                          gradientKey: gradient0,
+                          gradientKey: gradient1,
                           iconData: FontAwesomeIcons.mapSigns,
                         ),
                         CircularKeys(
                           courseName: 'Option 3',
-                          gradientKey: gradient0,
+                          gradientKey: gradient2,
                           iconData: FontAwesomeIcons.mapMarkerAlt,
                         ),
                       ],
