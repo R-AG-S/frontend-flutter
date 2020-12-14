@@ -1,11 +1,7 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:library_mec/screens/passreset.dart';
-import 'package:library_mec/utilities/constants.dart';
 import 'package:settings_ui/settings_ui.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
 class Settings extends StatefulWidget {
