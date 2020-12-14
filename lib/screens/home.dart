@@ -554,3 +554,82 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+class CircularKeys extends StatelessWidget {
+  const CircularKeys({
+    @required this.courseName,
+    @required this.imageKey,
+    @required this.courseKey,
+    @required this.gradientKey,
+    @required this.iconData,
+    @required this.lowerBound,
+    @required this.upperBound,
+    @required this.videoId,
+  });
+  final String courseName;
+  final String imageKey;
+  final int courseKey;
+  final Gradient gradientKey;
+  final IconData iconData;
+  final int upperBound;
+  final int lowerBound;
+  final String videoId;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => CoursePage(
+                      courseName: courseName,
+                      gradientKey: gradientKey,
+                      imageKey: imageKey,
+                      descString: courseDesc[courseKey],
+                      quizCourseKey: courseKey,
+                      lowerBound: lowerBound,
+                      upperBound: upperBound,
+                      videoId: videoId,
+                    )));
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          GradientButton(
+            shape: CircleBorder(),
+            shapeRadius: BorderRadius.circular(0),
+            child: Icon(
+              iconData,
+              size: 35,
+            ),
+            callback: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CoursePage(
+                    courseName: courseName,
+                    gradientKey: gradientKey,
+                    imageKey: imageKey,
+                    descString: courseDesc[courseKey],
+                    quizCourseKey: courseKey,
+                    lowerBound: lowerBound,
+                    upperBound: upperBound,
+                    videoId: videoId,
+                  ),
+                ),
+              );
+            },
+            increaseHeightBy: MediaQuery.of(context).size.height * 0.02,
+            increaseWidthBy: MediaQuery.of(context).size.width * 0.05,
+            gradient: gradientKey,
+          ),
+          Text(
+            courseName,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 15, color: fadeColor),
+          )
+        ],
+      ),
+    );
+  }
+}
