@@ -233,9 +233,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                             children: [
                                               Text(
                                                 'User Name $index',
-                                                style: GoogleFonts.openSans(
+                                                style: TextStyle(
+                                                  fontFamily: 'Bambino',
                                                   fontSize: 18,
-                                                  fontWeight: FontWeight.w800,
+                                                  fontWeight: FontWeight.w400,
                                                   color: mainTextColor,
                                                 ),
                                               ),
