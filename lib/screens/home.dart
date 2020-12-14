@@ -193,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      vertical: 15,
+                      vertical: 25,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -201,17 +201,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         CircularKeys(
                           courseName: 'Option 1',
                           gradientKey: gradient0,
-                          iconData: FontAwesomeIcons.code,
+                          iconData: FontAwesomeIcons.info,
                         ),
                         CircularKeys(
                           courseName: 'Option 2',
                           gradientKey: gradient0,
-                          iconData: FontAwesomeIcons.accusoft,
+                          iconData: FontAwesomeIcons.mapSigns,
                         ),
                         CircularKeys(
                           courseName: 'Option 3',
                           gradientKey: gradient0,
-                          iconData: FontAwesomeIcons.yammer,
+                          iconData: FontAwesomeIcons.mapMarkerAlt,
                         ),
                       ],
                     ),
