@@ -18,6 +18,7 @@ double userLat = 0.0;
 double userLong = 0.0;
 bool isExpanded = true;
 List secondaryKeys = [
+  FontAwesomeIcons.userCog,
   FontAwesomeIcons.cog,
   FontAwesomeIcons.edit,
   FontAwesomeIcons.chartBar,
