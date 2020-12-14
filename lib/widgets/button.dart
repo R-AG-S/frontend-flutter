@@ -34,31 +34,32 @@ class ButtonCard extends StatelessWidget {
           child: Stack(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                    child: Icon(
-                      buttonIcon,
-                      size: 30,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    child: Text(
-                      buttonText,
-                      style: GoogleFonts.raleway(fontSize: 18),
-                    ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                        child: Icon(
+                          buttonIcon,
+                          size: 30,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20),
+                        child: Text(
+                          buttonText,
+                          style: GoogleFonts.raleway(fontSize: 18),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * 0.75, top: 20),
-                child: Icon(
-                  FontAwesomeIcons.chevronLeft,
-                  size: 30,
-                ),
+              Icon(
+                FontAwesomeIcons.chevronRight,
+                size: 30,
               )
             ],
           ),
