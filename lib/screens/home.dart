@@ -21,6 +21,10 @@ List secondaryKeys = [
   FontAwesomeIcons.edit,
 ];
 final int dataCount = 5;
+final double _initFabHeight = 120.0;
+double _fabHeight;
+double _panelHeightOpen;
+double _panelHeightClosed = 95.0;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -42,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final SlidableController slidableController = SlidableController();
   @override
   Widget build(BuildContext context) {
+    _panelHeightOpen = MediaQuery.of(context).size.height * .80;
     return SafeArea(
       child: Slidable(
         key: _slidableKey,
@@ -319,7 +324,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         layers: [
                           new TileLayerOptions(
                             urlTemplate:
-                                "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                                "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
                             subdomains: ['a', 'b', 'c'],
                           ),
                           new MarkerLayerOptions(
@@ -570,7 +575,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         secondaryActions: [
           SlideAction(
-            color: slideCardColor,
+            color: mainTextColor,
             child: ListView.builder(
               padding: const EdgeInsets.all(8),
               itemCount: secondaryKeys.length,
@@ -594,8 +599,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Divider(
-                        color: darkFadeTextColor,
-                        thickness: 0.5,
+                        color: whiteColor,
+                        thickness: 1,
                       ),
                     ],
                   ),
@@ -627,8 +632,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Divider(
-                          color: darkFadeTextColor,
-                          thickness: 0.5,
+                          color: whiteColor,
+                          thickness: 1.0,
                         ),
                       ],
                     ),
@@ -650,7 +655,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               },
             ),
-            color: slideCardColor,
+            color: mainTextColor,
             onTap: () {},
           ),
         ],
