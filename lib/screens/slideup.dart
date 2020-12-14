@@ -166,6 +166,11 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
             thickness: 7,
             color: dividerfadeColor,
           ),
+          ButtonCard(
+            buttonIcon: FontAwesomeIcons.car,
+            buttonText: "Listed Cars",
+            routeName: null,
+          ),
           Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.symmetric(
@@ -187,11 +192,6 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                 Divider(
                   thickness: 0.2,
                   color: darkFadeTextColor,
-                ),
-                ButtonCard(
-                  buttonIcon: FontAwesomeIcons.car,
-                  buttonText: "Listed Cars",
-                  routeName: null,
                 ),
                 Container(
                   height: 300,
