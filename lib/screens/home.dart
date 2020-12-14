@@ -76,8 +76,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            panel: Center(
-              child: Text("This is the sliding Widget"),
+            panel: Container(
+              color: whiteColor,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  FaIcon(
+                    FontAwesomeIcons.gripLines,
+                    color: fadeTextColor,
+                  ),
+                ],
+              ),
             ),
             body: Column(
               children: [
