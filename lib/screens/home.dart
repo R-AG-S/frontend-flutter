@@ -6,7 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+// import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -576,6 +576,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
+        secondaryActions: [
+          SlideAction(
+            child: ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: 20,
+              itemBuilder: (BuildContext context, int index) {},
+            ),
+          ),
+        ],
         actions: <Widget>[
           SlideAction(
             child: ListView.builder(
