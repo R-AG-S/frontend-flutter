@@ -428,11 +428,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   ],
                 ),
-                // isExpanded
-                //     ? SizedBox(
-                //         height: 10,
-                //       )
-                //     : Container(),
                 isExpanded
                     ? Padding(
                         padding: EdgeInsets.symmetric(
