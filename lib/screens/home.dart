@@ -422,80 +422,85 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: Container(
                         height: 100,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: dataCount,
-                          itemBuilder: (BuildContext context, int index) {
-                            if (index == dataCount - 1) {
-                              return SizedBox(
-                                width: 15,
-                              );
-                            }
-                            return Padding(
-                              padding: EdgeInsets.only(
-                                left: 15,
-                                bottom: 8,
-                              ),
-                              child: Card(
-                                color: whiteColor,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        SizedBox(
-                                          width: 15,
-                                        ),
-                                        Container(
-                                          height: 50,
-                                          width: 50,
-                                          decoration: BoxDecoration(
-                                            color: whiteColor,
-                                            image: DecorationImage(
-                                              image: NetworkImage(
-                                                'https://picsum.photos/id/${index + 40}/300/300',
+                        child: Theme(
+                          data: Theme.of(context).copyWith(
+                            accentColor: whiteColor,
+                          ),
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: dataCount,
+                            itemBuilder: (BuildContext context, int index) {
+                              if (index == dataCount - 1) {
+                                return SizedBox(
+                                  width: 15,
+                                );
+                              }
+                              return Padding(
+                                padding: EdgeInsets.only(
+                                  left: 15,
+                                  bottom: 8,
+                                ),
+                                child: Card(
+                                  color: whiteColor,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Container(
+                                            height: 50,
+                                            width: 50,
+                                            decoration: BoxDecoration(
+                                              color: whiteColor,
+                                              image: DecorationImage(
+                                                image: NetworkImage(
+                                                  'https://picsum.photos/id/${index + 40}/300/300',
+                                                ),
                                               ),
-                                            ),
-                                            borderRadius: BorderRadius.all(
-                                              Radius.circular(10),
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(10),
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        SizedBox(
-                                          width: 15,
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'User Name $index',
-                                              style: GoogleFonts.openSans(
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w800,
-                                                color: mainTextColor,
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'User Name $index',
+                                                style: GoogleFonts.openSans(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: mainTextColor,
+                                                ),
                                               ),
-                                            ),
-                                            Text(
-                                              'User Details',
-                                              style: GoogleFonts.openSans(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400,
-                                                color: mainTextColor,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          width: 15,
-                                        ),
-                                      ],
-                                    )
-                                  ],
+                                              Text(
+                                                'User Details',
+                                                style: GoogleFonts.openSans(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: mainTextColor,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
+                              );
+                            },
+                          ),
                         ),
                       ),
                     )
