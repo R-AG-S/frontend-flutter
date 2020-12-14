@@ -25,8 +25,8 @@ final int dataCount = 5;
 double _panelHeightOpen;
 double _panelHeightClosed;
 BorderRadiusGeometry radius = BorderRadius.only(
-  topLeft: Radius.circular(24.0),
-  topRight: Radius.circular(24.0),
+  topLeft: Radius.circular(15.0),
+  topRight: Radius.circular(15.0),
 );
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -65,10 +65,19 @@ class _HomeScreenState extends State<HomeScreen> {
             borderRadius: radius,
             maxHeight: _panelHeightOpen,
             minHeight: _panelHeightClosed,
-            collapsed: Center(
-              child: FaIcon(
-                FontAwesomeIcons.chevronUp,
-                color: mainTextColor,
+            collapsed: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15.0),
+                  topRight: Radius.circular(15.0),
+                ),
+              ),
+              color: mainTextColor,
+              child: Center(
+                child: FaIcon(
+                  FontAwesomeIcons.chevronUp,
+                  color: whiteColor,
+                ),
               ),
             ),
             panel: Center(
@@ -85,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       height: isExpanded
-                          ? MediaQuery.of(context).size.height * 0.68
+                          ? MediaQuery.of(context).size.height * 0.66
                           : MediaQuery.of(context).size.height * 0.969,
                       child: FlutterMap(
                         options: new MapOptions(
@@ -283,11 +292,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   ],
                 ),
-                isExpanded
-                    ? SizedBox(
-                        height: 25,
-                      )
-                    : Container(),
+                // isExpanded
+                //     ? SizedBox(
+                //         height: 10,
+                //       )
+                //     : Container(),
                 isExpanded
                     ? Padding(
                         padding: EdgeInsets.symmetric(
