@@ -610,13 +610,14 @@ class CircularKeys extends StatelessWidget {
             gradient: gradientKey,
           ),
           SizedBox(
-            height: 4,
+            height: 3,
           ),
           Text(
             courseName,
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 15,
+            style: GoogleFonts.openSans(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
               color: darkFadeTextColor,
             ),
           )
