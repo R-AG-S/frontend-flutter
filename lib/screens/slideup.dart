@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/utilities/data.dart';
 
 class SlideUpPanel extends StatefulWidget {
   @override
@@ -193,7 +194,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                       accentColor: whiteColor,
                     ),
                     child: ListView.builder(
-                      itemCount: 6,
+                      itemCount: iconData.length,
                       itemBuilder: (BuildContext context, int index) {
                         return Column(
                           children: [
