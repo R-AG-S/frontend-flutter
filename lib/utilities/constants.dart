@@ -25,3 +25,7 @@ final Gradient gradient2 = LinearGradient(colors: [
   Color(0xfff77f00),
   Color(0xfff77f00),
 ]);
+final Gradient gradient3 = LinearGradient(colors: [
+  Color(0xfffcbf49),
+  Color(0xfffcbf49),
+]);
