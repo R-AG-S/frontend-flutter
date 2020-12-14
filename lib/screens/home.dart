@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 CircularKeys(
                                   courseName: 'Option 1',
-                                  gradientKey: null,
+                                  gradientKey: gradient0,
                                   iconData: FontAwesomeIcons.optinMonster,
                                 )
                               ],
