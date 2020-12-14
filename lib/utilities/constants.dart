@@ -14,8 +14,6 @@ final Color cardBlueColor = Color(0xFF43b581);
 final Color bottomColor = Color(0xFFf7f8fc);
 final Color bottomTextColor = Color(0xFF3C5F7D);
 final Gradient gradient0 = LinearGradient(colors: [
-  Color(0xffF64C18),
-  Color(0xffF64C18),
-  Color(0xffF64C18),
-  Color(0xffF64C18)
+  Color(0xff003049),
+  Color(0xff003049),
 ]);
