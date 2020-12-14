@@ -25,8 +25,8 @@ final int dataCount = 5;
 double _panelHeightOpen;
 double _panelHeightClosed;
 BorderRadiusGeometry radius = BorderRadius.only(
-  topLeft: Radius.circular(15.0),
-  topRight: Radius.circular(15.0),
+  topLeft: Radius.circular(5.0),
+  topRight: Radius.circular(5.0),
 );
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     _panelHeightOpen = MediaQuery.of(context).size.height * .80;
-    _panelHeightClosed = MediaQuery.of(context).size.height * .08;
+    _panelHeightClosed = MediaQuery.of(context).size.height * .2;
     return SafeArea(
       child: Slidable(
         key: _slidableKey,
@@ -67,16 +67,16 @@ class _HomeScreenState extends State<HomeScreen> {
             minHeight: _panelHeightClosed,
             collapsed: Container(
               decoration: BoxDecoration(
+                color: mainTextColor,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15.0),
-                  topRight: Radius.circular(15.0),
+                  topLeft: Radius.circular(5.0),
+                  topRight: Radius.circular(5.0),
                 ),
               ),
-              color: mainTextColor,
               child: Center(
                 child: FaIcon(
-                  FontAwesomeIcons.chevronUp,
-                  color: whiteColor,
+                  FontAwesomeIcons.gripLines,
+                  color: fadeTextColor,
                 ),
               ),
             ),
