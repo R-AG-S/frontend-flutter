@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/utilities/constants.dart';
 
 class ButtonCard extends StatelessWidget {
   const ButtonCard({
@@ -20,7 +23,7 @@ class ButtonCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
         child: Container(
           decoration: BoxDecoration(
-            color: mainBgColor,
+            color: whiteColor,
             border: Border.all(
               color: Colors.white,
             ),
@@ -53,7 +56,7 @@ class ButtonCard extends StatelessWidget {
                 padding: EdgeInsets.only(
                     left: MediaQuery.of(context).size.width * 0.75, top: 20),
                 child: Icon(
-                  OMIcons.navigateNext,
+                  FontAwesomeIcons.chevronLeft,
                   size: 30,
                 ),
               )
