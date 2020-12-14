@@ -426,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           scrollDirection: Axis.horizontal,
                           itemCount: dataCount,
                           itemBuilder: (BuildContext context, int index) {
-                            if (index == dataCount) {
+                            if (index == dataCount - 1) {
                               return SizedBox(
                                 width: 15,
                               );
