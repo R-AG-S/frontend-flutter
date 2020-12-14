@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:payup/utilities/constants.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class SlideUpPanel extends StatefulWidget {
@@ -14,13 +16,10 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
         title: Text("SlidingUpPanelExample"),
       ),
       body: SlidingUpPanel(
-        collapsed: Container(
-          color: Colors.blueGrey,
-          child: Center(
-            child: Text(
-              "This is the collapsed Widget",
-              style: TextStyle(color: Colors.white),
-            ),
+        collapsed: Center(
+          child: FaIcon(
+            FontAwesomeIcons.chevronUp,
+            color: mainTextColor,
           ),
         ),
         panel: Center(
