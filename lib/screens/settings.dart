@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/utilities/constants.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
@@ -50,7 +51,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             fontFamily: 'Bambino',
             letterSpacing: 0.5,
             fontSize: 22,
-            color: mainBgColor,
+            color: whiteColor,
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -75,22 +76,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   color: mainBgColor,
                 ),
                 leading: Icon(Icons.exit_to_app),
-                onTap: () async {
-                  final SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
-                  try {
-                    bool isLogged = prefs.getBool('isLogged');
-                    if (isLogged) {
-                      prefs.setBool('isLogged', false);
-                      prefs.setString('mail', null);
-                      prefs.setString('pass', null);
-                      Navigator.of(context).pushNamed('login');
-                    }
-                  } catch (e) {
-                    print(e);
-                    print("Error\n");
-                  }
-                },
+                onTap: () async {},
               ),
             ],
           ),
@@ -104,14 +90,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             tiles: [
               SettingsTile(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    CupertinoPageRoute(
-                      builder: (context) => UpdatePassword(),
-                    ),
-                  );
-                },
+                onTap: () {},
                 title: 'Change password',
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
@@ -161,26 +140,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   leading: Icon(Icons.info_outline_rounded)),
             ],
           ),
-          // CustomSection(
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //       Image.asset(
-          //         'images/settings.png',
-          //         height: 25,
-          //         width: 25,
-          //         color: Color(0xFF777777),
-          //       ),
-          //       SizedBox(
-          //         width: 15,
-          //       ),
-          //       Text(
-          //         'Version: 2.4.0',
-          //         style: TextStyle(color: Color(0xFF777777)),
-          //       ),
-          //     ],
-          //   ),
-          // ),
         ],
       ),
     );
