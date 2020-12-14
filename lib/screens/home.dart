@@ -437,9 +437,13 @@ class SecondaryIcons extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              CupertinoPageRoute(
-                builder: (context) => routeName,
-              );
+              try {
+                CupertinoPageRoute(
+                  builder: (context) => routeName,
+                );
+              } catch (e) {
+                print(e);
+              }
             },
             child: CircleAvatar(
               radius: 24,
