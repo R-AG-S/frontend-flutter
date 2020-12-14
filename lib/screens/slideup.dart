@@ -163,6 +163,27 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
           Divider(
             thickness: 7,
             color: dividerfadeColor,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            padding: EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 15,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Participants',
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.openSans(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: darkFadeTextColor,
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
