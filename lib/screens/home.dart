@@ -345,19 +345,19 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: [
                   SecondaryIcons(
-                    iconName: null,
+                    iconName: secondaryKeys[0],
                     routeName: null,
                   ),
                   SecondaryIcons(
-                    iconName: null,
+                    iconName: secondaryKeys[1],
                     routeName: null,
                   ),
                   SecondaryIcons(
-                    iconName: null,
+                    iconName: secondaryKeys[2],
                     routeName: null,
                   ),
                   SecondaryIcons(
-                    iconName: null,
+                    iconName: secondaryKeys[3],
                     routeName: null,
                   ),
                 ],
