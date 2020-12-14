@@ -371,7 +371,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ? CupertinoPageRoute(
                                               builder: (context) => Settings(),
                                             )
-                                          : null;
+                                          : print('Error');
                         },
                         child: CircleAvatar(
                           radius: 30,
