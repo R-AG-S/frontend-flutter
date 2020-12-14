@@ -216,6 +216,11 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                     color: darkFadeTextColor,
                                   ),
                                 ),
+                                Icon(
+                                  FontAwesomeIcons.solidCircle,
+                                  color: Colors.green,
+                                  size: 10,
+                                )
                               ],
                             ),
                             Divider()
@@ -273,7 +278,7 @@ class CircularKeys extends StatelessWidget {
               fontWeight: FontWeight.w400,
               color: darkFadeTextColor,
             ),
-          )
+          ),
         ],
       ),
     );
