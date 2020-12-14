@@ -18,8 +18,8 @@ final Gradient gradient0 = LinearGradient(colors: [
   Color(0xff003049),
 ]);
 final Gradient gradient1 = LinearGradient(colors: [
-  Color(0xff003049),
-  Color(0xff003049),
+  Color(0xffd62828),
+  Color(0xffd62828),
 ]);
 final Gradient gradient2 = LinearGradient(colors: [
   Color(0xff003049),
