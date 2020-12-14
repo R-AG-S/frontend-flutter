@@ -4,6 +4,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -184,6 +185,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                   )
                                 ],
                               ),
+                            ),
+                            Row(
+                              children: [
+                                CircularKeys(
+                                  courseName: 'Option 1',
+                                  gradientKey: null,
+                                  iconData: FontAwesomeIcons.optinMonster,
+                                )
+                              ],
                             )
                           ],
                         ),
@@ -558,22 +568,12 @@ class _HomeScreenState extends State<HomeScreen> {
 class CircularKeys extends StatelessWidget {
   const CircularKeys({
     @required this.courseName,
-    @required this.imageKey,
-    @required this.courseKey,
     @required this.gradientKey,
     @required this.iconData,
-    @required this.lowerBound,
-    @required this.upperBound,
-    @required this.videoId,
   });
   final String courseName;
-  final String imageKey;
-  final int courseKey;
   final Gradient gradientKey;
   final IconData iconData;
-  final int upperBound;
-  final int lowerBound;
-  final String videoId;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
