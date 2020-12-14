@@ -344,34 +344,21 @@ class _HomeScreenState extends State<HomeScreen> {
               color: mainTextColor,
               child: Column(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 4,
-                    ),
-                    child: Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            CupertinoPageRoute(
-                              builder: (context) => Settings(),
-                            );
-                          },
-                          child: CircleAvatar(
-                            radius: 30,
-                            backgroundColor: whiteColor,
-                            child: Icon(
-                              secondaryKeys[index],
-                              color: darkFadeTextColor,
-                            ),
-                          ),
-                        ),
-                        Divider(
-                          color: whiteColor,
-                          thickness: 1,
-                        ),
-                      ],
-                    ),
+                  SecondaryIcons(
+                    iconName: null,
+                    routeName: null,
+                  ),
+                  SecondaryIcons(
+                    iconName: null,
+                    routeName: null,
+                  ),
+                  SecondaryIcons(
+                    iconName: null,
+                    routeName: null,
+                  ),
+                  SecondaryIcons(
+                    iconName: null,
+                    routeName: null,
                   ),
                 ],
               )),
@@ -424,6 +411,48 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             color: mainTextColor,
             onTap: () {},
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SecondaryIcons extends StatelessWidget {
+  const SecondaryIcons({
+    @required this.iconName,
+    @required this.routeName,
+  });
+  final Widget routeName;
+  final IconData iconName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 8.0,
+        vertical: 4,
+      ),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: () {
+              CupertinoPageRoute(
+                builder: (context) => routeName,
+              );
+            },
+            child: CircleAvatar(
+              radius: 30,
+              backgroundColor: whiteColor,
+              child: Icon(
+                iconName,
+                color: darkFadeTextColor,
+              ),
+            ),
+          ),
+          Divider(
+            color: whiteColor,
+            thickness: 1,
           ),
         ],
       ),
