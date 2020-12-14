@@ -19,7 +19,7 @@ class ButtonCard extends StatelessWidget {
       },
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 25,
+          horizontal: 15,
         ),
         child: Container(
           decoration: BoxDecoration(
@@ -31,7 +31,7 @@ class ButtonCard extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                     child: Image(
                       height: 50,
                       image: AssetImage('images/car01.png'),
@@ -41,7 +41,11 @@ class ButtonCard extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 20),
                     child: Text(
                       buttonText,
-                      style: GoogleFonts.raleway(fontSize: 18),
+                      style: GoogleFonts.openSans(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: darkFadeTextColor,
+                      ),
                     ),
                   ),
                 ],
