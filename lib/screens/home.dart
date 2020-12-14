@@ -99,12 +99,30 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: whiteColor,
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 15,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Room Name'),
-                            Text('Room Details'),
+                            Text(
+                              'Room Name',
+                              style: TextStyle(
+                                fontFamily: 'Bambino',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                color: mainTextColor,
+                              ),
+                            ),
+                            Text(
+                              'Created By User Name',
+                              style: GoogleFonts.openSans(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: fadeTextColor,
+                              ),
+                            ),
                           ],
                         ),
                       ),
