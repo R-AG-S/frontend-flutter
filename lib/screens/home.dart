@@ -448,7 +448,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: mainTextColor,
                           onPressed: () {},
                           child: Text(
-                            'Driver',
+                            'Start Drive',
                             style: TextStyle(
                               fontFamily: 'Bambino',
                               fontSize: 18,
@@ -475,7 +475,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: mainTextColor,
                           onPressed: () {},
                           child: Text(
-                            'Passenger',
+                            'Join Drive',
                             style: TextStyle(
                               fontFamily: 'Bambino',
                               fontSize: 18,
