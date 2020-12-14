@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundColor: whiteColor,
                                 child: Icon(
                                   FontAwesomeIcons.bars,
-                                  color: darkFadeTextColor,
+                                  color: fadeTextColor,
                                 ),
                               ),
                             ),
@@ -187,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundColor: whiteColor,
                                 child: Icon(
                                   FontAwesomeIcons.expand,
-                                  color: mainTextColor,
+                                  color: fadeTextColor,
                                 ),
                               ),
                             ),
