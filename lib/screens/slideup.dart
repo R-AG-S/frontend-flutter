@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
+import 'package:payup/widgets/button.dart';
 
 class SlideUpPanel extends StatefulWidget {
   @override
@@ -186,6 +187,11 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                 Divider(
                   thickness: 0.2,
                   color: darkFadeTextColor,
+                ),
+                ButtonCard(
+                  buttonIcon: FontAwesomeIcons.car,
+                  buttonText: "Listed Cars",
+                  routeName: null,
                 ),
                 Container(
                   height: 300,
