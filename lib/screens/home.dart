@@ -438,7 +438,7 @@ class SecondaryIcons extends StatelessWidget {
           GestureDetector(
             onTap: () {
               try {
-                CupertinoPageRoute(
+                MaterialPageRoute(
                   builder: (context) => routeName,
                 );
               } catch (e) {
