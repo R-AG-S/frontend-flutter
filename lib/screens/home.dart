@@ -209,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           iconData: FontAwesomeIcons.mapSigns,
                         ),
                         CircularKeys(
-                          courseName: 'Option 3',
+                          courseName: 'Pick Me',
                           gradientKey: gradient2,
                           iconData: FontAwesomeIcons.mapMarkerAlt,
                         ),
