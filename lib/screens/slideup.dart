@@ -194,8 +194,16 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                     ),
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: dataCount,
-                      itemBuilder: (BuildContext context, int index) {},
+                      itemCount: 6,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+                          children: [
+                            Row(
+                              children: [],
+                            )
+                          ],
+                        );
+                      },
                     ),
                   ),
                 ),
