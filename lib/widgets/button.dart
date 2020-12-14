@@ -6,11 +6,9 @@ import 'package:payup/utilities/constants.dart';
 class ButtonCard extends StatelessWidget {
   const ButtonCard({
     @required this.buttonText,
-    @required this.buttonIcon,
     @required this.routeName,
   });
   final String buttonText;
-  final IconData buttonIcon;
   final String routeName;
 
   @override
@@ -20,16 +18,12 @@ class ButtonCard extends StatelessWidget {
         Navigator.pushNamed(context, routeName);
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+        padding: EdgeInsets.symmetric(
+          horizontal: 25,
+        ),
         child: Container(
           decoration: BoxDecoration(
             color: whiteColor,
-            border: Border.all(
-              color: Colors.white,
-            ),
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,7 +33,7 @@ class ButtonCard extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                     child: Image(
-                      height: 30,
+                      height: 50,
                       image: AssetImage('images/car01.png'),
                     ),
                   ),
@@ -54,7 +48,7 @@ class ButtonCard extends StatelessWidget {
               ),
               Icon(
                 FontAwesomeIcons.chevronRight,
-                size: 30,
+                size: 18,
               )
             ],
           ),
