@@ -186,19 +186,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],
                               ),
                             ),
-                            Row(
-                              children: [
-                                CircularKeys(
-                                  courseName: 'Option 1',
-                                  gradientKey: gradient0,
-                                  iconData: FontAwesomeIcons.optinMonster,
-                                )
-                              ],
-                            )
                           ],
                         ),
                       ),
                     ),
+                  ),
+                  Row(
+                    children: [
+                      CircularKeys(
+                        courseName: 'Option 1',
+                        gradientKey: gradient0,
+                        iconData: FontAwesomeIcons.optinMonster,
+                      )
+                    ],
                   )
                 ],
               ),
