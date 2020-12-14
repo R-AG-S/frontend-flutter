@@ -8,7 +8,6 @@ import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-// import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -308,7 +307,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               setState(() {
                                 isExpanded = isExpanded ? false : true;
                               });
-                              // Navigator.of(context).push(_createRoute());
                             },
                             child: Container(
                               decoration: BoxDecoration(
