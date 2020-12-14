@@ -167,7 +167,6 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
             color: dividerfadeColor,
           ),
           ButtonCard(
-            buttonIcon: FontAwesomeIcons.car,
             buttonText: "Listed Cars",
             routeName: null,
           ),
