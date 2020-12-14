@@ -14,6 +14,15 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
         title: Text("SlidingUpPanelExample"),
       ),
       body: SlidingUpPanel(
+        collapsed: Container(
+          color: Colors.blueGrey,
+          child: Center(
+            child: Text(
+              "This is the collapsed Widget",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
