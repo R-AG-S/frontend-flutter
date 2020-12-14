@@ -202,7 +202,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                               children: [
                                 FadeInImage.assetNetwork(
                                   fadeOutDuration: Duration(seconds: 1),
-                                  image: profileData['dp'],
+                                  image: iconData[index],
                                   placeholder: 'images/place.png',
                                   height: 50,
                                   width: 50,
