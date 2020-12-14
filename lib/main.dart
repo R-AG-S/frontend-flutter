@@ -23,7 +23,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'slide',
+      initialRoute: 'splash',
       routes: {
         'splash': (context) => SplashScreen(),
         'login': (context) => LoginScreen(),
