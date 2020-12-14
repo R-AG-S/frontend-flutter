@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/screens/settings.dart';
 import 'package:payup/screens/slideup.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
@@ -352,7 +354,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          CupertinoPageRoute(
+                            builder: (context) => Settings(),
+                          );
+                        },
                         child: CircleAvatar(
                           radius: 30,
                           backgroundColor: whiteColor,
