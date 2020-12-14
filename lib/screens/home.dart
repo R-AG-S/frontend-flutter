@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/screens/slideup.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
+import 'package:payup/utilities/data.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -230,20 +231,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                           SizedBox(
                                             width: 15,
                                           ),
-                                          Container(
+                                          FadeInImage.assetNetwork(
+                                            fadeOutDuration:
+                                                Duration(seconds: 1),
+                                            image: iconData[index],
+                                            placeholder: 'images/place.png',
                                             height: 50,
-                                            width: 50,
-                                            decoration: BoxDecoration(
-                                              color: whiteColor,
-                                              image: DecorationImage(
-                                                image: NetworkImage(
-                                                  'https://picsum.photos/id/${index + 40}/300/300',
-                                                ),
-                                              ),
-                                              borderRadius: BorderRadius.all(
-                                                Radius.circular(10),
-                                              ),
-                                            ),
                                           ),
                                           SizedBox(
                                             width: 15,
