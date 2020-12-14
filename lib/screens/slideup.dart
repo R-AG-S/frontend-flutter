@@ -199,7 +199,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                         return Column(
                           children: [
                             Row(
-                              children: [],
+                              children: [Image(image: AssetImage(''))],
                             )
                           ],
                         );
