@@ -617,7 +617,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SlideAction(
             child: ListView.builder(
               padding: const EdgeInsets.all(8),
-              itemCount: 20,
+              itemCount: 5,
               itemBuilder: (BuildContext context, int index) {
                 if (index == 0) {
                   return Padding(
