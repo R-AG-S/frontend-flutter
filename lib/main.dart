@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:payup/screens/home.dart';
 import 'package:payup/screens/login.dart';
+import 'package:payup/screens/slideup.dart';
 import 'package:payup/screens/splash.dart';
 
 void main() {
@@ -27,6 +28,7 @@ class _MainAppState extends State<MainApp> {
         'splash': (context) => SplashScreen(),
         'login': (context) => LoginScreen(),
         'home': (context) => HomeScreen(),
+        'slide': (context) => SlideUpPanel()
       },
     );
   }
