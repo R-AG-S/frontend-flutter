@@ -204,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           iconData: FontAwesomeIcons.info,
                         ),
                         CircularKeys(
-                          courseName: 'Option 2',
+                          courseName: 'Trips',
                           gradientKey: gradient1,
                           iconData: FontAwesomeIcons.mapSigns,
                         ),
