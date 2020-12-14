@@ -23,7 +23,7 @@ List secondaryKeys = [
 ];
 final int dataCount = 5;
 double _panelHeightOpen;
-double _panelHeightClosed = 95.0;
+double _panelHeightClosed;
 BorderRadiusGeometry radius = BorderRadius.only(
   topLeft: Radius.circular(24.0),
   topRight: Radius.circular(24.0),
@@ -50,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     _panelHeightOpen = MediaQuery.of(context).size.height * .80;
+    _panelHeightClosed = MediaQuery.of(context).size.height * .08;
     return SafeArea(
       child: Slidable(
         key: _slidableKey,
