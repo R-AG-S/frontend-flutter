@@ -191,14 +191,34 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  Row(
-                    children: [
-                      CircularKeys(
-                        courseName: 'Option 1',
-                        gradientKey: gradient0,
-                        iconData: FontAwesomeIcons.optinMonster,
-                      )
-                    ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 15,
+                    ),
+                    child: Row(
+                      children: [
+                        CircularKeys(
+                          courseName: 'Option 1',
+                          gradientKey: gradient0,
+                          iconData: FontAwesomeIcons.code,
+                        ),
+                        CircularKeys(
+                          courseName: 'Option 2',
+                          gradientKey: gradient0,
+                          iconData: FontAwesomeIcons.accusoft,
+                        ),
+                        CircularKeys(
+                          courseName: 'Option 3',
+                          gradientKey: gradient0,
+                          iconData: FontAwesomeIcons.yammer,
+                        ),
+                        CircularKeys(
+                          courseName: 'Option 4',
+                          gradientKey: gradient0,
+                          iconData: FontAwesomeIcons.warehouse,
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
