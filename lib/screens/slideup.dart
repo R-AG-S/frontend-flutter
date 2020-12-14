@@ -7,19 +7,20 @@ class SlideUpPanel extends StatefulWidget {
 }
 
 class _SlideUpPanelState extends State<SlideUpPanel> {
- @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text("SlidingUpPanelExample"),
-    ),
-    body: SlidingUpPanel(
-      panel: Center(
-        child: Text("This is the sliding Widget"),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SlidingUpPanelExample"),
       ),
-      body: Center(
-        child: Text("This is the Widget behind the sliding panel"),
+      body: SlidingUpPanel(
+        panel: Center(
+          child: Text("This is the sliding Widget"),
+        ),
+        body: Center(
+          child: Text("This is the Widget behind the sliding panel"),
+        ),
       ),
-    ),
-  );
+    );
+  }
 }
