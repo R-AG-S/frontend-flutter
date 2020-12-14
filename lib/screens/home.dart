@@ -350,7 +350,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SecondaryIcons(
                     iconName: secondaryKeys[1],
-                    routeName: null,
+                    routeName: Settings(),
                   ),
                   SecondaryIcons(
                     iconName: secondaryKeys[2],
