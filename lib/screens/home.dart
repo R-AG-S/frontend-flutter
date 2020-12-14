@@ -507,33 +507,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 isExpanded
-                    ? Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 15,
-                            ),
-                            // CircleAvatar(
-                            //   radius: 25,
-                            //   backgroundColor: whiteColor,
-                            //   backgroundImage: NetworkImage(
-                            //     'https://picsum.photos/id/${40}/300/300',
-                            //   ),
-                            // ),
-                            // SizedBox(
-                            //   width: 15,
-                            // ),
-                            Text(
-                              'Room Name',
-                              style: GoogleFonts.openSans(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w600,
-                                color: bottomTextColor,
-                              ),
-                            )
-                          ],
-                        ),
+                    ? SizedBox(
+                        height: 25,
                       )
                     : Container(),
                 isExpanded
