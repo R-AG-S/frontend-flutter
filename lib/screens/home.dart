@@ -197,6 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         CircularKeys(
                           courseName: 'Logs',
@@ -207,6 +208,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           courseName: 'Trips',
                           gradientKey: gradient1,
                           iconData: FontAwesomeIcons.mapSigns,
+                        ),
+                        CircularKeys(
+                          courseName: 'Pick Me',
+                          gradientKey: gradient2,
+                          iconData: FontAwesomeIcons.mapMarkerAlt,
                         ),
                         CircularKeys(
                           courseName: 'Pick Me',
