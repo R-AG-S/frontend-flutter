@@ -582,7 +582,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         secondaryActions: [
           SlideAction(
-            color: mainTextColor,
+            color: slideCardColor,
             child: ListView.builder(
               padding: const EdgeInsets.all(8),
               itemCount: secondaryKeys.length,
@@ -606,7 +606,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Divider(
-                        color: whiteColor,
+                        color: darkFadeTextColor,
                         thickness: 0.5,
                       ),
                     ],
@@ -639,7 +639,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Divider(
-                          color: whiteColor,
+                          color: darkFadeTextColor,
                           thickness: 0.5,
                         ),
                       ],
@@ -662,7 +662,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               },
             ),
-            color: mainTextColor,
+            color: slideCardColor,
             onTap: () {},
           ),
         ],
