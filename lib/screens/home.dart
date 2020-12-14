@@ -595,7 +595,7 @@ class CircularKeys extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisSize: MainAxisSize.min,
         children: [
           GradientButton(
             shape: CircleBorder(),
@@ -608,6 +608,9 @@ class CircularKeys extends StatelessWidget {
             increaseHeightBy: 10,
             increaseWidthBy: 10,
             gradient: gradientKey,
+          ),
+          SizedBox(
+            height: 4,
           ),
           Text(
             courseName,
