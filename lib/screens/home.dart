@@ -430,7 +430,7 @@ class SecondaryIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: 8.0,
+        horizontal: 12.5,
         vertical: 4,
       ),
       child: Column(
@@ -442,7 +442,7 @@ class SecondaryIcons extends StatelessWidget {
               );
             },
             child: CircleAvatar(
-              radius: 30,
+              radius: 24,
               backgroundColor: whiteColor,
               child: Icon(
                 iconName,
