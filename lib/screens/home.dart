@@ -100,6 +100,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             offset: Offset(0.0, 0.75))
                       ],
                     ),
+                    child: Column(
+                      children: [
+                        Text('Room Name'),
+                        Text('Room Details'),
+                      ],
+                    ),
                   )
                 ],
               ),
