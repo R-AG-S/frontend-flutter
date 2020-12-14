@@ -341,57 +341,40 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         secondaryActions: [
           SlideAction(
-            color: mainTextColor,
-            child: ListView.builder(
-              padding: const EdgeInsets.all(8),
-              itemCount: secondaryKeys.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                    vertical: 4,
-                  ),
-                  child: Column(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          index == 0
-                              ? CupertinoPageRoute(
-                                  builder: (context) => Settings(),
-                                )
-                              : index == 1
-                                  ? CupertinoPageRoute(
-                                      builder: (context) => Settings(),
-                                    )
-                                  : index == 2
-                                      ? CupertinoPageRoute(
-                                          builder: (context) => Settings(),
-                                        )
-                                      : index == 3
-                                          ? CupertinoPageRoute(
-                                              builder: (context) => Settings(),
-                                            )
-                                          : print('Error');
-                        },
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundColor: whiteColor,
-                          child: Icon(
-                            secondaryKeys[index],
-                            color: darkFadeTextColor,
+              color: mainTextColor,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.0,
+                      vertical: 4,
+                    ),
+                    child: Column(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            CupertinoPageRoute(
+                              builder: (context) => Settings(),
+                            );
+                          },
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundColor: whiteColor,
+                            child: Icon(
+                              secondaryKeys[index],
+                              color: darkFadeTextColor,
+                            ),
                           ),
                         ),
-                      ),
-                      Divider(
-                        color: whiteColor,
-                        thickness: 1,
-                      ),
-                    ],
+                        Divider(
+                          color: whiteColor,
+                          thickness: 1,
+                        ),
+                      ],
+                    ),
                   ),
-                );
-              },
-            ),
-          ),
+                ],
+              )),
         ],
         actions: <Widget>[
           SlideAction(
