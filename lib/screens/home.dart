@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: FlutterMap(
                         options: new MapOptions(
                           center: LatLng(userLat, userLong),
-                          zoom: 16.0,
+                          zoom: 14.0,
                         ),
                         layers: [
                           new TileLayerOptions(
