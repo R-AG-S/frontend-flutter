@@ -296,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
         // ],
         child: Scaffold(
           extendBodyBehindAppBar: true,
-          backgroundColor: bottomColor,
+          backgroundColor: whiteColor,
           body: SingleChildScrollView(
             child: Column(
               children: [
