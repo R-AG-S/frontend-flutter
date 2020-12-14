@@ -466,7 +466,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               'User Name $index',
                                               style: GoogleFonts.openSans(
                                                 fontSize: 18,
-                                                fontWeight: FontWeight.w400,
+                                                fontWeight: FontWeight.w800,
                                                 color: mainTextColor,
                                               ),
                                             ),
