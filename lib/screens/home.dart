@@ -98,12 +98,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration: BoxDecoration(
                         color: whiteColor,
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Room Name'),
-                          Text('Room Details'),
-                        ],
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Room Name'),
+                            Text('Room Details'),
+                          ],
+                        ),
                       ),
                     ),
                   )
