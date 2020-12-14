@@ -213,11 +213,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           gradientKey: gradient0,
                           iconData: FontAwesomeIcons.yammer,
                         ),
-                        CircularKeys(
-                          courseName: 'Option 4',
-                          gradientKey: gradient0,
-                          iconData: FontAwesomeIcons.warehouse,
-                        )
                       ],
                     ),
                   )
