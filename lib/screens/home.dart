@@ -309,7 +309,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       height: isExpanded
-                          ? MediaQuery.of(context).size.height * 0.74
+                          ? MediaQuery.of(context).size.height * 0.68
                           : MediaQuery.of(context).size.height * 0.969,
                       child: FlutterMap(
                         options: new MapOptions(
@@ -548,13 +548,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           height: 50,
-                          color: blueColor,
+                          color: mainTextColor,
                           onPressed: () {},
                           child: Text(
                             'Driver',
-                            style: GoogleFonts.openSans(
+                            style: TextStyle(
+                              fontFamily: 'Bambino',
                               fontSize: 18,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w400,
                               color: whiteColor,
                             ),
                           ),
@@ -574,13 +575,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           height: 50,
-                          color: blueColor,
+                          color: mainTextColor,
                           onPressed: () {},
                           child: Text(
                             'Passenger',
-                            style: GoogleFonts.openSans(
+                            style: TextStyle(
+                              fontFamily: 'Bambino',
                               fontSize: 18,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w400,
                               color: whiteColor,
                             ),
                           ),
