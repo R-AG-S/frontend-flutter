@@ -170,6 +170,10 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
             buttonText: "Listed Cars",
             routeName: null,
           ),
+          Divider(
+            thickness: 7,
+            color: dividerfadeColor,
+          ),
           Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.symmetric(
