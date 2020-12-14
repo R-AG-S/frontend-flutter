@@ -81,10 +81,26 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  FaIcon(
-                    FontAwesomeIcons.gripLines,
-                    color: fadeTextColor,
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5.0,
+                    ),
+                    child: FaIcon(
+                      FontAwesomeIcons.gripLines,
+                      color: fadeTextColor,
+                    ),
                   ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: whiteColor,
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                            color: Colors.black54,
+                            blurRadius: 15.0,
+                            offset: Offset(0.0, 0.75))
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
