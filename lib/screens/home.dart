@@ -21,8 +21,6 @@ List secondaryKeys = [
   FontAwesomeIcons.edit,
 ];
 final int dataCount = 5;
-final double _initFabHeight = 120.0;
-double _fabHeight;
 double _panelHeightOpen;
 double _panelHeightClosed = 95.0;
 
@@ -56,276 +54,274 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           extendBodyBehindAppBar: true,
           backgroundColor: whiteColor,
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                      ),
-                      height: isExpanded
-                          ? MediaQuery.of(context).size.height * 0.68
-                          : MediaQuery.of(context).size.height * 0.969,
-                      child: FlutterMap(
-                        options: new MapOptions(
-                          center: LatLng(userLat, userLong),
-                          zoom: 14.0,
-                        ),
-                        layers: [
-                          new TileLayerOptions(
-                            urlTemplate:
-                                "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
-                            subdomains: ['a', 'b', 'c'],
-                          ),
-                          new MarkerLayerOptions(
-                            markers: [
-                              new Marker(
-                                width: 80.0,
-                                height: 80.0,
-                                point: LatLng(userLat, userLong),
-                                builder: (ctx) => new Container(
-                                  child: Container(
-                                    color: Colors.transparent,
-                                    child: Icon(
-                                      FontAwesomeIcons.mapMarkerAlt,
-                                      color: redColor,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+          body: Column(
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: GestureDetector(
-                            onTap: () =>
-                                _slidableKey.currentState.renderingMode ==
-                                        SlidableRenderingMode.none
-                                    ? _slidableKey.currentState.open()
-                                    : _slidableKey.currentState.close(),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 1,
-                                    color: Colors.black26,
-                                    spreadRadius: 2,
-                                  )
-                                ],
-                              ),
-                              child: CircleAvatar(
-                                radius: 25,
-                                backgroundColor: whiteColor,
-                                child: Icon(
-                                  FontAwesomeIcons.bars,
-                                  color: darkFadeTextColor,
-                                ),
-                              ),
-                            ),
-                          ),
+                    height: isExpanded
+                        ? MediaQuery.of(context).size.height * 0.68
+                        : MediaQuery.of(context).size.height * 0.969,
+                    child: FlutterMap(
+                      options: new MapOptions(
+                        center: LatLng(userLat, userLong),
+                        zoom: 14.0,
+                      ),
+                      layers: [
+                        new TileLayerOptions(
+                          urlTemplate:
+                              "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c'],
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            right: 20,
-                            left: 10,
-                          ),
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isExpanded = isExpanded ? false : true;
-                              });
-                              // Navigator.of(context).push(_createRoute());
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 1,
-                                    color: Colors.black26,
-                                    spreadRadius: 2,
+                        new MarkerLayerOptions(
+                          markers: [
+                            new Marker(
+                              width: 80.0,
+                              height: 80.0,
+                              point: LatLng(userLat, userLong),
+                              builder: (ctx) => new Container(
+                                child: Container(
+                                  color: Colors.transparent,
+                                  child: Icon(
+                                    FontAwesomeIcons.mapMarkerAlt,
+                                    color: redColor,
                                   ),
-                                ],
-                              ),
-                              child: CircleAvatar(
-                                radius: 25,
-                                backgroundColor: whiteColor,
-                                child: Icon(
-                                  FontAwesomeIcons.expand,
-                                  color: mainTextColor,
                                 ),
                               ),
                             ),
-                          ),
-                        )
+                          ],
+                        ),
                       ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: isExpanded
-                            ? MediaQuery.of(context).size.height * 0.58
-                            : MediaQuery.of(context).size.height * 0.8,
-                      ),
-                      child: Container(
-                        height: 100,
-                        child: Theme(
-                          data: Theme.of(context).copyWith(
-                            accentColor: whiteColor,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: GestureDetector(
+                          onTap: () =>
+                              _slidableKey.currentState.renderingMode ==
+                                      SlidableRenderingMode.none
+                                  ? _slidableKey.currentState.open()
+                                  : _slidableKey.currentState.close(),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 1,
+                                  color: Colors.black26,
+                                  spreadRadius: 2,
+                                )
+                              ],
+                            ),
+                            child: CircleAvatar(
+                              radius: 25,
+                              backgroundColor: whiteColor,
+                              child: Icon(
+                                FontAwesomeIcons.bars,
+                                color: darkFadeTextColor,
+                              ),
+                            ),
                           ),
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: dataCount,
-                            itemBuilder: (BuildContext context, int index) {
-                              if (index == dataCount - 1) {
-                                return SizedBox(
-                                  width: 15,
-                                );
-                              }
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                  left: 15,
-                                  bottom: 8,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          right: 20,
+                          left: 10,
+                        ),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isExpanded = isExpanded ? false : true;
+                            });
+                            // Navigator.of(context).push(_createRoute());
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 1,
+                                  color: Colors.black26,
+                                  spreadRadius: 2,
                                 ),
-                                child: Card(
-                                  color: whiteColor,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Container(
-                                            height: 50,
-                                            width: 50,
-                                            decoration: BoxDecoration(
-                                              color: whiteColor,
-                                              image: DecorationImage(
-                                                image: NetworkImage(
-                                                  'https://picsum.photos/id/${index + 40}/300/300',
-                                                ),
-                                              ),
-                                              borderRadius: BorderRadius.all(
-                                                Radius.circular(10),
+                              ],
+                            ),
+                            child: CircleAvatar(
+                              radius: 25,
+                              backgroundColor: whiteColor,
+                              child: Icon(
+                                FontAwesomeIcons.expand,
+                                color: mainTextColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: isExpanded
+                          ? MediaQuery.of(context).size.height * 0.58
+                          : MediaQuery.of(context).size.height * 0.8,
+                    ),
+                    child: Container(
+                      height: 100,
+                      child: Theme(
+                        data: Theme.of(context).copyWith(
+                          accentColor: whiteColor,
+                        ),
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: dataCount,
+                          itemBuilder: (BuildContext context, int index) {
+                            if (index == dataCount - 1) {
+                              return SizedBox(
+                                width: 15,
+                              );
+                            }
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                left: 15,
+                                bottom: 8,
+                              ),
+                              child: Card(
+                                color: whiteColor,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Container(
+                                          height: 50,
+                                          width: 50,
+                                          decoration: BoxDecoration(
+                                            color: whiteColor,
+                                            image: DecorationImage(
+                                              image: NetworkImage(
+                                                'https://picsum.photos/id/${index + 40}/300/300',
                                               ),
                                             ),
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(10),
+                                            ),
                                           ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'User Name $index',
-                                                style: TextStyle(
-                                                  fontFamily: 'Bambino',
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: mainTextColor,
-                                                ),
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'User Name $index',
+                                              style: TextStyle(
+                                                fontFamily: 'Bambino',
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w400,
+                                                color: mainTextColor,
                                               ),
-                                              Text(
-                                                'User Details',
-                                                style: GoogleFonts.openSans(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: mainTextColor,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                        ],
-                                      )
-                                    ],
-                                  ),
+                                            ),
+                                            Text(
+                                              'User Details',
+                                              style: GoogleFonts.openSans(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: mainTextColor,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
+                                      ],
+                                    )
+                                  ],
                                 ),
-                              );
-                            },
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              isExpanded
+                  ? SizedBox(
+                      height: 25,
+                    )
+                  : Container(),
+              isExpanded
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 25,
+                        vertical: 8,
+                      ),
+                      child: FlatButton(
+                        minWidth: MediaQuery.of(context).size.width,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                        height: 50,
+                        color: mainTextColor,
+                        onPressed: () {},
+                        child: Text(
+                          'Driver',
+                          style: TextStyle(
+                            fontFamily: 'Bambino',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: whiteColor,
                           ),
                         ),
                       ),
                     )
-                  ],
-                ),
-                isExpanded
-                    ? SizedBox(
-                        height: 25,
-                      )
-                    : Container(),
-                isExpanded
-                    ? Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 25,
-                          vertical: 8,
+                  : Container(),
+              isExpanded
+                  ? Padding(
+                      padding: EdgeInsets.only(
+                        left: 25,
+                        right: 25,
+                        bottom: 8,
+                      ),
+                      child: FlatButton(
+                        minWidth: MediaQuery.of(context).size.width,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
                         ),
-                        child: FlatButton(
-                          minWidth: MediaQuery.of(context).size.width,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          height: 50,
-                          color: mainTextColor,
-                          onPressed: () {},
-                          child: Text(
-                            'Driver',
-                            style: TextStyle(
-                              fontFamily: 'Bambino',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: whiteColor,
-                            ),
+                        height: 50,
+                        color: mainTextColor,
+                        onPressed: () {},
+                        child: Text(
+                          'Passenger',
+                          style: TextStyle(
+                            fontFamily: 'Bambino',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: whiteColor,
                           ),
                         ),
-                      )
-                    : Container(),
-                isExpanded
-                    ? Padding(
-                        padding: EdgeInsets.only(
-                          left: 25,
-                          right: 25,
-                          bottom: 8,
-                        ),
-                        child: FlatButton(
-                          minWidth: MediaQuery.of(context).size.width,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          height: 50,
-                          color: mainTextColor,
-                          onPressed: () {},
-                          child: Text(
-                            'Passenger',
-                            style: TextStyle(
-                              fontFamily: 'Bambino',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: whiteColor,
-                            ),
-                          ),
-                        ),
-                      )
-                    : Container(),
-              ],
-            ),
+                      ),
+                    )
+                  : Container(),
+            ],
           ),
         ),
         secondaryActions: [
