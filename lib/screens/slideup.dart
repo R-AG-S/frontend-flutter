@@ -214,8 +214,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                   fadeOutDuration: Duration(seconds: 1),
                                   image: iconData[index],
                                   placeholder: 'images/place.png',
-                                  height: 50,
-                                  width: 50,
+                                  height: 45,
                                 ),
                                 Text(
                                   'Demo User $index',
