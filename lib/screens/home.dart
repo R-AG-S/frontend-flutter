@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     _panelHeightOpen = MediaQuery.of(context).size.height * .80;
-    _panelHeightClosed = MediaQuery.of(context).size.height * .2;
+    _panelHeightClosed = MediaQuery.of(context).size.height * .08;
     return SafeArea(
       child: Slidable(
         key: _slidableKey,
@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
             minHeight: _panelHeightClosed,
             collapsed: Container(
               decoration: BoxDecoration(
-                color: mainTextColor,
+                color: whiteColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(5.0),
                   topRight: Radius.circular(5.0),
