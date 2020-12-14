@@ -93,11 +93,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   Material(
                     elevation: 5.0,
                     child: Container(
+                      height: 100,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         color: whiteColor,
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Room Name'),
                           Text('Room Details'),
