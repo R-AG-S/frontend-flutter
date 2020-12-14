@@ -24,10 +24,6 @@ List secondaryKeys = [
 final int dataCount = 5;
 double _panelHeightOpen;
 double _panelHeightClosed;
-BorderRadiusGeometry radius = BorderRadius.only(
-  topLeft: Radius.circular(5.0),
-  topRight: Radius.circular(5.0),
-);
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -62,7 +58,6 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: whiteColor,
           body: SlidingUpPanel(
             backdropEnabled: true,
-            borderRadius: radius,
             maxHeight: _panelHeightOpen,
             minHeight: _panelHeightClosed,
             collapsed: Container(
