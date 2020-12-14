@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -8,8 +9,6 @@ class SlideUpPanel extends StatefulWidget {
   _SlideUpPanelState createState() => _SlideUpPanelState();
 }
 
-double _panelHeightOpen;
-double _panelHeightClosed;
 BorderRadiusGeometry radius = BorderRadius.only(
   topLeft: Radius.circular(24.0),
   topRight: Radius.circular(24.0),
@@ -18,29 +17,150 @@ BorderRadiusGeometry radius = BorderRadius.only(
 class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   Widget build(BuildContext context) {
-    _panelHeightOpen = MediaQuery.of(context).size.height * 0.8;
-    _panelHeightClosed = MediaQuery.of(context).size.height * 0.1;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("SlidingUpPanelExample"),
-      ),
-      body: SlidingUpPanel(
-        backdropEnabled: true,
-        borderRadius: radius,
-        maxHeight: _panelHeightOpen,
-        minHeight: _panelHeightClosed,
-        collapsed: Center(
-          child: FaIcon(
-            FontAwesomeIcons.chevronUp,
-            color: mainTextColor,
+    return Container(
+      color: whiteColor,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 5.0,
+            ),
+            child: FaIcon(
+              FontAwesomeIcons.gripLines,
+              color: fadeTextColor,
+            ),
           ),
-        ),
-        panel: Center(
-          child: Text("This is the sliding Widget"),
-        ),
-        body: Center(
-          child: Text("This is the Widget behind the sliding panel"),
-        ),
+          Material(
+            elevation: 5.0,
+            child: Container(
+              height: 100,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: whiteColor,
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 15,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Room Name',
+                      style: TextStyle(
+                        fontFamily: 'Bambino',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                        color: mainTextColor,
+                      ),
+                    ),
+                    Text(
+                      'Created By User Name',
+                      style: GoogleFonts.openSans(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: darkFadeTextColor,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 0,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.userFriends,
+                                color: fadeTextColor,
+                                size: 16,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                ),
+                                child: Text(
+                                  'Members Count 12',
+                                  style: GoogleFonts.openSans(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: fadeTextColor,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.carSide,
+                                color: fadeTextColor,
+                                size: 16,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                ),
+                                child: Text(
+                                  'Cars Listed 12',
+                                  style: GoogleFonts.openSans(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: fadeTextColor,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 30,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 25,
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircularKeys(
+                  courseName: 'Logs',
+                  gradientKey: gradient0,
+                  iconData: FontAwesomeIcons.info,
+                ),
+                CircularKeys(
+                  courseName: 'Trips',
+                  gradientKey: gradient1,
+                  iconData: FontAwesomeIcons.mapSigns,
+                ),
+                CircularKeys(
+                  courseName: 'Pick Me',
+                  gradientKey: gradient2,
+                  iconData: FontAwesomeIcons.mapMarkerAlt,
+                ),
+                CircularKeys(
+                  courseName: 'Dues',
+                  gradientKey: gradient3,
+                  iconData: FontAwesomeIcons.rupeeSign,
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
