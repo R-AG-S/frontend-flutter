@@ -182,6 +182,10 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                     color: darkFadeTextColor,
                   ),
                 ),
+                Divider(
+                  thickness: 0.2,
+                  color: darkFadeTextColor,
+                ),
               ],
             ),
           )
