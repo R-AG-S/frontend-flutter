@@ -588,7 +588,10 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: secondaryKeys.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                    vertical: 4,
+                  ),
                   child: Column(
                     children: [
                       GestureDetector(
