@@ -209,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
-                            itemCount: dataCount,
+                            itemCount: iconData.length,
                             itemBuilder: (BuildContext context, int index) {
                               if (index == dataCount - 1) {
                                 return SizedBox(
