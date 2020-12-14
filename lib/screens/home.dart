@@ -581,8 +581,31 @@ class _HomeScreenState extends State<HomeScreen> {
           SlideAction(
             child: ListView.builder(
               padding: const EdgeInsets.all(8),
-              itemCount: 20,
-              itemBuilder: (BuildContext context, int index) {},
+              itemCount: secondaryKeys.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundColor: whiteColor,
+                          child: Icon(
+                            secondaryKeys[index],
+                            color: darkFadeTextColor,
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: darkFadeTextColor,
+                        thickness: 0.5,
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
           ),
         ],
