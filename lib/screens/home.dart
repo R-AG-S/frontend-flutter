@@ -605,8 +605,8 @@ class CircularKeys extends StatelessWidget {
               size: 18,
             ),
             callback: () {},
-            increaseHeightBy: MediaQuery.of(context).size.height * 0.02,
-            increaseWidthBy: MediaQuery.of(context).size.width * 0.05,
+            increaseHeightBy: 10,
+            increaseWidthBy: 10,
             gradient: gradientKey,
           ),
           Text(
