@@ -64,7 +64,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             titleTextStyle: TextStyle(
               fontFamily: 'Bambino',
               fontSize: ScreenUtil().setSp(40),
-              color: mainBgColor,
+              color: whiteColor,
               fontWeight: FontWeight.w400,
             ),
             tiles: [
@@ -73,7 +73,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
-                  color: mainBgColor,
+                  color: whiteColor,
                 ),
                 leading: Icon(Icons.exit_to_app),
               ),
@@ -84,7 +84,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             titleTextStyle: TextStyle(
               fontFamily: 'Bambino',
               fontSize: ScreenUtil().setSp(40),
-              color: mainBgColor,
+              color: whiteColor,
               fontWeight: FontWeight.w400,
             ),
             tiles: [
@@ -93,7 +93,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
-                  color: mainBgColor,
+                  color: whiteColor,
                 ),
                 leading: Icon(Icons.exit_to_app),
               ),
@@ -102,7 +102,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
-                  color: mainBgColor,
+                  color: whiteColor,
                 ),
                 enabled: notificationsEnabled,
                 leading: Icon(Icons.notifications_active),
@@ -116,7 +116,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             titleTextStyle: TextStyle(
               fontFamily: 'Bambino',
               fontSize: ScreenUtil().setSp(40),
-              color: mainBgColor,
+              color: whiteColor,
               fontWeight: FontWeight.w400,
             ),
             tiles: [
@@ -125,7 +125,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
                     fontWeight: FontWeight.w600,
-                    color: mainBgColor,
+                    color: whiteColor,
                   ),
                   leading: Icon(Icons.description)),
               SettingsTile(
@@ -133,7 +133,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
                     fontWeight: FontWeight.w600,
-                    color: mainBgColor,
+                    color: whiteColor,
                   ),
                   leading: Icon(Icons.info_outline_rounded)),
             ],
