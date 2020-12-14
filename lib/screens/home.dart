@@ -120,9 +120,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: GoogleFonts.openSans(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
-                                color: fadeTextColor,
+                                color: darkFadeTextColor,
                               ),
                             ),
+                            Row(
+                              children: [],
+                            )
                           ],
                         ),
                       ),
