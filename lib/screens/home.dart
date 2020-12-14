@@ -582,6 +582,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         secondaryActions: [
           SlideAction(
+            color: slideCardColor,
             child: ListView.builder(
               padding: const EdgeInsets.all(8),
               itemCount: secondaryKeys.length,
