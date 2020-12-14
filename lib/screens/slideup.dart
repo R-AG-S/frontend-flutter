@@ -200,11 +200,12 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                           children: [
                             Row(
                               children: [
-                                Image(
-                                  image: AssetImage(
-                                    'images/001-lego.png',
-                                  ),
+                                FadeInImage.assetNetwork(
+                                  fadeOutDuration: Duration(seconds: 1),
+                                  image: profileData['dp'],
+                                  placeholder: 'images/place.png',
                                   height: 50,
+                                  width: 50,
                                 ),
                                 Text('user $index')
                               ],
