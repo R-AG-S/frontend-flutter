@@ -187,13 +187,12 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   color: darkFadeTextColor,
                 ),
                 Container(
-                  height: 100,
+                  height: 300,
                   child: Theme(
                     data: Theme.of(context).copyWith(
                       accentColor: whiteColor,
                     ),
                     child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
                       itemCount: 6,
                       itemBuilder: (BuildContext context, int index) {
                         return Column(
@@ -202,11 +201,14 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                               children: [
                                 Image(
                                   image: AssetImage(
-                                    'images/svg/01.svg',
+                                    'images/001-lego.png',
                                   ),
+                                  height: 50,
                                 ),
+                                Text('user $index')
                               ],
-                            )
+                            ),
+                            Divider()
                           ],
                         );
                       },
