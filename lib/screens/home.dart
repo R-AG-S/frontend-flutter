@@ -577,21 +577,7 @@ class CircularKeys extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => CoursePage(
-                      courseName: courseName,
-                      gradientKey: gradientKey,
-                      imageKey: imageKey,
-                      descString: courseDesc[courseKey],
-                      quizCourseKey: courseKey,
-                      lowerBound: lowerBound,
-                      upperBound: upperBound,
-                      videoId: videoId,
-                    )));
-      },
+      onTap: () {},
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -602,23 +588,7 @@ class CircularKeys extends StatelessWidget {
               iconData,
               size: 35,
             ),
-            callback: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CoursePage(
-                    courseName: courseName,
-                    gradientKey: gradientKey,
-                    imageKey: imageKey,
-                    descString: courseDesc[courseKey],
-                    quizCourseKey: courseKey,
-                    lowerBound: lowerBound,
-                    upperBound: upperBound,
-                    videoId: videoId,
-                  ),
-                ),
-              );
-            },
+            callback: () {},
             increaseHeightBy: MediaQuery.of(context).size.height * 0.02,
             increaseWidthBy: MediaQuery.of(context).size.width * 0.05,
             gradient: gradientKey,
@@ -626,7 +596,10 @@ class CircularKeys extends StatelessWidget {
           Text(
             courseName,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 15, color: fadeColor),
+            style: TextStyle(
+              fontSize: 15,
+              color: darkFadeTextColor,
+            ),
           )
         ],
       ),
