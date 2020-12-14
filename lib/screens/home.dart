@@ -90,21 +90,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: fadeTextColor,
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: whiteColor,
-                      boxShadow: <BoxShadow>[
-                        BoxShadow(
-                            color: Colors.black54,
-                            blurRadius: 15.0,
-                            offset: Offset(0.0, 0.75))
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Text('Room Name'),
-                        Text('Room Details'),
-                      ],
+                  Material(
+                    elevation: 5.0,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        color: whiteColor,
+                      ),
+                      child: Column(
+                        children: [
+                          Text('Room Name'),
+                          Text('Room Details'),
+                        ],
+                      ),
                     ),
                   )
                 ],
