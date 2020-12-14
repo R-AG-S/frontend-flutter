@@ -606,7 +606,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Divider(
-                        color: darkFadeTextColor,
+                        color: whiteColor,
                         thickness: 0.5,
                       ),
                     ],
@@ -639,7 +639,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Divider(
-                          color: darkFadeTextColor,
+                          color: whiteColor,
                           thickness: 0.5,
                         ),
                       ],
