@@ -31,29 +31,24 @@ class ButtonCard extends StatelessWidget {
               Radius.circular(20),
             ),
           ),
-          child: Stack(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                        child: Icon(
-                          buttonIcon,
-                          size: 30,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: 20),
-                        child: Text(
-                          buttonText,
-                          style: GoogleFonts.raleway(fontSize: 18),
-                        ),
-                      ),
-                    ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                    child: Image(
+                      height: 30,
+                      image: AssetImage('images/car01.png'),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Text(
+                      buttonText,
+                      style: GoogleFonts.raleway(fontSize: 18),
+                    ),
                   ),
                 ],
               ),
