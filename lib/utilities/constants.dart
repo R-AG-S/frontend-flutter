@@ -21,11 +21,11 @@ final Gradient gradient1 = LinearGradient(colors: [
   Color(0xffd62828),
   Color(0xffd62828),
 ]);
-final Gradient gradient2 = LinearGradient(colors: [
+final Gradient gradient3 = LinearGradient(colors: [
   Color(0xfff77f00),
   Color(0xfff77f00),
 ]);
-final Gradient gradient3 = LinearGradient(colors: [
-  Color(0xfffcbf49),
-  Color(0xfffcbf49),
+final Gradient gradient2 = LinearGradient(colors: [
+  Color(0xff80b918),
+  Color(0xff80b918),
 ]);
