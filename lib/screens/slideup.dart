@@ -186,6 +186,19 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   thickness: 0.2,
                   color: darkFadeTextColor,
                 ),
+                Container(
+                  height: 100,
+                  child: Theme(
+                    data: Theme.of(context).copyWith(
+                      accentColor: whiteColor,
+                    ),
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: dataCount,
+                      itemBuilder: (BuildContext context, int index) {},
+                    ),
+                  ),
+                ),
               ],
             ),
           )
