@@ -47,7 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     _panelHeightOpen = MediaQuery.of(context).size.height * .80;
-    _panelHeightClosed = MediaQuery.of(context).size.height * .08;
+    _panelHeightClosed =
+        isExpanded ? MediaQuery.of(context).size.height * .08 : 0.0;
     return SafeArea(
       child: Slidable(
         key: _slidableKey,
