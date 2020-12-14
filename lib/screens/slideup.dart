@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class SlideUpPanel extends StatefulWidget {
   @override
@@ -158,6 +157,52 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   iconData: FontAwesomeIcons.rupeeSign,
                 ),
               ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class CircularKeys extends StatelessWidget {
+  const CircularKeys({
+    @required this.courseName,
+    @required this.gradientKey,
+    @required this.iconData,
+  });
+  final String courseName;
+  final Gradient gradientKey;
+  final IconData iconData;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          GradientButton(
+            shape: CircleBorder(),
+            shapeRadius: BorderRadius.circular(0),
+            child: Icon(
+              iconData,
+              size: 18,
+            ),
+            callback: () {},
+            increaseHeightBy: 10,
+            increaseWidthBy: 10,
+            gradient: gradientKey,
+          ),
+          SizedBox(
+            height: 3,
+          ),
+          Text(
+            courseName,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.openSans(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: darkFadeTextColor,
             ),
           )
         ],
