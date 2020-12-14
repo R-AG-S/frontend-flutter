@@ -20,6 +20,7 @@ bool isExpanded = true;
 List secondaryKeys = [
   FontAwesomeIcons.cog,
   FontAwesomeIcons.edit,
+  FontAwesomeIcons.chartBar,
 ];
 final int dataCount = 5;
 double _panelHeightOpen;
