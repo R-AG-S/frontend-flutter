@@ -76,7 +76,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   color: mainBgColor,
                 ),
                 leading: Icon(Icons.exit_to_app),
-                onTap: () async {},
               ),
             ],
           ),
@@ -90,7 +89,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             tiles: [
               SettingsTile(
-                onTap: () {},
                 title: 'Change password',
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),

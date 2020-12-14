@@ -355,9 +355,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          CupertinoPageRoute(
-                            builder: (context) => Settings(),
-                          );
+                          index == 0
+                              ? CupertinoPageRoute(
+                                  builder: (context) => Settings(),
+                                )
+                              : index == 1
+                                  ? CupertinoPageRoute(
+                                      builder: (context) => Settings(),
+                                    )
+                                  : index == 2
+                                      ? CupertinoPageRoute(
+                                          builder: (context) => Settings(),
+                                        )
+                                      : index == 3
+                                          ? CupertinoPageRoute(
+                                              builder: (context) => Settings(),
+                                            )
+                                          : null;
                         },
                         child: CircleAvatar(
                           radius: 30,
