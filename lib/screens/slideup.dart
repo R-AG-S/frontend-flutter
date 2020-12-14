@@ -218,7 +218,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                 ),
                                 Icon(
                                   FontAwesomeIcons.solidCircle,
-                                  color: Colors.green,
+                                  color: index % 2 == 0
+                                      ? Colors.green
+                                      : Colors.red,
                                   size: 10,
                                 )
                               ],
