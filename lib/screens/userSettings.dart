@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
-import 'package:payup/widgets/button.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class UserSettings extends StatefulWidget {
