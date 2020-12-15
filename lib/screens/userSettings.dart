@@ -29,6 +29,9 @@ class _UserSettingsState extends State<UserSettings> {
       ),
       home: Column(
         children: [
+          SizedBox(
+            height: 15,
+          ),
           SettingsList(
             shrinkWrap: true,
             sections: [
