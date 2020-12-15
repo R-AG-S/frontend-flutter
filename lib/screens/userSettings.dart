@@ -206,7 +206,14 @@ class _UserSettingsState extends State<UserSettings> {
                 child: Wrap(
                   children: [
                     ListTile(
-                        title: new Text('Pick Your Avatar'),
+                        title: new Text(
+                          'Pick Your Avatar',
+                          style: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(45),
+                            fontWeight: FontWeight.w600,
+                            color: whiteColor,
+                          ),
+                        ),
                         onTap: () {
                           Navigator.of(context).pop();
                         }),
