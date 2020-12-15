@@ -68,15 +68,15 @@ class _UserSettingsState extends State<UserSettings> {
               },
               child: Padding(
                 padding: EdgeInsets.only(top: 50),
-                child: Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: whiteColor,
-                  ),
-                  padding: EdgeInsets.all(10),
-                  child: Stack(
-                    children: [
-                      ClipRRect(
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: whiteColor,
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.network(
                           'https://firebasestorage.googleapis.com/v0/b/inout-776aa.appspot.com/o/avatar-png%2F63.png?alt=media&token=bbd3fdc4-f800-4ee9-ac58-173a395dbfa8',
@@ -85,7 +85,13 @@ class _UserSettingsState extends State<UserSettings> {
                           fit: BoxFit.fitHeight,
                         ),
                       ),
-                      Container(
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: 60,
+                        left: 60,
+                      ),
+                      child: Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: mainTextColor,
@@ -97,9 +103,9 @@ class _UserSettingsState extends State<UserSettings> {
                           FontAwesomeIcons.penNib,
                           color: whiteColor,
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),
