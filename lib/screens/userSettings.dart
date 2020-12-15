@@ -27,52 +27,63 @@ class _UserSettingsState extends State<UserSettings> {
         brightness: Brightness.dark,
         canvasColor: mainTextColor,
       ),
-      home: Container(
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: [
-            SettingsList(
-              shrinkWrap: true,
-              sections: [
-                SettingsSection(
-                  title: 'General',
-                  titleTextStyle: TextStyle(
-                    fontFamily: 'Bambino',
-                    fontSize: ScreenUtil().setSp(40),
-                    color: whiteColor,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  tiles: [
-                    SettingsTile(
-                      title: 'Add Description',
-                      titleTextStyle: GoogleFonts.openSans(
-                        fontSize: ScreenUtil().setSp(45),
-                        fontWeight: FontWeight.w600,
-                        color: whiteColor,
-                      ),
-                      leading: Icon(
-                        FontAwesomeIcons.penNib,
-                        size: 18,
-                      ),
-                    ),
-                    SettingsTile(
-                      title: 'Edit Listed Cars',
-                      titleTextStyle: GoogleFonts.openSans(
-                        fontSize: ScreenUtil().setSp(45),
-                        fontWeight: FontWeight.w600,
-                        color: whiteColor,
-                      ),
-                      leading: Icon(
-                        FontAwesomeIcons.carAlt,
-                        size: 18,
-                      ),
-                    ),
-                  ],
+      home: Column(
+        children: [
+          SettingsList(
+            shrinkWrap: true,
+            sections: [
+              SettingsSection(
+                title: 'General',
+                titleTextStyle: TextStyle(
+                  fontFamily: 'Bambino',
+                  fontSize: ScreenUtil().setSp(40),
+                  color: whiteColor,
+                  fontWeight: FontWeight.w400,
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+          SettingsList(
+            shrinkWrap: true,
+            sections: [
+              SettingsSection(
+                title: 'General',
+                titleTextStyle: TextStyle(
+                  fontFamily: 'Bambino',
+                  fontSize: ScreenUtil().setSp(40),
+                  color: whiteColor,
+                  fontWeight: FontWeight.w400,
+                ),
+                tiles: [
+                  SettingsTile(
+                    title: 'Add Description',
+                    titleTextStyle: GoogleFonts.openSans(
+                      fontSize: ScreenUtil().setSp(45),
+                      fontWeight: FontWeight.w600,
+                      color: whiteColor,
+                    ),
+                    leading: Icon(
+                      FontAwesomeIcons.penNib,
+                      size: 18,
+                    ),
+                  ),
+                  SettingsTile(
+                    title: 'Edit Listed Cars',
+                    titleTextStyle: GoogleFonts.openSans(
+                      fontSize: ScreenUtil().setSp(45),
+                      fontWeight: FontWeight.w600,
+                      color: whiteColor,
+                    ),
+                    leading: Icon(
+                      FontAwesomeIcons.carAlt,
+                      size: 18,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     );
     //                  Scaffold(
