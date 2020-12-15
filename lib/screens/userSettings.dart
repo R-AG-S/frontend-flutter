@@ -181,96 +181,102 @@ class _TabbarState extends State<Tabbar> {
           ),
           body: TabBarView(
             children: [
-              SettingsList(
-                sections: [
-                  SettingsSection(
-                    title: 'General',
-                    titleTextStyle: TextStyle(
-                      fontFamily: 'Bambino',
-                      fontSize: ScreenUtil().setSp(40),
-                      color: whiteColor,
-                      fontWeight: FontWeight.w400,
+              Container(
+                color: mainTextColor,
+                padding: EdgeInsets.symmetric(
+                  vertical: 15,
+                ),
+                child: SettingsList(
+                  sections: [
+                    SettingsSection(
+                      title: 'General',
+                      titleTextStyle: TextStyle(
+                        fontFamily: 'Bambino',
+                        fontSize: ScreenUtil().setSp(40),
+                        color: whiteColor,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      tiles: [
+                        SettingsTile(
+                          title: 'Add Description',
+                          titleTextStyle: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(45),
+                            fontWeight: FontWeight.w600,
+                            color: whiteColor,
+                          ),
+                          leading: Icon(
+                            FontAwesomeIcons.penNib,
+                            size: 18,
+                          ),
+                        ),
+                        SettingsTile(
+                          title: 'Edit Listed Cars',
+                          titleTextStyle: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(45),
+                            fontWeight: FontWeight.w600,
+                            color: whiteColor,
+                          ),
+                          leading: Icon(
+                            FontAwesomeIcons.carAlt,
+                            size: 18,
+                          ),
+                        ),
+                      ],
                     ),
-                    tiles: [
-                      SettingsTile(
-                        title: 'Add Description',
-                        titleTextStyle: GoogleFonts.openSans(
-                          fontSize: ScreenUtil().setSp(45),
-                          fontWeight: FontWeight.w600,
-                          color: whiteColor,
-                        ),
-                        leading: Icon(
-                          FontAwesomeIcons.penNib,
-                          size: 18,
-                        ),
+                    // SettingsSection(
+                    //   title: 'Account',
+                    //   titleTextStyle: TextStyle(
+                    //     fontFamily: 'Bambino',
+                    //     fontSize: ScreenUtil().setSp(40),
+                    //     color: whiteColor,
+                    //     fontWeight: FontWeight.w400,
+                    //   ),
+                    //   tiles: [
+                    //     SettingsTile(
+                    //       title: 'Log out',
+                    //       titleTextStyle: GoogleFonts.openSans(
+                    //         fontSize: ScreenUtil().setSp(45),
+                    //         fontWeight: FontWeight.w600,
+                    //         color: whiteColor,
+                    //       ),
+                    //       leading: Icon(Icons.exit_to_app),
+                    //     ),
+                    //   ],
+                    // ),
+                    SettingsSection(
+                      title: 'Security',
+                      titleTextStyle: TextStyle(
+                        fontFamily: 'Bambino',
+                        fontSize: ScreenUtil().setSp(40),
+                        color: whiteColor,
+                        fontWeight: FontWeight.w400,
                       ),
-                      SettingsTile(
-                        title: 'Edit Listed Cars',
-                        titleTextStyle: GoogleFonts.openSans(
-                          fontSize: ScreenUtil().setSp(45),
-                          fontWeight: FontWeight.w600,
-                          color: whiteColor,
+                      tiles: [
+                        SettingsTile(
+                          title: 'Change Room Code',
+                          titleTextStyle: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(45),
+                            fontWeight: FontWeight.w600,
+                            color: whiteColor,
+                          ),
+                          leading: Icon(Icons.exit_to_app),
                         ),
-                        leading: Icon(
-                          FontAwesomeIcons.carAlt,
-                          size: 18,
+                        SettingsTile.switchTile(
+                          title: 'Enable Notifications',
+                          titleTextStyle: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(45),
+                            fontWeight: FontWeight.w600,
+                            color: whiteColor,
+                          ),
+                          enabled: true,
+                          leading: Icon(Icons.notifications_active),
+                          switchValue: true,
+                          onToggle: (value) {},
                         ),
-                      ),
-                    ],
-                  ),
-                  // SettingsSection(
-                  //   title: 'Account',
-                  //   titleTextStyle: TextStyle(
-                  //     fontFamily: 'Bambino',
-                  //     fontSize: ScreenUtil().setSp(40),
-                  //     color: whiteColor,
-                  //     fontWeight: FontWeight.w400,
-                  //   ),
-                  //   tiles: [
-                  //     SettingsTile(
-                  //       title: 'Log out',
-                  //       titleTextStyle: GoogleFonts.openSans(
-                  //         fontSize: ScreenUtil().setSp(45),
-                  //         fontWeight: FontWeight.w600,
-                  //         color: whiteColor,
-                  //       ),
-                  //       leading: Icon(Icons.exit_to_app),
-                  //     ),
-                  //   ],
-                  // ),
-                  SettingsSection(
-                    title: 'Security',
-                    titleTextStyle: TextStyle(
-                      fontFamily: 'Bambino',
-                      fontSize: ScreenUtil().setSp(40),
-                      color: whiteColor,
-                      fontWeight: FontWeight.w400,
+                      ],
                     ),
-                    tiles: [
-                      SettingsTile(
-                        title: 'Change Room Code',
-                        titleTextStyle: GoogleFonts.openSans(
-                          fontSize: ScreenUtil().setSp(45),
-                          fontWeight: FontWeight.w600,
-                          color: whiteColor,
-                        ),
-                        leading: Icon(Icons.exit_to_app),
-                      ),
-                      SettingsTile.switchTile(
-                        title: 'Enable Notifications',
-                        titleTextStyle: GoogleFonts.openSans(
-                          fontSize: ScreenUtil().setSp(45),
-                          fontWeight: FontWeight.w600,
-                          color: whiteColor,
-                        ),
-                        enabled: true,
-                        leading: Icon(Icons.notifications_active),
-                        switchValue: true,
-                        onToggle: (value) {},
-                      ),
-                    ],
-                  ),
-                ],
+                  ],
+                ),
               ),
               Container(
                 child: Column(
