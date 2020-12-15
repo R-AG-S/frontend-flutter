@@ -61,7 +61,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: SettingsList(
         sections: [
           SettingsSection(
-            title: 'Room Settings',
+            title: 'General',
             titleTextStyle: TextStyle(
               fontFamily: 'Bambino',
               fontSize: ScreenUtil().setSp(40),
@@ -89,7 +89,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   color: whiteColor,
                 ),
                 leading: Icon(
-                  FontAwesomeIcons.penNib,
+                  FontAwesomeIcons.carAlt,
                   size: 18,
                 ),
               ),
