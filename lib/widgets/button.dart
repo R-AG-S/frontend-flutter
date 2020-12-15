@@ -39,8 +39,10 @@ class ButtonCard extends StatelessWidget {
                 children: [
                   isIcon
                       ? Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 15, vertical: 10),
+                          padding: EdgeInsets.only(
+                            left: 15,
+                            right: 40,
+                          ),
                           child: Icon(
                             iconData,
                             size: 18,
@@ -58,21 +60,29 @@ class ButtonCard extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 20),
                     child: Text(
                       buttonText,
-                      style: GoogleFonts.openSans(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: colorKey == whiteColor
-                            ? darkFadeTextColor
-                            : whiteColor,
-                      ),
+                      style: isIcon
+                          ? GoogleFonts.openSans(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: whiteColor,
+                            )
+                          : GoogleFonts.openSans(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: colorKey == whiteColor
+                                  ? darkFadeTextColor
+                                  : whiteColor,
+                            ),
                     ),
                   ),
                 ],
               ),
-              Icon(
-                FontAwesomeIcons.chevronRight,
-                size: 18,
-              )
+              isIcon
+                  ? Container()
+                  : Icon(
+                      FontAwesomeIcons.chevronRight,
+                      size: 18,
+                    )
             ],
           ),
         ),
