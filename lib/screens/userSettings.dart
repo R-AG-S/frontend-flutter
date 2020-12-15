@@ -22,7 +22,7 @@ class _UserSettingsState extends State<UserSettings> {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home: SettingsScreen(),
+      home: Container(),
     );
   }
 }
