@@ -224,6 +224,11 @@ class _UserSettingsState extends State<UserSettings> {
                         children: List.generate(iconData.length, (index) {
                           return GestureDetector(
                             child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                color: mainTextColor,
+                                width: 0.5,
+                              )),
                               padding: EdgeInsets.all(5),
                               color: whiteColor,
                               child: FadeInImage.assetNetwork(
