@@ -96,13 +96,11 @@ class ButtonIconCard extends StatelessWidget {
     @required this.buttonText,
     @required this.routeName,
     @required this.colorKey,
-    @required this.imageKey,
     @required this.iconData,
   });
   final String buttonText;
   final String routeName;
   final Color colorKey;
-  final String imageKey;
   final IconData iconData;
   @override
   Widget build(BuildContext context) {
