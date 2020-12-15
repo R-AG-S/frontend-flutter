@@ -142,7 +142,7 @@ class _UserSettingsState extends State<UserSettings> {
               buttonText: 'Change Password',
               routeName: null,
               colorKey: mainTextColor,
-              iconData: FontAwesomeIcons.envelope,
+              iconData: FontAwesomeIcons.unlockAlt,
               isIcon: true,
               imageKey: null,
             ),
