@@ -7,10 +7,13 @@ class ButtonCard extends StatelessWidget {
   const ButtonCard({
     @required this.buttonText,
     @required this.routeName,
+    @required this.colorKey,
+    @required this.imageKey,
   });
   final String buttonText;
   final String routeName;
-
+  final Color colorKey;
+  final String imageKey;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,7 +26,7 @@ class ButtonCard extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-            color: whiteColor,
+            color: colorKey,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
