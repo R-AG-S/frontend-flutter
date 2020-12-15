@@ -150,6 +150,33 @@ class _UserSettingsState extends State<UserSettings> {
                     ),
                   ],
                 ),
+                SettingsSection(
+                  title: 'Misc',
+                  titleTextStyle: TextStyle(
+                    fontFamily: 'Bambino',
+                    fontSize: ScreenUtil().setSp(40),
+                    color: whiteColor,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  tiles: [
+                    SettingsTile(
+                        title: 'Terms of Service',
+                        titleTextStyle: GoogleFonts.openSans(
+                          fontSize: ScreenUtil().setSp(45),
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor,
+                        ),
+                        leading: Icon(Icons.description)),
+                    SettingsTile(
+                        title: 'About',
+                        titleTextStyle: GoogleFonts.openSans(
+                          fontSize: ScreenUtil().setSp(45),
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor,
+                        ),
+                        leading: Icon(Icons.info_outline_rounded)),
+                  ],
+                ),
               ],
             ),
           ],
