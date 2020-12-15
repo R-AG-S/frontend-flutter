@@ -67,7 +67,7 @@ class _UserSettingsState extends State<UserSettings> {
                 // _showPicker(context);
               },
               child: Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 15),
                 child: Stack(
                   children: [
                     Container(
@@ -93,9 +93,12 @@ class _UserSettingsState extends State<UserSettings> {
                       ),
                       child: Container(
                         decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: mainTextColor,
-                        ),
+                            shape: BoxShape.circle,
+                            color: mainTextColor,
+                            border: Border.all(
+                              color: whiteColor,
+                              width: 2,
+                            )),
                         padding: EdgeInsets.all(
                           10,
                         ),
