@@ -117,6 +117,12 @@ class _UserSettingsState extends State<UserSettings> {
               shrinkWrap: true,
               sections: [
                 SettingsSection(
+                  titlePadding: EdgeInsets.all(
+                    0,
+                  ),
+                  subtitlePadding: EdgeInsets.all(
+                    0,
+                  ),
                   tiles: [
                     SettingsTile(
                       title: 'Add Description',
