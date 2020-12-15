@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/utilities/data.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class UserSettings extends StatefulWidget {
@@ -199,22 +200,21 @@ class _UserSettingsState extends State<UserSettings> {
         builder: (BuildContext bc) {
           return SafeArea(
             child: Container(
-              child: new Wrap(
-                children: <Widget>[
-                  new ListTile(
-                      leading: new Icon(Icons.photo_library),
-                      title: new Text('Photo Library'),
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      }),
-                  new ListTile(
-                    leading: new Icon(Icons.photo_camera),
-                    title: new Text('Camera'),
+              color: whiteColor,
+              child: GridView.count(
+                crossAxisCount: 3,
+                children: List.generate(iconData.length, (index) {
+                  return GestureDetector(
+                    child: _futreImage[index],
                     onTap: () {
-                      Navigator.of(context).pop();
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) =>
+                      //             VideoPage(videoData: videoData)));
                     },
-                  ),
-                ],
+                  );
+                }),
               ),
             ),
           );
