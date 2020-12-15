@@ -219,18 +219,26 @@ class _UserSettingsState extends State<UserSettings> {
                         }),
                     Container(
                       height: 300,
+                      decoration: BoxDecoration(
+                        color: whiteColor,
+                        border: Border.all(
+                          color: mainTextColor,
+                          width: 0.25,
+                        ),
+                      ),
                       child: GridView.count(
                         crossAxisCount: 5,
                         children: List.generate(iconData.length, (index) {
                           return GestureDetector(
                             child: Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(
-                                color: mainTextColor,
-                                width: 0.5,
-                              )),
+                                color: whiteColor,
+                                border: Border.all(
+                                  color: mainTextColor,
+                                  width: 0.25,
+                                ),
+                              ),
                               padding: EdgeInsets.all(5),
-                              color: whiteColor,
                               child: FadeInImage.assetNetwork(
                                 fadeOutDuration: Duration(seconds: 1),
                                 image: iconData[index],
