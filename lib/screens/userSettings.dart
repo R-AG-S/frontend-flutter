@@ -68,8 +68,11 @@ class _UserSettingsState extends State<UserSettings> {
               },
               child: Padding(
                 padding: EdgeInsets.only(top: 50),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(60),
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  padding: EdgeInsets.all(10),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
                     child: Image.network(
