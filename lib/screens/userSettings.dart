@@ -88,8 +88,8 @@ class _UserSettingsState extends State<UserSettings> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                        top: 60,
-                        left: 60,
+                        top: 80,
+                        left: 80,
                       ),
                       child: Container(
                         decoration: BoxDecoration(
