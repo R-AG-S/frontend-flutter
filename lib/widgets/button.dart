@@ -9,11 +9,15 @@ class ButtonCard extends StatelessWidget {
     @required this.routeName,
     @required this.colorKey,
     @required this.imageKey,
+    @required this.isIcon,
+    @required this.iconData,
   });
   final String buttonText;
   final String routeName;
   final Color colorKey;
   final String imageKey;
+  final bool isIcon;
+  final IconData iconData;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -33,13 +37,20 @@ class ButtonCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                    child: Image(
-                      height: 50,
-                      image: AssetImage(imageKey),
-                    ),
-                  ),
+                  isIcon
+                      ? Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
+                          child: Icon(),
+                        )
+                      : Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
+                          child: Image(
+                            height: 50,
+                            image: AssetImage(imageKey),
+                          ),
+                        ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 20),
                     child: Text(
