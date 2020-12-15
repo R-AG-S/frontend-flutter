@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -70,47 +71,50 @@ class _UserSettingsState extends State<UserSettings> {
                 },
                 child: Padding(
                   padding: EdgeInsets.only(top: 15),
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: whiteColor,
-                        ),
-                        padding: EdgeInsets.all(10),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/inout-776aa.appspot.com/o/avatar-png%2F63.png?alt=media&token=bbd3fdc4-f800-4ee9-ac58-173a395dbfa8',
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: 80,
-                          left: 80,
-                        ),
-                        child: Container(
+                  child: GestureDetector(
+                    onTap: () => _showPicker(context),
+                    child: Stack(
+                      children: [
+                        Container(
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: mainTextColor,
-                              border: Border.all(
-                                color: whiteColor,
-                                width: 2,
-                              )),
-                          padding: EdgeInsets.all(
-                            10,
-                          ),
-                          child: Icon(
-                            FontAwesomeIcons.solidEdit,
+                            shape: BoxShape.circle,
                             color: whiteColor,
                           ),
+                          padding: EdgeInsets.all(10),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(50),
+                            child: Image.network(
+                              'https://firebasestorage.googleapis.com/v0/b/inout-776aa.appspot.com/o/avatar-png%2F63.png?alt=media&token=bbd3fdc4-f800-4ee9-ac58-173a395dbfa8',
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
                         ),
-                      )
-                    ],
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 80,
+                            left: 80,
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: mainTextColor,
+                                border: Border.all(
+                                  color: whiteColor,
+                                  width: 2,
+                                )),
+                            padding: EdgeInsets.all(
+                              10,
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.solidEdit,
+                              color: whiteColor,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -187,6 +191,35 @@ class _UserSettingsState extends State<UserSettings> {
           ),
         ),
       ),
+    );
+  }
+
+  void _showPicker(context) {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext bc) {
+        return SafeArea(
+          child: Container(
+            child: new Wrap(
+              children: <Widget>[
+                new ListTile(
+                    leading: new Icon(Icons.photo_library),
+                    title: new Text('Photo Library'),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    }),
+                new ListTile(
+                  leading: new Icon(Icons.photo_camera),
+                  title: new Text('Camera'),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
