@@ -211,7 +211,7 @@ class _UserSettingsState extends State<UserSettings> {
                           style: GoogleFonts.openSans(
                             fontSize: ScreenUtil().setSp(45),
                             fontWeight: FontWeight.w600,
-                            color: whiteColor,
+                            color: mainTextColor,
                           ),
                         ),
                         onTap: () {
