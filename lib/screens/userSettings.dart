@@ -114,37 +114,29 @@ class _UserSettingsState extends State<UserSettings> {
                 ),
               ),
             ),
-            ButtonCard(
+            ButtonIconCard(
               buttonText: 'Username',
               routeName: null,
               colorKey: mainTextColor,
               iconData: FontAwesomeIcons.penFancy,
-              isIcon: true,
-              imageKey: null,
             ),
-            ButtonCard(
+            ButtonIconCard(
               buttonText: 'Email',
               routeName: null,
               colorKey: mainTextColor,
               iconData: FontAwesomeIcons.envelope,
-              isIcon: true,
-              imageKey: null,
             ),
-            ButtonCard(
+            ButtonIconCard(
               buttonText: 'Phone',
               routeName: null,
               colorKey: mainTextColor,
               iconData: FontAwesomeIcons.phone,
-              isIcon: true,
-              imageKey: null,
             ),
-            ButtonCard(
+            ButtonIconCard(
               buttonText: 'Change Password',
               routeName: null,
               colorKey: mainTextColor,
               iconData: FontAwesomeIcons.unlockAlt,
-              isIcon: true,
-              imageKey: null,
             ),
             // SettingsList(
             //   shrinkWrap: true,
