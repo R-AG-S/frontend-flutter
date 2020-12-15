@@ -139,52 +139,28 @@ class _UserSettingsState extends State<UserSettings> {
               ),
             ),
             SettingsTile(
-              title: 'Add Description',
+              title: 'Phone',
               titleTextStyle: GoogleFonts.openSans(
                 fontSize: ScreenUtil().setSp(45),
                 fontWeight: FontWeight.w600,
                 color: whiteColor,
               ),
               leading: Icon(
-                FontAwesomeIcons.penNib,
+                FontAwesomeIcons.phone,
                 size: 18,
               ),
             ),
             SettingsTile(
-              title: 'Add Description',
+              title: 'Change Password',
               titleTextStyle: GoogleFonts.openSans(
                 fontSize: ScreenUtil().setSp(45),
                 fontWeight: FontWeight.w600,
                 color: whiteColor,
               ),
               leading: Icon(
-                FontAwesomeIcons.penNib,
+                FontAwesomeIcons.unlockAlt,
                 size: 18,
               ),
-            ),
-            ButtonIconCard(
-              buttonText: 'Username',
-              routeName: null,
-              colorKey: mainTextColor,
-              iconData: FontAwesomeIcons.penFancy,
-            ),
-            ButtonIconCard(
-              buttonText: 'Email',
-              routeName: null,
-              colorKey: mainTextColor,
-              iconData: FontAwesomeIcons.envelope,
-            ),
-            ButtonIconCard(
-              buttonText: 'Phone',
-              routeName: null,
-              colorKey: mainTextColor,
-              iconData: FontAwesomeIcons.phone,
-            ),
-            ButtonIconCard(
-              buttonText: 'Change Password',
-              routeName: null,
-              colorKey: mainTextColor,
-              iconData: FontAwesomeIcons.unlockAlt,
             ),
             SettingsTile(
               title: 'Add Description',
