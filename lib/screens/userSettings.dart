@@ -1,7 +1,10 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:settings_ui/settings_ui.dart';
 
 class UserSettings extends StatefulWidget {
   @override
@@ -178,126 +181,96 @@ class _TabbarState extends State<Tabbar> {
           ),
           body: TabBarView(
             children: [
-              SingleChildScrollView(
-                child: Container(
-                  // color: bottomContainerColor,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: 25,
-                          left: 25,
-                          right: 25,
+              SettingsList(
+                sections: [
+                  SettingsSection(
+                    title: 'General',
+                    titleTextStyle: TextStyle(
+                      fontFamily: 'Bambino',
+                      fontSize: ScreenUtil().setSp(40),
+                      color: whiteColor,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    tiles: [
+                      SettingsTile(
+                        title: 'Add Description',
+                        titleTextStyle: GoogleFonts.openSans(
+                          fontSize: ScreenUtil().setSp(45),
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor,
                         ),
-                        child: TextFormField(
-                          // controller: _bioController,
-                          onChanged: (value) {
-                            setState(() {
-                              // userBio = value;
-                            });
-                          },
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: mainBgColor,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          decoration: InputDecoration(
-                            labelStyle: TextStyle(
-                              color: darkFadeTextColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            border: InputBorder.none,
-                            labelText: 'Bio',
-                          ),
+                        leading: Icon(
+                          FontAwesomeIcons.penNib,
+                          size: 18,
                         ),
                       ),
-                      Padding(
-                          padding: EdgeInsets.only(
-                            top: 25,
-                            left: 25,
-                            right: 25,
-                          ),
-                          child: TextFormField(
-                            enabled: false,
-                            initialValue: widget.userId,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: mainBgColor,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            decoration: InputDecoration(
-                              labelStyle: TextStyle(
-                                color: darkFadeTextColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              border: InputBorder.none,
-                              labelText: 'Username',
-                            ),
-                          )),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: 25,
-                          left: 25,
-                          right: 25,
+                      SettingsTile(
+                        title: 'Edit Listed Cars',
+                        titleTextStyle: GoogleFonts.openSans(
+                          fontSize: ScreenUtil().setSp(45),
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor,
                         ),
-                        child: TextFormField(
-                          // controller: _passwordController,
-                          keyboardType: TextInputType.visiblePassword,
-                          obscureText: true,
-                          onChanged: (value) {
-                            setState(() {
-                              // userPassword = value;
-                            });
-                          },
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: mainBgColor,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          decoration: InputDecoration(
-                            labelStyle: TextStyle(
-                              color: darkFadeTextColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            border: InputBorder.none,
-                            labelText: 'Enter Password',
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: 25,
-                          left: 25,
-                          right: 25,
-                        ),
-                        child: TextFormField(
-                          // controller: _confirmController,
-                          keyboardType: TextInputType.visiblePassword,
-                          obscureText: true,
-                          onEditingComplete: () {},
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: mainBgColor,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          decoration: InputDecoration(
-                            labelStyle: TextStyle(
-                              color: darkFadeTextColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            border: InputBorder.none,
-                            labelText: 'Confirm Password',
-                          ),
+                        leading: Icon(
+                          FontAwesomeIcons.carAlt,
+                          size: 18,
                         ),
                       ),
                     ],
                   ),
-                ),
+                  // SettingsSection(
+                  //   title: 'Account',
+                  //   titleTextStyle: TextStyle(
+                  //     fontFamily: 'Bambino',
+                  //     fontSize: ScreenUtil().setSp(40),
+                  //     color: whiteColor,
+                  //     fontWeight: FontWeight.w400,
+                  //   ),
+                  //   tiles: [
+                  //     SettingsTile(
+                  //       title: 'Log out',
+                  //       titleTextStyle: GoogleFonts.openSans(
+                  //         fontSize: ScreenUtil().setSp(45),
+                  //         fontWeight: FontWeight.w600,
+                  //         color: whiteColor,
+                  //       ),
+                  //       leading: Icon(Icons.exit_to_app),
+                  //     ),
+                  //   ],
+                  // ),
+                  SettingsSection(
+                    title: 'Security',
+                    titleTextStyle: TextStyle(
+                      fontFamily: 'Bambino',
+                      fontSize: ScreenUtil().setSp(40),
+                      color: whiteColor,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    tiles: [
+                      SettingsTile(
+                        title: 'Change Room Code',
+                        titleTextStyle: GoogleFonts.openSans(
+                          fontSize: ScreenUtil().setSp(45),
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor,
+                        ),
+                        leading: Icon(Icons.exit_to_app),
+                      ),
+                      SettingsTile.switchTile(
+                        title: 'Enable Notifications',
+                        titleTextStyle: GoogleFonts.openSans(
+                          fontSize: ScreenUtil().setSp(45),
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor,
+                        ),
+                        enabled: true,
+                        leading: Icon(Icons.notifications_active),
+                        switchValue: true,
+                        onToggle: (value) {},
+                      ),
+                    ],
+                  ),
+                ],
               ),
               Container(
                 child: Column(
