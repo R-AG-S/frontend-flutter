@@ -122,6 +122,22 @@ class _UserSettingsState extends State<UserSettings> {
               isIcon: true,
               imageKey: null,
             ),
+            ButtonCard(
+              buttonText: 'Email',
+              routeName: null,
+              colorKey: mainTextColor,
+              iconData: FontAwesomeIcons.penFancy,
+              isIcon: true,
+              imageKey: null,
+            ),
+            ButtonCard(
+              buttonText: 'Phone',
+              routeName: null,
+              colorKey: mainTextColor,
+              iconData: FontAwesomeIcons.penFancy,
+              isIcon: true,
+              imageKey: null,
+            ),
             // SettingsList(
             //   shrinkWrap: true,
             //   sections: [
