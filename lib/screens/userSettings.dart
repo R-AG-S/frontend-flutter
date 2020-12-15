@@ -174,15 +174,20 @@ class _UserSettingsState extends State<UserSettings> {
                 size: 18,
               ),
             ),
-            SettingsSection(
-              title: 'General',
-              titleTextStyle: TextStyle(
-                fontFamily: 'Bambino',
-                fontSize: ScreenUtil().setSp(40),
-                color: whiteColor,
-                fontWeight: FontWeight.w400,
-              ),
-              tiles: [],
+            SettingsList(
+              shrinkWrap: true,
+              sections: [
+                SettingsSection(
+                  title: 'General',
+                  titleTextStyle: TextStyle(
+                    fontFamily: 'Bambino',
+                    fontSize: ScreenUtil().setSp(40),
+                    color: whiteColor,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  tiles: [],
+                ),
+              ],
             ),
             SettingsTile(
               title: 'Edit Listed Cars',
