@@ -85,9 +85,15 @@ class _UserSettingsState extends State<UserSettings> {
                           fit: BoxFit.fitHeight,
                         ),
                       ),
-                      Icon(
-                        FontAwesomeIcons.penNib,
-                        color: mainTextColor,
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: mainTextColor,
+                        ),
+                        child: Icon(
+                          FontAwesomeIcons.penNib,
+                          color: whiteColor,
+                        ),
                       )
                     ],
                   ),
