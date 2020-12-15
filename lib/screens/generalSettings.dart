@@ -46,7 +46,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
-          'Settings',
+          'Room Settings',
           style: TextStyle(
             fontFamily: 'Bambino',
             letterSpacing: 0.5,
@@ -61,6 +61,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
         sections: [
           SettingsSection(
             title: 'Room Settings',
+            titleTextStyle: TextStyle(
+              fontFamily: 'Bambino',
+              fontSize: ScreenUtil().setSp(40),
+              color: whiteColor,
+              fontWeight: FontWeight.w400,
+            ),
           ),
           // SettingsSection(
           //   title: 'Account',
