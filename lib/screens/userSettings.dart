@@ -205,7 +205,7 @@ class _UserSettingsState extends State<UserSettings> {
                 crossAxisCount: 3,
                 children: List.generate(iconData.length, (index) {
                   return GestureDetector(
-                    child: _futreImage[index],
+                    child: Image.network(iconData[index]),
                     onTap: () {
                       // Navigator.push(
                       //     context,
