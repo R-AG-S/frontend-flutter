@@ -76,7 +76,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   fontWeight: FontWeight.w600,
                   color: whiteColor,
                 ),
-                leading: Icon(FontAwesomeIcons.penNib),
+                leading: Icon(
+                  FontAwesomeIcons.penNib,
+                  size: 18,
+                ),
               ),
             ],
           ),
