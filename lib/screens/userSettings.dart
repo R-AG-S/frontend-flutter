@@ -8,6 +8,19 @@ class UserSettings extends StatefulWidget {
 class _UserSettingsState extends State<UserSettings> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    ScreenUtil.init(context,
+        designSize: Size(1080, 2400), allowFontScaling: false);
+    return MaterialApp(
+      builder: DevicePreview.appBuilder,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+        brightness: Brightness.light,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      home: SettingsScreen(),
+    );
   }
 }
