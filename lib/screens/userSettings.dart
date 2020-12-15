@@ -201,20 +201,27 @@ class _UserSettingsState extends State<UserSettings> {
           return SafeArea(
             child: Container(
               color: whiteColor,
-              child: GridView.count(
-                crossAxisCount: 3,
-                children: List.generate(iconData.length, (index) {
-                  return GestureDetector(
-                    child: Image.network(iconData[index]),
-                    onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) =>
-                      //             VideoPage(videoData: videoData)));
-                    },
-                  );
-                }),
+              child: Column(
+                children: [
+                  GridView.count(
+                    shrinkWrap: true,
+                    crossAxisCount: 3,
+                    children: List.generate(iconData.length, (index) {
+                      return GestureDetector(
+                        child: Image.network(
+                          iconData[index],
+                        ),
+                        onTap: () {
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) =>
+                          //             VideoPage(videoData: videoData)));
+                        },
+                      );
+                    }),
+                  ),
+                ],
               ),
             ),
           );
