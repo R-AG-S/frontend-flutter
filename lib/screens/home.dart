@@ -7,6 +7,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/screens/generalSettings.dart';
 import 'package:payup/screens/slideup.dart';
+import 'package:payup/screens/userSettings.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
 import 'package:payup/utilities/data.dart';
@@ -349,7 +350,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SecondaryIcons(
                     iconName: secondaryKeys[0],
-                    routeName: null,
+                    routeName: UserSettings(),
                   ),
                   SecondaryIcons(
                     iconName: secondaryKeys[1],
