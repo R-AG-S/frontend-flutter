@@ -103,7 +103,7 @@ class _UserSettingsState extends State<UserSettings> {
                           10,
                         ),
                         child: Icon(
-                          FontAwesomeIcons.penNib,
+                          FontAwesomeIcons.solidEdit,
                           color: whiteColor,
                         ),
                       ),
@@ -168,13 +168,16 @@ class _UserSettingsState extends State<UserSettings> {
                         ),
                         leading: Icon(Icons.description)),
                     SettingsTile(
-                        title: 'About',
-                        titleTextStyle: GoogleFonts.openSans(
-                          fontSize: ScreenUtil().setSp(45),
-                          fontWeight: FontWeight.w600,
-                          color: whiteColor,
-                        ),
-                        leading: Icon(Icons.info_outline_rounded)),
+                      title: 'About',
+                      titleTextStyle: GoogleFonts.openSans(
+                        fontSize: ScreenUtil().setSp(45),
+                        fontWeight: FontWeight.w600,
+                        color: whiteColor,
+                      ),
+                      leading: Icon(
+                        Icons.info_outline_rounded,
+                      ),
+                    ),
                   ],
                 ),
               ],
