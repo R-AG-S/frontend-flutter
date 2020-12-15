@@ -51,7 +51,7 @@ class _UserSettingsState extends State<UserSettings> {
               shrinkWrap: true,
               sections: [
                 SettingsSection(
-                  title: 'User Settings',
+                  title: 'Account Settings',
                   titleTextStyle: TextStyle(
                     fontFamily: 'Bambino',
                     fontSize: ScreenUtil().setSp(40),
