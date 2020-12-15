@@ -60,6 +60,21 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                   tiles: [],
                 ),
+              ],
+            ),
+            SettingsList(
+              shrinkWrap: true,
+              sections: [
+                SettingsSection(
+                  title: 'Account Settings',
+                  titleTextStyle: TextStyle(
+                    fontFamily: 'Bambino',
+                    fontSize: ScreenUtil().setSp(40),
+                    color: whiteColor,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  tiles: [],
+                ),
                 SettingsSection(
                   title: 'General',
                   titleTextStyle: TextStyle(
