@@ -71,6 +71,7 @@ class _UserSettingsState extends State<UserSettings> {
                 child: Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
+                    color: whiteColor,
                   ),
                   padding: EdgeInsets.all(10),
                   child: ClipRRect(
