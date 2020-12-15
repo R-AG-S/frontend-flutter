@@ -204,7 +204,7 @@ class _UserSettingsState extends State<UserSettings> {
               child: Column(
                 children: [
                   ListTile(
-                      leading: new Icon(Icons.photo_library),
+                      leading: new Icon(FontAwesomeIcons.userAlt),
                       title: new Text('Pick Your Avatar'),
                       onTap: () {
                         Navigator.of(context).pop();
