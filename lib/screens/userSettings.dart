@@ -114,6 +114,54 @@ class _UserSettingsState extends State<UserSettings> {
                 ),
               ),
             ),
+            SettingsTile(
+              title: 'Username',
+              titleTextStyle: GoogleFonts.openSans(
+                fontSize: ScreenUtil().setSp(45),
+                fontWeight: FontWeight.w600,
+                color: whiteColor,
+              ),
+              leading: Icon(
+                FontAwesomeIcons.penFancy,
+                size: 18,
+              ),
+            ),
+            SettingsTile(
+              title: 'Email',
+              titleTextStyle: GoogleFonts.openSans(
+                fontSize: ScreenUtil().setSp(45),
+                fontWeight: FontWeight.w600,
+                color: whiteColor,
+              ),
+              leading: Icon(
+                FontAwesomeIcons.solidEnvelope,
+                size: 18,
+              ),
+            ),
+            SettingsTile(
+              title: 'Add Description',
+              titleTextStyle: GoogleFonts.openSans(
+                fontSize: ScreenUtil().setSp(45),
+                fontWeight: FontWeight.w600,
+                color: whiteColor,
+              ),
+              leading: Icon(
+                FontAwesomeIcons.penNib,
+                size: 18,
+              ),
+            ),
+            SettingsTile(
+              title: 'Add Description',
+              titleTextStyle: GoogleFonts.openSans(
+                fontSize: ScreenUtil().setSp(45),
+                fontWeight: FontWeight.w600,
+                color: whiteColor,
+              ),
+              leading: Icon(
+                FontAwesomeIcons.penNib,
+                size: 18,
+              ),
+            ),
             ButtonIconCard(
               buttonText: 'Username',
               routeName: null,
@@ -138,16 +186,6 @@ class _UserSettingsState extends State<UserSettings> {
               colorKey: mainTextColor,
               iconData: FontAwesomeIcons.unlockAlt,
             ),
-            SettingsSection(
-              title: 'General',
-              titleTextStyle: TextStyle(
-                fontFamily: 'Bambino',
-                fontSize: ScreenUtil().setSp(40),
-                color: whiteColor,
-                fontWeight: FontWeight.w400,
-              ),
-              tiles: [],
-            ),
             SettingsTile(
               title: 'Add Description',
               titleTextStyle: GoogleFonts.openSans(
@@ -159,6 +197,16 @@ class _UserSettingsState extends State<UserSettings> {
                 FontAwesomeIcons.penNib,
                 size: 18,
               ),
+            ),
+            SettingsSection(
+              title: 'General',
+              titleTextStyle: TextStyle(
+                fontFamily: 'Bambino',
+                fontSize: ScreenUtil().setSp(40),
+                color: whiteColor,
+                fontWeight: FontWeight.w400,
+              ),
+              tiles: [],
             ),
             SettingsTile(
               title: 'Edit Listed Cars',
