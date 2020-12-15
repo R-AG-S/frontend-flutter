@@ -43,6 +43,7 @@ class ButtonCard extends StatelessWidget {
                               horizontal: 15, vertical: 10),
                           child: Icon(
                             iconData,
+                            size: 18,
                           ),
                         )
                       : Padding(
