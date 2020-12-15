@@ -171,6 +171,8 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
             routeName: null,
             imageKey: 'images/car01.png',
             colorKey: whiteColor,
+            iconData: null,
+            isIcon: false,
           ),
           Divider(
             thickness: 7,
