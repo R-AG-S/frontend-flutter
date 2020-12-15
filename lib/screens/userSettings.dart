@@ -90,6 +90,9 @@ class _UserSettingsState extends State<UserSettings> {
                           shape: BoxShape.circle,
                           color: mainTextColor,
                         ),
+                        padding: EdgeInsets.all(
+                          10,
+                        ),
                         child: Icon(
                           FontAwesomeIcons.penNib,
                           color: whiteColor,
