@@ -138,33 +138,6 @@ class _UserSettingsState extends State<UserSettings> {
               colorKey: mainTextColor,
               iconData: FontAwesomeIcons.unlockAlt,
             ),
-            // SettingsList(
-            //   shrinkWrap: true,
-            //   sections: [
-            //     SettingsSection(
-            //       titlePadding: EdgeInsets.all(
-            //         0,
-            //       ),
-            //       subtitlePadding: EdgeInsets.all(
-            //         0,
-            //       ),
-            //       tiles: [
-            //         SettingsTile(
-            //           title: 'Add Description',
-            //           titleTextStyle: GoogleFonts.openSans(
-            //             fontSize: ScreenUtil().setSp(45),
-            //             fontWeight: FontWeight.w600,
-            //             color: whiteColor,
-            //           ),
-            //           leading: Icon(
-            //             FontAwesomeIcons.penNib,
-            //             size: 18,
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //   ],
-            // ),
             SettingsList(
               shrinkWrap: true,
               sections: [
