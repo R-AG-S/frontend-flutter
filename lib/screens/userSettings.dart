@@ -210,30 +210,33 @@ class _UserSettingsState extends State<UserSettings> {
                         onTap: () {
                           Navigator.of(context).pop();
                         }),
-                    GridView.count(
-                      crossAxisCount: 5,
-                      children: List.generate(iconData.length, (index) {
-                        return GestureDetector(
-                          child: Container(
-                            padding: EdgeInsets.all(5),
-                            color: whiteColor,
-                            child: FadeInImage.assetNetwork(
-                              fadeOutDuration: Duration(seconds: 1),
-                              image: iconData[index],
-                              placeholder: 'images/place.png',
-                              height: 25,
+                    Container(
+                      height: 300,
+                      child: GridView.count(
+                        crossAxisCount: 5,
+                        children: List.generate(iconData.length, (index) {
+                          return GestureDetector(
+                            child: Container(
+                              padding: EdgeInsets.all(5),
+                              color: whiteColor,
+                              child: FadeInImage.assetNetwork(
+                                fadeOutDuration: Duration(seconds: 1),
+                                image: iconData[index],
+                                placeholder: 'images/place.png',
+                                height: 25,
+                              ),
                             ),
-                          ),
-                          onTap: () {
-                            Navigator.of(context).pop();
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) =>
-                            //             VideoPage(videoData: videoData)));
-                          },
-                        );
-                      }),
+                            onTap: () {
+                              Navigator.of(context).pop();
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) =>
+                              //             VideoPage(videoData: videoData)));
+                            },
+                          );
+                        }),
+                      ),
                     ),
                   ],
                 ),
