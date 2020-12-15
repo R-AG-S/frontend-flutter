@@ -115,7 +115,7 @@ class _UserSettingsState extends State<UserSettings> {
               ),
             ),
             ButtonCard(
-              buttonText: 'Add Description',
+              buttonText: 'Username',
               routeName: null,
               colorKey: mainTextColor,
               iconData: FontAwesomeIcons.penFancy,
