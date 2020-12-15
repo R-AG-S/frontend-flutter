@@ -43,6 +43,7 @@ class _UserSettingsState extends State<UserSettings> {
           backgroundColor: Colors.transparent,
         ),
         body: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
               height: 15,
