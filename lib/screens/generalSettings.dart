@@ -81,6 +81,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   size: 18,
                 ),
               ),
+              SettingsTile(
+                title: 'Add Description',
+                titleTextStyle: GoogleFonts.openSans(
+                  fontSize: ScreenUtil().setSp(45),
+                  fontWeight: FontWeight.w600,
+                  color: whiteColor,
+                ),
+                leading: Icon(
+                  FontAwesomeIcons.penNib,
+                  size: 18,
+                ),
+              ),
             ],
           ),
           // SettingsSection(
