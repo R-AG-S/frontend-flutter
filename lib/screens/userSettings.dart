@@ -42,184 +42,186 @@ class _UserSettingsState extends State<UserSettings> {
           ),
           backgroundColor: Colors.transparent,
         ),
-        body: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              height: 15,
-            ),
-            SettingsList(
-              shrinkWrap: true,
-              sections: [
-                SettingsSection(
-                  title: 'Account Settings',
-                  titleTextStyle: TextStyle(
-                    fontFamily: 'Bambino',
-                    fontSize: ScreenUtil().setSp(40),
-                    color: whiteColor,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  tiles: [],
-                ),
-              ],
-            ),
-            GestureDetector(
-              onTap: () {
-                // _showPicker(context);
-              },
-              child: Padding(
-                padding: EdgeInsets.only(top: 15),
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: whiteColor,
-                      ),
-                      padding: EdgeInsets.all(10),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/inout-776aa.appspot.com/o/avatar-png%2F63.png?alt=media&token=bbd3fdc4-f800-4ee9-ac58-173a395dbfa8',
-                          width: 100,
-                          height: 100,
-                          fit: BoxFit.fitHeight,
-                        ),
-                      ),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 15,
+              ),
+              SettingsList(
+                shrinkWrap: true,
+                sections: [
+                  SettingsSection(
+                    title: 'Account Settings',
+                    titleTextStyle: TextStyle(
+                      fontFamily: 'Bambino',
+                      fontSize: ScreenUtil().setSp(40),
+                      color: whiteColor,
+                      fontWeight: FontWeight.w400,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: 80,
-                        left: 80,
-                      ),
-                      child: Container(
+                    tiles: [],
+                  ),
+                ],
+              ),
+              GestureDetector(
+                onTap: () {
+                  // _showPicker(context);
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(top: 15),
+                  child: Stack(
+                    children: [
+                      Container(
                         decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: mainTextColor,
-                            border: Border.all(
-                              color: whiteColor,
-                              width: 2,
-                            )),
-                        padding: EdgeInsets.all(
-                          10,
-                        ),
-                        child: Icon(
-                          FontAwesomeIcons.solidEdit,
+                          shape: BoxShape.circle,
                           color: whiteColor,
                         ),
+                        padding: EdgeInsets.all(10),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.network(
+                            'https://firebasestorage.googleapis.com/v0/b/inout-776aa.appspot.com/o/avatar-png%2F63.png?alt=media&token=bbd3fdc4-f800-4ee9-ac58-173a395dbfa8',
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.fitHeight,
+                          ),
+                        ),
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: 80,
+                          left: 80,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: mainTextColor,
+                              border: Border.all(
+                                color: whiteColor,
+                                width: 2,
+                              )),
+                          padding: EdgeInsets.all(
+                            10,
+                          ),
+                          child: Icon(
+                            FontAwesomeIcons.solidEdit,
+                            color: whiteColor,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SettingsTile(
-              title: 'Username',
-              titleTextStyle: GoogleFonts.openSans(
-                fontSize: ScreenUtil().setSp(45),
-                fontWeight: FontWeight.w600,
-                color: whiteColor,
+              SettingsTile(
+                title: 'Username',
+                titleTextStyle: GoogleFonts.openSans(
+                  fontSize: ScreenUtil().setSp(45),
+                  fontWeight: FontWeight.w600,
+                  color: whiteColor,
+                ),
+                leading: Icon(
+                  FontAwesomeIcons.penFancy,
+                  size: 18,
+                ),
               ),
-              leading: Icon(
-                FontAwesomeIcons.penFancy,
-                size: 18,
+              SettingsTile(
+                title: 'Email',
+                titleTextStyle: GoogleFonts.openSans(
+                  fontSize: ScreenUtil().setSp(45),
+                  fontWeight: FontWeight.w600,
+                  color: whiteColor,
+                ),
+                leading: Icon(
+                  FontAwesomeIcons.solidEnvelope,
+                  size: 18,
+                ),
               ),
-            ),
-            SettingsTile(
-              title: 'Email',
-              titleTextStyle: GoogleFonts.openSans(
-                fontSize: ScreenUtil().setSp(45),
-                fontWeight: FontWeight.w600,
-                color: whiteColor,
+              SettingsTile(
+                title: 'Phone',
+                titleTextStyle: GoogleFonts.openSans(
+                  fontSize: ScreenUtil().setSp(45),
+                  fontWeight: FontWeight.w600,
+                  color: whiteColor,
+                ),
+                leading: Icon(
+                  FontAwesomeIcons.phone,
+                  size: 18,
+                ),
               ),
-              leading: Icon(
-                FontAwesomeIcons.solidEnvelope,
-                size: 18,
+              SettingsTile(
+                title: 'Change Password',
+                titleTextStyle: GoogleFonts.openSans(
+                  fontSize: ScreenUtil().setSp(45),
+                  fontWeight: FontWeight.w600,
+                  color: whiteColor,
+                ),
+                leading: Icon(
+                  FontAwesomeIcons.unlockAlt,
+                  size: 18,
+                ),
               ),
-            ),
-            SettingsTile(
-              title: 'Phone',
-              titleTextStyle: GoogleFonts.openSans(
-                fontSize: ScreenUtil().setSp(45),
-                fontWeight: FontWeight.w600,
-                color: whiteColor,
-              ),
-              leading: Icon(
-                FontAwesomeIcons.phone,
-                size: 18,
-              ),
-            ),
-            SettingsTile(
-              title: 'Change Password',
-              titleTextStyle: GoogleFonts.openSans(
-                fontSize: ScreenUtil().setSp(45),
-                fontWeight: FontWeight.w600,
-                color: whiteColor,
-              ),
-              leading: Icon(
-                FontAwesomeIcons.unlockAlt,
-                size: 18,
-              ),
-            ),
-            SettingsList(
-              shrinkWrap: true,
-              sections: [
-                SettingsSection(
-                  title: 'General',
-                  titleTextStyle: TextStyle(
-                    fontFamily: 'Bambino',
-                    fontSize: ScreenUtil().setSp(40),
-                    color: whiteColor,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  tiles: [
-                    SettingsTile(
-                      title: 'Edit Listed Cars',
-                      titleTextStyle: GoogleFonts.openSans(
-                        fontSize: ScreenUtil().setSp(45),
-                        fontWeight: FontWeight.w600,
-                        color: whiteColor,
-                      ),
-                      leading: Icon(
-                        FontAwesomeIcons.carAlt,
-                        size: 18,
-                      ),
+              SettingsList(
+                shrinkWrap: true,
+                sections: [
+                  SettingsSection(
+                    title: 'General',
+                    titleTextStyle: TextStyle(
+                      fontFamily: 'Bambino',
+                      fontSize: ScreenUtil().setSp(40),
+                      color: whiteColor,
+                      fontWeight: FontWeight.w400,
                     ),
-                  ],
-                ),
-                SettingsSection(
-                  title: 'Misc',
-                  titleTextStyle: TextStyle(
-                    fontFamily: 'Bambino',
-                    fontSize: ScreenUtil().setSp(40),
-                    color: whiteColor,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  tiles: [
-                    SettingsTile(
-                        title: 'Terms of Service',
+                    tiles: [
+                      SettingsTile(
+                        title: 'Edit Listed Cars',
                         titleTextStyle: GoogleFonts.openSans(
                           fontSize: ScreenUtil().setSp(45),
                           fontWeight: FontWeight.w600,
                           color: whiteColor,
                         ),
-                        leading: Icon(Icons.description)),
-                    SettingsTile(
-                      title: 'About',
-                      titleTextStyle: GoogleFonts.openSans(
-                        fontSize: ScreenUtil().setSp(45),
-                        fontWeight: FontWeight.w600,
-                        color: whiteColor,
+                        leading: Icon(
+                          FontAwesomeIcons.carAlt,
+                          size: 18,
+                        ),
                       ),
-                      leading: Icon(
-                        Icons.info_outline_rounded,
-                      ),
+                    ],
+                  ),
+                  SettingsSection(
+                    title: 'Misc',
+                    titleTextStyle: TextStyle(
+                      fontFamily: 'Bambino',
+                      fontSize: ScreenUtil().setSp(40),
+                      color: whiteColor,
+                      fontWeight: FontWeight.w400,
                     ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                    tiles: [
+                      SettingsTile(
+                          title: 'Terms of Service',
+                          titleTextStyle: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(45),
+                            fontWeight: FontWeight.w600,
+                            color: whiteColor,
+                          ),
+                          leading: Icon(Icons.description)),
+                      SettingsTile(
+                        title: 'About',
+                        titleTextStyle: GoogleFonts.openSans(
+                          fontSize: ScreenUtil().setSp(45),
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor,
+                        ),
+                        leading: Icon(
+                          Icons.info_outline_rounded,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
