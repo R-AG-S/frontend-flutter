@@ -131,6 +131,13 @@ class _TabbarState extends State<Tabbar> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+        brightness: Brightness.light,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 2,
