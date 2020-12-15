@@ -125,7 +125,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             tiles: [
               SettingsTile(
-                title: 'Change password',
+                title: 'Change Room Code',
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
