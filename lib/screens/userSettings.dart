@@ -41,11 +41,6 @@ class _UserSettingsState extends State<UserSettings> {
                   fontWeight: FontWeight.w400,
                 ),
               ),
-            ],
-          ),
-          SettingsList(
-            shrinkWrap: true,
-            sections: [
               SettingsSection(
                 title: 'General',
                 titleTextStyle: TextStyle(
