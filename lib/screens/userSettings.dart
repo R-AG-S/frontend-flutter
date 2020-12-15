@@ -221,7 +221,7 @@ class _UserSettingsState extends State<UserSettings> {
                             fadeOutDuration: Duration(seconds: 1),
                             image: iconData[index],
                             placeholder: 'images/place.png',
-                            height: 30,
+                            height: 25,
                           ),
                         ),
                         onTap: () {
