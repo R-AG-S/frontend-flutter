@@ -146,32 +146,31 @@ class _UserSettingsState extends State<UserSettings> {
                 color: whiteColor,
                 fontWeight: FontWeight.w400,
               ),
-              tiles: [
-                SettingsTile(
-                  title: 'Add Description',
-                  titleTextStyle: GoogleFonts.openSans(
-                    fontSize: ScreenUtil().setSp(45),
-                    fontWeight: FontWeight.w600,
-                    color: whiteColor,
-                  ),
-                  leading: Icon(
-                    FontAwesomeIcons.penNib,
-                    size: 18,
-                  ),
-                ),
-                SettingsTile(
-                  title: 'Edit Listed Cars',
-                  titleTextStyle: GoogleFonts.openSans(
-                    fontSize: ScreenUtil().setSp(45),
-                    fontWeight: FontWeight.w600,
-                    color: whiteColor,
-                  ),
-                  leading: Icon(
-                    FontAwesomeIcons.carAlt,
-                    size: 18,
-                  ),
-                ),
-              ],
+              tiles: [],
+            ),
+            SettingsTile(
+              title: 'Add Description',
+              titleTextStyle: GoogleFonts.openSans(
+                fontSize: ScreenUtil().setSp(45),
+                fontWeight: FontWeight.w600,
+                color: whiteColor,
+              ),
+              leading: Icon(
+                FontAwesomeIcons.penNib,
+                size: 18,
+              ),
+            ),
+            SettingsTile(
+              title: 'Edit Listed Cars',
+              titleTextStyle: GoogleFonts.openSans(
+                fontSize: ScreenUtil().setSp(45),
+                fontWeight: FontWeight.w600,
+                color: whiteColor,
+              ),
+              leading: Icon(
+                FontAwesomeIcons.carAlt,
+                size: 18,
+              ),
             ),
             SettingsSection(
               title: 'Misc',
