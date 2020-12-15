@@ -60,7 +60,9 @@ class ButtonCard extends StatelessWidget {
                       style: GoogleFonts.openSans(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
-                        color: darkFadeTextColor,
+                        color: colorKey == whiteColor
+                            ? darkFadeTextColor
+                            : whiteColor,
                       ),
                     ),
                   ),
