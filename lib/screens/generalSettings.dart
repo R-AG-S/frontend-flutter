@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:settings_ui/settings_ui.dart';
@@ -67,6 +68,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
               color: whiteColor,
               fontWeight: FontWeight.w400,
             ),
+            tiles: [
+              SettingsTile(
+                title: 'Add Description',
+                titleTextStyle: GoogleFonts.openSans(
+                  fontSize: ScreenUtil().setSp(45),
+                  fontWeight: FontWeight.w600,
+                  color: whiteColor,
+                ),
+                leading: Icon(FontAwesomeIcons.penNib),
+              ),
+            ],
           ),
           // SettingsSection(
           //   title: 'Account',
