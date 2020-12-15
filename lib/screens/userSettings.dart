@@ -214,8 +214,15 @@ class _UserSettingsState extends State<UserSettings> {
                     crossAxisCount: 3,
                     children: List.generate(iconData.length, (index) {
                       return GestureDetector(
-                        child: Image.network(
-                          iconData[index],
+                        child: Container(
+                          padding: EdgeInsets.all(5),
+                          color: whiteColor,
+                          child: FadeInImage.assetNetwork(
+                            fadeOutDuration: Duration(seconds: 1),
+                            image: iconData[index],
+                            placeholder: 'images/place.png',
+                            height: 30,
+                          ),
                         ),
                         onTap: () {
                           Navigator.of(context).pop();
