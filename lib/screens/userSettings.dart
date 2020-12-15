@@ -116,6 +116,27 @@ class _UserSettingsState extends State<UserSettings> {
               shrinkWrap: true,
               sections: [
                 SettingsSection(
+                  tiles: [
+                    SettingsTile(
+                      title: 'Add Description',
+                      titleTextStyle: GoogleFonts.openSans(
+                        fontSize: ScreenUtil().setSp(45),
+                        fontWeight: FontWeight.w600,
+                        color: whiteColor,
+                      ),
+                      leading: Icon(
+                        FontAwesomeIcons.penNib,
+                        size: 18,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SettingsList(
+              shrinkWrap: true,
+              sections: [
+                SettingsSection(
                   title: 'General',
                   titleTextStyle: TextStyle(
                     fontFamily: 'Bambino',
