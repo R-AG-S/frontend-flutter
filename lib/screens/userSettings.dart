@@ -33,13 +33,14 @@ class _UserSettingsState extends State<UserSettings> {
             shrinkWrap: true,
             sections: [
               SettingsSection(
-                title: 'General',
+                title: 'User Settings',
                 titleTextStyle: TextStyle(
                   fontFamily: 'Bambino',
                   fontSize: ScreenUtil().setSp(40),
                   color: whiteColor,
                   fontWeight: FontWeight.w400,
                 ),
+                tiles: [],
               ),
               SettingsSection(
                 title: 'General',
