@@ -74,14 +74,22 @@ class _UserSettingsState extends State<UserSettings> {
                     color: whiteColor,
                   ),
                   padding: EdgeInsets.all(10),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50),
-                    child: Image.network(
-                      'https://firebasestorage.googleapis.com/v0/b/inout-776aa.appspot.com/o/avatar-png%2F63.png?alt=media&token=bbd3fdc4-f800-4ee9-ac58-173a395dbfa8',
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.fitHeight,
-                    ),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.network(
+                          'https://firebasestorage.googleapis.com/v0/b/inout-776aa.appspot.com/o/avatar-png%2F63.png?alt=media&token=bbd3fdc4-f800-4ee9-ac58-173a395dbfa8',
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.fitHeight,
+                        ),
+                      ),
+                      Icon(
+                        FontAwesomeIcons.penNib,
+                        color: mainTextColor,
+                      )
+                    ],
                   ),
                 ),
               ),
