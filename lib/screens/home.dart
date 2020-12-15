@@ -344,6 +344,9 @@ class _HomeScreenState extends State<HomeScreen> {
               color: mainTextColor,
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 15,
+                  ),
                   SecondaryIcons(
                     iconName: secondaryKeys[0],
                     routeName: null,
