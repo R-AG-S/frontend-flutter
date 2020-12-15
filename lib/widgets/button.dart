@@ -146,31 +146,15 @@ class ButtonIconCard extends StatelessWidget {
                         ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 20),
-                    child: Text(
-                      buttonText,
-                      style: isIcon
-                          ? GoogleFonts.openSans(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: whiteColor,
-                            )
-                          : GoogleFonts.openSans(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: colorKey == whiteColor
-                                  ? darkFadeTextColor
-                                  : whiteColor,
-                            ),
-                    ),
+                    child: Text(buttonText,
+                        style: GoogleFonts.openSans(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor,
+                        )),
                   ),
                 ],
               ),
-              isIcon
-                  ? Container()
-                  : Icon(
-                      FontAwesomeIcons.chevronRight,
-                      size: 18,
-                    )
             ],
           ),
         ),
