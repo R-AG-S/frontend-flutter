@@ -132,7 +132,7 @@ class ButtonIconCard extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Text(
                       buttonText,
                       style: GoogleFonts.openSans(
