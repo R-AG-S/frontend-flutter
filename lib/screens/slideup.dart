@@ -169,6 +169,8 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
           ButtonCard(
             buttonText: "Listed Cars",
             routeName: null,
+            imageKey: 'images/car01.png',
+            colorKey: whiteColor,
           ),
           Divider(
             thickness: 7,
