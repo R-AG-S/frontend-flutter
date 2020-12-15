@@ -60,25 +60,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: SettingsList(
         sections: [
           SettingsSection(
-            title: 'Account',
-            titleTextStyle: TextStyle(
-              fontFamily: 'Bambino',
-              fontSize: ScreenUtil().setSp(40),
-              color: whiteColor,
-              fontWeight: FontWeight.w400,
-            ),
-            tiles: [
-              SettingsTile(
-                title: 'Log out',
-                titleTextStyle: GoogleFonts.openSans(
-                  fontSize: ScreenUtil().setSp(45),
-                  fontWeight: FontWeight.w600,
-                  color: whiteColor,
-                ),
-                leading: Icon(Icons.exit_to_app),
-              ),
-            ],
+            title: 'Room Settings',
           ),
+          // SettingsSection(
+          //   title: 'Account',
+          //   titleTextStyle: TextStyle(
+          //     fontFamily: 'Bambino',
+          //     fontSize: ScreenUtil().setSp(40),
+          //     color: whiteColor,
+          //     fontWeight: FontWeight.w400,
+          //   ),
+          //   tiles: [
+          //     SettingsTile(
+          //       title: 'Log out',
+          //       titleTextStyle: GoogleFonts.openSans(
+          //         fontSize: ScreenUtil().setSp(45),
+          //         fontWeight: FontWeight.w600,
+          //         color: whiteColor,
+          //       ),
+          //       leading: Icon(Icons.exit_to_app),
+          //     ),
+          //   ],
+          // ),
           SettingsSection(
             title: 'Security',
             titleTextStyle: TextStyle(
