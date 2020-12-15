@@ -31,7 +31,7 @@ class _UserSettingsState extends State<UserSettings> {
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           title: Text(
-            'Room Settings',
+            'User Settings',
             style: TextStyle(
               fontFamily: 'Bambino',
               letterSpacing: 0.5,
