@@ -27,62 +27,78 @@ class _UserSettingsState extends State<UserSettings> {
         brightness: Brightness.dark,
         canvasColor: mainTextColor,
       ),
-      home: Column(
-        children: [
-          SizedBox(
-            height: 15,
+      home: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          title: Text(
+            'Room Settings',
+            style: TextStyle(
+              fontFamily: 'Bambino',
+              letterSpacing: 0.5,
+              fontSize: 22,
+              color: whiteColor,
+              fontWeight: FontWeight.w400,
+            ),
           ),
-          SettingsList(
-            shrinkWrap: true,
-            sections: [
-              SettingsSection(
-                title: 'User Settings',
-                titleTextStyle: TextStyle(
-                  fontFamily: 'Bambino',
-                  fontSize: ScreenUtil().setSp(40),
-                  color: whiteColor,
-                  fontWeight: FontWeight.w400,
-                ),
-                tiles: [],
-              ),
-              SettingsSection(
-                title: 'General',
-                titleTextStyle: TextStyle(
-                  fontFamily: 'Bambino',
-                  fontSize: ScreenUtil().setSp(40),
-                  color: whiteColor,
-                  fontWeight: FontWeight.w400,
-                ),
-                tiles: [
-                  SettingsTile(
-                    title: 'Add Description',
-                    titleTextStyle: GoogleFonts.openSans(
-                      fontSize: ScreenUtil().setSp(45),
-                      fontWeight: FontWeight.w600,
-                      color: whiteColor,
-                    ),
-                    leading: Icon(
-                      FontAwesomeIcons.penNib,
-                      size: 18,
-                    ),
+          backgroundColor: Colors.transparent,
+        ),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 15,
+            ),
+            SettingsList(
+              shrinkWrap: true,
+              sections: [
+                SettingsSection(
+                  title: 'User Settings',
+                  titleTextStyle: TextStyle(
+                    fontFamily: 'Bambino',
+                    fontSize: ScreenUtil().setSp(40),
+                    color: whiteColor,
+                    fontWeight: FontWeight.w400,
                   ),
-                  SettingsTile(
-                    title: 'Edit Listed Cars',
-                    titleTextStyle: GoogleFonts.openSans(
-                      fontSize: ScreenUtil().setSp(45),
-                      fontWeight: FontWeight.w600,
-                      color: whiteColor,
-                    ),
-                    leading: Icon(
-                      FontAwesomeIcons.carAlt,
-                      size: 18,
-                    ),
+                  tiles: [],
+                ),
+                SettingsSection(
+                  title: 'General',
+                  titleTextStyle: TextStyle(
+                    fontFamily: 'Bambino',
+                    fontSize: ScreenUtil().setSp(40),
+                    color: whiteColor,
+                    fontWeight: FontWeight.w400,
                   ),
-                ],
-              ),
-            ],
-          ),
-        ],
+                  tiles: [
+                    SettingsTile(
+                      title: 'Add Description',
+                      titleTextStyle: GoogleFonts.openSans(
+                        fontSize: ScreenUtil().setSp(45),
+                        fontWeight: FontWeight.w600,
+                        color: whiteColor,
+                      ),
+                      leading: Icon(
+                        FontAwesomeIcons.penNib,
+                        size: 18,
+                      ),
+                    ),
+                    SettingsTile(
+                      title: 'Edit Listed Cars',
+                      titleTextStyle: GoogleFonts.openSans(
+                        fontSize: ScreenUtil().setSp(45),
+                        fontWeight: FontWeight.w600,
+                        color: whiteColor,
+                      ),
+                      leading: Icon(
+                        FontAwesomeIcons.carAlt,
+                        size: 18,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
     //                  Scaffold(
