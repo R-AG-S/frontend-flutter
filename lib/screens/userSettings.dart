@@ -200,18 +200,18 @@ class _UserSettingsState extends State<UserSettings> {
         builder: (BuildContext bc) {
           return SafeArea(
             child: Container(
+              padding: EdgeInsets.all(5),
               color: whiteColor,
-              child: Column(
+              child: Wrap(
                 children: [
                   ListTile(
-                      leading: new Icon(FontAwesomeIcons.userAlt),
                       title: new Text('Pick Your Avatar'),
                       onTap: () {
                         Navigator.of(context).pop();
                       }),
                   GridView.count(
                     shrinkWrap: true,
-                    crossAxisCount: 3,
+                    crossAxisCount: 5,
                     children: List.generate(iconData.length, (index) {
                       return GestureDetector(
                         child: Container(
