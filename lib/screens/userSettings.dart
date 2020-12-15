@@ -203,6 +203,12 @@ class _UserSettingsState extends State<UserSettings> {
               color: whiteColor,
               child: Column(
                 children: [
+                  ListTile(
+                      leading: new Icon(Icons.photo_library),
+                      title: new Text('Photo Library'),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      }),
                   GridView.count(
                     shrinkWrap: true,
                     crossAxisCount: 3,
@@ -212,6 +218,7 @@ class _UserSettingsState extends State<UserSettings> {
                           iconData[index],
                         ),
                         onTap: () {
+                          Navigator.of(context).pop();
                           // Navigator.push(
                           //     context,
                           //     MaterialPageRoute(
