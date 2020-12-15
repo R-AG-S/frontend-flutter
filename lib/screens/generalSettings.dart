@@ -82,7 +82,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
               SettingsTile(
-                title: 'Add Description',
+                title: 'Edit Listed Cars',
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
