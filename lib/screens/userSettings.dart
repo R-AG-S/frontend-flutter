@@ -114,34 +114,37 @@ class _UserSettingsState extends State<UserSettings> {
                 ),
               ),
             ),
-            ButtonCard(),
-            SettingsList(
-              shrinkWrap: true,
-              sections: [
-                SettingsSection(
-                  titlePadding: EdgeInsets.all(
-                    0,
-                  ),
-                  subtitlePadding: EdgeInsets.all(
-                    0,
-                  ),
-                  tiles: [
-                    SettingsTile(
-                      title: 'Add Description',
-                      titleTextStyle: GoogleFonts.openSans(
-                        fontSize: ScreenUtil().setSp(45),
-                        fontWeight: FontWeight.w600,
-                        color: whiteColor,
-                      ),
-                      leading: Icon(
-                        FontAwesomeIcons.penNib,
-                        size: 18,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+            ButtonCard(
+              buttonText: 'Add Description',
+              routeName: null,
             ),
+            // SettingsList(
+            //   shrinkWrap: true,
+            //   sections: [
+            //     SettingsSection(
+            //       titlePadding: EdgeInsets.all(
+            //         0,
+            //       ),
+            //       subtitlePadding: EdgeInsets.all(
+            //         0,
+            //       ),
+            //       tiles: [
+            //         SettingsTile(
+            //           title: 'Add Description',
+            //           titleTextStyle: GoogleFonts.openSans(
+            //             fontSize: ScreenUtil().setSp(45),
+            //             fontWeight: FontWeight.w600,
+            //             color: whiteColor,
+            //           ),
+            //           leading: Icon(
+            //             FontAwesomeIcons.penNib,
+            //             size: 18,
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ],
+            // ),
             SettingsList(
               shrinkWrap: true,
               sections: [
