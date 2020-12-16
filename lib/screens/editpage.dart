@@ -44,7 +44,7 @@ class _EditPageScreenState extends State<EditPageScreen> {
                 ),
                 child: TextFormWidget(
                   hint: 'Password',
-                  firstNameController: _passwordController,
+                  firstNameController: _editController,
                   type: TextInputType.visiblePassword,
                   obscure: true,
                 ),
