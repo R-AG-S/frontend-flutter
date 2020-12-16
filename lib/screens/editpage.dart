@@ -4,9 +4,11 @@ class EditPageScreen extends StatefulWidget {
   EditPageScreen({
     @required this.name,
     @required this.url,
+    @required this.value,
     @required this.inputType,
   });
   final String name;
+  final String value;
   final String url;
   final TextInputType inputType;
   @override
