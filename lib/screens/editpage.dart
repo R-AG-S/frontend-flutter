@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
 
 class EditPageScreen extends StatefulWidget {
@@ -45,11 +46,28 @@ class _EditPageScreenState extends State<EditPageScreen> {
                 padding: EdgeInsets.symmetric(
                   vertical: 8,
                 ),
-                child: TextFormWidget(
-                  hint: widget.name,
-                  firstNameController: _editController,
-                  type: widget.inputType,
-                  obscure: false,
+                child: TextField(
+                  style: TextStyle(color: mainTextColor),
+                  cursorColor: mainTextColor,
+                  controller: _editController,
+                  keyboardType: widget.inputType,
+                  maxLength: 50,
+                  decoration: InputDecoration(
+                    labelText: widget.value,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(5.0),
+                      ),
+                    ),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
+                    filled: true,
+                    fillColor: cardColor,
+                    counterText: '',
+                  ),
                 ),
               ),
             ],
