@@ -21,12 +21,16 @@ class _UserSettingsState extends State<UserSettings> {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.green,
         brightness: Brightness.light,
+        iconTheme: IconThemeData(color: darkFadeTextColor),
+        primaryTextTheme: Typography.material2018().black,
+        textTheme: Typography.material2018().black,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        canvasColor: mainTextColor,
+        primaryTextTheme: Typography.material2018().white,
+        textTheme: Typography.material2018().white,
       ),
       home: Scaffold(
         extendBodyBehindAppBar: true,
