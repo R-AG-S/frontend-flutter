@@ -18,19 +18,22 @@ class _EditPageScreenState extends State<EditPageScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(elevation: 0,
-        title: Text(
-          'Room Settings',
-          style: TextStyle(
-            fontFamily: 'Bambino',
-            letterSpacing: 0.5,
-            fontSize: 22,
-            fontWeight: FontWeight.w400,
+        appBar: AppBar(
+          elevation: 0,
+          title: Text(
+            'Room Settings',
+            style: TextStyle(
+              fontFamily: 'Bambino',
+              letterSpacing: 0.5,
+              fontSize: 22,
+              fontWeight: FontWeight.w400,
+            ),
           ),
+          backgroundColor: Colors.transparent,
         ),
-        backgroundColor: Colors.transparent,
-      ),
-      body:
+        body: Container(
+          child: Column(),
+        ),
       ),
     );
   }
