@@ -8,6 +8,8 @@ class EditPageScreen extends StatefulWidget {
 class _EditPageScreenState extends State<EditPageScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+      child: Scaffold(),
+    );
   }
 }
