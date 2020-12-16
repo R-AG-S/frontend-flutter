@@ -145,9 +145,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   iconData: FontAwesomeIcons.info,
                 ),
                 CircularKeys(
-                  courseName: 'Trips',
+                  courseName: 'Dues',
                   gradientKey: gradient1,
-                  iconData: FontAwesomeIcons.mapSigns,
+                  iconData: FontAwesomeIcons.rupeeSign,
                 ),
                 CircularKeys(
                   courseName: 'Pick Me',
@@ -155,9 +155,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   iconData: FontAwesomeIcons.mapMarkerAlt,
                 ),
                 CircularKeys(
-                  courseName: 'Dues',
+                  courseName: 'Settings',
                   gradientKey: gradient3,
-                  iconData: FontAwesomeIcons.rupeeSign,
+                  iconData: FontAwesomeIcons.cogs,
                 ),
               ],
             ),
