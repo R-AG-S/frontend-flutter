@@ -39,6 +39,7 @@ class _EditPageScreenState extends State<EditPageScreen> {
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        canvasColor: mainTextColor,
         primaryTextTheme: Typography.material2018().white,
         textTheme: Typography.material2018().white,
       ),
