@@ -78,7 +78,7 @@ class UserSettingScreen extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // _showPicker(context);
+                _showPicker(context);
               },
               child: Padding(
                 padding: EdgeInsets.only(top: 15),
@@ -89,6 +89,7 @@ class UserSettingScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
+                          color: whiteColor,
                         ),
                         padding: EdgeInsets.all(10),
                         child: ClipRRect(
