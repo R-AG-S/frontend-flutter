@@ -38,10 +38,6 @@ class _UserSettingsState extends State<UserSettings> {
 }
 
 class UserSettingScreen extends StatelessWidget {
-  const UserSettingScreen({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
