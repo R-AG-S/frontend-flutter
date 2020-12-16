@@ -18,6 +18,12 @@ final GlobalKey<ScaffoldState> _loginscaffoldKey = GlobalKey();
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
+  void initState() {
+    super.initState();
+    print('Login');
+  }
+
+  @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
