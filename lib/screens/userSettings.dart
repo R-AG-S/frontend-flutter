@@ -1,8 +1,10 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/screens/editpage.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
 import 'package:settings_ui/settings_ui.dart';
@@ -134,6 +136,18 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => EditPageScreen(
+                            name: null,
+                            url: null,
+                            value: null,
+                            inputType: null),
+                      ),
+                    );
+                  },
                   title: 'Username',
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
