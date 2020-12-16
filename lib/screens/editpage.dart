@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 
 class EditPageScreen extends StatefulWidget {
@@ -87,6 +88,27 @@ class _EditPageScreenState extends State<EditPageScreen> {
                         horizontal: 15,
                       ),
                       counterText: '',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 12,
+                  ),
+                  child: ButtonTheme(
+                    minWidth: MediaQuery.of(context).size.width,
+                    height: 50.0,
+                    child: RaisedButton(
+                      color: whiteColor,
+                      child: Text(
+                        'Log In',
+                        style: GoogleFonts.openSans(
+                          fontSize: 18,
+                          color: darkFadeTextColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      onPressed: null,
                     ),
                   ),
                 ),
