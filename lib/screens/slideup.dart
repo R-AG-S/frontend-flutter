@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
+import 'package:payup/screens/generalSettings.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
 import 'package:payup/widgets/button.dart';
@@ -161,7 +162,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   courseName: 'Settings',
                   gradientKey: gradient3,
                   iconData: FontAwesomeIcons.cog,
-                  route: null,
+                  route: Settings(),
                 ),
               ],
             ),
