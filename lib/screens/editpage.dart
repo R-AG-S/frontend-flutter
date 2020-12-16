@@ -87,7 +87,6 @@ class _EditPageScreenState extends State<EditPageScreen> {
                         horizontal: 15,
                       ),
                       filled: true,
-                      fillColor: cardColor,
                       counterText: '',
                     ),
                   ),
