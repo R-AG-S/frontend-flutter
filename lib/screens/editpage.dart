@@ -32,11 +32,6 @@ class _EditPageScreenState extends State<EditPageScreen> {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        buttonTheme: ButtonThemeData(
-          buttonColor: mainTextColor,
-          textTheme: ButtonTextTheme.primary,
-        ),
-        primarySwatch: Colors.green,
         brightness: Brightness.light,
         iconTheme: IconThemeData(color: darkFadeTextColor),
         primaryTextTheme: Typography.material2018().black,
@@ -101,17 +96,21 @@ class _EditPageScreenState extends State<EditPageScreen> {
                     vertical: 24,
                   ),
                   child: ButtonTheme(
+                    buttonColor: Colors.greenAccent[400],
+                    focusColor: Colors.greenAccent[400],
                     minWidth: MediaQuery.of(context).size.width,
                     height: 50.0,
                     child: RaisedButton(
+                      color: Colors.greenAccent[400],
                       child: Text(
                         'Save',
                         style: GoogleFonts.openSans(
                           fontSize: 18,
+                          color: whiteColor,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      onPressed: null,
+                      onPressed: () {},
                     ),
                   ),
                 ),
