@@ -251,6 +251,9 @@ class _UserSettingsState extends State<UserSettings> {
                               ),
                             ),
                             onTap: () {
+                              setState(() {
+                                url = iconData[index];
+                              });
                               Navigator.of(context).pop();
                               // Navigator.push(
                               //     context,
