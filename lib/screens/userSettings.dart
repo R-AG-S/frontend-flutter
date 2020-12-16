@@ -89,7 +89,6 @@ class UserSettingScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: whiteColor,
                         ),
                         padding: EdgeInsets.all(10),
                         child: ClipRRect(
@@ -110,9 +109,7 @@ class UserSettingScreen extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: mainTextColor,
                               border: Border.all(
-                                color: whiteColor,
                                 width: 2,
                               )),
                           padding: EdgeInsets.all(
