@@ -21,7 +21,7 @@ class _EditPageScreenState extends State<EditPageScreen> {
         appBar: AppBar(
           elevation: 0,
           title: Text(
-            'Room Settings',
+            'Edit ' + widget.name,
             style: TextStyle(
               fontFamily: 'Bambino',
               letterSpacing: 0.5,
