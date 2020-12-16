@@ -38,7 +38,6 @@ class _UserSettingsState extends State<UserSettings> {
       ),
       home: SafeArea(
         child: Scaffold(
-          extendBodyBehindAppBar: true,
           appBar: AppBar(
             elevation: 0,
             title: Text(
