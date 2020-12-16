@@ -14,6 +14,8 @@ class SignInScreen extends StatefulWidget {
 bool isWaiting = false;
 final TextEditingController _emailController = TextEditingController();
 final TextEditingController _passwordController = TextEditingController();
+final TextEditingController _nameController = TextEditingController();
+final TextEditingController _phoneController = TextEditingController();
 
 class _SignInScreenState extends State<SignInScreen> {
   @override
@@ -101,10 +103,32 @@ class _SignInScreenState extends State<SignInScreen> {
                                   vertical: 8,
                                 ),
                                 child: TextFormWidget(
+                                  hint: 'Name',
+                                  firstNameController: _nameController,
+                                  type: TextInputType.name,
+                                  obscure: false,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 8,
+                                ),
+                                child: TextFormWidget(
                                   hint: 'Email',
                                   firstNameController: _emailController,
                                   type: TextInputType.emailAddress,
                                   obscure: false,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 8,
+                                ),
+                                child: TextFormWidget(
+                                  hint: 'Password',
+                                  firstNameController: _passwordController,
+                                  type: TextInputType.visiblePassword,
+                                  obscure: true,
                                 ),
                               ),
                               Padding(
