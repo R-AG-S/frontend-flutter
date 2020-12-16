@@ -32,6 +32,10 @@ class _EditPageScreenState extends State<EditPageScreen> {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        buttonTheme: ButtonThemeData(
+          buttonColor: mainTextColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
         primarySwatch: Colors.green,
         brightness: Brightness.light,
         iconTheme: IconThemeData(color: darkFadeTextColor),
