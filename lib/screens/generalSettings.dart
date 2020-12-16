@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:payup/utilities/constants.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
@@ -13,9 +12,6 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  MaterialColor myGreen = MaterialColor(0xFFAAD400, const {
-    50: Colors.green,
-  });
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
@@ -72,7 +68,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             titleTextStyle: TextStyle(
               fontFamily: 'Bambino',
               fontSize: ScreenUtil().setSp(40),
-              color: whiteColor,
               fontWeight: FontWeight.w400,
             ),
             tiles: [
@@ -81,7 +76,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
-                  color: whiteColor,
                 ),
                 leading: Icon(
                   FontAwesomeIcons.penNib,
@@ -93,7 +87,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
-                  color: whiteColor,
                 ),
                 leading: Icon(
                   FontAwesomeIcons.carAlt,
@@ -107,7 +100,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             titleTextStyle: TextStyle(
               fontFamily: 'Bambino',
               fontSize: ScreenUtil().setSp(40),
-              color: whiteColor,
               fontWeight: FontWeight.w400,
             ),
             tiles: [
@@ -116,7 +108,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
-                  color: whiteColor,
                 ),
                 leading: Icon(Icons.exit_to_app),
               ),
@@ -125,7 +116,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
-                  color: whiteColor,
                 ),
                 enabled: notificationsEnabled,
                 leading: Icon(Icons.notifications_active),
