@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -207,7 +209,26 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                               onPressed: isWaiting
                                   ? null
-                                  : () {
+                                  : ()async {
+                                      print(
+                                        _emailController.text +
+                                            _passwordController.text +
+                                      );
+                                      final response = await http.post(
+                                        'https://payup-backend.herokuapp.com/users/register/',
+                                        headers: <String, String>{
+                                          'Content-type': 'application/json',
+                                          'Accept': 'application/json',
+                                          // "Authorization": "Some token"
+                                        },
+                                        body: json.encode(
+                                          <String, String>{
+                                            "email": _emailController.text,
+                                            "password":
+                                                _passwordController.text,
+                                          },
+                                        ),
+                                      );
                                       Navigator.pushNamed(context, 'home');
                                     },
                             ),
