@@ -209,13 +209,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                               onPressed: isWaiting
                                   ? null
-                                  : ()async {
-                                      print(
-                                        _emailController.text +
-                                            _passwordController.text +
-                                      );
+                                  : () async {
+                                      print(_emailController.text +
+                                          _passwordController.text);
                                       final response = await http.post(
-                                        'https://payup-backend.herokuapp.com/users/register/',
+                                        'https://payup-backend.herokuapp.com/users/login/',
                                         headers: <String, String>{
                                           'Content-type': 'application/json',
                                           'Accept': 'application/json',
@@ -229,7 +227,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                           },
                                         ),
                                       );
-                                      Navigator.pushNamed(context, 'home');
+                                      print(jsonDecode(response.body));
+                                      // Navigator.pushNamed(context, 'home');
                                     },
                             ),
                           ),
