@@ -118,25 +118,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                   obscure: true,
                                 ),
                               ),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).pushReplacement(
-                                    CupertinoPageRoute<bool>(
-                                      builder: (BuildContext context) =>
-                                          SignInScreen(),
-                                    ),
-                                  );
-                                },
-                                child: Text(
-                                  '''Forgot your password?''',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.openSans(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: blueColor,
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ),
