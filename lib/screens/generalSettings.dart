@@ -133,7 +133,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   );
                 },
-                title: 'Change Room Code',
+                title: 'Exit Room',
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
                   fontWeight: FontWeight.w600,
