@@ -226,7 +226,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       );
                                       print(jsonDecode(response.body)['email']);
-                                      // Navigator.pushNamed(context, 'home');
+                                      if (response.statusCode == 200) {
+                                        Navigator.pushNamed(context, 'home');
+                                      }
+                                      ;
                                     },
                             ),
                           ),
