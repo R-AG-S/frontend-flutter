@@ -251,7 +251,7 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
-                  title: 'General',
+                  title: 'Security',
                   titleTextStyle: TextStyle(
                     fontFamily: 'Bambino',
                     fontSize: ScreenUtil().setSp(40),
