@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     _firebaseMessaging.configure(
       onMessage: (Map<String, dynamic> message) async {
-        print("onMessage: $message");
+        print("onMessage: ${message['data']['message']}");
       },
       onLaunch: (Map<String, dynamic> message) async {
         print("onLaunch: $message");
