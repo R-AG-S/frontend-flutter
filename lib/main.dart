@@ -32,7 +32,7 @@ class _MainAppState extends State<MainApp> {
         'home': (context) => HomeScreen(),
         'slide': (context) => SlideUpPanel(),
         'settings': (context) => Settings(),
-        'details': (context) => DetailPage(),
+        'details': (context) => PushMessagingExample(),
       },
     );
   }
