@@ -136,15 +136,16 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
-                  onTap: () {
+                  onPressed: (value) {
                     Navigator.push(
                       context,
                       CupertinoPageRoute(
                         builder: (context) => EditPageScreen(
-                            name: null,
-                            url: null,
-                            value: null,
-                            inputType: null),
+                          name: 'Username',
+                          url: null,
+                          value: 'User Name',
+                          inputType: TextInputType.name,
+                        ),
                       ),
                     );
                   },
