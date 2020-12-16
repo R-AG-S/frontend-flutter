@@ -80,9 +80,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     context,
                     CupertinoPageRoute(
                       builder: (context) => EditPageScreen(
-                        name: 'Username',
+                        name: 'Description',
                         url: null,
-                        value: 'User Name',
+                        value: 'Description',
                         inputType: TextInputType.name,
                       ),
                     ),
