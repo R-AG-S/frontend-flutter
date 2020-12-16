@@ -25,7 +25,6 @@ class _UserSettingsState extends State<UserSettings> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
-        brightness: Brightness.light,
         canvasColor: Color(0xFFEFEFF4),
         iconTheme: IconThemeData(color: darkFadeTextColor),
         primaryTextTheme: Typography.material2018().black,
@@ -60,20 +59,28 @@ class _UserSettingsState extends State<UserSettings> {
                 SizedBox(
                   height: 15,
                 ),
-                SettingsList(
-                  shrinkWrap: true,
-                  sections: [
-                    SettingsSection(
-                      title: 'Account Settings',
-                      titleTextStyle: TextStyle(
-                        fontFamily: 'Bambino',
-                        fontSize: ScreenUtil().setSp(40),
-                        fontWeight: FontWeight.w400,
-                      ),
-                      tiles: [],
-                    ),
-                  ],
+                SettingsTile(
+                  title: 'Account Settings',
+                  titleTextStyle: TextStyle(
+                    fontFamily: 'Bambino',
+                    fontSize: ScreenUtil().setSp(40),
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
+                // SettingsList(
+                //   shrinkWrap: true,
+                //   sections: [
+                //     SettingsSection(
+                //       title: 'Account Settings',
+                //       titleTextStyle: TextStyle(
+                //         fontFamily: 'Bambino',
+                //         fontSize: ScreenUtil().setSp(40),
+                //         fontWeight: FontWeight.w400,
+                //       ),
+                //       tiles: [],
+                //     ),
+                //   ],
+                // ),
                 GestureDetector(
                   onTap: () {
                     // _showPicker(context);
