@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:payup/utilities/constants.dart';
-import 'package:payup/widgets/textform.dart';
 
 class EditPageScreen extends StatefulWidget {
   EditPageScreen({
