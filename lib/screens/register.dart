@@ -125,10 +125,10 @@ class _SignInScreenState extends State<SignInScreen> {
                                   vertical: 8,
                                 ),
                                 child: TextFormWidget(
-                                  hint: 'Password',
-                                  firstNameController: _passwordController,
-                                  type: TextInputType.visiblePassword,
-                                  obscure: true,
+                                  hint: 'Number',
+                                  firstNameController: _phoneController,
+                                  type: TextInputType.phone,
+                                  obscure: false,
                                 ),
                               ),
                               Padding(
