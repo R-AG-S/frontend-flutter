@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: EdgeInsets.all(8.0),
                     child: Center(
                       child: Text(
-                        '''Car Pool with friends. It's always fun!!!''',
+                        '''Carpool with friends. It's always fun!!!''',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.raleway(
                           fontSize: 14,
