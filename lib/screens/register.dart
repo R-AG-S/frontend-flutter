@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
@@ -5,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/screens/login.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
+import 'package:http/http.dart' as http;
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -15,7 +18,7 @@ bool isWaiting = false;
 final TextEditingController _emailController = TextEditingController();
 final TextEditingController _passwordController = TextEditingController();
 final TextEditingController _nameController = TextEditingController();
-final TextEditingController _phoneController = TextEditingController();
+final TextEditingController _userNameController = TextEditingController();
 
 class _SignInScreenState extends State<SignInScreen> {
   @override
@@ -125,9 +128,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                   vertical: 8,
                                 ),
                                 child: TextFormWidget(
-                                  hint: 'Number',
-                                  firstNameController: _phoneController,
-                                  type: TextInputType.phone,
+                                  hint: 'Username',
+                                  firstNameController: _userNameController,
+                                  type: TextInputType.name,
                                   obscure: false,
                                 ),
                               ),
@@ -185,7 +188,38 @@ class _SignInScreenState extends State<SignInScreen> {
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                              onPressed: isWaiting ? null : () {},
+                              onPressed: isWaiting
+                                  ? null
+                                  : () async {
+                                      final response = await http.post(
+                                        'https://payup-backend.herokuapp.com/users/register/',
+                                        headers: <String, String>{
+                                          "email": _emailController.text,
+                                          "password": _passwordController.text,
+                                          "username": _userNameController.text,
+                                          "full_name": _nameController.text
+                                        },
+                                      );
+                                      // Future<http.Response> createAlbum(
+                                      //     String title) {
+                                      //   return http.post(
+                                      //     'https://payup-backend.herokuapp.com/users/register/',
+                                      //     headers: <String, String>{
+                                      //       "email": _emailController.text,
+                                      //       "password":
+                                      //           _passwordController.text,
+                                      //       "username":
+                                      //           _userNameController.text,
+                                      //       "full_name": _nameController.text
+                                      //     },
+                                      //     body: jsonEncode(<String, String>{}),
+                                      //   );
+                                      // }
+
+                                      print(
+                                        response,
+                                      );
+                                    },
                             ),
                           ),
                         ),
