@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class EditPageScreen extends StatefulWidget {
-  EditPageScreen({});
+  EditPageScreen(
+      {@required this.name, @required this.url, @required this.inputType});
   final String name;
   final String url;
   final TextInputType inputType;
