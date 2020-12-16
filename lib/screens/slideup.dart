@@ -258,6 +258,7 @@ class CircularKeys extends StatelessWidget {
     @required this.courseName,
     @required this.gradientKey,
     @required this.iconData,
+    @required this.route,
   });
   final String courseName;
   final Gradient gradientKey;
