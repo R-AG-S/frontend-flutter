@@ -17,7 +17,9 @@ class _EditPageScreenState extends State<EditPageScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(),
+      child: Scaffold(
+        appBar: AppBar(),
+      ),
     );
   }
 }
