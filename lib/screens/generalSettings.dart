@@ -105,7 +105,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   fontWeight: FontWeight.w600,
                 ),
                 leading: Icon(
-                  FontAwesomeIcons.carAlt,
+                  FontAwesomeIcons.gasPump,
                   size: 18,
                 ),
               ),
