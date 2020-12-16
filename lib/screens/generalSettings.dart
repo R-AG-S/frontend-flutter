@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/screens/editpage.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter_screenutil/screenutil.dart';
@@ -74,6 +75,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             tiles: [
               SettingsTile(
+                onPressed: (value) {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => EditPageScreen(
+                        name: 'Username',
+                        url: null,
+                        value: 'User Name',
+                        inputType: TextInputType.name,
+                      ),
+                    ),
+                  );
+                },
                 title: 'Add Description',
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
