@@ -22,10 +22,8 @@ class _SettingsState extends State<Settings> {
       theme: ThemeData(
         primarySwatch: Colors.green,
         brightness: Brightness.light,
-        primaryTextTheme:
-            Typography.material2018(platform: TargetPlatform.android).black,
-        textTheme:
-            Typography.material2018(platform: TargetPlatform.android).black,
+        primaryTextTheme: Typography.material2018().black,
+        textTheme: Typography.material2018().black,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
