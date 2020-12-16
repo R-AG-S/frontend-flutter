@@ -5,6 +5,7 @@ import 'package:payup/screens/login.dart';
 import 'package:payup/screens/generalSettings.dart';
 import 'package:payup/screens/slideup.dart';
 import 'package:payup/screens/splash.dart';
+import 'package:payup/utilities/fcm.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +32,7 @@ class _MainAppState extends State<MainApp> {
         'home': (context) => HomeScreen(),
         'slide': (context) => SlideUpPanel(),
         'settings': (context) => Settings(),
+        'details': (context) => DetailPage(),
       },
     );
   }
