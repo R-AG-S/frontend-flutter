@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payup/widgets/textform.dart';
 
 class EditPageScreen extends StatefulWidget {
   EditPageScreen({
@@ -34,7 +35,21 @@ class _EditPageScreenState extends State<EditPageScreen> {
           backgroundColor: Colors.transparent,
         ),
         body: Container(
-          child: Column(),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 8,
+                ),
+                child: TextFormWidget(
+                  hint: 'Password',
+                  firstNameController: _passwordController,
+                  type: TextInputType.visiblePassword,
+                  obscure: true,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
