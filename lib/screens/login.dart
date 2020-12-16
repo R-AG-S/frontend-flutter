@@ -227,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           },
                                         ),
                                       );
-                                      print(jsonDecode(response.body));
+                                      print(jsonDecode(response.body)['email']);
                                       // Navigator.pushNamed(context, 'home');
                                     },
                             ),
