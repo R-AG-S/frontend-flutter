@@ -13,6 +13,9 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  MaterialColor myGreen = MaterialColor(0xFFAAD400, const {
+    50: Colors.green,
+  });
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
@@ -21,7 +24,7 @@ class _SettingsState extends State<Settings> {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.green,
         brightness: Brightness.light,
       ),
       darkTheme: ThemeData(
