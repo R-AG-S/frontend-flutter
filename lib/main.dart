@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:payup/screens/home.dart';
@@ -7,6 +8,7 @@ import 'package:payup/screens/slideup.dart';
 import 'package:payup/screens/splash.dart';
 import 'package:payup/utilities/fcm.dart';
 
+final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
