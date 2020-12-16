@@ -24,16 +24,20 @@ class _SettingsState extends State<Settings> {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.green,
-          brightness: Brightness.light,
-          textTheme: TextTheme(
-            bodyText1: TextStyle(
-              color: mainTextColor,
-            ),
-            bodyText2: TextStyle(
-              color: mainTextColor,
-            ),
-          )),
+        primarySwatch: Colors.green,
+        brightness: Brightness.light,
+        textTheme: TextTheme(
+          bodyText1: TextStyle(
+            color: mainTextColor,
+          ),
+          bodyText2: TextStyle(
+            color: mainTextColor,
+          ),
+        ).apply(
+          bodyColor: Colors.orange,
+          displayColor: Colors.blue,
+        ),
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
