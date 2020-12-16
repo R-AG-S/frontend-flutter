@@ -36,6 +36,9 @@ class _EditPageScreenState extends State<EditPageScreen> {
           backgroundColor: Colors.transparent,
         ),
         body: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: 25,
+          ),
           child: Column(
             children: [
               Padding(
