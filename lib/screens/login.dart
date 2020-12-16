@@ -210,8 +210,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               onPressed: isWaiting
                                   ? null
                                   : () async {
-                                      print(_emailController.text +
-                                          _passwordController.text);
                                       final response = await http.post(
                                         'https://payup-backend.herokuapp.com/users/login/',
                                         headers: <String, String>{
