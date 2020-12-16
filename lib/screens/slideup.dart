@@ -262,10 +262,13 @@ class CircularKeys extends StatelessWidget {
   final String courseName;
   final Gradient gradientKey;
   final IconData iconData;
+  final Route route;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => route,))
+      },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
