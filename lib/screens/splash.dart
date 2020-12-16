@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Firebase.initializeApp().whenComplete(() async {
       print('Connected');
       Timer(Duration(seconds: 3), () {
-        Navigator.pushNamed(context, 'login');
+        Navigator.pushNamed(context, 'details');
         // if (isReady) {
         //   Navigator.pushNamed(context, 'home');
         // } else {
