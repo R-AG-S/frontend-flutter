@@ -99,12 +99,10 @@ class _EditPageScreenState extends State<EditPageScreen> {
                     minWidth: MediaQuery.of(context).size.width,
                     height: 50.0,
                     child: RaisedButton(
-                      color: whiteColor,
                       child: Text(
-                        'Log In',
+                        'Save',
                         style: GoogleFonts.openSans(
                           fontSize: 18,
-                          color: darkFadeTextColor,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
