@@ -259,13 +259,13 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
-                  title: 'Edit Listed Cars',
+                  title: 'Logout',
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
                     fontWeight: FontWeight.w600,
                   ),
                   leading: Icon(
-                    FontAwesomeIcons.carAlt,
+                    FontAwesomeIcons.signOutAlt,
                     size: 18,
                   ),
                 ),
