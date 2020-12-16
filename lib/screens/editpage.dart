@@ -69,8 +69,8 @@ class _EditPageScreenState extends State<EditPageScreen> {
                     vertical: 8,
                   ),
                   child: TextField(
-                    style: TextStyle(color: mainTextColor),
-                    cursorColor: mainTextColor,
+                    // style: TextStyle(color: mainTextColor),
+                    // cursorColor: mainTextColor,
                     controller: _editController,
                     keyboardType: widget.inputType,
                     maxLength: 50,
@@ -86,7 +86,6 @@ class _EditPageScreenState extends State<EditPageScreen> {
                         vertical: 10,
                         horizontal: 15,
                       ),
-                      filled: true,
                       counterText: '',
                     ),
                   ),
