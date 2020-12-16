@@ -62,7 +62,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             fontFamily: 'Bambino',
             letterSpacing: 0.5,
             fontSize: 22,
-            color: whiteColor,
             fontWeight: FontWeight.w400,
           ),
         ),
