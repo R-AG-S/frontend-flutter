@@ -20,6 +20,12 @@ class EditPageScreen extends StatefulWidget {
 class _EditPageScreenState extends State<EditPageScreen> {
   final TextEditingController _editController = TextEditingController();
   @override
+  void initState() {
+    _editController.text = widget.value;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
