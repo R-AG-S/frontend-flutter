@@ -46,7 +46,7 @@ class _EditPageScreenState extends State<EditPageScreen> {
                   hint: widget.name,
                   firstNameController: _editController,
                   type: widget.inputType,
-                  obscure: true,
+                  obscure: false,
                 ),
               ),
             ],
