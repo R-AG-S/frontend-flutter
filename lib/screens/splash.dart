@@ -12,8 +12,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushNamed(context, 'login');
+    Firebase.initializeApp().whenComplete(() async {
+      print('Connected');
+      Timer(Duration(seconds: 3), () {
+        if (isReady) {
+          Navigator.pushNamed(context, 'home');
+        } else {
+          Navigator.pushNamed(context, 'login');
+        }
+      });
+      setState(() {});
     });
   }
 
