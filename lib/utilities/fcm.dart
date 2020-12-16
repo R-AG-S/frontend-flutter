@@ -97,7 +97,7 @@ class _PushMessagingExampleState extends State<PushMessagingExample> {
 
   Widget _buildDialog(BuildContext context, Item item) {
     return AlertDialog(
-      content: Text("Item ${item.itemId} has been updated"),
+      content: Text("Item $item has been updated"),
       actions: <Widget>[
         FlatButton(
           child: const Text('CLOSE'),
