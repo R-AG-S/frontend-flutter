@@ -26,17 +26,10 @@ class _SettingsState extends State<Settings> {
       theme: ThemeData(
         primarySwatch: Colors.green,
         brightness: Brightness.light,
-        textTheme: TextTheme(
-          bodyText1: TextStyle(
-            color: mainTextColor,
-          ),
-          bodyText2: TextStyle(
-            color: mainTextColor,
-          ),
-        ).apply(
-          bodyColor: Colors.orange,
-          displayColor: Colors.blue,
-        ),
+        primaryTextTheme:
+            Typography.material2018(platform: TargetPlatform.android).black,
+        textTheme:
+            Typography.material2018(platform: TargetPlatform.android).black,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
@@ -60,6 +53,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        elevation: 0,
         title: Text(
           'Room Settings',
           style: TextStyle(
