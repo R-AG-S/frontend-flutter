@@ -160,6 +160,19 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
+                  onPressed: (value) {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => EditPageScreen(
+                          name: 'Email',
+                          url: null,
+                          value: 'Email',
+                          inputType: TextInputType.emailAddress,
+                        ),
+                      ),
+                    );
+                  },
                   title: 'Email',
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
@@ -171,6 +184,19 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
+                  onPressed: (value) {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => EditPageScreen(
+                          name: 'Phone',
+                          url: null,
+                          value: 'Phone',
+                          inputType: TextInputType.number,
+                        ),
+                      ),
+                    );
+                  },
                   title: 'Phone',
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
@@ -182,6 +208,19 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
+                  // onPressed: (value) {
+                  //   Navigator.push(
+                  //     context,
+                  //     CupertinoPageRoute(
+                  //       builder: (context) => EditPageScreen(
+                  //         name: 'Username',
+                  //         url: null,
+                  //         value: 'User Name',
+                  //         inputType: TextInputType.name,
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
                   title: 'Change Password',
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
