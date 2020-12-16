@@ -229,7 +229,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                       if (response.statusCode == 200) {
                                         Navigator.pushNamed(context, 'home');
                                       }
-                                      ;
                                     },
                             ),
                           ),
