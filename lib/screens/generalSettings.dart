@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/utilities/constants.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
@@ -22,11 +23,14 @@ class _SettingsState extends State<Settings> {
       theme: ThemeData(
         primarySwatch: Colors.green,
         brightness: Brightness.light,
+        iconTheme: IconThemeData(color: darkFadeTextColor),
         primaryTextTheme: Typography.material2018().black,
         textTheme: Typography.material2018().black,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        primaryTextTheme: Typography.material2018().white,
+        textTheme: Typography.material2018().white,
       ),
       home: SettingsScreen(),
     );
