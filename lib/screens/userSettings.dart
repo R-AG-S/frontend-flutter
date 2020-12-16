@@ -23,7 +23,7 @@ class _UserSettingsState extends State<UserSettings> {
       theme: ThemeData(
         primarySwatch: Colors.green,
         brightness: Brightness.light,
-        canvasColor: Colors.white.withOpacity(0.98),
+        canvasColor: Color(0xFFEFEFF4),
         iconTheme: IconThemeData(color: darkFadeTextColor),
         primaryTextTheme: Typography.material2018().black,
         textTheme: Typography.material2018().black,
@@ -115,6 +115,7 @@ class _UserSettingsState extends State<UserSettings> {
                               ),
                               child: Icon(
                                 FontAwesomeIcons.solidEdit,
+                                color: whiteColor,
                               ),
                             ),
                           )
