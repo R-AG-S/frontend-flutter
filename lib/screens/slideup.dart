@@ -143,21 +143,25 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   courseName: 'Logs',
                   gradientKey: gradient0,
                   iconData: FontAwesomeIcons.info,
+                  route: null,
                 ),
                 CircularKeys(
                   courseName: 'Dues',
                   gradientKey: gradient1,
                   iconData: FontAwesomeIcons.rupeeSign,
+                  route: null,
                 ),
                 CircularKeys(
                   courseName: 'Pick Me',
                   gradientKey: gradient2,
                   iconData: FontAwesomeIcons.mapMarkerAlt,
+                  route: null,
                 ),
                 CircularKeys(
                   courseName: 'Settings',
                   gradientKey: gradient3,
                   iconData: FontAwesomeIcons.cog,
+                  route: null,
                 ),
               ],
             ),
@@ -263,12 +267,16 @@ class CircularKeys extends StatelessWidget {
   final String courseName;
   final Gradient gradientKey;
   final IconData iconData;
-  final Route route;
+  final route;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => route,))
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => route,
+            ));
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,
