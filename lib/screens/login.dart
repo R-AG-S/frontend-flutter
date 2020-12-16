@@ -20,7 +20,6 @@ final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
-  @override
   void initState() {
     super.initState();
     _firebaseMessaging.configure(
