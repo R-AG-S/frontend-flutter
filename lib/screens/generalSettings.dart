@@ -120,6 +120,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             tiles: [
               SettingsTile(
+                onPressed: (value) {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => EditPageScreen(
+                        name: 'Room Code',
+                        url: null,
+                        value: 'Room Code',
+                        inputType: TextInputType.name,
+                      ),
+                    ),
+                  );
+                },
                 title: 'Change Room Code',
                 titleTextStyle: GoogleFonts.openSans(
                   fontSize: ScreenUtil().setSp(45),
