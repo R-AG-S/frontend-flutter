@@ -157,7 +157,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                 CircularKeys(
                   courseName: 'Settings',
                   gradientKey: gradient3,
-                  iconData: FontAwesomeIcons.cogs,
+                  iconData: FontAwesomeIcons.cog,
                 ),
               ],
             ),
