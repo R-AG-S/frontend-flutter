@@ -30,6 +30,9 @@ class _SettingsState extends State<Settings> {
             bodyText1: TextStyle(
               color: mainTextColor,
             ),
+            bodyText2: TextStyle(
+              color: mainTextColor,
+            ),
           )),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
