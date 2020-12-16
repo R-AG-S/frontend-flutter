@@ -191,14 +191,28 @@ class _SignInScreenState extends State<SignInScreen> {
                               onPressed: isWaiting
                                   ? null
                                   : () async {
+                                      print(
+                                        _emailController.text +
+                                            _passwordController.text +
+                                            _nameController.text,
+                                      );
                                       final response = await http.post(
                                         'https://payup-backend.herokuapp.com/users/register/',
                                         headers: <String, String>{
-                                          "email": _emailController.text,
-                                          "password": _passwordController.text,
-                                          "username": _userNameController.text,
-                                          "full_name": _nameController.text
+                                          'Content-type': 'application/json',
+                                          'Accept': 'application/json',
+                                          // "Authorization": "Some token"
                                         },
+                                        body: json.encode(
+                                          <String, String>{
+                                            "email": _emailController.text,
+                                            "password":
+                                                _passwordController.text,
+                                            "username":
+                                                _userNameController.text,
+                                            "full_name": _nameController.text
+                                          },
+                                        ),
                                       );
                                       // Future<http.Response> createAlbum(
                                       //     String title) {
@@ -217,7 +231,10 @@ class _SignInScreenState extends State<SignInScreen> {
                                       // }
 
                                       print(
-                                        response,
+                                        response.statusCode,
+                                      );
+                                      print(
+                                        response.body,
                                       );
                                     },
                             ),
