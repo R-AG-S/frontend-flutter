@@ -250,6 +250,25 @@ class _UserSettingsState extends State<UserSettings> {
                     size: 18,
                   ),
                 ),
+                SettingsTile(
+                  title: 'General',
+                  titleTextStyle: TextStyle(
+                    fontFamily: 'Bambino',
+                    fontSize: ScreenUtil().setSp(40),
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SettingsTile(
+                  title: 'Edit Listed Cars',
+                  titleTextStyle: GoogleFonts.openSans(
+                    fontSize: ScreenUtil().setSp(45),
+                    fontWeight: FontWeight.w600,
+                  ),
+                  leading: Icon(
+                    FontAwesomeIcons.carAlt,
+                    size: 18,
+                  ),
+                ),
               ],
             ),
           ),
