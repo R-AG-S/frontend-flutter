@@ -291,7 +291,14 @@ class CircularKeys extends StatelessWidget {
               iconData,
               size: 18,
             ),
-            callback: () {},
+            callback: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => route,
+                ),
+              );
+            },
             increaseHeightBy: 10,
             increaseWidthBy: 10,
             gradient: gradientKey,
