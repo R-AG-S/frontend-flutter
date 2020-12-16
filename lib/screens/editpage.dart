@@ -64,6 +64,7 @@ class _EditPageScreenState extends State<EditPageScreen> {
               horizontal: 25,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(
@@ -93,7 +94,7 @@ class _EditPageScreenState extends State<EditPageScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    vertical: 12,
+                    vertical: 24,
                   ),
                   child: ButtonTheme(
                     minWidth: MediaQuery.of(context).size.width,
