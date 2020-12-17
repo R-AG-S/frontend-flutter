@@ -43,30 +43,224 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding:
-                  EdgeInsets.only(top: height * 0.155, bottom: height * 0.05),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Center(
-                    child: Text(
-                      'Sign up to PayUp',
-                      style: GoogleFonts.raleway(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: mainTextColor,
+        body: Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom * 0.1,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.only(top: height * 0.155, bottom: height * 0.05),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Center(
+                      child: Text(
+                        'Sign up to PayUp',
+                        style: GoogleFonts.raleway(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
+                          color: mainTextColor,
+                        ),
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          '''Car Pool with friends. It's always fun!!!''',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.raleway(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: mainTextColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 35,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 50,
+                              bottom: 8,
+                              // left: MediaQuery.of(context).size.width * 0.1,
+                              // right: MediaQuery.of(context).size.width * 0.1,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'ACCOUNT INFORMATION',
+                                  style: GoogleFonts.openSans(
+                                    color: darkFadeTextColor,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 8,
+                                  ),
+                                  child: TextFormWidget(
+                                    hint: 'Name',
+                                    firstNameController: _nameController,
+                                    type: TextInputType.name,
+                                    obscure: false,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 8,
+                                  ),
+                                  child: TextFormWidget(
+                                    hint: 'Email',
+                                    firstNameController: _emailController,
+                                    type: TextInputType.emailAddress,
+                                    obscure: false,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 8,
+                                  ),
+                                  child: TextFormWidget(
+                                    hint: 'Username',
+                                    firstNameController: _userNameController,
+                                    type: TextInputType.name,
+                                    obscure: false,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 8,
+                                  ),
+                                  child: TextFormWidget(
+                                    hint: 'Password',
+                                    firstNameController: _passwordController,
+                                    type: TextInputType.visiblePassword,
+                                    obscure: true,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SignInButton(
+                            Buttons.Google,
+                            padding: EdgeInsets.symmetric(
+                              vertical: height * 0.01,
+                              horizontal: width * 0.15,
+                            ),
+                            text: "Sign in with Google",
+                            onPressed: () {
+                              // Navigator.pushNamed(context, 'profile');
+                            },
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 12,
+                            ),
+                            child: ButtonTheme(
+                              minWidth: width,
+                              height: 50.0,
+                              child: RaisedButton(
+                                color: whiteColor,
+                                child: isWaiting
+                                    ? Container(
+                                        height: 40,
+                                        width: 40,
+                                        padding: EdgeInsets.all(8),
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 2,
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                                  mainTextColor),
+                                        ),
+                                      )
+                                    : Text(
+                                        'Sign In',
+                                        style: GoogleFonts.openSans(
+                                          fontSize: 18,
+                                          color: darkFadeTextColor,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                onPressed: isWaiting
+                                    ? null
+                                    : () async {
+                                        print(
+                                          _emailController.text +
+                                              _passwordController.text +
+                                              _nameController.text,
+                                        );
+                                        final response = await http.post(
+                                          'https://payup-backend.herokuapp.com/users/register/',
+                                          headers: <String, String>{
+                                            'Content-type': 'application/json',
+                                            'Accept': 'application/json',
+                                            // "Authorization": "Some token"
+                                          },
+                                          body: json.encode(
+                                            <String, String>{
+                                              "email": _emailController.text,
+                                              "password":
+                                                  _passwordController.text,
+                                              "username":
+                                                  _userNameController.text,
+                                              "full_name": _nameController.text
+                                            },
+                                          ),
+                                        );
+                                        // Future<http.Response> createAlbum(
+                                        //     String title) {
+                                        //   return http.post(
+                                        //     'https://payup-backend.herokuapp.com/users/register/',
+                                        //     headers: <String, String>{
+                                        //       "email": _emailController.text,
+                                        //       "password":
+                                        //           _passwordController.text,
+                                        //       "username":
+                                        //           _userNameController.text,
+                                        //       "full_name": _nameController.text
+                                        //     },
+                                        //     body: jsonEncode(<String, String>{}),
+                                        //   );
+                                        // }
+
+                                        print(
+                                          response.statusCode,
+                                        );
+                                        print(
+                                          response.body,
+                                        );
+                                      },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  padding: EdgeInsets.only(
+                    bottom: height * 0.025,
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Text(
-                        '''Car Pool with friends. It's always fun!!!''',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '''Already have an account?  ''',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.raleway(
                           fontSize: 14,
@@ -74,219 +268,30 @@ class _SignInScreenState extends State<SignInScreen> {
                           color: mainTextColor,
                         ),
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 35,
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                            top: 50,
-                            bottom: 8,
-                            // left: MediaQuery.of(context).size.width * 0.1,
-                            // right: MediaQuery.of(context).size.width * 0.1,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'ACCOUNT INFORMATION',
-                                style: GoogleFonts.openSans(
-                                  color: darkFadeTextColor,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 8,
-                                ),
-                                child: TextFormWidget(
-                                  hint: 'Name',
-                                  firstNameController: _nameController,
-                                  type: TextInputType.name,
-                                  obscure: false,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 8,
-                                ),
-                                child: TextFormWidget(
-                                  hint: 'Email',
-                                  firstNameController: _emailController,
-                                  type: TextInputType.emailAddress,
-                                  obscure: false,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 8,
-                                ),
-                                child: TextFormWidget(
-                                  hint: 'Username',
-                                  firstNameController: _userNameController,
-                                  type: TextInputType.name,
-                                  obscure: false,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 8,
-                                ),
-                                child: TextFormWidget(
-                                  hint: 'Password',
-                                  firstNameController: _passwordController,
-                                  type: TextInputType.visiblePassword,
-                                  obscure: true,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SignInButton(
-                          Buttons.Google,
-                          padding: EdgeInsets.symmetric(
-                            vertical: height * 0.01,
-                            horizontal: width * 0.15,
-                          ),
-                          text: "Sign in with Google",
-                          onPressed: () {
-                            // Navigator.pushNamed(context, 'profile');
-                          },
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 12,
-                          ),
-                          child: ButtonTheme(
-                            minWidth: width,
-                            height: 50.0,
-                            child: RaisedButton(
-                              color: whiteColor,
-                              child: isWaiting
-                                  ? Container(
-                                      height: 40,
-                                      width: 40,
-                                      padding: EdgeInsets.all(8),
-                                      child: CircularProgressIndicator(
-                                        strokeWidth: 2,
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                                mainTextColor),
-                                      ),
-                                    )
-                                  : Text(
-                                      'Sign In',
-                                      style: GoogleFonts.openSans(
-                                        fontSize: 18,
-                                        color: darkFadeTextColor,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                              onPressed: isWaiting
-                                  ? null
-                                  : () async {
-                                      print(
-                                        _emailController.text +
-                                            _passwordController.text +
-                                            _nameController.text,
-                                      );
-                                      final response = await http.post(
-                                        'https://payup-backend.herokuapp.com/users/register/',
-                                        headers: <String, String>{
-                                          'Content-type': 'application/json',
-                                          'Accept': 'application/json',
-                                          // "Authorization": "Some token"
-                                        },
-                                        body: json.encode(
-                                          <String, String>{
-                                            "email": _emailController.text,
-                                            "password":
-                                                _passwordController.text,
-                                            "username":
-                                                _userNameController.text,
-                                            "full_name": _nameController.text
-                                          },
-                                        ),
-                                      );
-                                      // Future<http.Response> createAlbum(
-                                      //     String title) {
-                                      //   return http.post(
-                                      //     'https://payup-backend.herokuapp.com/users/register/',
-                                      //     headers: <String, String>{
-                                      //       "email": _emailController.text,
-                                      //       "password":
-                                      //           _passwordController.text,
-                                      //       "username":
-                                      //           _userNameController.text,
-                                      //       "full_name": _nameController.text
-                                      //     },
-                                      //     body: jsonEncode(<String, String>{}),
-                                      //   );
-                                      // }
-
-                                      print(
-                                        response.statusCode,
-                                      );
-                                      print(
-                                        response.body,
-                                      );
-                                    },
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(
+                            CupertinoPageRoute<bool>(
+                              builder: (BuildContext context) => LoginScreen(),
                             ),
+                          );
+                        },
+                        child: Text(
+                          '''Log in''',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.raleway(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: redColor,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                padding: EdgeInsets.only(
-                  bottom: height * 0.025,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '''Already have an account?  ''',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.raleway(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: mainTextColor,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(
-                          CupertinoPageRoute<bool>(
-                            builder: (BuildContext context) => LoginScreen(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        '''Log in''',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.raleway(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: redColor,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
