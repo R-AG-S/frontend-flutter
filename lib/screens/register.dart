@@ -307,7 +307,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                               SnackBarBehavior
                                                                   .floating,
                                                           backgroundColor:
-                                                              errorCardColor,
+                                                              redColor,
                                                           content: Text(
                                                             'An error occurred. Please try again later.',
                                                             style: TextStyle(
