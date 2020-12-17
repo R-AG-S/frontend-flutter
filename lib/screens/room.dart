@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RoomOptions extends StatefulWidget {
   @override
@@ -8,6 +10,8 @@ class RoomOptions extends StatefulWidget {
 class _RoomOptionsState extends State<RoomOptions> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context,
+        designSize: Size(1080, 2400), allowFontScaling: false);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFFFBD35),
