@@ -294,6 +294,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 if (response.statusCode ==
                                                     200) {
                                                   Flushbar(
+                                                    backgroundColor: greenColor,
                                                     title: "Hey Ninja",
                                                     message:
                                                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
