@@ -5,7 +5,7 @@ import 'package:payup/utilities/constants.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _detailsController = TextEditingController();
-final TextEditingController _phoneController = TextEditingController();
+final TextEditingController _fuelController = TextEditingController();
 
 class CreateRoomScreen extends StatefulWidget {
   @override
@@ -105,7 +105,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                     vertical: 8,
                   ),
                   child: TextField(
-                    controller: _nameController,
+                    controller: _fuelController,
                     keyboardType: TextInputType.number,
                     maxLength: 50,
                     decoration: InputDecoration(
