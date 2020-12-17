@@ -80,11 +80,6 @@ class _MyAppState extends State<MyApp> {
             );
           },
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => _scanBytes(),
-          tooltip: 'Take a Photo',
-          child: const Icon(Icons.camera_alt),
-        ),
       ),
     );
   }
@@ -151,20 +146,6 @@ class _MyAppState extends State<MyApp> {
                         Expanded(
                           flex: 5,
                           child: GestureDetector(
-                            onTap: () async {
-                              final success =
-                                  await ImageGallerySaver.saveImage(this.bytes);
-                              SnackBar snackBar;
-                              if (success) {
-                                snackBar = new SnackBar(
-                                    content:
-                                        new Text('Successful Preservation!'));
-                                Scaffold.of(context).showSnackBar(snackBar);
-                              } else {
-                                snackBar = new SnackBar(
-                                    content: new Text('Save failed!'));
-                              }
-                            },
                             child: Text(
                               'save',
                               style:
