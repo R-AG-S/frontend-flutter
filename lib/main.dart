@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:payup/screens/home.dart';
 import 'package:payup/screens/login.dart';
 import 'package:payup/screens/generalSettings.dart';
+import 'package:payup/screens/room.dart';
 import 'package:payup/screens/slideup.dart';
 import 'package:payup/screens/splash.dart';
 import 'package:payup/utilities/fcm.dart';
@@ -55,6 +56,7 @@ class _MainAppState extends State<MainApp> {
         'slide': (context) => SlideUpPanel(),
         'settings': (context) => Settings(),
         'details': (context) => PushMessagingExample(),
+        'room': (context) => RoomOptions(),
       },
     );
   }
