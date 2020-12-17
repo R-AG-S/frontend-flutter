@@ -25,16 +25,14 @@ final TextEditingController _phoneController = TextEditingController();
 class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     ScreenUtil.init(context,
         designSize: Size(1080, 2400), allowFontScaling: false);
     return SafeArea(
       child: Scaffold(
-        // resizeToAvoidBottomInset: false,
-        // resizeToAvoidBottomPadding: false,
         floatingActionButton: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(ScreenUtil().setHeight(
+            30,
+          )),
           child: FloatingActionButton(
             mini: true,
             heroTag: "btn1",
@@ -189,8 +187,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                   SignInButton(
                                     Buttons.Google,
                                     padding: EdgeInsets.symmetric(
-                                      vertical: height * 0.01,
-                                      horizontal: width * 0.15,
+                                      vertical: ScreenUtil().setHeight(22.5),
+                                      horizontal: ScreenUtil().setWidth(235),
                                     ),
                                     text: "Sign in with Google",
                                     onPressed: () {
@@ -202,7 +200,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                       vertical: ScreenUtil().setHeight(36),
                                     ),
                                     child: ButtonTheme(
-                                      minWidth: width,
+                                      minWidth: ScreenUtil().setWidth(1080),
                                       height: ScreenUtil().setHeight(150),
                                       child: RaisedButton(
                                         color: whiteColor,
