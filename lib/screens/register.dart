@@ -329,7 +329,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                                     Flushbar(
                                                       backgroundColor: redColor,
                                                       title: "Error",
-                                                      message: 'Input Invalid.',
+                                                      message: jsonDecode(
+                                                          response
+                                                              .body)['Message'],
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
