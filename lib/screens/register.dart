@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/screens/login.dart';
@@ -26,6 +27,8 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    ScreenUtil.init(context,
+        designSize: Size(1080, 2400), allowFontScaling: false);
     return SafeArea(
       child: Scaffold(
         // resizeToAvoidBottomInset: false,
