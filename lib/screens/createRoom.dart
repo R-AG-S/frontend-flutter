@@ -106,7 +106,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                   ),
                   child: TextField(
                     controller: _nameController,
-                    keyboardType: TextInputType.name,
+                    keyboardType: TextInputType.number,
                     maxLength: 50,
                     decoration: InputDecoration(
                       hintText: 'Fuel Price',
