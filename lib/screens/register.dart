@@ -326,7 +326,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 '''Log in''',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.raleway(
-                                  fontSize: 14,
+                                  fontSize: ScreenUtil().setSp(38),
                                   fontWeight: FontWeight.w400,
                                   color: redColor,
                                 ),
