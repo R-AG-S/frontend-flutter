@@ -288,6 +288,93 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 print(
                                                   response.body,
                                                 );
+                                                if (response.statusCode ==
+                                                    200) {
+                                                  _homescaffoldKey.currentState
+                                                      .showSnackBar(SnackBar(
+                                                          margin: EdgeInsets
+                                                              .symmetric(
+                                                            vertical:
+                                                                ScreenUtil()
+                                                                    .setHeight(
+                                                                        15),
+                                                            horizontal:
+                                                                ScreenUtil()
+                                                                    .setWidth(
+                                                                        15),
+                                                          ),
+                                                          behavior:
+                                                              SnackBarBehavior
+                                                                  .floating,
+                                                          backgroundColor:
+                                                              errorCardColor,
+                                                          content: Text(
+                                                            'An error occurred. Please try again later.',
+                                                            style: TextStyle(
+                                                                color:
+                                                                    mainBgColor),
+                                                          ),
+                                                          duration: Duration(
+                                                              seconds: 3)));
+                                                } else if (response
+                                                        .statusCode ==
+                                                    400) {
+                                                  _homescaffoldKey.currentState
+                                                      .showSnackBar(SnackBar(
+                                                          margin: EdgeInsets
+                                                              .symmetric(
+                                                            vertical:
+                                                                ScreenUtil()
+                                                                    .setHeight(
+                                                                        15),
+                                                            horizontal:
+                                                                ScreenUtil()
+                                                                    .setWidth(
+                                                                        15),
+                                                          ),
+                                                          behavior:
+                                                              SnackBarBehavior
+                                                                  .floating,
+                                                          backgroundColor:
+                                                              errorCardColor,
+                                                          content: Text(
+                                                            'An error occurred. Please try again later.',
+                                                            style: TextStyle(
+                                                                color:
+                                                                    mainBgColor),
+                                                          ),
+                                                          duration: Duration(
+                                                              seconds: 3)));
+                                                } else if (response
+                                                        .statusCode ==
+                                                    409) {
+                                                  _homescaffoldKey.currentState
+                                                      .showSnackBar(SnackBar(
+                                                          margin: EdgeInsets
+                                                              .symmetric(
+                                                            vertical:
+                                                                ScreenUtil()
+                                                                    .setHeight(
+                                                                        15),
+                                                            horizontal:
+                                                                ScreenUtil()
+                                                                    .setWidth(
+                                                                        15),
+                                                          ),
+                                                          behavior:
+                                                              SnackBarBehavior
+                                                                  .floating,
+                                                          backgroundColor:
+                                                              errorCardColor,
+                                                          content: Text(
+                                                            'An error occurred. Please try again later.',
+                                                            style: TextStyle(
+                                                                color:
+                                                                    mainBgColor),
+                                                          ),
+                                                          duration: Duration(
+                                                              seconds: 3)));
+                                                }
                                               },
                                       ),
                                     ),
