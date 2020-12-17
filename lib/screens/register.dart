@@ -311,9 +311,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                                     Flushbar(
                                                       backgroundColor:
                                                           greenColor,
-                                                      title: "Hey Ninja",
-                                                      message:
-                                                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                                                      title: "Login Successful",
+                                                      // message:
+                                                      // "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
