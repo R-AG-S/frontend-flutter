@@ -52,77 +52,82 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 8,
-                  ),
-                  child: TextField(
-                    controller: _nameController,
-                    keyboardType: TextInputType.name,
-                    maxLength: 50,
-                    decoration: InputDecoration(
-                      hintText: 'Name of Room',
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(5.0),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 8,
+                      ),
+                      child: TextField(
+                        controller: _nameController,
+                        keyboardType: TextInputType.name,
+                        maxLength: 50,
+                        decoration: InputDecoration(
+                          hintText: 'Name of Room',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5.0),
+                            ),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 15,
+                          ),
+                          counterText: '',
                         ),
                       ),
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 10,
-                        horizontal: 15,
-                      ),
-                      counterText: '',
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 8,
-                  ),
-                  child: TextField(
-                    controller: _detailsController,
-                    keyboardType: TextInputType.multiline,
-                    maxLength: 144,
-                    decoration: InputDecoration(
-                      hintText: 'Enter Description',
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(5.0),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 8,
+                      ),
+                      child: TextField(
+                        controller: _detailsController,
+                        keyboardType: TextInputType.multiline,
+                        maxLength: 144,
+                        decoration: InputDecoration(
+                          hintText: 'Enter Description',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5.0),
+                            ),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 15,
+                          ),
+                          counterText: '',
                         ),
                       ),
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 10,
-                        horizontal: 15,
-                      ),
-                      counterText: '',
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 8,
-                  ),
-                  child: TextField(
-                    controller: _fuelController,
-                    keyboardType: TextInputType.number,
-                    maxLength: 50,
-                    decoration: InputDecoration(
-                      hintText: 'Fuel Price',
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(5.0),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 8,
+                      ),
+                      child: TextField(
+                        controller: _fuelController,
+                        keyboardType: TextInputType.number,
+                        maxLength: 50,
+                        decoration: InputDecoration(
+                          hintText: 'Fuel Price',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5.0),
+                            ),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 15,
+                          ),
+                          counterText: '',
                         ),
                       ),
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: 10,
-                        horizontal: 15,
-                      ),
-                      counterText: '',
                     ),
-                  ),
+                  ],
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
