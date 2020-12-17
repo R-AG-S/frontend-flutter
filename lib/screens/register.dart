@@ -105,8 +105,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                     padding: EdgeInsets.only(
                                       top: 50,
                                       bottom: 8,
-                                      // left: MediaQuery.of(context).size.width * 0.1,
-                                      // right: MediaQuery.of(context).size.width * 0.1,
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
