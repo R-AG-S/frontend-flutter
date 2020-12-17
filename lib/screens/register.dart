@@ -317,33 +317,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
-                                                    _registerSaffoldKey
-                                                        .currentState
-                                                        .showSnackBar(SnackBar(
-                                                            margin: EdgeInsets
-                                                                .symmetric(
-                                                              vertical:
-                                                                  ScreenUtil()
-                                                                      .setHeight(
-                                                                          15),
-                                                              horizontal:
-                                                                  ScreenUtil()
-                                                                      .setWidth(
-                                                                          15),
-                                                            ),
-                                                            behavior:
-                                                                SnackBarBehavior
-                                                                    .floating,
-                                                            backgroundColor:
-                                                                greenColor,
-                                                            content: Text(
-                                                              'Sign In Successfull.',
-                                                              style: TextStyle(
-                                                                  color:
-                                                                      mainBgColor),
-                                                            ),
-                                                            duration: Duration(
-                                                                seconds: 3)));
                                                   } else if (response
                                                           .statusCode ==
                                                       400) {
