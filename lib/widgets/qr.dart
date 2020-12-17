@@ -2,267 +2,170 @@ import 'dart:async';
 import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 
-class QRScreen extends StatefulWidget {
+const flashOn = 'FLASH ON';
+const flashOff = 'FLASH OFF';
+const frontCamera = 'FRONT CAMERA';
+const backCamera = 'BACK CAMERA';
+
+class QRViewExample extends StatefulWidget {
+  const QRViewExample({
+    Key key,
+  }) : super(key: key);
+
   @override
-  _QRScreenState createState() => _QRScreenState();
+  State<StatefulWidget> createState() => _QRViewExampleState();
 }
 
-class _QRScreenState extends State<QRScreen> {
-  Uint8List bytes = Uint8List(0);
-  TextEditingController _inputController;
-  TextEditingController _outputController;
-
-  @override
-  initState() {
-    super.initState();
-    this._inputController = new TextEditingController();
-    this._outputController = new TextEditingController();
-  }
+class _QRViewExampleState extends State<QRViewExample> {
+  var qrText = '';
+  var flashState = flashOn;
+  var cameraState = frontCamera;
+  QRViewController controller;
+  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey[300],
-        body: Builder(
-          builder: (BuildContext context) {
-            return ListView(
-              children: <Widget>[
-                _qrCodeWidget(this.bytes, context),
-                Container(
-                  color: Colors.white,
-                  child: Column(
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Expanded(flex: 4, child: _buildQrView(context)),
+          Expanded(
+            flex: 1,
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text('This is the result of scan: $qrText'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      TextField(
-                        controller: this._inputController,
-                        keyboardType: TextInputType.url,
-                        textInputAction: TextInputAction.go,
-                        onSubmitted: (value) => _generateBarCode(value),
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.text_fields),
-                          helperText:
-                              'Please input your code to generage qrcode image.',
-                          hintText: 'Please Input Your Code',
-                          hintStyle: TextStyle(fontSize: 15),
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 7, vertical: 15),
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        child: RaisedButton(
+                          onPressed: () {
+                            if (controller != null) {
+                              controller.toggleFlash();
+                              if (_isFlashOn(flashState)) {
+                                setState(() {
+                                  flashState = flashOff;
+                                });
+                              } else {
+                                setState(() {
+                                  flashState = flashOn;
+                                });
+                              }
+                            }
+                          },
+                          child:
+                              Text(flashState, style: TextStyle(fontSize: 20)),
                         ),
                       ),
-                      SizedBox(height: 20),
-                      TextField(
-                        controller: this._outputController,
-                        maxLines: 2,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.wrap_text),
-                          helperText:
-                              'The barcode or qrcode you scan will be displayed in this area.',
-                          hintText:
-                              'The barcode or qrcode you scan will be displayed in this area.',
-                          hintStyle: TextStyle(fontSize: 15),
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 7, vertical: 15),
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        child: RaisedButton(
+                          onPressed: () {
+                            if (controller != null) {
+                              controller.flipCamera();
+                              if (_isBackCamera(cameraState)) {
+                                setState(() {
+                                  cameraState = frontCamera;
+                                });
+                              } else {
+                                setState(() {
+                                  cameraState = backCamera;
+                                });
+                              }
+                            }
+                          },
+                          child:
+                              Text(cameraState, style: TextStyle(fontSize: 20)),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                      this._buttonGroup(),
-                      SizedBox(height: 70),
+                      )
                     ],
                   ),
-                ),
-              ],
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget _qrCodeWidget(Uint8List bytes, BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(20),
-      child: Card(
-        elevation: 6,
-        child: Column(
-          children: <Widget>[
-            Container(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  Icon(Icons.verified_user, size: 18, color: Colors.green),
-                  Text('  Generate Qrcode', style: TextStyle(fontSize: 15)),
-                  Spacer(),
-                  Icon(Icons.more_vert, size: 18, color: Colors.black54),
-                ],
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
-              decoration: BoxDecoration(
-                color: Colors.black12,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(4), topRight: Radius.circular(4)),
-              ),
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.only(left: 40, right: 40, top: 30, bottom: 10),
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 190,
-                    child: bytes.isEmpty
-                        ? Center(
-                            child: Text('Empty code ... ',
-                                style: TextStyle(color: Colors.black38)),
-                          )
-                        : Image.memory(bytes),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        child: RaisedButton(
+                          onPressed: () {
+                            controller?.pauseCamera();
+                          },
+                          child: Text('pause', style: TextStyle(fontSize: 20)),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        child: RaisedButton(
+                          onPressed: () {
+                            controller?.resumeCamera();
+                          },
+                          child: Text('resume', style: TextStyle(fontSize: 20)),
+                        ),
+                      )
+                    ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 7, left: 25, right: 25),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Expanded(
-                          flex: 5,
-                          child: GestureDetector(
-                            child: Text(
-                              'remove',
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.blue),
-                              textAlign: TextAlign.left,
-                            ),
-                            onTap: () =>
-                                this.setState(() => this.bytes = Uint8List(0)),
-                          ),
-                        ),
-                        Text('|',
-                            style:
-                                TextStyle(fontSize: 15, color: Colors.black26)),
-                        Expanded(
-                          flex: 5,
-                          child: GestureDetector(
-                            child: Text(
-                              'save',
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.blue),
-                              textAlign: TextAlign.right,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),
-            Divider(height: 2, color: Colors.black26),
-            Container(
-              child: Row(
-                children: <Widget>[
-                  Icon(Icons.history, size: 16, color: Colors.black38),
-                  Text('  Generate History',
-                      style: TextStyle(fontSize: 14, color: Colors.black38)),
-                  Spacer(),
-                  Icon(Icons.chevron_right, size: 16, color: Colors.black38),
-                ],
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
 
-  Widget _buttonGroup() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          flex: 1,
-          child: SizedBox(
-            height: 120,
-            child: InkWell(
-              onTap: () => _generateBarCode(this._inputController.text),
-              child: Card(
-                child: Column(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 2,
-                      child: Image.asset('images/generate_qrcode.png'),
-                    ),
-                    Divider(height: 20),
-                    Expanded(flex: 1, child: Text("Generate")),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: SizedBox(
-            height: 120,
-            child: InkWell(
-              onTap: _scan,
-              child: Card(
-                child: Column(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 2,
-                      child: Image.asset('images/scanner.png'),
-                    ),
-                    Divider(height: 20),
-                    Expanded(flex: 1, child: Text("Scan")),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: SizedBox(
-            height: 120,
-            child: InkWell(
-              onTap: _scanPhoto,
-              child: Card(
-                child: Column(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 2,
-                      child: Image.asset('images/albums.png'),
-                    ),
-                    Divider(height: 20),
-                    Expanded(flex: 1, child: Text("Scan Photo")),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
+  bool _isFlashOn(String current) {
+    return flashOn == current;
   }
 
-  Future _scan() async {
-    await Permission.camera.request();
-    String barcode = await scanner.scan();
-    if (barcode == null) {
-      print('nothing return.');
-    } else {
-      this._outputController.text = barcode;
-    }
+  bool _isBackCamera(String current) {
+    return backCamera == current;
   }
 
-  Future _scanPhoto() async {
-    await Permission.storage.request();
-    String barcode = await scanner.scanPhoto();
-    this._outputController.text = barcode;
+  Widget _buildQrView(BuildContext context) {
+    // To ensure the Scanner view is properly sizes after rotation
+    // we need to listen for Flutter SizeChanged notification and update controller
+    return NotificationListener<SizeChangedLayoutNotification>(
+        onNotification: (notification) {
+          Future.microtask(() => controller?.updateDimensions(qrKey));
+          return false;
+        },
+        child: SizeChangedLayoutNotifier(
+            key: const Key('qr-size-notifier'),
+            child: QRView(
+              key: qrKey,
+              onQRViewCreated: _onQRViewCreated,
+              overlay: QrScannerOverlayShape(
+                borderColor: Colors.red,
+                borderRadius: 10,
+                borderLength: 30,
+                borderWidth: 10,
+                cutOutSize: 300,
+              ),
+            )));
   }
 
-  Future _generateBarCode(String inputCode) async {
-    Uint8List result = await scanner.generateBarCode(inputCode);
-    this.setState(() => this.bytes = result);
+  void _onQRViewCreated(QRViewController controller) {
+    this.controller = controller;
+    controller.scannedDataStream.listen((scanData) {
+      setState(() {
+        qrText = scanData;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }
