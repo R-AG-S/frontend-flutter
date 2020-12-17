@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+        primarySwatch: white,
         canvasColor: Color(0xFFEFEFF4),
         iconTheme: IconThemeData(color: darkFadeTextColor),
         primaryTextTheme: Typography.material2018().black,
