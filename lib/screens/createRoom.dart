@@ -50,13 +50,11 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                     vertical: 8,
                   ),
                   child: TextField(
-                    // style: TextStyle(color: mainTextColor),
-                    // cursorColor: mainTextColor,
                     controller: _editController,
-                    keyboardType: widget.inputType,
+                    keyboardType: TextInputType.name,
                     maxLength: 50,
                     decoration: InputDecoration(
-                      labelText: widget.value,
+                      hintText: 'Name of Room',
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.all(
