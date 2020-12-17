@@ -11,6 +11,7 @@ class _RoomOptionsState extends State<RoomOptions> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFFFBD35),
+        body: Column(),
       ),
     );
   }
