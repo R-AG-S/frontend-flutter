@@ -360,6 +360,14 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 } else if (response
                                                         .statusCode ==
                                                     409) {
+                                                  Flushbar(
+                                                    backgroundColor: redColor,
+                                                    title: "Hey Ninja",
+                                                    message:
+                                                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
                                                   _registerSaffoldKey
                                                       .currentState
                                                       .showSnackBar(
