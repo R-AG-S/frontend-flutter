@@ -104,7 +104,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                   Padding(
                                     padding: EdgeInsets.only(
                                       top: ScreenUtil().setHeight(125),
-                                      bottom: 8,
+                                      bottom: ScreenUtil().setHeight(24),
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
