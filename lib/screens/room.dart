@@ -25,7 +25,8 @@ class _RoomOptionsState extends State<RoomOptions> {
             Center(
               child: Text(
                 'New Here?',
-                style: GoogleFonts.raleway(
+                style: TextStyle(
+                  fontFamily: 'Bambino',
                   fontSize: ScreenUtil().setSp(65),
                   fontWeight: FontWeight.w700,
                   color: whiteColor,
