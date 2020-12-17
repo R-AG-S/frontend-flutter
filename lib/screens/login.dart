@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:device_preview/device_preview.dart';
 import 'package:flushbar/flushbar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
@@ -275,7 +276,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         '''Don't have an account?  ''',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.raleway(
-                          fontSize: 14,
+                          fontSize: ScreenUtil().setSp(42),
                           fontWeight: FontWeight.w400,
                         ),
                       ),
