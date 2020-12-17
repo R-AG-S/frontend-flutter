@@ -48,45 +48,52 @@ class _RoomOptionsState extends State<RoomOptions> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: ScreenUtil().setHeight(36),
-              ),
-              child: ButtonTheme(
-                minWidth: ScreenUtil().setWidth(1080),
-                height: ScreenUtil().setHeight(150),
-                child: RaisedButton(
-                  onPressed: () {},
-                  color: whiteColor,
-                  child: Text(
-                    'Create Room',
-                    style: GoogleFonts.openSans(
-                      fontSize: ScreenUtil().setSp(48),
-                      color: darkFadeTextColor,
-                      fontWeight: FontWeight.w600,
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: ScreenUtil().setHeight(36),
+                    ),
+                    child: ButtonTheme(
+                      minWidth: ScreenUtil().setWidth(1080),
+                      height: ScreenUtil().setHeight(150),
+                      child: RaisedButton(
+                        onPressed: () {},
+                        color: whiteColor,
+                        child: Text(
+                          'Create Room',
+                          style: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(48),
+                            color: darkFadeTextColor,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: ScreenUtil().setHeight(36),
-              ),
-              child: ButtonTheme(
-                minWidth: ScreenUtil().setWidth(1080),
-                height: ScreenUtil().setHeight(150),
-                child: RaisedButton(
-                  onPressed: () {},
-                  color: whiteColor,
-                  child: Text(
-                    'join Room',
-                    style: GoogleFonts.openSans(
-                      fontSize: ScreenUtil().setSp(48),
-                      color: darkFadeTextColor,
-                      fontWeight: FontWeight.w600,
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: ScreenUtil().setHeight(36),
+                    ),
+                    child: ButtonTheme(
+                      minWidth: ScreenUtil().setWidth(1080),
+                      height: ScreenUtil().setHeight(150),
+                      child: RaisedButton(
+                        onPressed: () {},
+                        color: whiteColor,
+                        child: Text(
+                          'join Room',
+                          style: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(48),
+                            color: darkFadeTextColor,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
           ],
