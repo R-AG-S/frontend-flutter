@@ -51,8 +51,8 @@ class _SignInScreenState extends State<SignInScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
         body: SingleChildScrollView(
           reverse: false,
-          child: Scaffold(
-            body: Stack(
+          child: Container(
+            child: Stack(
               children: [
                 Padding(
                   padding: EdgeInsets.only(
@@ -366,7 +366,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                           .floating,
                                                       backgroundColor: redColor,
                                                       content: Text(
-                                                        'An error occurred. Please try again later.',
+                                                        'The user with the provided uid already exists.',
                                                         style: TextStyle(
                                                             color: mainBgColor),
                                                       ),
