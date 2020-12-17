@@ -34,10 +34,8 @@ class _SignInScreenState extends State<SignInScreen> {
         _passwordController.text != "" &&
         _userNameController.text.isNotEmpty &&
         _userNameController.text != "" &&
-        _nameController.text.isNotEmpty &&
-        _nameController.text != "" &&
-        _nameController.text.isNotEmpty &&
-        _nameController.text != "") {
+        _phoneController.text.isNotEmpty &&
+        _phoneController.text != "") {
       return true;
     } else {
       return false;
