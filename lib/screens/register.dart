@@ -330,6 +330,14 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 } else if (response
                                                         .statusCode ==
                                                     400) {
+                                                  Flushbar(
+                                                    backgroundColor: redColor,
+                                                    title: "Error",
+                                                    message:
+                                                        'The user with the provided uid already exists.',
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
                                                   _registerSaffoldKey
                                                       .currentState
                                                       .showSnackBar(SnackBar(
