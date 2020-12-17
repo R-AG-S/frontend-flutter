@@ -300,7 +300,12 @@ class _SignInScreenState extends State<SignInScreen> {
                                                       },
                                                     ),
                                                   );
-
+                                                  print(
+                                                    response.statusCode,
+                                                  );
+                                                  print(
+                                                    response.body,
+                                                  );
                                                   if (response.statusCode ==
                                                       201) {
                                                     print(
