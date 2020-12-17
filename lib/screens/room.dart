@@ -68,7 +68,16 @@ class _RoomOptionsState extends State<RoomOptions> {
                       minWidth: ScreenUtil().setWidth(1080),
                       height: ScreenUtil().setHeight(150),
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => QRScreen(
+                                message: 'SRD56GH',
+                              ),
+                            ),
+                          );
+                        },
                         color: whiteColor,
                         child: Text(
                           'Create Room',
