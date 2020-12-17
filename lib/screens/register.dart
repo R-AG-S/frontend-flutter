@@ -295,8 +295,12 @@ class _SignInScreenState extends State<SignInScreen> {
                           ],
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: ScreenUtil().setHeight(
+                            200,
+                          ),
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
