@@ -6,12 +6,12 @@ import 'package:flutter/services.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 /// This is the screen that you'll see when the app starts
-class MainScreen extends StatefulWidget {
+class QRScreen extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _QRScreenState createState() => _QRScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _QRScreenState extends State<QRScreen> {
   @override
   Widget build(BuildContext context) {
     final message = '567834';
