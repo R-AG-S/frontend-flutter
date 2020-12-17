@@ -71,10 +71,11 @@ class _RoomOptionsState extends State<RoomOptions> {
                         color: whiteColor,
                         child: Text(
                           'Create Room',
-                          style: GoogleFonts.openSans(
+                          style: TextStyle(
+                            fontFamily: 'Bambino',
                             fontSize: ScreenUtil().setSp(48),
                             color: darkFadeTextColor,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
                       ),
@@ -92,7 +93,8 @@ class _RoomOptionsState extends State<RoomOptions> {
                         color: whiteColor,
                         child: Text(
                           'Join Room',
-                          style: GoogleFonts.openSans(
+                          style: TextStyle(
+                            fontFamily: 'Bambino',
                             fontSize: ScreenUtil().setSp(48),
                             color: darkFadeTextColor,
                             fontWeight: FontWeight.w600,
