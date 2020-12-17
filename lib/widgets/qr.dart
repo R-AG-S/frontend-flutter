@@ -56,7 +56,7 @@ class _QRScreenState extends State<QRScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40)
                     .copyWith(bottom: 40),
-                child: Text(message),
+                child: Text(widget.message),
               ),
             ],
           ),
