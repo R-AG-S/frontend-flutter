@@ -78,7 +78,7 @@ class _QRScreenState extends State<QRScreen> {
 
   Future<ui.Image> _loadOverlayImage() async {
     final completer = Completer<ui.Image>();
-    final byteData = await rootBundle.load('images/place.png');
+    final byteData = await rootBundle.load('images/fade.png');
     ui.decodeImageFromList(byteData.buffer.asUint8List(), completer.complete);
     return completer.future;
   }
