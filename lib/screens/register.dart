@@ -56,7 +56,7 @@ class _SignInScreenState extends State<SignInScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom * 0.025,
+                    bottom: MediaQuery.of(context).viewInsets.bottom * 0.1,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
