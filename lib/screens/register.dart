@@ -358,15 +358,16 @@ class _SignInScreenState extends State<SignInScreen> {
                                                           Duration(seconds: 3),
                                                     )..show(context);
                                                   }
+                                                } else {
+                                                  Flushbar(
+                                                    backgroundColor: redColor,
+                                                    title: "Error",
+                                                    message:
+                                                        '''Input shouldn't be null.''',
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
                                                 }
-                                                Flushbar(
-                                                  backgroundColor: redColor,
-                                                  title: "Error",
-                                                  message:
-                                                      '''Input shouldn't be null.''',
-                                                  duration:
-                                                      Duration(seconds: 3),
-                                                )..show(context);
                                               },
                                       ),
                                     ),
