@@ -109,7 +109,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                     keyboardType: TextInputType.name,
                     maxLength: 50,
                     decoration: InputDecoration(
-                      hintText: 'Name of Room',
+                      hintText: 'Fuel Price',
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.all(
