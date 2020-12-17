@@ -25,11 +25,11 @@ final TextEditingController _phoneController = TextEditingController();
 GlobalKey<ScaffoldState> _registerSaffoldKey = GlobalKey();
 
 class _SignInScreenState extends State<SignInScreen> {
-  bool CheckStatus() {
+  bool checkStatus() {
     if (_nameController.text.isNotEmpty &&
         _nameController.text != "" &&
-        _nameController.text.isNotEmpty &&
-        _nameController.text != "" &&
+        _emailController.text.isNotEmpty &&
+        _emailController.text != "" &&
         _nameController.text.isNotEmpty &&
         _nameController.text != "" &&
         _nameController.text.isNotEmpty &&
@@ -253,7 +253,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                         onPressed: isWaiting
                                             ? null
                                             : () async {
-                                                if (CheckStatus()) {
+                                                if (checkStatus()) {
                                                   final response =
                                                       await http.post(
                                                     'https://payup-backend.herokuapp.com/users/register/',
