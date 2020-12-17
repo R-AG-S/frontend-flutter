@@ -65,7 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
         Flushbar(
           backgroundColor: redColor,
           title: "Error",
-          message: 'Name should not be empty.',
+          message: 'Username should not be empty.',
           duration: Duration(seconds: 3),
         )..show(context);
       }
