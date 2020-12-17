@@ -30,7 +30,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
           appBar: AppBar(
             elevation: 0,
             title: Text(
-              'Edit ' + widget.name,
+              'Create Carpool Room',
               style: TextStyle(
                 fontFamily: 'Bambino',
                 letterSpacing: 0.5,
