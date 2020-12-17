@@ -15,6 +15,8 @@ class QRScreen extends StatefulWidget {
 class _QRScreenState extends State<QRScreen> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context,
+        designSize: Size(1080, 2400), allowFontScaling: false);
     final qrFutureBuilder = FutureBuilder(
       future: _loadOverlayImage(),
       builder: (ctx, snapshot) {
