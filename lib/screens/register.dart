@@ -320,8 +320,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                                       title: "Login Successful",
                                                       message:
                                                           '''You're now a member of PayUp.''',
-                                                      // message:
-                                                      // "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
