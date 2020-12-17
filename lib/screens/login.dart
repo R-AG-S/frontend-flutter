@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flushbar/flushbar.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
@@ -284,5 +285,46 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  bool checkStatus() {
+    if (_emailController.text.isEmpty && _emailController.text == "") {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: 'Email should not be empty.',
+        duration: Duration(seconds: 3),
+      )..show(context);
+      return false;
+    } else if (_passwordController.text.isEmpty &&
+        _passwordController.text == "") {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: 'Password should not be empty.',
+        duration: Duration(seconds: 3),
+      )..show(context);
+      return false;
+    } else if (!(_emailController.text.toString().contains(
+          new RegExp(r'@', caseSensitive: true),
+        ))) {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: 'Enter valid email id.',
+        duration: Duration(seconds: 3),
+      )..show(context);
+      return false;
+    } else if (_passwordController.text.length < 8) {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: 'Password too short.',
+        duration: Duration(seconds: 3),
+      )..show(context);
+      return false;
+    } else {
+      return true;
+    }
   }
 }
