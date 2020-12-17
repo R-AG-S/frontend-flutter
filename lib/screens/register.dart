@@ -307,11 +307,13 @@ class _SignInScreenState extends State<SignInScreen> {
                                                     response.body,
                                                   );
                                                   if (response.statusCode ==
-                                                      200) {
+                                                      201) {
                                                     Flushbar(
                                                       backgroundColor:
                                                           greenColor,
                                                       title: "Login Successful",
+                                                      message:
+                                                          '''You're now a member of PayUp.''',
                                                       // message:
                                                       // "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
                                                       duration:
@@ -333,8 +335,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                                     Flushbar(
                                                       backgroundColor: redColor,
                                                       title: "Error",
-                                                      message:
-                                                          'The user with the provided uid already exists.',
+                                                      message: jsonDecode(
+                                                          response
+                                                              .body)['Message'],
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
