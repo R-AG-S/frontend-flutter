@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -292,6 +293,13 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 );
                                                 if (response.statusCode ==
                                                     200) {
+                                                  Flushbar(
+                                                    title: "Hey Ninja",
+                                                    message:
+                                                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
                                                   _registerSaffoldKey.currentState
                                                       .showSnackBar(SnackBar(
                                                           margin: EdgeInsets
