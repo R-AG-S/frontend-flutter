@@ -115,7 +115,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                           style: GoogleFonts.openSans(
                                             color: darkFadeTextColor,
                                             fontWeight: FontWeight.w600,
-                                            fontSize: 12,
+                                            fontSize: ScreenUtil().setSp(35),
                                           ),
                                         ),
                                         Padding(
