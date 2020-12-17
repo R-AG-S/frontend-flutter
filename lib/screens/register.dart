@@ -68,6 +68,13 @@ class _SignInScreenState extends State<SignInScreen> {
           message: 'Username should not be empty.',
           duration: Duration(seconds: 3),
         )..show(context);
+      } else if (_phoneController.text.isEmpty && _phoneController.text == "") {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message: 'Phone Number should not be empty.',
+          duration: Duration(seconds: 3),
+        )..show(context);
       }
       return false;
     }
