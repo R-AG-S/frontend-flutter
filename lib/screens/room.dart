@@ -17,6 +17,7 @@ class _RoomOptionsState extends State<RoomOptions> {
       child: Scaffold(
         backgroundColor: Color(0xFFFFBD35),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.asset(
               'images/car_3.gif',
