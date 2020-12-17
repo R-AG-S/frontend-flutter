@@ -210,7 +210,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                             ? Container(
                                                 height:
                                                     ScreenUtil().setHeight(120),
-                                                width: 40,
+                                                width:
+                                                    ScreenUtil().setWidth(120),
                                                 padding: EdgeInsets.all(8),
                                                 child:
                                                     CircularProgressIndicator(
