@@ -48,7 +48,10 @@ class _RoomOptionsState extends State<RoomOptions> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.symmetric(
+                  horizontal: ScreenUtil().setWidth(
+                75,
+              )),
               child: Column(
                 children: [
                   Padding(
