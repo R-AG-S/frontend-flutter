@@ -199,7 +199,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.symmetric(
-                                      vertical: 12,
+                                      vertical: ScreenUtil().setHeight(36),
                                     ),
                                     child: ButtonTheme(
                                       minWidth: width,
@@ -208,7 +208,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                         color: whiteColor,
                                         child: isWaiting
                                             ? Container(
-                                                height: 40,
+                                                height:
+                                                    ScreenUtil().setHeight(120),
                                                 width: 40,
                                                 padding: EdgeInsets.all(8),
                                                 child:
