@@ -362,9 +362,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                                     409) {
                                                   Flushbar(
                                                     backgroundColor: redColor,
-                                                    title: "Hey Ninja",
+                                                    title: "Error",
                                                     message:
-                                                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                                                        'The user with the provided uid already exists.',
                                                     duration:
                                                         Duration(seconds: 3),
                                                   )..show(context);
