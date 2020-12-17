@@ -156,6 +156,18 @@ class _SignInScreenState extends State<SignInScreen> {
                                             vertical: 8,
                                           ),
                                           child: TextFormWidget(
+                                            hint: 'Phone Number',
+                                            firstNameController:
+                                                _phoneController,
+                                            type: TextInputType.phone,
+                                            obscure: false,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            vertical: 8,
+                                          ),
+                                          child: TextFormWidget(
                                             hint: 'Password',
                                             firstNameController:
                                                 _passwordController,
