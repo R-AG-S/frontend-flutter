@@ -88,7 +88,7 @@ class _SignInScreenState extends State<SignInScreen> {
         Flushbar(
           backgroundColor: redColor,
           title: "Error",
-          message: 'Enter valid email id.',
+          message: 'Password too short.',
           duration: Duration(seconds: 3),
         )..show(context);
       }
