@@ -30,8 +30,8 @@ class _SignInScreenState extends State<SignInScreen> {
         _nameController.text != "" &&
         _emailController.text.isNotEmpty &&
         _emailController.text != "" &&
-        _nameController.text.isNotEmpty &&
-        _nameController.text != "" &&
+        _passwordController.text.isNotEmpty &&
+        _passwordController.text != "" &&
         _nameController.text.isNotEmpty &&
         _nameController.text != "" &&
         _nameController.text.isNotEmpty &&
