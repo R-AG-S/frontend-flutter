@@ -203,7 +203,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                     ),
                                     child: ButtonTheme(
                                       minWidth: width,
-                                      height: 50.0,
+                                      height: ScreenUtil().setHeight(150),
                                       child: RaisedButton(
                                         color: whiteColor,
                                         child: isWaiting
