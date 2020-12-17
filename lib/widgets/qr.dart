@@ -5,16 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
+class QRScreen extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _QRScreenState createState() => _QRScreenState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _QRScreenState extends State<QRScreen> {
   Uint8List bytes = Uint8List(0);
   TextEditingController _inputController;
   TextEditingController _outputController;
