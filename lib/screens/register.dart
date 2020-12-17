@@ -323,6 +323,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
+                                                    Navigator.pushNamed(
+                                                        context, 'room');
                                                   } else if (response
                                                           .statusCode ==
                                                       400) {
