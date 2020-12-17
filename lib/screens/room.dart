@@ -75,7 +75,7 @@ class _RoomOptionsState extends State<RoomOptions> {
                             fontFamily: 'Bambino',
                             fontSize: ScreenUtil().setSp(48),
                             color: darkFadeTextColor,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
