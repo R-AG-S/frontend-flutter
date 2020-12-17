@@ -371,7 +371,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                   backgroundColor: redColor,
                                                   title: "Error",
                                                   message:
-                                                      '''Input should'nt be null.''',
+                                                      '''Input shouldn't be null.''',
                                                   duration:
                                                       Duration(seconds: 3),
                                                 )..show(context);
