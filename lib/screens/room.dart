@@ -58,7 +58,7 @@ class _RoomOptionsState extends State<RoomOptions> {
                   onPressed: () {},
                   color: whiteColor,
                   child: Text(
-                    'Sign In',
+                    'Create Room',
                     style: GoogleFonts.openSans(
                       fontSize: ScreenUtil().setSp(48),
                       color: darkFadeTextColor,
@@ -79,7 +79,7 @@ class _RoomOptionsState extends State<RoomOptions> {
                   onPressed: () {},
                   color: whiteColor,
                   child: Text(
-                    'Sign In',
+                    'join Room',
                     style: GoogleFonts.openSans(
                       fontSize: ScreenUtil().setSp(48),
                       color: darkFadeTextColor,
