@@ -78,9 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Icon(
                 Icons.help_outline_rounded,
                 size: 26.0,
-                color: fadeTextColor,
               ),
-              backgroundColor: whiteColor,
             ),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
@@ -98,7 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: GoogleFonts.raleway(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,
-                          color: mainTextColor,
                         ),
                       ),
                     ),
@@ -111,7 +108,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: GoogleFonts.raleway(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
-                            color: mainTextColor,
                           ),
                         ),
                       ),
@@ -136,7 +132,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Text(
                                   'ACCOUNT INFORMATION',
                                   style: GoogleFonts.openSans(
-                                    color: darkFadeTextColor,
                                     fontWeight: FontWeight.w600,
                                     fontSize: 12,
                                   ),
@@ -278,7 +273,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: GoogleFonts.raleway(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
-                          color: mainTextColor,
                         ),
                       ),
                       GestureDetector(
