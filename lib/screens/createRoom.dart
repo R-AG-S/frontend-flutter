@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 
 class CreateRoomScreen extends StatefulWidget {
@@ -83,7 +84,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                     child: RaisedButton(
                       color: Colors.greenAccent[400],
                       child: Text(
-                        'Save',
+                        'Create Room',
                         style: GoogleFonts.openSans(
                           fontSize: 18,
                           color: whiteColor,
