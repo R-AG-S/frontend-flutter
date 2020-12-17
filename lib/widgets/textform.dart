@@ -16,7 +16,9 @@ class TextFormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: TextStyle(color: mainTextColor),
+      style: TextStyle(
+        color: mainTextColor,
+      ),
       cursorColor: mainTextColor,
       controller: firstNameController,
       keyboardType: type,
@@ -36,6 +38,9 @@ class TextFormWidget extends StatelessWidget {
         ),
         filled: true,
         fillColor: cardColor,
+        hintStyle: TextStyle(
+          color: mainTextColor,
+        ),
         counterText: '',
       ),
     );
