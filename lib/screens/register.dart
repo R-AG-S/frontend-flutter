@@ -30,6 +30,7 @@ class _SignInScreenState extends State<SignInScreen> {
         designSize: Size(1080, 2400), allowFontScaling: false);
     return SafeArea(
       child: Scaffold(
+        key: _registerSaffoldKey,
         floatingActionButton: Padding(
           padding: EdgeInsets.all(ScreenUtil().setHeight(
             30,
@@ -310,7 +311,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                           backgroundColor:
                                                               greenColor,
                                                           content: Text(
-                                                            'An error occurred. Please try again later.',
+                                                            'Sign In Successfull.',
                                                             style: TextStyle(
                                                                 color:
                                                                     mainBgColor),
