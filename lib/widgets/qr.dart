@@ -4,6 +4,8 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/utilities/constants.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class QRScreen extends StatefulWidget {
@@ -59,7 +61,13 @@ class _QRScreenState extends State<QRScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40)
                     .copyWith(bottom: 40),
-                child: Text(widget.message),
+                child: Text(
+                  widget.message,
+                  style: GoogleFonts.openSans(
+                    fontSize: ScreenUtil().setSp(48),
+                    color: mainTextColor,
+                  ),
+                ),
               ),
             ],
           ),
