@@ -78,6 +78,54 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
+                    vertical: 8,
+                  ),
+                  child: TextField(
+                    controller: _nameController,
+                    keyboardType: TextInputType.name,
+                    maxLength: 50,
+                    decoration: InputDecoration(
+                      hintText: 'Name of Room',
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(5.0),
+                        ),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 15,
+                      ),
+                      counterText: '',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 8,
+                  ),
+                  child: TextField(
+                    controller: _nameController,
+                    keyboardType: TextInputType.name,
+                    maxLength: 50,
+                    decoration: InputDecoration(
+                      hintText: 'Name of Room',
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(5.0),
+                        ),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 15,
+                      ),
+                      counterText: '',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
                     vertical: 24,
                   ),
                   child: ButtonTheme(
