@@ -266,9 +266,19 @@ class _SignInScreenState extends State<SignInScreen> {
                                                               '+91'
                                                           ? _phoneController
                                                               .text
-                                                          : '+91' +
-                                                              _phoneController
-                                                                  .text
+                                                          : _phoneController
+                                                                      .text
+                                                                      .toString()
+                                                                      .substring(
+                                                                          0,
+                                                                          2) ==
+                                                                  '91'
+                                                              ? '+' +
+                                                                  _phoneController
+                                                                      .text
+                                                              : '+91' +
+                                                                  _phoneController
+                                                                      .text
                                                     },
                                                   ),
                                                 );
