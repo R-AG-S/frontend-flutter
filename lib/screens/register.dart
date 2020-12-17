@@ -75,9 +75,10 @@ class _SignInScreenState extends State<SignInScreen> {
           message: 'Phone Number should not be empty.',
           duration: Duration(seconds: 3),
         )..show(context);
-      } else if (_emailController.text.toString().contains(
+      } else if (!(_emailController.text.toString().contains(
             new RegExp(r'@', caseSensitive: true),
-          )) return false;
+          ))) {}
+      return false;
     }
   }
 
