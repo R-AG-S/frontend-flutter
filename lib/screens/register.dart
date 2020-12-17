@@ -73,7 +73,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: Text(
                                 'Sign up to PayUp',
                                 style: GoogleFonts.raleway(
-                                  fontSize: ScreenUtil().setSp(75),
+                                  fontSize: ScreenUtil().setSp(65),
                                   fontWeight: FontWeight.w700,
                                   color: mainTextColor,
                                 ),
@@ -86,7 +86,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                   '''Car Pool with friends. It's always fun!!!''',
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.raleway(
-                                    fontSize: 14,
+                                    fontSize: ScreenUtil().setSp(40),
                                     fontWeight: FontWeight.w400,
                                     color: mainTextColor,
                                   ),
