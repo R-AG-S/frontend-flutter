@@ -330,8 +330,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                                       backgroundColor: redColor,
                                                       title: "Error",
                                                       message: jsonDecode(
-                                                          response
-                                                              .body)['Message'],
+                                                                  response
+                                                                      .body)[
+                                                              'Message']
+                                                          .toString()
+                                                          .split('(')[0],
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
@@ -342,8 +345,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                                       backgroundColor: redColor,
                                                       title: "Error",
                                                       message: jsonDecode(
-                                                          response
-                                                              .body)['Message'],
+                                                                  response
+                                                                      .body)[
+                                                              'Message']
+                                                          .toString()
+                                                          .split('(')[0],
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
@@ -352,8 +358,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                                       backgroundColor: redColor,
                                                       title: "Error",
                                                       message: jsonDecode(
-                                                          response
-                                                              .body)['Message'],
+                                                                  response
+                                                                      .body)[
+                                                              'Message']
+                                                          .toString()
+                                                          .split('(')[0],
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
