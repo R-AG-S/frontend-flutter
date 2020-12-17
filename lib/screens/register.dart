@@ -105,7 +105,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                     style: GoogleFonts.raleway(
                                       fontSize: ScreenUtil().setSp(40),
                                       fontWeight: FontWeight.w400,
-                                      color: mainTextColor,
                                     ),
                                   ),
                                 ),
