@@ -52,11 +52,12 @@ class _SignInScreenState extends State<SignInScreen> {
           message: 'Email should not be empty.',
           duration: Duration(seconds: 3),
         )..show(context);
-      } else if (_nameController.text.isEmpty && _nameController.text == "") {
+      } else if (_passwordController.text.isEmpty &&
+          _passwordController.text == "") {
         Flushbar(
           backgroundColor: redColor,
           title: "Error",
-          message: 'Name should not be empty.',
+          message: 'Password should not be empty.',
           duration: Duration(seconds: 3),
         )..show(context);
       } else if (_nameController.text.isEmpty && _nameController.text == "") {
