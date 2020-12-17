@@ -345,6 +345,16 @@ class _SignInScreenState extends State<SignInScreen> {
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
+                                                  } else {
+                                                    Flushbar(
+                                                      backgroundColor: redColor,
+                                                      title: "Error",
+                                                      message: jsonDecode(
+                                                          response
+                                                              .body)['Message'],
+                                                      duration:
+                                                          Duration(seconds: 3),
+                                                    )..show(context);
                                                   }
                                                 }
                                                 Flushbar(
