@@ -263,22 +263,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                                     },
                                                   ),
                                                 );
-                                                // Future<http.Response> createAlbum(
-                                                //     String title) {
-                                                //   return http.post(
-                                                //     'https://payup-backend.herokuapp.com/users/register/',
-                                                //     headers: <String, String>{
-                                                //       "email": _emailController.text,
-                                                //       "password":
-                                                //           _passwordController.text,
-                                                //       "username":
-                                                //           _userNameController.text,
-                                                //       "full_name": _nameController.text
-                                                //     },
-                                                //     body: jsonEncode(<String, String>{}),
-                                                //   );
-                                                // }
-
                                                 print(
                                                   response.statusCode,
                                                 );
