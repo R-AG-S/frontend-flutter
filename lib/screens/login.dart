@@ -211,25 +211,28 @@ class _LoginScreenState extends State<LoginScreen> {
                               onPressed: isWaiting
                                   ? null
                                   : () async {
-                                      final response = await http.post(
-                                        'https://payup-backend.herokuapp.com/users/login/',
-                                        headers: <String, String>{
-                                          'Content-type': 'application/json',
-                                          'Accept': 'application/json',
-                                          // "Authorization": "Some token"
-                                        },
-                                        body: json.encode(
-                                          <String, String>{
-                                            "email": _emailController.text,
-                                            "password":
-                                                _passwordController.text,
+                                      if (checkStatus()) {
+                                        final response = await http.post(
+                                          'https://payup-backend.herokuapp.com/users/login/',
+                                          headers: <String, String>{
+                                            'Content-type': 'application/json',
+                                            'Accept': 'application/json',
+                                            // "Authorization": "Some token"
                                           },
-                                        ),
-                                      );
-                                      print(jsonDecode(response.body)['email']);
-                                      print(response.statusCode);
-                                      if (response.statusCode == 200) {
-                                        Navigator.pushNamed(context, 'room');
+                                          body: json.encode(
+                                            <String, String>{
+                                              "email": _emailController.text,
+                                              "password":
+                                                  _passwordController.text,
+                                            },
+                                          ),
+                                        );
+                                        print(
+                                            jsonDecode(response.body)['email']);
+                                        print(response.statusCode);
+                                        if (response.statusCode == 200) {
+                                          Navigator.pushNamed(context, 'room');
+                                        }
                                       }
                                     },
                             ),
