@@ -8,6 +8,8 @@ class RoomOptions extends StatefulWidget {
 class _RoomOptionsState extends State<RoomOptions> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+      child: Scaffold(),
+    );
   }
 }
