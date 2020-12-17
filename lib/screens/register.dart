@@ -21,6 +21,7 @@ final TextEditingController _passwordController = TextEditingController();
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _userNameController = TextEditingController();
 final TextEditingController _phoneController = TextEditingController();
+GlobalKey<ScaffoldState> _registerSaffoldKey = GlobalKey();
 
 class _SignInScreenState extends State<SignInScreen> {
   @override
@@ -290,7 +291,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 );
                                                 if (response.statusCode ==
                                                     200) {
-                                                  _homescaffoldKey.currentState
+                                                  _registerSaffoldKey
+                                                      .currentState
                                                       .showSnackBar(SnackBar(
                                                           margin: EdgeInsets
                                                               .symmetric(
@@ -319,7 +321,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 } else if (response
                                                         .statusCode ==
                                                     400) {
-                                                  _homescaffoldKey.currentState
+                                                  _registerSaffoldKey
+                                                      .currentState
                                                       .showSnackBar(SnackBar(
                                                           margin: EdgeInsets
                                                               .symmetric(
@@ -348,32 +351,30 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 } else if (response
                                                         .statusCode ==
                                                     409) {
-                                                  _homescaffoldKey.currentState
-                                                      .showSnackBar(SnackBar(
-                                                          margin: EdgeInsets
-                                                              .symmetric(
-                                                            vertical:
-                                                                ScreenUtil()
-                                                                    .setHeight(
-                                                                        15),
-                                                            horizontal:
-                                                                ScreenUtil()
-                                                                    .setWidth(
-                                                                        15),
-                                                          ),
-                                                          behavior:
-                                                              SnackBarBehavior
-                                                                  .floating,
-                                                          backgroundColor:
-                                                              redColor,
-                                                          content: Text(
-                                                            'An error occurred. Please try again later.',
-                                                            style: TextStyle(
-                                                                color:
-                                                                    mainBgColor),
-                                                          ),
-                                                          duration: Duration(
-                                                              seconds: 3)));
+                                                  _registerSaffoldKey
+                                                      .currentState
+                                                      .showSnackBar(
+                                                    SnackBar(
+                                                      margin:
+                                                          EdgeInsets.symmetric(
+                                                        vertical: ScreenUtil()
+                                                            .setHeight(15),
+                                                        horizontal: ScreenUtil()
+                                                            .setWidth(15),
+                                                      ),
+                                                      behavior: SnackBarBehavior
+                                                          .floating,
+                                                      backgroundColor: redColor,
+                                                      content: Text(
+                                                        'An error occurred. Please try again later.',
+                                                        style: TextStyle(
+                                                            color: mainBgColor),
+                                                      ),
+                                                      duration: Duration(
+                                                        seconds: 3,
+                                                      ),
+                                                    ),
+                                                  );
                                                 }
                                               },
                                       ),
