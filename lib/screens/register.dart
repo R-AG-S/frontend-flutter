@@ -333,38 +333,10 @@ class _SignInScreenState extends State<SignInScreen> {
                                                   Flushbar(
                                                     backgroundColor: redColor,
                                                     title: "Error",
-                                                    message:
-                                                        'The user with the provided uid already exists.',
+                                                    message: 'Input Invalid.',
                                                     duration:
                                                         Duration(seconds: 3),
                                                   )..show(context);
-                                                  _registerSaffoldKey
-                                                      .currentState
-                                                      .showSnackBar(SnackBar(
-                                                          margin: EdgeInsets
-                                                              .symmetric(
-                                                            vertical:
-                                                                ScreenUtil()
-                                                                    .setHeight(
-                                                                        15),
-                                                            horizontal:
-                                                                ScreenUtil()
-                                                                    .setWidth(
-                                                                        15),
-                                                          ),
-                                                          behavior:
-                                                              SnackBarBehavior
-                                                                  .floating,
-                                                          backgroundColor:
-                                                              redColor,
-                                                          content: Text(
-                                                            'An error occurred. Please try again later.',
-                                                            style: TextStyle(
-                                                                color:
-                                                                    mainBgColor),
-                                                          ),
-                                                          duration: Duration(
-                                                              seconds: 3)));
                                                 } else if (response
                                                         .statusCode ==
                                                     409) {
