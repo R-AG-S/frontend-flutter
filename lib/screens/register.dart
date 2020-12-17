@@ -406,7 +406,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 '''Already have an account?  ''',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.raleway(
-                                  fontSize: ScreenUtil().setSp(38),
+                                  fontSize: ScreenUtil().setSp(42),
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -423,8 +423,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                   '''Log in''',
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.raleway(
-                                    fontSize: ScreenUtil().setSp(38),
-                                    fontWeight: FontWeight.w400,
+                                    fontSize: ScreenUtil().setSp(42),
+                                    fontWeight: FontWeight.w600,
                                     color: redColor,
                                   ),
                                 ),
