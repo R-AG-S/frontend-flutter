@@ -56,7 +56,7 @@ class _SignInScreenState extends State<SignInScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom * 0.2,
+                    bottom: MediaQuery.of(context).viewInsets.bottom * 0.025,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -295,40 +295,38 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       Align(
                         alignment: Alignment.bottomCenter,
-                        child: Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                '''Already have an account?  ''',
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '''Already have an account?  ''',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.raleway(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: mainTextColor,
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pushReplacement(
+                                  CupertinoPageRoute<bool>(
+                                    builder: (BuildContext context) =>
+                                        LoginScreen(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                '''Log in''',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.raleway(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: mainTextColor,
+                                  color: redColor,
                                 ),
                               ),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).pushReplacement(
-                                    CupertinoPageRoute<bool>(
-                                      builder: (BuildContext context) =>
-                                          LoginScreen(),
-                                    ),
-                                  );
-                                },
-                                child: Text(
-                                  '''Log in''',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.raleway(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: redColor,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       )
                     ],
