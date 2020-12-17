@@ -95,7 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                horizontal: 35,
+                                horizontal: ScreenUtil().setWidth(75),
                               ),
                               child: Column(
                                 mainAxisAlignment:
