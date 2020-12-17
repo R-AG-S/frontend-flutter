@@ -27,6 +27,8 @@ class _SignInScreenState extends State<SignInScreen> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomPadding: false,
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(10.0),
           child: FloatingActionButton(
