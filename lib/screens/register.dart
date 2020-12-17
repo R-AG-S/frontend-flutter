@@ -38,6 +38,35 @@ class _SignInScreenState extends State<SignInScreen> {
         _phoneController.text != "") {
       return true;
     } else {
+      if (_nameController.text.isEmpty && _nameController.text == "") {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message: 'Name should not be empty.',
+          duration: Duration(seconds: 3),
+        )..show(context);
+      } else if (_emailController.text.isEmpty && _emailController.text == "") {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message: 'Email should not be empty.',
+          duration: Duration(seconds: 3),
+        )..show(context);
+      } else if (_nameController.text.isEmpty && _nameController.text == "") {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message: 'Name should not be empty.',
+          duration: Duration(seconds: 3),
+        )..show(context);
+      } else if (_nameController.text.isEmpty && _nameController.text == "") {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message: 'Name should not be empty.',
+          duration: Duration(seconds: 3),
+        )..show(context);
+      }
       return false;
     }
   }
