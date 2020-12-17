@@ -19,6 +19,7 @@ final TextEditingController _emailController = TextEditingController();
 final TextEditingController _passwordController = TextEditingController();
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _userNameController = TextEditingController();
+final TextEditingController _phoneController = TextEditingController();
 
 class _SignInScreenState extends State<SignInScreen> {
   @override
@@ -52,7 +53,7 @@ class _SignInScreenState extends State<SignInScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom * 0.3,
+                    bottom: MediaQuery.of(context).viewInsets.bottom * 0.2,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
