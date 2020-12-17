@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/widgets/qr.dart';
 
 class RoomOptions extends StatefulWidget {
   @override
@@ -89,7 +90,14 @@ class _RoomOptionsState extends State<RoomOptions> {
                       minWidth: ScreenUtil().setWidth(1080),
                       height: ScreenUtil().setHeight(150),
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => QRScreen(),
+                            ),
+                          );
+                        },
                         color: whiteColor,
                         child: Text(
                           'Join Room',
