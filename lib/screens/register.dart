@@ -291,8 +291,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                 );
                                                 if (response.statusCode ==
                                                     200) {
-                                                  _registerSaffoldKey
-                                                      .currentState
+                                                  _registerSaffoldKey.currentState
                                                       .showSnackBar(SnackBar(
                                                           margin: EdgeInsets
                                                               .symmetric(
@@ -309,7 +308,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                               SnackBarBehavior
                                                                   .floating,
                                                           backgroundColor:
-                                                              redColor,
+                                                              greenColor,
                                                           content: Text(
                                                             'An error occurred. Please try again later.',
                                                             style: TextStyle(
