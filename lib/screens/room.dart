@@ -13,7 +13,7 @@ class _RoomOptionsState extends State<RoomOptions> {
         backgroundColor: Color(0xFFFFBD35),
         body: Column(
           children: [
-            Image.asset(),
+            Image.asset('images/car_3.gif'),
           ],
         ),
       ),
