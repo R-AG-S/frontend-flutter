@@ -33,7 +33,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
       home: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            elevation: 0,
+            elevation: 2,
             title: Text(
               'Create Carpool Room',
               style: TextStyle(
@@ -43,7 +43,6 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            backgroundColor: Colors.transparent,
           ),
           body: Container(
             padding: EdgeInsets.symmetric(
