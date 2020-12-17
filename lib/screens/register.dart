@@ -191,7 +191,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                     Buttons.Google,
                                     padding: EdgeInsets.symmetric(
                                       vertical: ScreenUtil().setHeight(22.5),
-                                      horizontal: ScreenUtil().setWidth(235),
+                                      horizontal: ScreenUtil().setWidth(230),
                                     ),
                                     text: "Sign in with Google",
                                     onPressed: () {
