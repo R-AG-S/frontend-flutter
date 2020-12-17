@@ -82,7 +82,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                   ),
                   child: TextField(
                     controller: _detailsController,
-                    keyboardType: TextInputType.name,
+                    keyboardType: TextInputType.multiline,
                     maxLength: 144,
                     decoration: InputDecoration(
                       hintText: 'Enter Description',
