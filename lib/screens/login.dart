@@ -59,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       darkTheme: ThemeData(
         primarySwatch: black,
+        accentColor: black,
         brightness: Brightness.dark,
         canvasColor: mainTextColor,
         primaryTextTheme: Typography.material2018().white,
