@@ -120,7 +120,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                         ),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            vertical: 8,
+                                            vertical:
+                                                ScreenUtil().setHeight(24),
                                           ),
                                           child: TextFormWidget(
                                             hint: 'Name',
@@ -132,7 +133,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                         ),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            vertical: 8,
+                                            vertical:
+                                                ScreenUtil().setHeight(24),
                                           ),
                                           child: TextFormWidget(
                                             hint: 'Email',
@@ -144,7 +146,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                         ),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            vertical: 8,
+                                            vertical:
+                                                ScreenUtil().setHeight(24),
                                           ),
                                           child: TextFormWidget(
                                             hint: 'Username',
@@ -156,7 +159,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                         ),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            vertical: 8,
+                                            vertical:
+                                                ScreenUtil().setHeight(24),
                                           ),
                                           child: TextFormWidget(
                                             hint: 'Phone Number',
@@ -168,7 +172,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                         ),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
-                                            vertical: 8,
+                                            vertical:
+                                                ScreenUtil().setHeight(24),
                                           ),
                                           child: TextFormWidget(
                                             hint: 'Password',
