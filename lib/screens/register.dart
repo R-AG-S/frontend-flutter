@@ -73,7 +73,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: Text(
                                 'Sign up to PayUp',
                                 style: GoogleFonts.raleway(
-                                  fontSize: 24,
+                                  fontSize: ScreenUtil().setSp(75),
                                   fontWeight: FontWeight.w700,
                                   color: mainTextColor,
                                 ),
