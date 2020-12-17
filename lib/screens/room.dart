@@ -27,7 +27,7 @@ class _RoomOptionsState extends State<RoomOptions> {
                 'New Here?',
                 style: TextStyle(
                   fontFamily: 'Bambino',
-                  fontSize: ScreenUtil().setSp(65),
+                  fontSize: ScreenUtil().setSp(90),
                   fontWeight: FontWeight.w700,
                   color: whiteColor,
                 ),
@@ -40,7 +40,7 @@ class _RoomOptionsState extends State<RoomOptions> {
                   '''Create or Join to Continue''',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.raleway(
-                    fontSize: ScreenUtil().setSp(40),
+                    fontSize: ScreenUtil().setSp(50),
                     fontWeight: FontWeight.w400,
                     color: mainTextColor,
                   ),
