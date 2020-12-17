@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-/// This is the screen that you'll see when the app starts
 class QRScreen extends StatefulWidget {
+  QRScreen({@required this.message});
+  final String message;
   @override
   _QRScreenState createState() => _QRScreenState();
 }
@@ -14,8 +15,6 @@ class QRScreen extends StatefulWidget {
 class _QRScreenState extends State<QRScreen> {
   @override
   Widget build(BuildContext context) {
-    final message = '567834';
-
     final qrFutureBuilder = FutureBuilder(
       future: _loadOverlayImage(),
       builder: (ctx, snapshot) {
@@ -26,7 +25,7 @@ class _QRScreenState extends State<QRScreen> {
         return CustomPaint(
           size: Size.square(size),
           painter: QrPainter(
-            data: message,
+            data: widget.message,
             version: QrVersions.auto,
             // size: 320.0,
             embeddedImage: snapshot.data,
