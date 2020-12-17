@@ -94,7 +94,9 @@ class _RoomOptionsState extends State<RoomOptions> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => QRScreen(),
+                              builder: (context) => QRScreen(
+                                message: 'SRD56GH',
+                              ),
                             ),
                           );
                         },
