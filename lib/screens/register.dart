@@ -77,7 +77,21 @@ class _SignInScreenState extends State<SignInScreen> {
         )..show(context);
       } else if (!(_emailController.text.toString().contains(
             new RegExp(r'@', caseSensitive: true),
-          ))) {}
+          ))) {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message: 'Enter valid email id.',
+          duration: Duration(seconds: 3),
+        )..show(context);
+      } else if (_passwordController.text.length < 8) {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message: 'Enter valid email id.',
+          duration: Duration(seconds: 3),
+        )..show(context);
+      }
       return false;
     }
   }
