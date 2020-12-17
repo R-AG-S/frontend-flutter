@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/utilities/constants.dart';
 
 class RoomOptions extends StatefulWidget {
   @override
@@ -23,11 +24,11 @@ class _RoomOptionsState extends State<RoomOptions> {
             ),
             Center(
               child: Text(
-                'Sign up to PayUp',
+                'New Here?',
                 style: GoogleFonts.raleway(
                   fontSize: ScreenUtil().setSp(65),
                   fontWeight: FontWeight.w700,
-                  color: mainTextColor,
+                  color: whiteColor,
                 ),
               ),
             ),
@@ -35,7 +36,7 @@ class _RoomOptionsState extends State<RoomOptions> {
               padding: EdgeInsets.all(8.0),
               child: Center(
                 child: Text(
-                  '''Car Pool with friends. It's always fun!!!''',
+                  '''Create or Join to Continue''',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.raleway(
                     fontSize: ScreenUtil().setSp(40),
