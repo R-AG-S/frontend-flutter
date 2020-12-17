@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -149,7 +151,28 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () async {
+                        final response = await http.post(
+                          'https://payup-backend.herokuapp.com/carpool/create_room',
+                          headers: <String, String>{
+                            'Content-type': 'application/json',
+                            'Accept': 'application/json',
+                            // "Authorization": "Some token"
+                          },
+                          body: json.encode(
+                            <String, String>{
+                              "room_name": _nameController.text,
+                              "details": _detailsController.text,
+                              "petrol_price": _fuelController.text
+                            },
+                          ),
+                        );
+                        print(jsonDecode(response.body)['email']);
+                        print(response.statusCode);
+                        if (response.statusCode == 200) {
+                          Navigator.pushNamed(context, 'room');
+                        }
+                      },
                     ),
                   ),
                 ),
