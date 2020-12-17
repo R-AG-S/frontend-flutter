@@ -289,7 +289,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           '''Sign Up''',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.raleway(
-                            fontSize: 14,
+                            fontSize: ScreenUtil().setSp(42),
                             fontWeight: FontWeight.w600,
                             color: redColor,
                           ),
