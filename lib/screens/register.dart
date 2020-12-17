@@ -51,8 +51,8 @@ class _SignInScreenState extends State<SignInScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
         body: SingleChildScrollView(
           reverse: false,
-          child: Container(
-            child: Stack(
+          child: Scaffold(
+            body: Stack(
               children: [
                 Padding(
                   padding: EdgeInsets.only(
