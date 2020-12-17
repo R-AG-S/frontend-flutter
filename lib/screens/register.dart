@@ -223,7 +223,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                             : Text(
                                                 'Sign In',
                                                 style: GoogleFonts.openSans(
-                                                  fontSize: 18,
+                                                  fontSize:
+                                                      ScreenUtil().setSp(48),
                                                   color: darkFadeTextColor,
                                                   fontWeight: FontWeight.w600,
                                                 ),
