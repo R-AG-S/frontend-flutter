@@ -257,7 +257,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                                           _userNameController
                                                               .text,
                                                       "full_name":
-                                                          _nameController.text
+                                                          _nameController.text,
+                                                      "phone_number":
+                                                          _phoneController.text
                                                     },
                                                   ),
                                                 );
