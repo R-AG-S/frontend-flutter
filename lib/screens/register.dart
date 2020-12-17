@@ -60,7 +60,8 @@ class _SignInScreenState extends State<SignInScreen> {
           message: 'Password should not be empty.',
           duration: Duration(seconds: 3),
         )..show(context);
-      } else if (_nameController.text.isEmpty && _nameController.text == "") {
+      } else if (_userNameController.text.isEmpty &&
+          _userNameController.text == "") {
         Flushbar(
           backgroundColor: redColor,
           title: "Error",
