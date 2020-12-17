@@ -5,7 +5,7 @@ import 'package:payup/utilities/constants.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _detailsController = TextEditingController();
-final TextEditingController _editController = TextEditingController();
+final TextEditingController _phoneController = TextEditingController();
 
 class CreateRoomScreen extends StatefulWidget {
   @override
