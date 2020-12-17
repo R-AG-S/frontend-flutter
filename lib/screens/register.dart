@@ -129,7 +129,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                           Text(
                                             'ACCOUNT INFORMATION',
                                             style: GoogleFonts.openSans(
-                                              color: darkFadeTextColor,
                                               fontWeight: FontWeight.w600,
                                               fontSize: ScreenUtil().setSp(35),
                                             ),
@@ -409,7 +408,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                 style: GoogleFonts.raleway(
                                   fontSize: ScreenUtil().setSp(38),
                                   fontWeight: FontWeight.w400,
-                                  color: mainTextColor,
                                 ),
                               ),
                               GestureDetector(
