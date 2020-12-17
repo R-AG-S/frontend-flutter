@@ -9,7 +9,9 @@ class _RoomOptionsState extends State<RoomOptions> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(),
+      child: Scaffold(
+        backgroundColor: Color(0xFFFFBD35),
+      ),
     );
   }
 }
