@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 
+final TextEditingController _nameController = TextEditingController();
+final TextEditingController _detailsController = TextEditingController();
+final TextEditingController _editController = TextEditingController();
+
 class CreateRoomScreen extends StatefulWidget {
   @override
   _CreateRoomScreenState createState() => _CreateRoomScreenState();
