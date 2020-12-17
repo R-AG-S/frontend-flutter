@@ -34,7 +34,7 @@ class _RoomOptionsState extends State<RoomOptions> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(0.0),
               child: Center(
                 child: Text(
                   '''Create or Join to Continue''',
