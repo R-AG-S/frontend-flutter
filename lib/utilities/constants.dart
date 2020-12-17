@@ -7,6 +7,7 @@ final Color fadeTextColor = Color(0xFF8B8A8F);
 final Color darkFadeTextColor = Color(0xFF202225);
 final Color lightFadeText = Colors.white70;
 final Color redColor = Color(0xFFFE2C55);
+final Color greenColor = Color(0xFF80b918);
 final Color cardColor = Color(0xFFD1D2D3);
 final Color blueColor = Color(0xFF7289DA);
 final Color slideCardColor = Color(0xFFE3E5E8);
