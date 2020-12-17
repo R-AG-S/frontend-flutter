@@ -83,7 +83,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                   child: TextField(
                     controller: _detailsController,
                     keyboardType: TextInputType.name,
-                    maxLength: 50,
+                    maxLength: 144,
                     decoration: InputDecoration(
                       hintText: 'Enter Description',
                       border: OutlineInputBorder(
