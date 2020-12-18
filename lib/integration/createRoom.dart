@@ -15,7 +15,7 @@ createRoom(String name, String details, String fuel) async {
       body: json.encode(
         <String, String>{
           "room_name": name,
-          "details": _detailsController.text,
+          "details": details,
           "petrol_price": _fuelController.text
         },
       ),
