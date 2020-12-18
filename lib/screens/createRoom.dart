@@ -182,15 +182,15 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                     'refreshToken',
                                     jsonDecode(
                                         refreshBody.body)['refreshToken']);
-                                print(
-                                    jsonDecode(refreshBody.body)[refreshToken]);
+                                print(jsonDecode(
+                                    refreshBody.body)['refreshToken']);
                                 final response = await http.post(
                                   'https://payup-backend.herokuapp.com/carpool/create_room',
                                   headers: <String, String>{
                                     'Content-type': 'application/json',
                                     'Accept': 'application/json',
                                     "Authorization": jsonDecode(
-                                        refreshBody.body)[refreshToken]
+                                        refreshBody.body)['refreshToken']
                                   },
                                   body: json.encode(
                                     <String, String>{
