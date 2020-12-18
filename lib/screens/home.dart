@@ -423,7 +423,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => routeName,
+                ),
+              );},
                       child: CircleAvatar(
                         radius: 25,
                         backgroundColor: whiteColor,
