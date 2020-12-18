@@ -9,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:payup/integration/userData.dart';
+import 'package:payup/backend/userData.dart';
 import 'package:payup/screens/register.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
