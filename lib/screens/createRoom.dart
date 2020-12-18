@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flushbar/flushbar.dart';
 import 'package:http/http.dart' as http;
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -185,10 +186,31 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                 if (response.statusCode == 200) {
                                   Navigator.pushNamed(context, 'room');
                                 }
-                              } catch (e) {}
-                            } catch (e) {}
+                              } catch (e) {
+                                Flushbar(
+                                  backgroundColor: redColor,
+                                  title: "Error",
+                                  message: 'An error occurred',
+                                  duration: Duration(seconds: 3),
+                                )..show(context);
+                              }
+                            } catch (e) {
+                              Flushbar(
+                                backgroundColor: redColor,
+                                title: "Error",
+                                message: 'An error occurred',
+                                duration: Duration(seconds: 3),
+                              )..show(context);
+                            }
                           }
-                        } catch (e) {}
+                        } catch (e) {
+                          Flushbar(
+                            backgroundColor: redColor,
+                            title: "Error",
+                            message: 'An error occurred',
+                            duration: Duration(seconds: 3),
+                          )..show(context);
+                        }
                       },
                     ),
                   ),
