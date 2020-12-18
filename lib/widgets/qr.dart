@@ -69,10 +69,9 @@ class _QRScreenState extends State<QRScreen> {
                 child: Center(
                   child: Container(
                     padding: EdgeInsets.all(
-                      5,
+                      10,
                     ),
                     color: white,
-                    width: 280,
                     child: qrFutureBuilder,
                   ),
                 ),
