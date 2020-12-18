@@ -13,7 +13,7 @@ joinRoom(String roomId) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, String>{"refreshToken*": refreshToken},
+        <String, String>{"room_id": roomId},
       ),
     );
     print(jsonDecode(joinRoom.body));
