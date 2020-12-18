@@ -183,7 +183,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                 print(response.statusCode);
                                 final qrCode =
                                     jsonDecode(response.body)['ROOM_ID'];
-                                if (response.statusCode == 200) {
+                                if (response.statusCode == 201) {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
