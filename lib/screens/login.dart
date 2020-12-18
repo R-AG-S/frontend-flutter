@@ -274,7 +274,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       backgroundColor: redColor,
                                                       title: "Error",
                                                       message:
-                                                          'Enter valid email id.',
+                                                          'An error occurred',
                                                       duration:
                                                           Duration(seconds: 3),
                                                     )..show(context);
@@ -284,15 +284,29 @@ class _LoginScreenState extends State<LoginScreen> {
                                                     backgroundColor: redColor,
                                                     title: "Error",
                                                     message:
-                                                        'Enter valid email id.',
+                                                        'An error occurred',
                                                     duration:
                                                         Duration(seconds: 3),
                                                   )..show(context);
                                                 }
                                               }
                                             }
-                                          } catch (e) {}
-                                        } catch (e) {}
+                                          } catch (e) {
+                                            Flushbar(
+                                              backgroundColor: redColor,
+                                              title: "Error",
+                                              message: 'An error occurred',
+                                              duration: Duration(seconds: 3),
+                                            )..show(context);
+                                          }
+                                        } catch (e) {
+                                          Flushbar(
+                                            backgroundColor: redColor,
+                                            title: "Error",
+                                            message: 'An error occurred',
+                                            duration: Duration(seconds: 3),
+                                          )..show(context);
+                                        }
                                       },
                               ),
                             ),
