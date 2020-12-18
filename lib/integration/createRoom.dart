@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/integration/refresh.dart';
 
-createRoom() async {
+createRoom(String name, String details, String fuel) async {
   try {
     final authKey = await refreshToken();
     final response = await http.post(
@@ -14,7 +14,7 @@ createRoom() async {
       },
       body: json.encode(
         <String, String>{
-          "room_name": _nameController.text,
+          "room_name": name,
           "details": _detailsController.text,
           "petrol_price": _fuelController.text
         },
