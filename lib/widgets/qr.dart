@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/screens/home.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -128,9 +129,14 @@ class _QRScreenState extends State<QRScreen> {
                   minWidth: ScreenUtil().setWidth(1080),
                   height: ScreenUtil().setHeight(150),
                   child: RaisedButton(
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => HomeScreen(),
+                      ),
+                    ),
                     color: whiteColor,
                     child: Text(
-                      'Sign In',
+                      'Continue',
                       style: GoogleFonts.openSans(
                         fontSize: ScreenUtil().setSp(48),
                         color: darkFadeTextColor,
