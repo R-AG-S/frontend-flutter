@@ -83,7 +83,6 @@ class _QRScreenState extends State<QRScreen> {
                   style: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(56),
                     fontWeight: FontWeight.bold,
-                    color: mainTextColor,
                   ),
                 ),
               ),
