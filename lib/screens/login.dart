@@ -267,16 +267,28 @@ class _LoginScreenState extends State<LoginScreen> {
                                                         jsonDecode(
                                                                 response.body)[
                                                             'refreshToken']);
+                                                    Navigator.pushNamed(
+                                                        context, 'room');
                                                   } catch (e) {
-                                                    prefs.setBool(
-                                                        'isLogged', false);
-                                                    print(e);
-                                                    print("Error\n");
-                                                    return false;
+                                                    Flushbar(
+                                                      backgroundColor: redColor,
+                                                      title: "Error",
+                                                      message:
+                                                          'Enter valid email id.',
+                                                      duration:
+                                                          Duration(seconds: 3),
+                                                    )..show(context);
                                                   }
-                                                } catch (e) {}
-                                                Navigator.pushNamed(
-                                                    context, 'room');
+                                                } catch (e) {
+                                                  Flushbar(
+                                                    backgroundColor: redColor,
+                                                    title: "Error",
+                                                    message:
+                                                        'Enter valid email id.',
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
+                                                }
                                               }
                                             }
                                           } catch (e) {}
