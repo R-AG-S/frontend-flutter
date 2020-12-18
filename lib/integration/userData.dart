@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<String> refreshToken() async {
+refreshToken() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   try {
     final refreshToken = prefs.getString('refreshToken');
@@ -14,9 +14,6 @@ Future<String> refreshToken() async {
         'Accept': 'application/json',
       },
     );
-    print(jsonDecode(refreshBody.body)['access_token']);
-    return (jsonDecode(refreshBody.body)['access_token']);
-  } catch (e) {
-    return 'Error';
-  }
+    print(jsonDecode(refreshBody.body));
+  } catch (e) {}
 }
