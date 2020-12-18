@@ -165,7 +165,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                             try {
                               final authKey = await refreshToken();
                               if (authKey != 'Error') {
-                                final qrCode = createRoom(
+                                final qrCode = await createRoom(
                                     _nameController.text, details, fuel);
                                 if (qrCode != 'Error') {
                                   Navigator.push(
