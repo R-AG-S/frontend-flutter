@@ -359,9 +359,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         iconName: secondaryKeys[0],
                         routeName: UserSettings(),
                       ),
-                      Divider(
-                        color: whiteColor,
-                        thickness: 1.0,
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10,
+                        ),
+                        child: Divider(
+                          color: whiteColor,
+                          thickness: 1.0,
+                        ),
                       ),
                     ],
                   );
