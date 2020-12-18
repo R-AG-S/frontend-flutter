@@ -415,20 +415,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   );
-                  SecondaryIcons(
-                    iconName: secondaryKeys[0],
-                    routeName: UserSettings(),
-                  ),
                 } else {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
                     child: GestureDetector(
-                      onTap: () {Navigator.push(
-                context,
-                CupertinoPageRoute(
-                  builder: (context) => routeName,
-                ),
-              );},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => UserSettings(),
+                          ),
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 25,
                         backgroundColor: whiteColor,
