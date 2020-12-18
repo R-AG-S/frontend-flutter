@@ -110,15 +110,11 @@ class _QRScreenState extends State<QRScreen> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40)
-                    .copyWith(bottom: 40),
-                child: Text(
-                  widget.message,
-                  style: GoogleFonts.openSans(
-                    fontSize: ScreenUtil().setSp(56),
-                    fontWeight: FontWeight.bold,
-                  ),
+              Text(
+                widget.message,
+                style: GoogleFonts.openSans(
+                  fontSize: ScreenUtil().setSp(56),
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               Padding(
