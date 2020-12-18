@@ -3,10 +3,8 @@ import 'package:flushbar/flushbar.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:payup/integration/createRoom.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/qr.dart';
-import 'package:payup/integration/refresh.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _detailsController = TextEditingController();
