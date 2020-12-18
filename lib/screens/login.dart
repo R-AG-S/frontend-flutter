@@ -230,45 +230,64 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ? null
                                     : () async {
                                         try {
-                                          try {
-                                            if (checkStatus()) {
-                                              final response = await http.post(
-                                                'https://payup-backend.herokuapp.com/users/login/',
-                                                headers: <String, String>{
-                                                  'Content-type':
-                                                      'application/json',
-                                                  'Accept': 'application/json',
-                                                  // "Authorization": "Some token"
-                                                },
-                                                body: json.encode(
-                                                  <String, String>{
-                                                    "email":
-                                                        _emailController.text,
-                                                    "password":
-                                                        _passwordController
-                                                            .text,
+                                          final result =
+                                              await InternetAddress.lookup(
+                                                  'google.com');
+                                          if (result.isNotEmpty &&
+                                              result[0].rawAddress.isNotEmpty) {
+                                            try {
+                                              if (checkStatus()) {
+                                                final response =
+                                                    await http.post(
+                                                  'https://payup-backend.herokuapp.com/users/login/',
+                                                  headers: <String, String>{
+                                                    'Content-type':
+                                                        'application/json',
+                                                    'Accept':
+                                                        'application/json',
+                                                    // "Authorization": "Some token"
                                                   },
-                                                ),
-                                              );
-                                              print(
-                                                jsonDecode(response.body)[
-                                                    'refreshToken'],
-                                              );
-                                              print(response.statusCode);
-                                              if (response.statusCode == 200) {
-                                                try {
-                                                  final SharedPreferences
-                                                      prefs =
-                                                      await SharedPreferences
-                                                          .getInstance();
+                                                  body: json.encode(
+                                                    <String, String>{
+                                                      "email":
+                                                          _emailController.text,
+                                                      "password":
+                                                          _passwordController
+                                                              .text,
+                                                    },
+                                                  ),
+                                                );
+                                                print(
+                                                  jsonDecode(response.body)[
+                                                      'refreshToken'],
+                                                );
+                                                print(response.statusCode);
+                                                if (response.statusCode ==
+                                                    200) {
                                                   try {
-                                                    prefs.setString(
-                                                        'refreshToken',
-                                                        jsonDecode(
-                                                                response.body)[
-                                                            'refreshToken']);
-                                                    Navigator.pushNamed(
-                                                        context, 'room');
+                                                    final SharedPreferences
+                                                        prefs =
+                                                        await SharedPreferences
+                                                            .getInstance();
+                                                    try {
+                                                      prefs.setString(
+                                                          'refreshToken',
+                                                          jsonDecode(response
+                                                                  .body)[
+                                                              'refreshToken']);
+                                                      Navigator.pushNamed(
+                                                          context, 'room');
+                                                    } catch (e) {
+                                                      Flushbar(
+                                                        backgroundColor:
+                                                            redColor,
+                                                        title: "Error",
+                                                        message:
+                                                            'An error occurred',
+                                                        duration: Duration(
+                                                            seconds: 3),
+                                                      )..show(context);
+                                                    }
                                                   } catch (e) {
                                                     Flushbar(
                                                       backgroundColor: redColor,
@@ -279,19 +298,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                                           Duration(seconds: 3),
                                                     )..show(context);
                                                   }
-                                                } catch (e) {
-                                                  Flushbar(
-                                                    backgroundColor: redColor,
-                                                    title: "Error",
-                                                    message:
-                                                        'An error occurred',
-                                                    duration:
-                                                        Duration(seconds: 3),
-                                                  )..show(context);
                                                 }
                                               }
+                                            } catch (e) {
+                                              Flushbar(
+                                                backgroundColor: redColor,
+                                                title: "Error",
+                                                message: 'An error occurred',
+                                                duration: Duration(seconds: 3),
+                                              )..show(context);
                                             }
-                                          } catch (e) {
+                                          } else {
                                             Flushbar(
                                               backgroundColor: redColor,
                                               title: "Error",
