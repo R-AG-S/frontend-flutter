@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/integration/createRoom.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/qr.dart';
 import 'package:payup/integration/refresh.dart';
@@ -164,27 +165,9 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                             try {
                               final authKey = await refreshToken();
                               if (authKey != 'Error') {
-                                final response = await http.post(
-                                  'https://payup-backend.herokuapp.com/carpool/create_room',
-                                  headers: <String, String>{
-                                    'Content-type': 'application/json',
-                                    'Accept': 'application/json',
-                                    "Authorization": authKey
-                                  },
-                                  body: json.encode(
-                                    <String, String>{
-                                      "room_name": _nameController.text,
-                                      "details": _detailsController.text,
-                                      "petrol_price": _fuelController.text
-                                    },
-                                  ),
-                                );
-                                print(
-                                  jsonDecode(response.body),
-                                );
-                                final qrCode =
-                                    jsonDecode(response.body)['ROOM_ID'];
-                                if (response.statusCode == 201) {
+                                final qrCode = createRoom(
+                                    _nameController.text, details, fuel);
+                                if (qrCode != 'Error') {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
