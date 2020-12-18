@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/qr.dart';
-import 'package:payup/widgets/refresh.dart';
+import 'package:payup/integration/refresh.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _detailsController = TextEditingController();
