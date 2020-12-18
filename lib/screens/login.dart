@@ -261,6 +261,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       prefs =
                                                       await SharedPreferences
                                                           .getInstance();
+                                                  try {
+                                                    prefs.setString(
+                                                        'refreshToken',
+                                                        jsonDecode(
+                                                                response.body)[
+                                                            'refreshToken']);
+                                                  } catch (e) {
+                                                    prefs.setBool(
+                                                        'isLogged', false);
+                                                    print(e);
+                                                    print("Error\n");
+                                                    return false;
+                                                  }
                                                 } catch (e) {}
                                                 Navigator.pushNamed(
                                                     context, 'room');
