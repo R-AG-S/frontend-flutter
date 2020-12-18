@@ -11,6 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/screens/register.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -255,6 +256,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                               );
                                               print(response.statusCode);
                                               if (response.statusCode == 200) {
+                                                try {
+                                                  final SharedPreferences
+                                                      prefs =
+                                                      await SharedPreferences
+                                                          .getInstance();
+                                                } catch (e) {}
                                                 Navigator.pushNamed(
                                                     context, 'room');
                                               }
