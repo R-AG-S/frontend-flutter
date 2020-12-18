@@ -385,27 +385,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   );
                 } else if (index == 1) {
-                  return Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: CircleAvatar(
-                            radius: 30,
-                            backgroundColor: whiteColor,
-                            child: Icon(
-                              secondaryKeys[0],
-                              color: darkFadeTextColor,
-                            ),
+                  return Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundColor: whiteColor,
+                          child: Icon(
+                            secondaryKeys[0],
+                            color: darkFadeTextColor,
                           ),
                         ),
-                        Divider(
-                          color: whiteColor,
-                          thickness: 1.0,
-                        ),
-                      ],
-                    ),
+                      ),
+                      Divider(
+                        color: whiteColor,
+                        thickness: 1.0,
+                      ),
+                    ],
                   );
                 } else {
                   return Padding(
