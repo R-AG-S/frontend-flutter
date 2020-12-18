@@ -24,5 +24,6 @@ createRoom(String name, String details, String fuel) async {
       jsonDecode(response.body),
     );
     final qrCode = jsonDecode(response.body)['ROOM_ID'];
+    return qrCode;
   } catch (e) {}
 }
