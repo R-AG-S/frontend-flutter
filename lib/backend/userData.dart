@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/backend/refresh.dart';
-import 'package:payup/integration/refresh.dart';
 
 getUserData() async {
   try {
