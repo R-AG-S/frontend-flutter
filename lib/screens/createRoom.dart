@@ -5,6 +5,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _detailsController = TextEditingController();
@@ -159,26 +160,32 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                           if (result.isNotEmpty &&
                               result[0].rawAddress.isNotEmpty) {
                             try {
-                              final response = await http.post(
-                                'https://payup-backend.herokuapp.com/carpool/create_room',
-                                headers: <String, String>{
-                                  'Content-type': 'application/json',
-                                  'Accept': 'application/json',
-                                  "Authorization": "Some token"
-                                },
-                                body: json.encode(
-                                  <String, String>{
-                                    "room_name": _nameController.text,
-                                    "details": _detailsController.text,
-                                    "petrol_price": _fuelController.text
+                              final SharedPreferences prefs =
+                                  await SharedPreferences.getInstance();
+                              try {
+                                final refreshToken =
+                                    prefs.getString('refreshToken');
+                                final response = await http.post(
+                                  'https://payup-backend.herokuapp.com/carpool/create_room',
+                                  headers: <String, String>{
+                                    'Content-type': 'application/json',
+                                    'Accept': 'application/json',
+                                    "Authorization": refreshToken
                                   },
-                                ),
-                              );
-                              print(jsonDecode(response.body));
-                              print(response.statusCode);
-                              if (response.statusCode == 200) {
-                                Navigator.pushNamed(context, 'room');
-                              }
+                                  body: json.encode(
+                                    <String, String>{
+                                      "room_name": _nameController.text,
+                                      "details": _detailsController.text,
+                                      "petrol_price": _fuelController.text
+                                    },
+                                  ),
+                                );
+                                print(jsonDecode(response.body));
+                                print(response.statusCode);
+                                if (response.statusCode == 200) {
+                                  Navigator.pushNamed(context, 'room');
+                                }
+                              } catch (e) {}
                             } catch (e) {}
                           }
                         } catch (e) {}
