@@ -18,5 +18,8 @@ Future<String> refreshToken() async {
       ),
     );
     print(jsonDecode(refreshBody.body)['access_token']);
-  } catch (e) {}
+    return (jsonDecode(refreshBody.body)['access_token']);
+  } catch (e) {
+    return 'Error';
+  }
 }
