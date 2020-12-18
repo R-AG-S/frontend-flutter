@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/integration/refresh.dart';
 
-createRoom(String name, String details, String fuel) async {
+Future<String> createRoom(String name, String details, String fuel) async {
   try {
     final authKey = await refreshToken();
     final response = await http.post(
