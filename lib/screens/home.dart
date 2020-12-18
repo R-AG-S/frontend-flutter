@@ -345,8 +345,11 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: 5,
               itemBuilder: (BuildContext context, int index) {
                 if (index == 0) {
-                  return SecondaryIcons(
-                      iconName: FontAwesomeIcons.plus, routeName: null);
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SecondaryIcons(
+                        iconName: FontAwesomeIcons.plus, routeName: null),
+                  );
                 } else if (index == 1) {
                   return Column(
                     children: [
