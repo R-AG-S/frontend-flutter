@@ -120,6 +120,24 @@ class _QRScreenState extends State<QRScreen> {
                   ),
                 ),
               ),
+              Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: ScreenUtil().setHeight(36),
+                                      ),
+                                      child: ButtonTheme(
+                                        minWidth: ScreenUtil().setWidth(1080),
+                                        height: ScreenUtil().setHeight(150),
+                                        child: RaisedButton(
+                                          color: whiteColor,
+                                          child:  Text(
+                                                  'Sign In',
+                                                  style: GoogleFonts.openSans(
+                                                    fontSize:
+                                                        ScreenUtil().setSp(48),
+                                                    color: darkFadeTextColor,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
             ],
           ),
         ),
