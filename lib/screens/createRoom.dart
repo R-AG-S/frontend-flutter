@@ -153,25 +153,30 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                       ),
                       onPressed: () async {
                         try {
-                          final response = await http.post(
-                            'https://payup-backend.herokuapp.com/carpool/create_room',
-                            headers: <String, String>{
-                              'Content-type': 'application/json',
-                              'Accept': 'application/json',
-                              "Authorization": "Some token"
-                            },
-                            body: json.encode(
-                              <String, String>{
-                                "room_name": _nameController.text,
-                                "details": _detailsController.text,
-                                "petrol_price": _fuelController.text
+                          final result =
+                              await InternetAddress.lookup('google.com');
+                          if (result.isNotEmpty &&
+                              result[0].rawAddress.isNotEmpty) {
+                            final response = await http.post(
+                              'https://payup-backend.herokuapp.com/carpool/create_room',
+                              headers: <String, String>{
+                                'Content-type': 'application/json',
+                                'Accept': 'application/json',
+                                "Authorization": "Some token"
                               },
-                            ),
-                          );
-                          print(jsonDecode(response.body));
-                          print(response.statusCode);
-                          if (response.statusCode == 200) {
-                            Navigator.pushNamed(context, 'room');
+                              body: json.encode(
+                                <String, String>{
+                                  "room_name": _nameController.text,
+                                  "details": _detailsController.text,
+                                  "petrol_price": _fuelController.text
+                                },
+                              ),
+                            );
+                            print(jsonDecode(response.body));
+                            print(response.statusCode);
+                            if (response.statusCode == 200) {
+                              Navigator.pushNamed(context, 'room');
+                            }
                           }
                         } catch (e) {}
                       },
