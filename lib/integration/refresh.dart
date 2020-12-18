@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<String> refreshToken() async {
+Future<String> refreshToken(String roomId) async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   try {
     final refreshToken = prefs.getString('refreshToken');
