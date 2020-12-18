@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:payup/integration/refresh.dart';
+import 'package:payup/backend/refresh.dart';
 
 setCarDetails(String carModel, String milege) async {
   try {
     final authKey = await refreshToken();
-    final joinRoom = await http.post(
+    final setCarDetails = await http.post(
       'https://payup-backend.herokuapp.com/carpool/join_room',
       headers: <String, String>{
         'Content-type': 'application/json',
@@ -16,6 +16,6 @@ setCarDetails(String carModel, String milege) async {
         <String, String>{"car_model": carModel, "mileage": milege},
       ),
     );
-    print(jsonDecode(joinRoom.body));
+    print(jsonDecode(setCarDetails.body));
   } catch (e) {}
 }
