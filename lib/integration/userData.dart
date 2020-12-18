@@ -8,7 +8,7 @@ Future<String> refreshToken() async {
     final refreshToken = prefs.getString('refreshToken');
     print(refreshToken);
     final refreshBody = await http.get(
-      'https://payup-backend.herokuapp.com/users/refresh_token/',
+      'https://payup-backend.herokuapp.com/users/get_user_data/',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
