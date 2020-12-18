@@ -228,33 +228,39 @@ class _LoginScreenState extends State<LoginScreen> {
                                 onPressed: isWaiting
                                     ? null
                                     : () async {
-                                        if (checkStatus()) {
-                                          final response = await http.post(
-                                            'https://payup-backend.herokuapp.com/users/login/',
-                                            headers: <String, String>{
-                                              'Content-type':
-                                                  'application/json',
-                                              'Accept': 'application/json',
-                                              // "Authorization": "Some token"
-                                            },
-                                            body: json.encode(
-                                              <String, String>{
-                                                "email": _emailController.text,
-                                                "password":
-                                                    _passwordController.text,
-                                              },
-                                            ),
-                                          );
-                                          print(
-                                            jsonDecode(
-                                                response.body)['refreshToken'],
-                                          );
-                                          print(response.statusCode);
-                                          if (response.statusCode == 200) {
-                                            Navigator.pushNamed(
-                                                context, 'room');
-                                          }
-                                        }
+                                        try {
+                                          try {
+                                            if (checkStatus()) {
+                                              final response = await http.post(
+                                                'https://payup-backend.herokuapp.com/users/login/',
+                                                headers: <String, String>{
+                                                  'Content-type':
+                                                      'application/json',
+                                                  'Accept': 'application/json',
+                                                  // "Authorization": "Some token"
+                                                },
+                                                body: json.encode(
+                                                  <String, String>{
+                                                    "email":
+                                                        _emailController.text,
+                                                    "password":
+                                                        _passwordController
+                                                            .text,
+                                                  },
+                                                ),
+                                              );
+                                              print(
+                                                jsonDecode(response.body)[
+                                                    'refreshToken'],
+                                              );
+                                              print(response.statusCode);
+                                              if (response.statusCode == 200) {
+                                                Navigator.pushNamed(
+                                                    context, 'room');
+                                              }
+                                            }
+                                          } catch (e) {}
+                                        } catch (e) {}
                                       },
                               ),
                             ),
