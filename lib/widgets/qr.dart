@@ -123,7 +123,8 @@ class _QRScreenState extends State<QRScreen> {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  vertical: ScreenUtil().setHeight(36),
+                  vertical: ScreenUtil().setHeight(50),
+                  horizontal: ScreenUtil().setWidth(100),
                 ),
                 child: ButtonTheme(
                   minWidth: ScreenUtil().setWidth(1080),
