@@ -65,9 +65,13 @@ class _QRScreenState extends State<QRScreen> {
         child: Scaffold(
           body: Column(
             children: <Widget>[
-              Padding(padding: EdgeInsets.symmetric(horizontal: 25), child: Column(children: [Center(
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
+                  children: [
+                    Center(
                       child: Text(
-                        'Log In to PayUp',
+                        'Share QR',
                         style: GoogleFonts.raleway(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,
@@ -86,7 +90,10 @@ class _QRScreenState extends State<QRScreen> {
                           ),
                         ),
                       ),
-                    ),],),)
+                    ),
+                  ],
+                ),
+              ),
               Expanded(
                 child: Center(
                   child: Container(
