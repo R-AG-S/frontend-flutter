@@ -340,29 +340,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        secondaryActions: [
-          SlideAction(
-              color: mainTextColor,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 15,
-                  ),
-                  SecondaryIcons(
-                    iconName: secondaryKeys[1],
-                    routeName: Settings(),
-                  ),
-                  SecondaryIcons(
-                    iconName: secondaryKeys[2],
-                    routeName: null,
-                  ),
-                  SecondaryIcons(
-                    iconName: secondaryKeys[3],
-                    routeName: null,
-                  ),
-                ],
-              )),
-        ],
         actions: <Widget>[
           SlideAction(
             child: ListView.builder(
