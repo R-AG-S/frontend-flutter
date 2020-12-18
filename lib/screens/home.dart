@@ -370,33 +370,14 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: 5,
               itemBuilder: (BuildContext context, int index) {
                 if (index == 0) {
-                  return Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundColor: whiteColor,
-                        child: Icon(
-                          FontAwesomeIcons.plus,
-                          color: darkFadeTextColor,
-                        ),
-                      ),
-                    ),
-                  );
+                  return SecondaryIcons(
+                      iconName: FontAwesomeIcons.plus, routeName: null);
                 } else if (index == 1) {
                   return Column(
                     children: [
-                      GestureDetector(
-                        onTap: () {},
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundColor: whiteColor,
-                          child: Icon(
-                            secondaryKeys[0],
-                            color: darkFadeTextColor,
-                          ),
-                        ),
+                      SecondaryIcons(
+                        iconName: secondaryKeys[0],
+                        routeName: UserSettings(),
                       ),
                       Divider(
                         color: whiteColor,
@@ -408,14 +389,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
                     child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                            builder: (context) => UserSettings(),
-                          ),
-                        );
-                      },
+                      onTap: () {},
                       child: CircleAvatar(
                         radius: 25,
                         backgroundColor: whiteColor,
