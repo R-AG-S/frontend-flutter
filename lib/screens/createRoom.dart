@@ -6,6 +6,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/widgets/refresh.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _detailsController = TextEditingController();
@@ -160,14 +161,14 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                           if (result.isNotEmpty &&
                               result[0].rawAddress.isNotEmpty) {
                             try {
-                              try {
+                              final authKey = await refreshToken();
+                              if (authKey != 'Error') {
                                 final response = await http.post(
                                   'https://payup-backend.herokuapp.com/carpool/create_room',
                                   headers: <String, String>{
                                     'Content-type': 'application/json',
                                     'Accept': 'application/json',
-                                    "Authorization": jsonDecode(
-                                        refreshBody.body)['access_token']
+                                    "Authorization": authKey
                                   },
                                   body: json.encode(
                                     <String, String>{
@@ -182,7 +183,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                 if (response.statusCode == 200) {
                                   Navigator.pushNamed(context, 'room');
                                 }
-                              } catch (e) {
+                              } else {
                                 Flushbar(
                                   backgroundColor: redColor,
                                   title: "Error",
