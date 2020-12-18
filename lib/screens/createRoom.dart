@@ -6,6 +6,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/widgets/qr.dart';
 import 'package:payup/widgets/refresh.dart';
 
 final TextEditingController _nameController = TextEditingController();
@@ -180,8 +181,16 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                 );
                                 print(jsonDecode(response.body));
                                 print(response.statusCode);
+                                final qrCode =
+                                    jsonDecode(response.body)['ROOM_ID'];
                                 if (response.statusCode == 200) {
-                                  Navigator.pushNamed(context, 'room');
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          QRScreen(message: null),
+                                    ),
+                                  );
                                 }
                               } else {
                                 Flushbar(
