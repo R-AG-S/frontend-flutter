@@ -13,7 +13,7 @@ setCarDetails(String carModel, String milege) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, String>{"car_model": carModel, "mileage": "string"},
+        <String, String>{"car_model": carModel, "mileage": milege},
       ),
     );
     print(jsonDecode(joinRoom.body));
