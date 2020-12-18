@@ -425,27 +425,23 @@ class SecondaryIcons extends StatelessWidget {
         horizontal: 12.5,
         vertical: 4,
       ),
-      child: Column(
-        children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                CupertinoPageRoute(
-                  builder: (context) => routeName,
-                ),
-              );
-            },
-            child: CircleAvatar(
-              radius: 24,
-              backgroundColor: whiteColor,
-              child: Icon(
-                iconName,
-                color: darkFadeTextColor,
-              ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+              builder: (context) => routeName,
             ),
+          );
+        },
+        child: CircleAvatar(
+          radius: 24,
+          backgroundColor: whiteColor,
+          child: Icon(
+            iconName,
+            color: darkFadeTextColor,
           ),
-        ],
+        ),
       ),
     );
   }
