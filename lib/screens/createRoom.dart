@@ -179,8 +179,9 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                     },
                                   ),
                                 );
-                                print(jsonDecode(response.body));
-                                print(response.statusCode);
+                                print(
+                                  jsonDecode(response.body),
+                                );
                                 final qrCode =
                                     jsonDecode(response.body)['ROOM_ID'];
                                 if (response.statusCode == 201) {
