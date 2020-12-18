@@ -416,7 +416,7 @@ class SecondaryIcons extends StatelessWidget {
           );
         },
         child: CircleAvatar(
-          radius: 30,
+          radius: 25,
           backgroundColor: whiteColor,
           child: Icon(
             iconName,
