@@ -67,9 +67,9 @@ class _QRScreenState extends State<QRScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 25,
-                  vertical: 25,
+                padding: EdgeInsets.only(
+                  top: ScreenUtil().setHeight(250),
+                  bottom: ScreenUtil().setHeight(10),
                 ),
                 child: Column(
                   children: [
