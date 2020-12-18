@@ -6,7 +6,6 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _detailsController = TextEditingController();
@@ -161,27 +160,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                           if (result.isNotEmpty &&
                               result[0].rawAddress.isNotEmpty) {
                             try {
-                              final SharedPreferences prefs =
-                                  await SharedPreferences.getInstance();
                               try {
-                                final refreshToken =
-                                    prefs.getString('refreshToken');
-                                print(refreshToken);
-                                final refreshBody = await http.post(
-                                  'https://payup-backend.herokuapp.com/users/refresh_token/',
-                                  headers: <String, String>{
-                                    'Content-type': 'application/json',
-                                    'Accept': 'application/json',
-                                  },
-                                  body: json.encode(
-                                    <String, String>{
-                                      "refreshToken": refreshToken
-                                    },
-                                  ),
-                                );
-                                print(jsonDecode(
-                                    refreshBody.body)['access_token']);
-
                                 final response = await http.post(
                                   'https://payup-backend.herokuapp.com/carpool/create_room',
                                   headers: <String, String>{
