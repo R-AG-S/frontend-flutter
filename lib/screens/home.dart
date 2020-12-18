@@ -385,10 +385,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
-                        Divider(
-                          color: whiteColor,
-                          thickness: 1.0,
-                        ),
                       ],
                     ),
                   );
