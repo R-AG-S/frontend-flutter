@@ -187,7 +187,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                     refreshBody.body)['refresh_token']);
 
                                 final response = await http.post(
-                                  'https://payup-backend.herokuapp.com/carpool/create_room',
+                                  'https://payup-backend.herokuapp.com/carpool/create_room/',
                                   headers: <String, String>{
                                     'Content-type': 'application/json',
                                     'Accept': 'application/json',
