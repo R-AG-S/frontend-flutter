@@ -62,14 +62,16 @@ class _QRScreenState extends State<QRScreen> {
         textTheme: Typography.material2018().white,
       ),
       home: SafeArea(
-        top: true,
-        bottom: true,
-        child: Container(
-          child: Column(
+        child: Scaffold(
+          body: Column(
             children: <Widget>[
               Expanded(
                 child: Center(
                   child: Container(
+                    padding: EdgeInsets.all(
+                      5,
+                    ),
+                    color: white,
                     width: 280,
                     child: qrFutureBuilder,
                   ),
