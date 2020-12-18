@@ -445,10 +445,6 @@ class SecondaryIcons extends StatelessWidget {
               ),
             ),
           ),
-          Divider(
-            color: whiteColor,
-            thickness: 1,
-          ),
         ],
       ),
     );
