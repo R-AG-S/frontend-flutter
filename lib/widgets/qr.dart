@@ -64,9 +64,13 @@ class _QRScreenState extends State<QRScreen> {
       home: SafeArea(
         child: Scaffold(
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 25,
+                ),
                 child: Column(
                   children: [
                     Center(
