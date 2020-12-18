@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/integration/refresh.dart';
 
-setCarDetails(String roomId) async {
+setCarDetails(String carModel, String milege) async {
   try {
     final authKey = await refreshToken();
     final joinRoom = await http.post(
@@ -13,7 +13,7 @@ setCarDetails(String roomId) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, String>{"car_model": "string", "mileage": "string"},
+        <String, String>{"car_model": carModel, "mileage": "string"},
       ),
     );
     print(jsonDecode(joinRoom.body));
