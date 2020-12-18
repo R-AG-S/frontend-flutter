@@ -245,8 +245,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                               },
                                             ),
                                           );
-                                          print(jsonDecode(
-                                              response.body)['email']);
+                                          print(
+                                            jsonDecode(
+                                                response.body)['refreshToken'],
+                                          );
                                           print(response.statusCode);
                                           if (response.statusCode == 200) {
                                             Navigator.pushNamed(
