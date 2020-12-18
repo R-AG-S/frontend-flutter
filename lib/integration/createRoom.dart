@@ -16,7 +16,7 @@ createRoom(String name, String details, String fuel) async {
         <String, String>{
           "room_name": name,
           "details": details,
-          "petrol_price": _fuelController.text
+          "petrol_price": fuel
         },
       ),
     );
