@@ -166,6 +166,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                               try {
                                 final refreshToken =
                                     prefs.getString('refreshToken');
+                                print(refreshToken);
                                 final refreshBody = await http.post(
                                   'https://payup-backend.herokuapp.com/users/refresh_token/',
                                   headers: <String, String>{
