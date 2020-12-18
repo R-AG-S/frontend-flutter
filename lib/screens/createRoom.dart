@@ -188,7 +188,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          QRScreen(message: null),
+                                          QRScreen(message: qrCode),
                                     ),
                                   );
                                 }
