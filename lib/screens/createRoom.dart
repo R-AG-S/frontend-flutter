@@ -168,7 +168,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                 final qrCode = await createRoom(
                                     _nameController.text,
                                     _detailsController.text,
-                                    fuel);
+                                    _fuelController.text);
                                 if (qrCode != 'Error') {
                                   Navigator.push(
                                     context,
