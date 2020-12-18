@@ -60,7 +60,7 @@ class _QRScreenState extends State<QRScreen> {
         primaryTextTheme: Typography.material2018().white,
         textTheme: Typography.material2018().white,
       ),
-      child: SafeArea(
+      home: SafeArea(
         top: true,
         bottom: true,
         child: Container(
