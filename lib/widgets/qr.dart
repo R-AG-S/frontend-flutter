@@ -82,7 +82,7 @@ class _QRScreenState extends State<QRScreen> {
                       padding: EdgeInsets.all(8.0),
                       child: Center(
                         child: Text(
-                          '''Carpool with friends. It's always fun!!!''',
+                          '''Share QR code with friends for them to join''',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.raleway(
                             fontSize: 14,
