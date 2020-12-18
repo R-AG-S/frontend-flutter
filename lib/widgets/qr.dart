@@ -65,6 +65,28 @@ class _QRScreenState extends State<QRScreen> {
         child: Scaffold(
           body: Column(
             children: <Widget>[
+              Padding(padding: EdgeInsets.symmetric(horizontal: 25), child: Column(children: [Center(
+                      child: Text(
+                        'Log In to PayUp',
+                        style: GoogleFonts.raleway(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          '''Carpool with friends. It's always fun!!!''',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.raleway(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),],),)
               Expanded(
                 child: Center(
                   child: Container(
