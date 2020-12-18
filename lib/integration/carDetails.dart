@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/integration/refresh.dart';
 
-getUserData() async {
+getCarDetails() async {
   try {
     final authKey = await refreshToken();
     final carDetails = await http.get(
