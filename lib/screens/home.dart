@@ -346,7 +346,9 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (BuildContext context, int index) {
                 if (index == 0) {
                   return Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.only(
+                      top: 15,
+                    ),
                     child: SecondaryIcons(
                         iconName: FontAwesomeIcons.plus, routeName: null),
                   );
@@ -414,7 +416,7 @@ class SecondaryIcons extends StatelessWidget {
           );
         },
         child: CircleAvatar(
-          radius: 24,
+          radius: 30,
           backgroundColor: whiteColor,
           child: Icon(
             iconName,
