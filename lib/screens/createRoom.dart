@@ -157,7 +157,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                           headers: <String, String>{
                             'Content-type': 'application/json',
                             'Accept': 'application/json',
-                            // "Authorization": "Some token"
+                            "Authorization": "Some token"
                           },
                           body: json.encode(
                             <String, String>{
@@ -167,7 +167,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                             },
                           ),
                         );
-                        print(jsonDecode(response.body)['email']);
+                        print(jsonDecode(response.body));
                         print(response.statusCode);
                         if (response.statusCode == 200) {
                           Navigator.pushNamed(context, 'room');
