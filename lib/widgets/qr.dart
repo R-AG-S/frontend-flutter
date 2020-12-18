@@ -81,7 +81,8 @@ class _QRScreenState extends State<QRScreen> {
                 child: Text(
                   widget.message,
                   style: GoogleFonts.openSans(
-                    fontSize: ScreenUtil().setSp(48),
+                    fontSize: ScreenUtil().setSp(56),
+                    fontWeight: FontWeight.bold,
                     color: mainTextColor,
                   ),
                 ),
