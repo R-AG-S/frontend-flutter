@@ -5,7 +5,7 @@ import 'package:payup/integration/refresh.dart';
 joinRoom() async {
   try {
     final authKey = await refreshToken();
-    final refreshBody = await http.get(
+    final joinRoom = await http.get(
       'https://payup-backend.herokuapp.com/users/get_user_data/',
       headers: <String, String>{
         'Content-type': 'application/json',
@@ -13,6 +13,6 @@ joinRoom() async {
         "Authorization": authKey
       },
     );
-    print(jsonDecode(refreshBody.body));
+    print(jsonDecode(joinRoom.body));
   } catch (e) {}
 }
