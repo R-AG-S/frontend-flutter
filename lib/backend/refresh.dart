@@ -6,7 +6,6 @@ Future<String> refreshToken() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   try {
     final refreshToken = prefs.getString('refreshToken');
-    print(refreshToken);
     final refreshBody = await http.post(
       'https://payup-backend.herokuapp.com/users/refresh_token/',
       headers: <String, String>{
