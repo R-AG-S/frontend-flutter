@@ -16,7 +16,7 @@ setCarDetails(String roomId, String carData, double lat, double long) async {
         <String, dynamic>{
           "room_id": roomId,
           "lat": lat,
-          "lng": 0,
+          "lng": long,
           "car": carData
         },
       ),
