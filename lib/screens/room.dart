@@ -14,19 +14,6 @@ class RoomOptions extends StatefulWidget {
 
 class _RoomOptionsState extends State<RoomOptions> {
   @override
-  void initState() {
-    super.initState();
-    final userIdList = userRoomId();
-    if (userIdList.length > 0) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(),
-        ),
-      );
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
         designSize: Size(1080, 2400), allowFontScaling: false);
