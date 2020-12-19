@@ -6,7 +6,7 @@ startDrive(String roomId, String carData, double lat, double long) async {
   try {
     final authKey = await refreshToken();
     final startDrive = await http.post(
-      'https://payup-backend.herokuapp.com/active/start_drive',
+      'https://payup-backend.herokuapp.com/active/join_drive',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
