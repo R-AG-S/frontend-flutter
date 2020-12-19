@@ -14,7 +14,7 @@ setCarDetails(String roomId, String carData, double lat, double long) async {
       },
       body: json.encode(
         <String, dynamic>{
-          "room_id": "string",
+          "room_id": roomId,
           "lat": 0,
           "lng": 0,
           "car": "string"
