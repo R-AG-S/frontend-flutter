@@ -418,7 +418,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          counter = 
+                          counter = index - 2;
                         });
                       },
                       child: CircleAvatar(
