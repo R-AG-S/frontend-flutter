@@ -36,8 +36,10 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     _getLocation();
     super.initState();
+    _getDetails();
   }
 
+  _getDetails() {}
   _getLocation() async {
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
