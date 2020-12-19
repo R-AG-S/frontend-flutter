@@ -212,7 +212,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   horizontal: 15,
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
