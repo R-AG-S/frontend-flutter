@@ -13,7 +13,7 @@ setCarDetails(String carModel, String milege) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, String>{
+        <String, dynamic>{
           "room_id": "string",
           "lat": 0,
           "lng": 0,
