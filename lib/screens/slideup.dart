@@ -19,6 +19,7 @@ class SlideUpPanel extends StatefulWidget {
   final String creator;
   final String membCount;
   final String carCount;
+  final petrol;
   @override
   _SlideUpPanelState createState() => _SlideUpPanelState();
 }
