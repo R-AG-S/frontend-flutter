@@ -191,63 +191,60 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                 vertical: 10,
                 horizontal: 15,
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Participants',
-                      textAlign: TextAlign.left,
-                      style: GoogleFonts.openSans(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: darkFadeTextColor,
-                      ),
-                    ),
-                    Divider(
-                      thickness: 0.2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'Participants',
+                    textAlign: TextAlign.left,
+                    style: GoogleFonts.openSans(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                       color: darkFadeTextColor,
                     ),
-                    ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: iconData.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                FadeInImage.assetNetwork(
-                                  fadeOutDuration: Duration(seconds: 1),
-                                  image: iconData[index],
-                                  placeholder: 'images/place.png',
-                                  height: 45,
+                  ),
+                  Divider(
+                    thickness: 0.2,
+                    color: darkFadeTextColor,
+                  ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: iconData.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              FadeInImage.assetNetwork(
+                                fadeOutDuration: Duration(seconds: 1),
+                                image: iconData[index],
+                                placeholder: 'images/place.png',
+                                height: 45,
+                              ),
+                              Text(
+                                'Demo User $index',
+                                style: GoogleFonts.openSans(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: darkFadeTextColor,
                                 ),
-                                Text(
-                                  'Demo User $index',
-                                  style: GoogleFonts.openSans(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: darkFadeTextColor,
-                                  ),
-                                ),
-                                Icon(
-                                  FontAwesomeIcons.solidCircle,
-                                  color: index % 2 == 0
-                                      ? Colors.green
-                                      : Colors.red,
-                                  size: 10,
-                                )
-                              ],
-                            ),
-                            Divider()
-                          ],
-                        );
-                      },
-                    ),
-                  ],
-                ),
+                              ),
+                              Icon(
+                                FontAwesomeIcons.solidCircle,
+                                color:
+                                    index % 2 == 0 ? Colors.green : Colors.red,
+                                size: 10,
+                              )
+                            ],
+                          ),
+                          Divider()
+                        ],
+                      );
+                    },
+                  ),
+                ],
               ),
             )
           ],
