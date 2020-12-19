@@ -17,7 +17,23 @@ class _WaitingScreenState extends State<WaitingScreen> {
     nextStep();
   }
 
-  nextStep() {}
+  nextStep() async {
+    final userIdList = userRoomId();
+    if (userIdList.length > 0) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(),
+        ),
+      );
+    } else {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => RoomOptions(),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
