@@ -1,3 +1,4 @@
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/plugin_api.dart';
@@ -50,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Flushbar(
         backgroundColor: redColor,
         title: "Error",
-        message: jsonDecode(response.body)['Message'].toString().split('(')[0],
+        message: '',
         duration: Duration(seconds: 3),
       )..show(context);
     }
