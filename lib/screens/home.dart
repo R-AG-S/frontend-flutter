@@ -374,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: <Widget>[
           SlideAction(
             child: ListView.builder(
-              itemCount: 5,
+              itemCount: roomDetails.length + 2,
               itemBuilder: (BuildContext context, int index) {
                 if (index == 0) {
                   return Padding(
