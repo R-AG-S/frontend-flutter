@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/userRoomDetails.dart';
 import 'package:payup/backend/userRoomId.dart';
 import 'package:payup/screens/createRoom.dart';
-import 'package:payup/screens/home.dart';
 import 'package:payup/utilities/constants.dart';
 
 class RoomOptions extends StatefulWidget {
