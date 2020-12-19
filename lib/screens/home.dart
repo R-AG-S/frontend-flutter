@@ -124,261 +124,273 @@ class _HomeScreenState extends State<HomeScreen> {
               petrol: roomDetails[counter]['data']['petrol_price'],
               roomName: roomDetails[counter]['data']['room_name'],
             ),
-            body: Column(
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                      ),
-                      height: isExpanded
-                          ? MediaQuery.of(context).size.height * 0.66
-                          : MediaQuery.of(context).size.height * 0.969,
-                      child: FlutterMap(
-                        options: new MapOptions(
-                          center: LatLng(userLat, userLong),
-                          zoom: 14.0,
-                        ),
-                        layers: [
-                          new TileLayerOptions(
-                            urlTemplate:
-                                "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
-                            subdomains: ['a', 'b', 'c'],
+            body: isReady
+                ? Column(
+                    children: [
+                      Stack(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                            height: isExpanded
+                                ? MediaQuery.of(context).size.height * 0.66
+                                : MediaQuery.of(context).size.height * 0.969,
+                            child: FlutterMap(
+                              options: new MapOptions(
+                                center: LatLng(userLat, userLong),
+                                zoom: 14.0,
+                              ),
+                              layers: [
+                                new TileLayerOptions(
+                                  urlTemplate:
+                                      "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
+                                  subdomains: ['a', 'b', 'c'],
+                                ),
+                                new MarkerLayerOptions(
+                                  markers: [
+                                    new Marker(
+                                      width: 80.0,
+                                      height: 80.0,
+                                      point: LatLng(userLat, userLong),
+                                      builder: (ctx) => new Container(
+                                        child: Container(
+                                          color: Colors.transparent,
+                                          child: Icon(
+                                            FontAwesomeIcons.mapMarkerAlt,
+                                            color: redColor,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                          new MarkerLayerOptions(
-                            markers: [
-                              new Marker(
-                                width: 80.0,
-                                height: 80.0,
-                                point: LatLng(userLat, userLong),
-                                builder: (ctx) => new Container(
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(15.0),
+                                child: GestureDetector(
+                                  onTap: () =>
+                                      _slidableKey.currentState.renderingMode ==
+                                              SlidableRenderingMode.none
+                                          ? _slidableKey.currentState.open()
+                                          : _slidableKey.currentState.close(),
                                   child: Container(
-                                    color: Colors.transparent,
-                                    child: Icon(
-                                      FontAwesomeIcons.mapMarkerAlt,
-                                      color: redColor,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 1,
+                                          color: Colors.black26,
+                                          spreadRadius: 2,
+                                        )
+                                      ],
+                                    ),
+                                    child: CircleAvatar(
+                                      radius: 25,
+                                      backgroundColor: whiteColor,
+                                      child: Icon(
+                                        FontAwesomeIcons.bars,
+                                        color: fadeTextColor,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  right: 20,
+                                  left: 10,
+                                ),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      isExpanded = isExpanded ? false : true;
+                                    });
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 1,
+                                          color: Colors.black26,
+                                          spreadRadius: 2,
+                                        ),
+                                      ],
+                                    ),
+                                    child: CircleAvatar(
+                                      radius: 25,
+                                      backgroundColor: whiteColor,
+                                      child: Icon(
+                                        FontAwesomeIcons.expand,
+                                        color: fadeTextColor,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
                             ],
                           ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: isExpanded
+                                  ? MediaQuery.of(context).size.height * 0.58
+                                  : MediaQuery.of(context).size.height * 0.8,
+                            ),
+                            child: Container(
+                              height: 100,
+                              child: Theme(
+                                data: Theme.of(context).copyWith(
+                                  accentColor: whiteColor,
+                                ),
+                                child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: iconData.length,
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    if (index == dataCount - 1) {
+                                      return SizedBox(
+                                        width: 15,
+                                      );
+                                    }
+                                    return Padding(
+                                      padding: EdgeInsets.only(
+                                        left: 15,
+                                        bottom: 8,
+                                      ),
+                                      child: Card(
+                                        color: whiteColor,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 15,
+                                                ),
+                                                FadeInImage.assetNetwork(
+                                                  fadeOutDuration:
+                                                      Duration(seconds: 1),
+                                                  image: iconData[index],
+                                                  placeholder:
+                                                      'images/place.png',
+                                                  height: 50,
+                                                ),
+                                                SizedBox(
+                                                  width: 15,
+                                                ),
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'User Name $index',
+                                                      style: TextStyle(
+                                                        fontFamily: 'Bambino',
+                                                        fontSize: 18,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: mainTextColor,
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      'User Details',
+                                                      style:
+                                                          GoogleFonts.openSans(
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: mainTextColor,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  width: 15,
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          )
                         ],
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: GestureDetector(
-                            onTap: () =>
-                                _slidableKey.currentState.renderingMode ==
-                                        SlidableRenderingMode.none
-                                    ? _slidableKey.currentState.open()
-                                    : _slidableKey.currentState.close(),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 1,
-                                    color: Colors.black26,
-                                    spreadRadius: 2,
-                                  )
-                                ],
+                      isExpanded
+                          ? Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 25,
+                                vertical: 8,
                               ),
-                              child: CircleAvatar(
-                                radius: 25,
-                                backgroundColor: whiteColor,
-                                child: Icon(
-                                  FontAwesomeIcons.bars,
-                                  color: fadeTextColor,
+                              child: FlatButton(
+                                minWidth: MediaQuery.of(context).size.width,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            right: 20,
-                            left: 10,
-                          ),
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isExpanded = isExpanded ? false : true;
-                              });
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 1,
-                                    color: Colors.black26,
-                                    spreadRadius: 2,
-                                  ),
-                                ],
-                              ),
-                              child: CircleAvatar(
-                                radius: 25,
-                                backgroundColor: whiteColor,
-                                child: Icon(
-                                  FontAwesomeIcons.expand,
-                                  color: fadeTextColor,
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: isExpanded
-                            ? MediaQuery.of(context).size.height * 0.58
-                            : MediaQuery.of(context).size.height * 0.8,
-                      ),
-                      child: Container(
-                        height: 100,
-                        child: Theme(
-                          data: Theme.of(context).copyWith(
-                            accentColor: whiteColor,
-                          ),
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: iconData.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              if (index == dataCount - 1) {
-                                return SizedBox(
-                                  width: 15,
-                                );
-                              }
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                  left: 15,
-                                  bottom: 8,
-                                ),
-                                child: Card(
-                                  color: whiteColor,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          FadeInImage.assetNetwork(
-                                            fadeOutDuration:
-                                                Duration(seconds: 1),
-                                            image: iconData[index],
-                                            placeholder: 'images/place.png',
-                                            height: 50,
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'User Name $index',
-                                                style: TextStyle(
-                                                  fontFamily: 'Bambino',
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: mainTextColor,
-                                                ),
-                                              ),
-                                              Text(
-                                                'User Details',
-                                                style: GoogleFonts.openSans(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: mainTextColor,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                        ],
-                                      )
-                                    ],
+                                height: 50,
+                                color: mainTextColor,
+                                onPressed: () {},
+                                child: Text(
+                                  'Start Drive',
+                                  style: TextStyle(
+                                    fontFamily: 'Bambino',
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    color: whiteColor,
                                   ),
                                 ),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                isExpanded
-                    ? Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 25,
-                          vertical: 8,
-                        ),
-                        child: FlatButton(
-                          minWidth: MediaQuery.of(context).size.width,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          height: 50,
-                          color: mainTextColor,
-                          onPressed: () {},
-                          child: Text(
-                            'Start Drive',
-                            style: TextStyle(
-                              fontFamily: 'Bambino',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: whiteColor,
-                            ),
-                          ),
-                        ),
-                      )
-                    : Container(),
-                isExpanded
-                    ? Padding(
-                        padding: EdgeInsets.only(
-                          left: 25,
-                          right: 25,
-                          bottom: 8,
-                        ),
-                        child: FlatButton(
-                          minWidth: MediaQuery.of(context).size.width,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          height: 50,
-                          color: mainTextColor,
-                          onPressed: () {},
-                          child: Text(
-                            'Join Drive',
-                            style: TextStyle(
-                              fontFamily: 'Bambino',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: whiteColor,
-                            ),
-                          ),
-                        ),
-                      )
-                    : Container(),
-              ],
-            ),
+                              ),
+                            )
+                          : Container(),
+                      isExpanded
+                          ? Padding(
+                              padding: EdgeInsets.only(
+                                left: 25,
+                                right: 25,
+                                bottom: 8,
+                              ),
+                              child: FlatButton(
+                                minWidth: MediaQuery.of(context).size.width,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                height: 50,
+                                color: mainTextColor,
+                                onPressed: () {},
+                                child: Text(
+                                  'Join Drive',
+                                  style: TextStyle(
+                                    fontFamily: 'Bambino',
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    color: whiteColor,
+                                  ),
+                                ),
+                              ),
+                            )
+                          : Container(),
+                    ],
+                  )
+                : Scaffold(
+                    body: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  ),
           ),
         ),
         actions: <Widget>[
