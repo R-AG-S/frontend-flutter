@@ -13,7 +13,8 @@ userRoomDetails() async {
         "Authorization": authKey
       },
     );
-    print(jsonDecode(userRoomDetails.body)['Rooms']);
     return (jsonDecode(userRoomDetails.body)['Rooms']);
-  } catch (e) {}
+  } catch (e) {
+    return [];
+  }
 }
