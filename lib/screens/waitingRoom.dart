@@ -18,7 +18,7 @@ class _WaitingScreenState extends State<WaitingScreen> {
   }
 
   nextStep() async {
-    final userIdList = userRoomId();
+    final userIdList = await userRoomId();
     if (userIdList.length > 0) {
       Navigator.of(context).push(
         MaterialPageRoute(
