@@ -25,12 +25,7 @@ bool isReady = false;
 double userLat = 0.0;
 double userLong = 0.0;
 bool isExpanded = true;
-List secondaryKeys = [
-  FontAwesomeIcons.userCog,
-  FontAwesomeIcons.cog,
-  FontAwesomeIcons.solidEdit,
-  FontAwesomeIcons.solidChartBar,
-];
+
 final int dataCount = 5;
 double _panelHeightOpen;
 double _panelHeightClosed;
@@ -437,7 +432,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     return Column(
                       children: [
                         SecondaryIcons(
-                          iconName: secondaryKeys[0],
+                          iconName: FontAwesomeIcons.userCog,
                           routeName: UserSettings(),
                         ),
                         Padding(
