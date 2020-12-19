@@ -206,48 +206,41 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                   thickness: 0.2,
                   color: darkFadeTextColor,
                 ),
-                Container(
-                  height: 215,
-                  child: Theme(
-                    data: Theme.of(context).copyWith(
-                      accentColor: whiteColor,
-                    ),
-                    child: ListView.builder(
-                      itemCount: iconData.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                FadeInImage.assetNetwork(
-                                  fadeOutDuration: Duration(seconds: 1),
-                                  image: iconData[index],
-                                  placeholder: 'images/place.png',
-                                  height: 45,
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: iconData.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              FadeInImage.assetNetwork(
+                                fadeOutDuration: Duration(seconds: 1),
+                                image: iconData[index],
+                                placeholder: 'images/place.png',
+                                height: 45,
+                              ),
+                              Text(
+                                'Demo User $index',
+                                style: GoogleFonts.openSans(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: darkFadeTextColor,
                                 ),
-                                Text(
-                                  'Demo User $index',
-                                  style: GoogleFonts.openSans(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: darkFadeTextColor,
-                                  ),
-                                ),
-                                Icon(
-                                  FontAwesomeIcons.solidCircle,
-                                  color: index % 2 == 0
-                                      ? Colors.green
-                                      : Colors.red,
-                                  size: 10,
-                                )
-                              ],
-                            ),
-                            Divider()
-                          ],
-                        );
-                      },
-                    ),
+                              ),
+                              Icon(
+                                FontAwesomeIcons.solidCircle,
+                                color:
+                                    index % 2 == 0 ? Colors.green : Colors.red,
+                                size: 10,
+                              )
+                            ],
+                          ),
+                          Divider()
+                        ],
+                      );
+                    },
                   ),
                 ),
               ],
