@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _getDetails() async {
-    userRoomDetails();
+    await userRoomDetails();
   }
 
   _getLocation() async {
