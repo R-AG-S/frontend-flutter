@@ -13,7 +13,12 @@ setCarDetails(String carModel, String milege) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, String>{"car_model": carModel, "mileage": milege},
+        <String, String>{
+          "room_id": "string",
+          "lat": 0,
+          "lng": 0,
+          "car": "string"
+        },
       ),
     );
     print(jsonDecode(setCarDetails.body));
