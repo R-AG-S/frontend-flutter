@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Flushbar(
         backgroundColor: redColor,
         title: "Error",
-        message: '',
+        message: 'Some unexpected error occured. Try again.',
         duration: Duration(seconds: 3),
       )..show(context);
     }
