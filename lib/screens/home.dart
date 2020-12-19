@@ -122,6 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
               membCount: null,
               membersList: null,
               petrol: null,
+              roomName: null,
             ),
             body: Column(
               children: [
