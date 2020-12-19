@@ -44,19 +44,21 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _getDetails() async {
-    roomDetails.addAll(
-      await userRoomDetails(),
-    );
-    if (roomDetails.isEmpty) {
-      Flushbar(
-        backgroundColor: redColor,
-        title: "Error",
-        message: 'Some unexpected error occured. Try again.',
-        duration: Duration(seconds: 3),
-      )..show(context);
-    } else {
-      print(roomDetails);
-    }
+    try {
+      roomDetails.addAll(
+        await userRoomDetails(),
+      );
+      if (roomDetails.isEmpty) {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message: 'Some unexpected error occured. Try again.',
+          duration: Duration(seconds: 3),
+        )..show(context);
+      } else {
+        print(roomDetails);
+      }
+    } catch (e) {}
   }
 
   _getLocation() async {
