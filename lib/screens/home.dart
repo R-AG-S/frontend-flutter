@@ -60,6 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
           duration: Duration(seconds: 3),
         )..show(context);
       } else {
+        setState(() {
+          isReady = true;
+        });
         print(roomDetails);
       }
     } catch (e) {
