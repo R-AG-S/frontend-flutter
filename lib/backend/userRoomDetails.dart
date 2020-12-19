@@ -6,7 +6,7 @@ userRoomId() async {
   try {
     final authKey = await refreshToken();
     final userRoomId = await http.get(
-      'https://payup-backend.herokuapp.com/carpool/user_rooms/id',
+      'https://payup-backend.herokuapp.com/carpool/user_rooms/data',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
