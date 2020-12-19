@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/userRoomDetails.dart';
 import 'package:payup/backend/userRoomId.dart';
 import 'package:payup/screens/createRoom.dart';
+import 'package:payup/screens/home.dart';
 import 'package:payup/utilities/constants.dart';
 
 class RoomOptions extends StatefulWidget {
@@ -16,7 +17,13 @@ class _RoomOptionsState extends State<RoomOptions> {
   void initState() {
     super.initState();
     final userIdList = userRoomId();
-    if (userIdList.length > 0) {}
+    if (userIdList.length > 0) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(),
+        ),
+      );
+    }
   }
 
   @override
