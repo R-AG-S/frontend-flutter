@@ -412,16 +412,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: CircleAvatar(
                         radius: 25,
                         backgroundColor: whiteColor,
-                        child: Text(
-                          roomDetails[index - 2]['data']['room_name']
-                              .toString()
-                              .toUpperCase()
-                              .substring(0, 2),
-                          style: TextStyle(
-                            fontFamily: 'Bambino',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                            color: mainTextColor,
+                        child: Center(
+                          child: Text(
+                            roomDetails[index - 2]['data']['room_name']
+                                .toString()
+                                .toUpperCase()
+                                .substring(0, 2),
+                            style: TextStyle(
+                              fontFamily: 'KumbhSans',
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: mainTextColor,
+                            ),
                           ),
                         ),
                       ),
