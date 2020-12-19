@@ -30,6 +30,27 @@ class _WaitingScreenState extends State<WaitingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      builder: DevicePreview.appBuilder,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: white,
+        canvasColor: Color(0xFFEFEFF4),
+        iconTheme: IconThemeData(color: darkFadeTextColor),
+        primaryTextTheme: Typography.material2018().black,
+        textTheme: Typography.material2018().black,
+      ),
+      darkTheme: ThemeData(
+        primarySwatch: black,
+        accentColor: black,
+        brightness: Brightness.dark,
+        canvasColor: mainTextColor,
+        primaryTextTheme: Typography.material2018().white,
+        textTheme: Typography.material2018().white,
+      ),
+      home: SafeArea(
+        child: Scaffold(),
+      ),
+    );
   }
 }
