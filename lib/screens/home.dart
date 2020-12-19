@@ -416,7 +416,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          counter = 
+                        });
+                      },
                       child: CircleAvatar(
                         radius: 25,
                         backgroundColor: whiteColor,
