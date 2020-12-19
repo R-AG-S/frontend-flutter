@@ -17,7 +17,6 @@ Future<String> refreshToken() async {
         <String, String>{"refreshToken": refreshToken},
       ),
     );
-    print(jsonDecode(refreshBody.body));
     print(jsonDecode(refreshBody.body)['access_token']);
     return (jsonDecode(refreshBody.body)['access_token']);
   } catch (e) {
