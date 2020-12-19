@@ -104,7 +104,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                     horizontal: 10,
                                   ),
                                   child: Text(
-                                    'Members Count 12',
+                                    'Members Count ' + widget.membCount,
                                     style: GoogleFonts.openSans(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w400,
