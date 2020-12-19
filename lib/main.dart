@@ -53,7 +53,6 @@ class _MainAppState extends State<MainApp> {
         'splash': (context) => SplashScreen(),
         'login': (context) => LoginScreen(),
         'home': (context) => HomeScreen(),
-        'slide': (context) => SlideUpPanel(),
         'settings': (context) => Settings(),
         'details': (context) => PushMessagingExample(),
         'room': (context) => RoomOptions(),
