@@ -58,7 +58,14 @@ class _HomeScreenState extends State<HomeScreen> {
       } else {
         print(roomDetails);
       }
-    } catch (e) {}
+    } catch (e) {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: 'Some unexpected error occured. Try again.',
+        duration: Duration(seconds: 3),
+      )..show(context);
+    }
   }
 
   _getLocation() async {
