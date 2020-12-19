@@ -5,7 +5,7 @@ import 'package:payup/backend/refresh.dart';
 userRoomId() async {
   try {
     final authKey = await refreshToken();
-    final userDetails = await http.get(
+    final userRoomId = await http.get(
       'https://payup-backend.herokuapp.com/users/get_user_data/',
       headers: <String, String>{
         'Content-type': 'application/json',
@@ -13,6 +13,6 @@ userRoomId() async {
         "Authorization": authKey
       },
     );
-    print(jsonDecode(userDetails.body));
+    print(jsonDecode(userRoomId.body));
   } catch (e) {}
 }
