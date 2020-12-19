@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payup/backend/userRoomId.dart';
 import 'package:payup/screens/home.dart';
+import 'package:payup/screens/room.dart';
 
 class WaitingScreen extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _WaitingScreenState extends State<WaitingScreen> {
     } else {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => RoomOptions(),
         ),
       );
     }
