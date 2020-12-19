@@ -18,7 +18,13 @@ class _WaitingScreenState extends State<WaitingScreen> {
           builder: (context) => HomeScreen(),
         ),
       );
-    } else {}
+    } else {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(),
+        ),
+      );
+    }
   }
 
   @override
