@@ -36,6 +36,7 @@ Map roomDetails = Map();
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
+    roomDetails.clear();
     _getLocation();
     super.initState();
     _getDetails();
