@@ -9,11 +9,12 @@ import 'package:payup/utilities/data.dart';
 import 'package:payup/widgets/button.dart';
 
 class SlideUpPanel extends StatefulWidget {
-  SlideUpPanel(
-      {@required this.roomName,
-      @required this.creator,
-      @required this.membCount,
-      @required this.carCount});
+  SlideUpPanel({
+    @required this.roomName,
+    @required this.creator,
+    @required this.membCount,
+    @required this.carCount,
+  });
   final String roomName;
   final String creator;
   final String membCount;
