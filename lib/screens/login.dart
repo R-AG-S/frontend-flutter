@@ -290,6 +290,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                                         ),
                                                       );
                                                     } catch (e) {
+                                                      setState(() {
+                                                        isWaiting = false;
+                                                      });
                                                       Flushbar(
                                                         backgroundColor:
                                                             redColor,
@@ -301,6 +304,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       )..show(context);
                                                     }
                                                   } catch (e) {
+                                                    setState(() {
+                                                      isWaiting = false;
+                                                    });
                                                     Flushbar(
                                                       backgroundColor: redColor,
                                                       title: "Error",
@@ -313,6 +319,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 }
                                               }
                                             } catch (e) {
+                                              setState(() {
+                                                isWaiting = false;
+                                              });
                                               Flushbar(
                                                 backgroundColor: redColor,
                                                 title: "Error",
@@ -321,6 +330,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                               )..show(context);
                                             }
                                           } else {
+                                            setState(() {
+                                              isWaiting = false;
+                                            });
                                             Flushbar(
                                               backgroundColor: redColor,
                                               title: "Error",
@@ -329,6 +341,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                             )..show(context);
                                           }
                                         } catch (e) {
+                                          setState(() {
+                                            isWaiting = false;
+                                          });
                                           Flushbar(
                                             backgroundColor: redColor,
                                             title: "Error",
