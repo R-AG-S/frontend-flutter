@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:payup/backend/userRoomId.dart';
 import 'package:payup/screens/home.dart';
 import 'package:payup/screens/room.dart';
+import 'package:payup/utilities/constants.dart';
 
 class WaitingScreen extends StatefulWidget {
   @override
