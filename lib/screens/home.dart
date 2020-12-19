@@ -54,6 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
         message: 'Some unexpected error occured. Try again.',
         duration: Duration(seconds: 3),
       )..show(context);
+    } else {
+      print(roomDetails);
     }
   }
 
