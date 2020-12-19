@@ -14,12 +14,15 @@ class SlideUpPanel extends StatefulWidget {
     @required this.creator,
     @required this.membCount,
     @required this.carCount,
+    @required this.membersList,
+    @required this.petrol,
   });
   final String roomName;
   final String creator;
   final String membCount;
   final String carCount;
   final petrol;
+  final membersList;
   @override
   _SlideUpPanelState createState() => _SlideUpPanelState();
 }
