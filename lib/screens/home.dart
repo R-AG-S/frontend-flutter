@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             panel: SlideUpPanel(
               carCount: 12,
-              creator: null,
+              creator: roomDetails[counter]['data']['owner'],
               membCount: null,
               membersList: null,
               petrol: null,
