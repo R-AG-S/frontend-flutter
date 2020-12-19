@@ -18,7 +18,7 @@ class _WaitingScreenState extends State<WaitingScreen> {
           builder: (context) => HomeScreen(),
         ),
       );
-    }
+    } else {}
   }
 
   @override
