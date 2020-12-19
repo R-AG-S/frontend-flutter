@@ -17,7 +17,7 @@ setCarDetails(String roomId, String carData, double lat, double long) async {
           "room_id": roomId,
           "lat": 0,
           "lng": 0,
-          "car": "string"
+          "car": carData
         },
       ),
     );
