@@ -413,7 +413,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         radius: 25,
                         backgroundColor: whiteColor,
                         child: Text(
-                          roomDetails[index + 2]['room_name']
+                          roomDetails[index - 2]['data']['room_name']
                               .toString()
                               .substring(0, 2),
                         ),
