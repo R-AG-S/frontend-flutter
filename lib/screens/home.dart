@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
               creator: roomDetails[counter]['data']['owner'],
               membCount: roomDetails[counter]['data']['members'].length,
               membersList: roomDetails[counter]['data']['members'],
-              petrol: roomDetails[counter]['data']['owner'],
+              petrol: roomDetails[counter]['data']['petrol_price'],
               roomName: roomDetails[counter]['data']['owner'],
             ),
             body: Column(
