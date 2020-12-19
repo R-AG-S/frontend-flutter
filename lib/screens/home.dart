@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
               membCount: roomDetails[counter]['data']['members'].length,
               membersList: roomDetails[counter]['data']['members'],
               petrol: roomDetails[counter]['data']['petrol_price'],
-              roomName: roomDetails[counter]['data']['owner'],
+              roomName: roomDetails[counter]['data']['room_name'],
             ),
             body: Column(
               children: [
