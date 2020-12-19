@@ -15,7 +15,7 @@ class _RoomOptionsState extends State<RoomOptions> {
   @override
   void initState() {
     super.initState();
-    userRoomId();
+    final userIdList = userRoomId();
   }
 
   @override
