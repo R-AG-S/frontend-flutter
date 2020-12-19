@@ -99,9 +99,9 @@ class _RoomOptionsState extends State<RoomOptions> {
                       minWidth: ScreenUtil().setWidth(1080),
                       height: ScreenUtil().setHeight(150),
                       child: RaisedButton(
-                        onPressed: () {
-                          userRoomDetails();
-                          userRoomId();
+                        onPressed: () async {
+                          await userRoomDetails();
+                          await userRoomId();
                         },
                         color: whiteColor,
                         child: Text(
