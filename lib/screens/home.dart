@@ -415,6 +415,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text(
                           roomDetails[index - 2]['data']['room_name']
                               .toString()
+                              .toUpperCase()
                               .substring(0, 2),
                         ),
                       ),
