@@ -39,6 +39,7 @@ Map roomDetails = Map();
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
+    isReady = false;
     roomDetails.clear();
     _getLocation();
     super.initState();
