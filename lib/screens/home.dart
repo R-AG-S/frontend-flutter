@@ -116,7 +116,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            panel: SlideUpPanel(),
+            panel: SlideUpPanel(
+              carCount: null,
+              creator: null,
+              membCount: null,
+              membersList: null,
+              petrol: null,
+            ),
             body: Column(
               children: [
                 Stack(
