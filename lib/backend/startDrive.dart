@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/backend/refresh.dart';
 
-setCarDetails(String carModel, String milege) async {
+setCarDetails(String room_id, String carData, double lat, double long) async {
   try {
     final authKey = await refreshToken();
     final setCarDetails = await http.post(
