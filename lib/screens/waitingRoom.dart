@@ -14,20 +14,7 @@ class _WaitingScreenState extends State<WaitingScreen> {
   @override
   void initState() {
     super.initState();
-    final userIdList = userRoomId();
-    if (userIdList.length > 0) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(),
-        ),
-      );
-    } else {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => RoomOptions(),
-        ),
-      );
-    }
+    nextStep();
   }
 
   nextStep() {}
