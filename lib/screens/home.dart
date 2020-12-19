@@ -46,7 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
   _getDetails() async {
     try {
       final data = await userRoomDetails();
-      print(data);
       for (int i = 0; i < data.length; i++) {
         roomDetails[i] = data[i];
       }
