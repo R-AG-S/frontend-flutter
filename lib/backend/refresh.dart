@@ -14,7 +14,7 @@ Future<String> refreshToken() async {
         'Accept': 'application/json',
       },
       body: json.encode(
-        <String, String>{"refreshToken*": refreshToken},
+        <String, String>{"refreshToken": refreshToken},
       ),
     );
     print(jsonDecode(refreshBody.body));
