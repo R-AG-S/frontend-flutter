@@ -19,7 +19,7 @@ class SlideUpPanel extends StatefulWidget {
   });
   final String roomName;
   final String creator;
-  final String membCount;
+  final int membCount;
   final int carCount;
   final petrol;
   final membersList;
