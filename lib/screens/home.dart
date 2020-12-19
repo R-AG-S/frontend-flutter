@@ -417,6 +417,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               .toString()
                               .toUpperCase()
                               .substring(0, 2),
+                          style: TextStyle(
+                            fontFamily: 'Bambino',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: mainTextColor,
+                          ),
                         ),
                       ),
                     ),
