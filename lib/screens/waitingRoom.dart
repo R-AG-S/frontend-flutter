@@ -30,6 +30,7 @@ class _WaitingScreenState extends State<WaitingScreen> {
     }
   }
 
+  nextStep() {}
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
