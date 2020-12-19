@@ -46,7 +46,14 @@ class _HomeScreenState extends State<HomeScreen> {
     roomDetails.addAll(
       await userRoomDetails(),
     );
-    if (roomDetails.isEmpty) {}
+    if (roomDetails.isEmpty) {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: jsonDecode(response.body)['Message'].toString().split('(')[0],
+        duration: Duration(seconds: 3),
+      )..show(context);
+    }
   }
 
   _getLocation() async {
