@@ -210,6 +210,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                     color: darkFadeTextColor,
                   ),
                   ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: iconData.length,
                     itemBuilder: (BuildContext context, int index) {
