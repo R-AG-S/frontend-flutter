@@ -48,7 +48,11 @@ class _WaitingScreenState extends State<WaitingScreen> {
         textTheme: Typography.material2018().white,
       ),
       home: SafeArea(
-        child: Scaffold(),
+        child: Scaffold(
+          body: Center(
+            child: CircularProgressIndicator(),
+          ),
+        ),
       ),
     );
   }
