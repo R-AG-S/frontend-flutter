@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/backend/refresh.dart';
 
-userRoomId() async {
+userRoomDetails() async {
   try {
     final authKey = await refreshToken();
-    final userRoomId = await http.get(
+    final userRoomDetails = await http.get(
       'https://payup-backend.herokuapp.com/carpool/user_rooms/data',
       headers: <String, String>{
         'Content-type': 'application/json',
@@ -13,6 +13,6 @@ userRoomId() async {
         "Authorization": authKey
       },
     );
-    print(jsonDecode(userRoomId.body));
+    print(jsonDecode(userRoomDetails.body));
   } catch (e) {}
 }
