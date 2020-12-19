@@ -37,241 +37,234 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
   Widget build(BuildContext context) {
     return Container(
       color: whiteColor,
-      child: NotificationListener<OverscrollIndicatorNotification>(
-        onNotification: (OverscrollIndicatorNotification overscroll) {
-          overscroll.disallowGlow();
-          return;
-        },
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 5.0,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 5.0,
+              ),
+              child: FaIcon(
+                FontAwesomeIcons.gripLines,
+                color: fadeTextColor,
+              ),
+            ),
+            Material(
+              elevation: 5.0,
+              child: Container(
+                height: 100,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: whiteColor,
                 ),
-                child: FaIcon(
-                  FontAwesomeIcons.gripLines,
-                  color: fadeTextColor,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 15,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.roomName,
+                        style: TextStyle(
+                          fontFamily: 'Bambino',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                          color: mainTextColor,
+                        ),
+                      ),
+                      Text(
+                        'Created By ' + widget.creator,
+                        style: GoogleFonts.openSans(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: darkFadeTextColor,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 5,
+                          horizontal: 0,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.userFriends,
+                                  color: fadeTextColor,
+                                  size: 16,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                  ),
+                                  child: Text(
+                                    'Members Count ' +
+                                        widget.membCount.toString(),
+                                    style: GoogleFonts.openSans(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: fadeTextColor,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.carSide,
+                                  color: fadeTextColor,
+                                  size: 16,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                  ),
+                                  child: Text(
+                                    'Cars Listed 12',
+                                    style: GoogleFonts.openSans(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: fadeTextColor,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 30,
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              Material(
-                elevation: 5.0,
-                child: Container(
-                  height: 100,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: whiteColor,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 25,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CircularKeys(
+                    courseName: 'Logs',
+                    gradientKey: gradient0,
+                    iconData: FontAwesomeIcons.info,
+                    route: null,
                   ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 15,
+                  CircularKeys(
+                    courseName: 'Dues',
+                    gradientKey: gradient1,
+                    iconData: FontAwesomeIcons.rupeeSign,
+                    route: null,
+                  ),
+                  CircularKeys(
+                    courseName: 'Pick Me',
+                    gradientKey: gradient2,
+                    iconData: FontAwesomeIcons.mapMarkerAlt,
+                    route: null,
+                  ),
+                  CircularKeys(
+                    courseName: 'Settings',
+                    gradientKey: gradient3,
+                    iconData: FontAwesomeIcons.cog,
+                    route: Settings(),
+                  ),
+                ],
+              ),
+            ),
+            Divider(
+              thickness: 7,
+              color: dividerfadeColor,
+            ),
+            ButtonCard(
+              buttonText: "Listed Cars",
+              routeName: null,
+              imageKey: 'images/car01.png',
+              colorKey: whiteColor,
+              iconData: null,
+              isIcon: false,
+            ),
+            Divider(
+              thickness: 7,
+              color: dividerfadeColor,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.symmetric(
+                vertical: 10,
+                horizontal: 15,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'Participants',
+                    textAlign: TextAlign.left,
+                    style: GoogleFonts.openSans(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: darkFadeTextColor,
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.roomName,
-                          style: TextStyle(
-                            fontFamily: 'Bambino',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                            color: mainTextColor,
-                          ),
-                        ),
-                        Text(
-                          'Created By ' + widget.creator,
-                          style: GoogleFonts.openSans(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: darkFadeTextColor,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 5,
-                            horizontal: 0,
-                          ),
-                          child: Row(
+                  ),
+                  Divider(
+                    thickness: 0.2,
+                    color: darkFadeTextColor,
+                  ),
+                  ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: iconData.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Column(
+                        children: [
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    FontAwesomeIcons.userFriends,
-                                    color: fadeTextColor,
-                                    size: 16,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 10,
-                                    ),
-                                    child: Text(
-                                      'Members Count ' +
-                                          widget.membCount.toString(),
-                                      style: GoogleFonts.openSans(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                        color: fadeTextColor,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                              FadeInImage.assetNetwork(
+                                fadeOutDuration: Duration(seconds: 1),
+                                image: iconData[index],
+                                placeholder: 'images/place.png',
+                                height: 45,
                               ),
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    FontAwesomeIcons.carSide,
-                                    color: fadeTextColor,
-                                    size: 16,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 10,
-                                    ),
-                                    child: Text(
-                                      'Cars Listed 12',
-                                      style: GoogleFonts.openSans(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                        color: fadeTextColor,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                'Demo User $index',
+                                style: GoogleFonts.openSans(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: darkFadeTextColor,
+                                ),
                               ),
-                              SizedBox(
-                                width: 30,
+                              Icon(
+                                FontAwesomeIcons.solidCircle,
+                                color:
+                                    index % 2 == 0 ? Colors.green : Colors.red,
+                                size: 10,
                               )
                             ],
                           ),
-                        ),
-                      ],
-                    ),
+                          Divider()
+                        ],
+                      );
+                    },
                   ),
-                ),
+                ],
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 25,
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CircularKeys(
-                      courseName: 'Logs',
-                      gradientKey: gradient0,
-                      iconData: FontAwesomeIcons.info,
-                      route: null,
-                    ),
-                    CircularKeys(
-                      courseName: 'Dues',
-                      gradientKey: gradient1,
-                      iconData: FontAwesomeIcons.rupeeSign,
-                      route: null,
-                    ),
-                    CircularKeys(
-                      courseName: 'Pick Me',
-                      gradientKey: gradient2,
-                      iconData: FontAwesomeIcons.mapMarkerAlt,
-                      route: null,
-                    ),
-                    CircularKeys(
-                      courseName: 'Settings',
-                      gradientKey: gradient3,
-                      iconData: FontAwesomeIcons.cog,
-                      route: Settings(),
-                    ),
-                  ],
-                ),
-              ),
-              Divider(
-                thickness: 7,
-                color: dividerfadeColor,
-              ),
-              ButtonCard(
-                buttonText: "Listed Cars",
-                routeName: null,
-                imageKey: 'images/car01.png',
-                colorKey: whiteColor,
-                iconData: null,
-                isIcon: false,
-              ),
-              Divider(
-                thickness: 7,
-                color: dividerfadeColor,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.symmetric(
-                  vertical: 10,
-                  horizontal: 15,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Participants',
-                      textAlign: TextAlign.left,
-                      style: GoogleFonts.openSans(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: darkFadeTextColor,
-                      ),
-                    ),
-                    Divider(
-                      thickness: 0.2,
-                      color: darkFadeTextColor,
-                    ),
-                    ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: iconData.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                FadeInImage.assetNetwork(
-                                  fadeOutDuration: Duration(seconds: 1),
-                                  image: iconData[index],
-                                  placeholder: 'images/place.png',
-                                  height: 45,
-                                ),
-                                Text(
-                                  'Demo User $index',
-                                  style: GoogleFonts.openSans(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: darkFadeTextColor,
-                                  ),
-                                ),
-                                Icon(
-                                  FontAwesomeIcons.solidCircle,
-                                  color: index % 2 == 0
-                                      ? Colors.green
-                                      : Colors.red,
-                                  size: 10,
-                                )
-                              ],
-                            ),
-                            Divider()
-                          ],
-                        );
-                      },
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
