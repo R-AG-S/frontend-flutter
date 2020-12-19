@@ -13,7 +13,7 @@ startDrive(String roomId, double lat, double long) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, dynamic>{"room_id": roomId, "lat": lat, "lng": 0},
+        <String, dynamic>{"room_id": roomId, "lat": lat, "lng": long},
       ),
     );
     print(jsonDecode(startDrive.body));
