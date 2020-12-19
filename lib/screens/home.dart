@@ -47,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       final data = await userRoomDetails();
       print(data);
+      for (int i = 0; i < data.length; i++) {}
       roomDetails.addAll(data);
       if (roomDetails.isEmpty) {
         Flushbar(
