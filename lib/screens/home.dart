@@ -119,14 +119,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            panel: SlideUpPanel(
-              carCount: 12,
-              creator: roomDetails[counter]['data']['owner'],
-              membCount: roomDetails[counter]['data']['members'].length,
-              membersList: roomDetails[counter]['data']['members'],
-              petrol: roomDetails[counter]['data']['petrol_price'],
-              roomName: roomDetails[counter]['data']['room_name'],
-            ),
+            panel: isReady
+                ? SlideUpPanel(
+                    carCount: 12,
+                    creator: roomDetails[counter]['data']['owner'],
+                    membCount: roomDetails[counter]['data']['members'].length,
+                    membersList: roomDetails[counter]['data']['members'],
+                    petrol: roomDetails[counter]['data']['petrol_price'],
+                    roomName: roomDetails[counter]['data']['room_name'],
+                  )
+                : Container(),
             body: isReady
                 ? Column(
                     children: [
