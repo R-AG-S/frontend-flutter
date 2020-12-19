@@ -232,6 +232,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 onPressed: isWaiting
                                     ? null
                                     : () async {
+                                        setState(() {
+                                          isWaiting = true;
+                                        });
                                         try {
                                           final result =
                                               await InternetAddress.lookup(
