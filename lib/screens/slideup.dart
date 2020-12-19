@@ -209,7 +209,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                     thickness: 0.2,
                     color: darkFadeTextColor,
                   ),
-                  Expanded(
+                  Flexible(
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: iconData.length,
