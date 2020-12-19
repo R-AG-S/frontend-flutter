@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/backend/userRoomDetails.dart';
+import 'package:payup/backend/userRoomId.dart';
 import 'package:payup/screens/createRoom.dart';
 import 'package:payup/utilities/constants.dart';
 
@@ -97,7 +99,10 @@ class _RoomOptionsState extends State<RoomOptions> {
                       minWidth: ScreenUtil().setWidth(1080),
                       height: ScreenUtil().setHeight(150),
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          userRoomDetails();
+                          userRoomId();
+                        },
                         color: whiteColor,
                         child: Text(
                           'Join Room',
