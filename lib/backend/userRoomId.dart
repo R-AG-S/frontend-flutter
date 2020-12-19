@@ -14,5 +14,8 @@ userRoomId() async {
       },
     );
     print(jsonDecode(userRoomId.body)['Rooms']);
-  } catch (e) {}
+    return jsonDecode(userRoomId.body)['Rooms'];
+  } catch (e) {
+    return [];
+  }
 }
