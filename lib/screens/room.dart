@@ -14,8 +14,8 @@ class RoomOptions extends StatefulWidget {
 class _RoomOptionsState extends State<RoomOptions> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    final userIdList = userRoomId();
   }
 
   @override
