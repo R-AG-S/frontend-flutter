@@ -67,7 +67,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Room Name',
+                        widget.roomName,
                         style: TextStyle(
                           fontFamily: 'Bambino',
                           fontSize: 18,
@@ -76,7 +76,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                         ),
                       ),
                       Text(
-                        'Created By User Name',
+                        'Created By ' + widget.creator,
                         style: GoogleFonts.openSans(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
