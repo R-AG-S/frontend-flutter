@@ -191,7 +191,8 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
               horizontal: 15,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
               children: [
                 Text(
                   'Participants',
