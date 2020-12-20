@@ -100,8 +100,12 @@ class _RoomOptionsState extends State<RoomOptions> {
                       height: ScreenUtil().setHeight(150),
                       child: RaisedButton(
                         onPressed: () async {
-                          await userRoomDetails();
-                          await userRoomId();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => QRScanner(),
+                            ),
+                          );
                         },
                         color: whiteColor,
                         child: Text(
