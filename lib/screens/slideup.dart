@@ -43,7 +43,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
     isReady = false;
     creator.clear();
     userData.clear();
-    creator = getUserData(widget.creator);
+    creator[0] = getUserData(widget.creator);
     getUsers();
     super.initState();
   }
@@ -114,7 +114,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                           ),
                         ),
                         Text(
-                          'Created By ' + creator['name'],
+                          'Created By ' + creator[0]['name'],
                           style: GoogleFonts.openSans(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
