@@ -1,3 +1,4 @@
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -57,7 +58,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
       Flushbar(
         backgroundColor: redColor,
         title: "Error",
-        message: jsonDecode(response.body)['Message'].toString().split('(')[0],
+        message: 'Error occurred.',
         duration: Duration(seconds: 3),
       )..show(context);
     }
