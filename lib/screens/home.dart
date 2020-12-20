@@ -281,69 +281,74 @@ class _HomeScreenState extends State<HomeScreen> {
                                           width: 15,
                                         );
                                       }
-                                      return Padding(
-                                        padding: EdgeInsets.only(
-                                          left: 15,
-                                          bottom: 8,
-                                        ),
-                                        child: Card(
-                                          color: whiteColor,
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  SizedBox(
-                                                    width: 15,
-                                                  ),
-                                                  FadeInImage.assetNetwork(
-                                                    fadeOutDuration:
-                                                        Duration(seconds: 1),
-                                                    image: iconData[index],
-                                                    placeholder:
-                                                        'images/place.png',
-                                                    height: 50,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 15,
-                                                  ),
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        'User Name $index',
-                                                        style: TextStyle(
-                                                          fontFamily: 'Bambino',
-                                                          fontSize: 18,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: mainTextColor,
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        'User Details',
-                                                        style: GoogleFonts
-                                                            .openSans(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: mainTextColor,
-                                                        ),
-                                                      )
-                                                    ],
-                                                  ),
-                                                  SizedBox(
-                                                    width: 15,
-                                                  ),
-                                                ],
-                                              )
-                                            ],
+                                      if (passengers.isNotEmpty) {
+                                        return Padding(
+                                          padding: EdgeInsets.only(
+                                            left: 15,
+                                            bottom: 8,
                                           ),
-                                        ),
-                                      );
+                                          child: Card(
+                                            color: whiteColor,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    SizedBox(
+                                                      width: 15,
+                                                    ),
+                                                    FadeInImage.assetNetwork(
+                                                      fadeOutDuration:
+                                                          Duration(seconds: 1),
+                                                      image: iconData[index],
+                                                      placeholder:
+                                                          'images/place.png',
+                                                      height: 50,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 15,
+                                                    ),
+                                                    Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          'User Name $index',
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Bambino',
+                                                            fontSize: 18,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color:
+                                                                mainTextColor,
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          'User Details',
+                                                          style: GoogleFonts
+                                                              .openSans(
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            color:
+                                                                mainTextColor,
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      width: 15,
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      }
                                     },
                                   ),
                                 ),
