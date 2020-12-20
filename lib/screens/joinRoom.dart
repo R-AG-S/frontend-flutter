@@ -44,7 +44,7 @@ class _QRScannerState extends State<QRScanner> {
           ),
           body: Container(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 _buildQrView(context),
