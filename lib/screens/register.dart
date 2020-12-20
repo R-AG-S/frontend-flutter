@@ -275,7 +275,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                         // "Authorization": "Some token"
                                                       },
                                                       body: json.encode(
-                                                        <String, String>{
+                                                        <String, dynamic>{
                                                           "email":
                                                               _emailController
                                                                   .text,
