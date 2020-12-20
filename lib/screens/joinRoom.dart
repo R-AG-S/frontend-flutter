@@ -9,9 +9,11 @@ class QRScanner extends StatefulWidget {
   _QRScannerState createState() => _QRScannerState();
 }
 
-String qrCodeResult = "Not Yet Scanned";
-
 class _QRScannerState extends State<QRScanner> {
+  String qrCodeResult = "Not Yet Scanned";
+  var qrText = '';
+  QRViewController controller;
+  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
@@ -41,11 +43,13 @@ class _QRScannerState extends State<QRScanner> {
             centerTitle: true,
           ),
           body: Container(
+            height: 500,
             padding: EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                _buildQrView(context),
                 Text(
                   "Result",
                   style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
@@ -58,28 +62,41 @@ class _QRScannerState extends State<QRScanner> {
       ),
     );
   }
-}
 
-Widget _buildQrView(BuildContext context) {
-  // To ensure the Scanner view is properly sizes after rotation
-  // we need to listen for Flutter SizeChanged notification and update controller
-  return NotificationListener<SizeChangedLayoutNotification>(
-      onNotification: (notification) {
-        Future.microtask(() => controller?.updateDimensions(qrKey));
-        return false;
-      },
-      child: SizeChangedLayoutNotifier(
-        key: const Key('qr-size-notifier'),
-        child: QRView(
-          key: qrKey,
-          onQRViewCreated: _onQRViewCreated,
-          overlay: QrScannerOverlayShape(
-            borderColor: Colors.red,
-            borderRadius: 10,
-            borderLength: 30,
-            borderWidth: 10,
-            cutOutSize: 300,
+  Widget _buildQrView(BuildContext context) {
+    return NotificationListener<SizeChangedLayoutNotification>(
+        onNotification: (notification) {
+          Future.microtask(() => controller?.updateDimensions(qrKey));
+          return false;
+        },
+        child: SizeChangedLayoutNotifier(
+          key: const Key('qr-size-notifier'),
+          child: QRView(
+            key: qrKey,
+            onQRViewCreated: _onQRViewCreated,
+            overlay: QrScannerOverlayShape(
+              borderColor: Colors.red,
+              borderRadius: 10,
+              borderLength: 30,
+              borderWidth: 10,
+              cutOutSize: 300,
+            ),
           ),
-        ),
-      ));
+        ));
+  }
+
+  void _onQRViewCreated(QRViewController controller) {
+    this.controller = controller;
+    controller.scannedDataStream.listen((scanData) {
+      setState(() {
+        qrText = scanData;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 }
