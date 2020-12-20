@@ -420,8 +420,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       height: 50,
                                       color: mainTextColor,
-                                      onPressed: () {
-                                        final code = startDrive(
+                                      onPressed: () async {
+                                        final code = await startDrive(
                                             roomDetails[counter]['room_id'],
                                             'carData',
                                             userLat,
@@ -469,8 +469,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       height: 50,
                                       color: mainTextColor,
-                                      onPressed: () {
-                                        final code = joinDrive(
+                                      onPressed: () async {
+                                        final code = await joinDrive(
                                             roomDetails[counter]['room_id'],
                                             userLat,
                                             userLong);
