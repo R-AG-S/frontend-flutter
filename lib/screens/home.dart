@@ -27,6 +27,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+bool isWaiting = false;
 double distance = 0;
 int counter = 0;
 bool isReady = false;
