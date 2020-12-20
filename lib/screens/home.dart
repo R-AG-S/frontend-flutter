@@ -24,6 +24,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+int distance;
 int counter = 0;
 bool isReady = false;
 double userLat = 0.0;
@@ -94,6 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
       distanceFilter: 1,
     ).listen((Position position) {
       setState(() {
+        distance = distance + 1;
         userLat = position.latitude;
         userLong = position.longitude;
       });
