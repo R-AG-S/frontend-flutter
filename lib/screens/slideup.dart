@@ -46,7 +46,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
 
   getUsers() {
     for (int i = 0; i < widget.membersList.length; i++) {
-      var data = getUserData(widget.membersList[i]);
+      userData[i] = getUserData(widget.membersList[i]);
     }
   }
 
