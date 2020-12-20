@@ -19,6 +19,7 @@ class _QRScannerState extends State<QRScanner> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     ScreenUtil.init(context,
         designSize: Size(1080, 2400), allowFontScaling: false);
     return MaterialApp(
