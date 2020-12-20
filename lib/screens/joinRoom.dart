@@ -62,6 +62,145 @@ class _QRScannerState extends State<QRScanner> {
                     obscure: false,
                   ),
                 ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 12,
+                  ),
+                  child: ButtonTheme(
+                    minWidth: width,
+                    height: 50.0,
+                    child: RaisedButton(
+                      color: whiteColor,
+                      child: isWaiting
+                          ? Container(
+                              height: 40,
+                              width: 40,
+                              padding: EdgeInsets.all(8),
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    mainTextColor),
+                              ),
+                            )
+                          : Text(
+                              'Log In',
+                              style: GoogleFonts.openSans(
+                                fontSize: 18,
+                                color: darkFadeTextColor,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                      onPressed: isWaiting
+                          ? null
+                          : () async {
+                              setState(() {
+                                isWaiting = true;
+                              });
+                              try {
+                                final result =
+                                    await InternetAddress.lookup('google.com');
+                                if (result.isNotEmpty &&
+                                    result[0].rawAddress.isNotEmpty) {
+                                  try {
+                                    if (checkStatus()) {
+                                      final response = await http.post(
+                                        'https://payup-backend.herokuapp.com/users/login/',
+                                        headers: <String, String>{
+                                          'Content-type': 'application/json',
+                                          'Accept': 'application/json',
+                                          // "Authorization": "Some token"
+                                        },
+                                        body: json.encode(
+                                          <String, String>{
+                                            "email": _emailController.text,
+                                            "password":
+                                                _passwordController.text,
+                                          },
+                                        ),
+                                      );
+                                      print(
+                                        jsonDecode(
+                                            response.body)['refreshToken'],
+                                      );
+                                      print(response.statusCode);
+                                      if (response.statusCode == 200) {
+                                        try {
+                                          final SharedPreferences prefs =
+                                              await SharedPreferences
+                                                  .getInstance();
+                                          try {
+                                            prefs.setString(
+                                                'refreshToken',
+                                                jsonDecode(response.body)[
+                                                    'refreshToken']);
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    WaitingScreen(),
+                                              ),
+                                            );
+                                          } catch (e) {
+                                            setState(() {
+                                              isWaiting = false;
+                                            });
+                                            Flushbar(
+                                              backgroundColor: redColor,
+                                              title: "Error",
+                                              message: 'An error occurred',
+                                              duration: Duration(seconds: 3),
+                                            )..show(context);
+                                          }
+                                        } catch (e) {
+                                          setState(() {
+                                            isWaiting = false;
+                                          });
+                                          Flushbar(
+                                            backgroundColor: redColor,
+                                            title: "Error",
+                                            message: 'An error occurred',
+                                            duration: Duration(seconds: 3),
+                                          )..show(context);
+                                        }
+                                      }
+                                    }
+                                  } catch (e) {
+                                    setState(() {
+                                      isWaiting = false;
+                                    });
+                                    Flushbar(
+                                      backgroundColor: redColor,
+                                      title: "Error",
+                                      message: 'An error occurred',
+                                      duration: Duration(seconds: 3),
+                                    )..show(context);
+                                  }
+                                } else {
+                                  setState(() {
+                                    isWaiting = false;
+                                  });
+                                  Flushbar(
+                                    backgroundColor: redColor,
+                                    title: "Error",
+                                    message: 'An error occurred',
+                                    duration: Duration(seconds: 3),
+                                  )..show(context);
+                                }
+                              } catch (e) {
+                                setState(() {
+                                  isWaiting = false;
+                                });
+                                Flushbar(
+                                  backgroundColor: redColor,
+                                  title: "Error",
+                                  message: 'An error occurred',
+                                  duration: Duration(seconds: 3),
+                                )..show(context);
+                              }
+                            },
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
