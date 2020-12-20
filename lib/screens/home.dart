@@ -360,34 +360,98 @@ class _HomeScreenState extends State<HomeScreen> {
                             )
                           ],
                         ),
-                        isExpanded
-                            ? Padding(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 25,
-                                  vertical: 8,
-                                ),
-                                child: FlatButton(
-                                  minWidth: MediaQuery.of(context).size.width,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  height: 50,
-                                  color: mainTextColor,
-                                  onPressed: () {
-                                    _getLocationStream();
-                                  },
-                                  child: Text(
-                                    'Start Drive',
-                                    style: TextStyle(
-                                      fontFamily: 'Bambino',
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w400,
-                                      color: whiteColor,
+                        isDriving
+                            ? {
+                                isExpanded
+                                    ? Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 25,
+                                          vertical: 8,
+                                        ),
+                                        child: FlatButton(
+                                          minWidth:
+                                              MediaQuery.of(context).size.width,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(5.0),
+                                          ),
+                                          height: 50,
+                                          color: mainTextColor,
+                                          onPressed: () {
+                                            _getLocationStream();
+                                          },
+                                          child: Text(
+                                            'Start Drive',
+                                            style: TextStyle(
+                                              fontFamily: 'Bambino',
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w400,
+                                              color: whiteColor,
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    : Container(),
+                                isExpanded
+                                    ? Padding(
+                                        padding: EdgeInsets.only(
+                                          left: 25,
+                                          right: 25,
+                                          bottom: 8,
+                                        ),
+                                        child: FlatButton(
+                                          minWidth:
+                                              MediaQuery.of(context).size.width,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(5.0),
+                                          ),
+                                          height: 50,
+                                          color: mainTextColor,
+                                          onPressed: () {},
+                                          child: Text(
+                                            'Join Drive',
+                                            style: TextStyle(
+                                              fontFamily: 'Bambino',
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w400,
+                                              color: whiteColor,
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    : Container()
+                              }
+                            : isExpanded
+                                ? Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 25,
+                                      vertical: 8,
                                     ),
-                                  ),
-                                ),
-                              )
-                            : Container(),
+                                    child: FlatButton(
+                                      minWidth:
+                                          MediaQuery.of(context).size.width,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      height: 50,
+                                      color: mainTextColor,
+                                      onPressed: () {
+                                        _getLocationStream();
+                                      },
+                                      child: Text(
+                                        'Start Drive',
+                                        style: TextStyle(
+                                          fontFamily: 'Bambino',
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                          color: whiteColor,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : Container(),
                         isExpanded
                             ? Padding(
                                 padding: EdgeInsets.only(
