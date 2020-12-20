@@ -160,11 +160,6 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                 Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Icon(
-                                      FontAwesomeIcons.carSide,
-                                      color: fadeTextColor,
-                                      size: 16,
-                                    ),
                                     Padding(
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 10,
