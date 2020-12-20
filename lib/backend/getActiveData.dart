@@ -18,6 +18,6 @@ getActiveData(String roomId) async {
     );
     return (json.decode(getActiveData.body)['passengers_in_car']);
   } catch (e) {
-    return 400;
+    return {};
   }
 }
