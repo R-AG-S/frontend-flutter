@@ -92,7 +92,7 @@ class _QRScannerState extends State<QRScanner> {
                               ),
                             )
                           : Text(
-                              'Log In',
+                              'Join Room',
                               style: GoogleFonts.openSans(
                                 fontSize: 18,
                                 color: darkFadeTextColor,
