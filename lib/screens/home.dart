@@ -470,7 +470,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: mainTextColor,
                                       onPressed: () {
                                         _getLocation();
-                                        joinDrive(
+                                        final code = joinDrive(
                                             roomDetails[counter]['room_id'],
                                             userLat,
                                             userLong);
