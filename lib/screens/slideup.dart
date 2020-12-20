@@ -285,7 +285,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                           FadeInImage.assetNetwork(
                                             fadeOutDuration:
                                                 Duration(seconds: 1),
-                                            image: userData[index]['dp'] == null
+                                            image: userData[index]['dp'] ==
+                                                        null ||
+                                                    userData[index]['dp'] == ''
                                                 ? iconData[10]
                                                 : userData[index]['dp'],
                                             placeholder: 'images/place.png',
