@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -106,7 +108,7 @@ class _QRScannerState extends State<QRScanner> {
                                 if (result.isNotEmpty &&
                                     result[0].rawAddress.isNotEmpty) {
                                   try {
-                                    if (checkStatus()) {
+                                    if (_qrController.text.isNotEmpty) {
                                       final response = await http.post(
                                         'https://payup-backend.herokuapp.com/users/login/',
                                         headers: <String, String>{
