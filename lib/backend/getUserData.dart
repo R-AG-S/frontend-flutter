@@ -14,6 +14,9 @@ getUserData(String userId) async {
       },
     );
     print(jsonDecode(userDetails.body));
-    return ({'name': jsonDecode(userDetails.body)['displayname']});
+    return ({
+      'name': jsonDecode(userDetails.body)['displayname'],
+      'dp': jsonDecode(userDetails.body)['displaypic'],
+    });
   } catch (e) {}
 }
