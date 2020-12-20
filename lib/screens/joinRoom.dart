@@ -10,6 +10,7 @@ class QRScanner extends StatefulWidget {
 }
 
 class _QRScannerState extends State<QRScanner> {
+  final TextEditingController _qrController = TextEditingController();
   String qrCodeResult = "Not Yet Scanned";
   var qrText = '';
   QRViewController controller;
