@@ -288,6 +288,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                                           "full_name":
                                                               _nameController
                                                                   .text,
+                                                          "device_registeration_token":
+                                                              fcmToken,
                                                           "phone_number": _phoneController
                                                                       .text
                                                                       .toString()
@@ -309,9 +311,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                                           .text
                                                                   : '+91' +
                                                                       _phoneController
-                                                                          .text,
-                                                          "device_registeration_token":
-                                                              fcmToken
+                                                                          .text
                                                         },
                                                       ),
                                                     );
