@@ -35,12 +35,14 @@ BorderRadiusGeometry radius = BorderRadius.only(
   topLeft: Radius.circular(24.0),
   topRight: Radius.circular(24.0),
 );
+String creator;
 
 class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   void initState() {
     isReady = false;
     userData.clear();
+    creator = getUserData(widget.creator);
     getUsers();
     super.initState();
   }
