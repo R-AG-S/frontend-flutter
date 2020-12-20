@@ -7,6 +7,7 @@ import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:payup/backend/getUserData.dart';
 import 'package:payup/screens/generalSettings.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/utilities/data.dart';
 import 'package:payup/widgets/button.dart';
 
 bool isReady = false;
@@ -286,7 +287,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                       children: [
                                         FadeInImage.assetNetwork(
                                           fadeOutDuration: Duration(seconds: 1),
-                                          image: userData[index]['dp'],
+                                          image: userData[index]['dp'] == null
+                                              ? iconData[10]
+                                              : userData[index]['dp'],
                                           placeholder: 'images/place.png',
                                           height: 45,
                                         ),
