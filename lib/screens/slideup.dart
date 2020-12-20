@@ -11,7 +11,6 @@ import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
 import 'package:payup/widgets/button.dart';
 import 'package:payup/widgets/qr.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 bool isReady = false;
 Map userData = Map();
