@@ -425,6 +425,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 50,
                                       color: mainTextColor,
                                       onPressed: () {
+                                        setState(() {
+                                          isDriving = true;
+                                        });
                                         _getLocationStream();
                                       },
                                       child: Text(
