@@ -36,6 +36,7 @@ double _panelHeightClosed;
 Map roomDetails = Map();
 bool isDriving = false;
 Position currentPosition;
+bool isDriver = false;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
