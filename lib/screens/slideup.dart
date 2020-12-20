@@ -34,6 +34,12 @@ BorderRadiusGeometry radius = BorderRadius.only(
 
 class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: whiteColor,
