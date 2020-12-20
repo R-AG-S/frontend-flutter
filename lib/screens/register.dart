@@ -36,6 +36,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   getReady() async {
     fcmToken = await getFCMToken();
+    print(fcmToken);
   }
 
   @override
