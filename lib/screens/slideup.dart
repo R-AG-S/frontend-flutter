@@ -11,6 +11,7 @@ import 'package:payup/widgets/button.dart';
 
 bool isReady = false;
 Map userData = Map();
+String creator;
 
 class SlideUpPanel extends StatefulWidget {
   SlideUpPanel({
