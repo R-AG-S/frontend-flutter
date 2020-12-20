@@ -18,7 +18,7 @@ getActiveData(String roomId) async {
     );
     return ({
       'pass': json.decode(getActiveData.body)['passengers_in_car'],
-      'driver': json.decode(getActiveData.body)['passengers_in_car']
+      'driver': json.decode(getActiveData.body)['driver']
     });
   } catch (e) {
     return {};
