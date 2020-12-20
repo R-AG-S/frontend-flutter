@@ -35,12 +35,13 @@ BorderRadiusGeometry radius = BorderRadius.only(
   topLeft: Radius.circular(24.0),
   topRight: Radius.circular(24.0),
 );
-String creator;
+Map creator = Map();
 
 class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   void initState() {
     isReady = false;
+    creator.clear();
     userData.clear();
     creator = getUserData(widget.creator);
     getUsers();
@@ -113,7 +114,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                           ),
                         ),
                         Text(
-                          'Created By ' + widget.creator,
+                          'Created By ' + creator['name'],
                           style: GoogleFonts.openSans(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
