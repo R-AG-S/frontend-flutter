@@ -38,6 +38,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   void initState() {
     isReady = false;
+    getUsers();
     super.initState();
   }
 
