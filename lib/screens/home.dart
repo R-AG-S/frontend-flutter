@@ -41,6 +41,7 @@ bool isDriver = false;
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
+    isDriver = false;
     isReady = false;
     roomDetails.clear();
     _getLocation();
