@@ -424,7 +424,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 50,
                                       color: mainTextColor,
                                       onPressed: isWaiting
-                                          ? null
+                                          ? {
+                                              Flushbar(
+                                                backgroundColor: Colors.grey,
+                                                title: "Loading",
+                                                message: 'Please wait...',
+                                                duration: Duration(seconds: 3),
+                                              )..show(context)
+                                            }
                                           : () async {
                                               setState(() {
                                                 isWaiting = true;
@@ -486,7 +493,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 50,
                                       color: mainTextColor,
                                       onPressed: isWaiting
-                                          ? null
+                                          ? () {
+                                              Flushbar(
+                                                backgroundColor: Colors.grey,
+                                                title: "Loading",
+                                                message: 'Please wait...',
+                                                duration: Duration(seconds: 3),
+                                              )..show(context);
+                                            }
                                           : () async {
                                               setState(() {
                                                 isWaiting = true;
