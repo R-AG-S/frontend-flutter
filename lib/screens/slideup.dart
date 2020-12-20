@@ -294,7 +294,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                           height: 45,
                                         ),
                                         Text(
-                                          userData[index]['name'],
+                                          userData[index]['name'] == null
+                                              ? iconData[10]
+                                              : userData[index]['dp'],
                                           style: GoogleFonts.openSans(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w400,
