@@ -368,26 +368,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           horizontal: 25,
                                           vertical: 8,
                                         ),
-                                        child: FlatButton(
-                                          minWidth:
-                                              MediaQuery.of(context).size.width,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                          ),
-                                          height: 50,
-                                          color: mainTextColor,
-                                          onPressed: () {
-                                            _getLocationStream();
-                                          },
-                                          child: Text(
-                                            'Start Drive',
-                                            style: TextStyle(
-                                              fontFamily: 'Bambino',
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400,
-                                              color: whiteColor,
-                                            ),
+                                        child: Text(
+                                          'Distance Travelled ',
+                                          style: TextStyle(
+                                            fontFamily: 'Bambino',
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400,
+                                            color: whiteColor,
                                           ),
                                         ),
                                       )
