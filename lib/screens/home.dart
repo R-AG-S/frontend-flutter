@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               panel: isReady
                   ? SlideUpPanel(
                       carCount: 12,
-                      creator: userData(roomDetails[counter]['data']['owner']),
+                      creator: roomDetails[counter]['data']['owner'],
                       membCount: roomDetails[counter]['data']['members'].length,
                       membersList: roomDetails[counter]['data']['members'],
                       petrol: roomDetails[counter]['data']['petrol_price'],
