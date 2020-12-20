@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           duration: Duration(seconds: 3),
         )..show(context);
       } else {
-        creator = await userData(roomDetails[counter]['data']['owner']);
+        creator = await findUserData(roomDetails[counter]['data']['owner']);
         setState(() {
           isReady = true;
         });
