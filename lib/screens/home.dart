@@ -30,7 +30,6 @@ int counter = 0;
 bool isReady = false;
 double userLat = 0.0;
 double userLong = 0.0;
-bool isExpanded = true;
 String creator;
 final int dataCount = 5;
 double _panelHeightOpen;
