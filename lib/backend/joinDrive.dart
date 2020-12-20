@@ -17,5 +17,7 @@ joinDrive(String roomId, double lat, double long) async {
       ),
     );
     print(jsonDecode(joinDrive.body));
-  } catch (e) {}
+  } catch (e) {
+    return 400;
+  }
 }
