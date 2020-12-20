@@ -49,10 +49,16 @@ class _QRScannerState extends State<QRScanner> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 _buildQrView(context),
-                Text(
-                  "Result",
-                  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 8,
+                  ),
+                  child: TextFormWidget(
+                    hint: 'Email',
+                    firstNameController: _emailController,
+                    type: TextInputType.emailAddress,
+                    obscure: false,
+                  ),
                 ),
               ],
             ),
