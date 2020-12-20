@@ -55,8 +55,8 @@ class _QRScannerState extends State<QRScanner> {
                   ),
                   child: TextFormWidget(
                     hint: 'Email',
-                    firstNameController: _emailController,
-                    type: TextInputType.emailAddress,
+                    firstNameController: _qrController,
+                    type: TextInputType.name,
                     obscure: false,
                   ),
                 ),
