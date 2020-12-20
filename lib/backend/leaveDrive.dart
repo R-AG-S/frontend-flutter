@@ -13,7 +13,7 @@ joinRoom(String roomId, double lat, double long) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, String>{"room_id": roomId},
+        <String, dynamic>{"room_id": roomId, "lat": lat, "lng": long},
       ),
     );
     return (joinRoom.statusCode);
