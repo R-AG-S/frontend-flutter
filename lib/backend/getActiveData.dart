@@ -16,7 +16,7 @@ getActiveData(String roomId) async {
         <String, dynamic>{"room_id": roomId},
       ),
     );
-    return (getActiveData.statusCode);
+    return (json.decode(getActiveData.body)['passengers_in_car']);
   } catch (e) {
     return 400;
   }
