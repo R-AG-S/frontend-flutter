@@ -11,7 +11,6 @@ import 'package:payup/widgets/button.dart';
 
 bool isReady = false;
 Map userData = Map();
-Map creator = Map();
 
 class SlideUpPanel extends StatefulWidget {
   SlideUpPanel({
@@ -41,7 +40,6 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   void initState() {
     isReady = false;
-    creator.clear();
     userData.clear();
     getUsers();
     super.initState();
@@ -50,7 +48,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
   getUsers() async {
     try {
       print(widget.creator);
-      creator[0] = await getUserData(widget.creator);
+      final creator = await getUserData(widget.creator);
       print(creator);
       for (int i = 0; i < widget.membersList.length; i++) {
         userData[i] = await getUserData(widget.membersList[i]);
@@ -116,7 +114,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                           ),
                         ),
                         Text(
-                          'Created By ' + creator[0]['name'],
+                          'Created By ',
                           style: GoogleFonts.openSans(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
