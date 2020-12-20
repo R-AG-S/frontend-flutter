@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
       distanceFilter: 1,
     ).listen((Position position) async {
       passengers.clear();
-      passengers = await getActiveData();
+      passengers = await getActiveData(roomDetails[counter]['room_id']);
       setState(() {
         if (Geolocator.distanceBetween(
                 currentPosition.latitude,
