@@ -118,7 +118,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                             ),
                           ),
                           Text(
-                            'Created By ' + creator,
+                            widget.desc,
                             style: GoogleFonts.openSans(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
