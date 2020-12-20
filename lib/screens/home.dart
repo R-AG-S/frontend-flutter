@@ -376,6 +376,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         setState(() {
                                           isDriving = false;
                                         });
+                                        isDriver?:;
                                       },
                                       child: Text(
                                         'Stop Drive',
@@ -409,6 +410,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       onPressed: () {
                                         setState(() {
                                           isDriving = true;
+                                          isDriver = true;
                                         });
                                         _getLocation();
                                         startDrive(
@@ -446,9 +448,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: mainTextColor,
                                       onPressed: () {
                                         _getLocation();
-                                        startDrive(
+                                        joinDrive(
                                             roomDetails[counter]['room_id'],
-                                            'carData',
                                             userLat,
                                             userLong);
                                         _getLocationStream();
