@@ -5,6 +5,7 @@ import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/backend/roomJoin.dart';
 import 'package:payup/screens/home.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
@@ -111,6 +112,7 @@ class _QRScannerState extends State<QRScanner> {
                                     result[0].rawAddress.isNotEmpty) {
                                   try {
                                     if (_qrController.text.isNotEmpty) {
+                                      final responseCode = joinRoom();
                                       if (response.statusCode == 200) {
                                         try {
                                           final SharedPreferences prefs =
