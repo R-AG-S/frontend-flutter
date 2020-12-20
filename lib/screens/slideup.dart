@@ -11,6 +11,7 @@ import 'package:payup/widgets/button.dart';
 
 bool isReady = false;
 Map userData = Map();
+Map creator = Map();
 
 class SlideUpPanel extends StatefulWidget {
   SlideUpPanel({
@@ -35,7 +36,6 @@ BorderRadiusGeometry radius = BorderRadius.only(
   topLeft: Radius.circular(24.0),
   topRight: Radius.circular(24.0),
 );
-Map creator = Map();
 
 class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
