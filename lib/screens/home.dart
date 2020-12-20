@@ -380,6 +380,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: mainTextColor,
                                       onPressed: () {
                                         setState(() {
+                                          isWaiting = true;
                                           isDriving = false;
                                         });
                                         _getLocation();
