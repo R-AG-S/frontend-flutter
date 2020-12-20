@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/backend/refresh.dart';
 
-userRoomDetails() async {
+userRoomDetails(String userId) async {
   try {
     final authKey = await refreshToken();
-    final userRoomDetails = await http.get(
-      'https://payup-backend.herokuapp.com/carpool/user_rooms/data',
+    final userDetails = await http.get(
+      'https://payup-backend.herokuapp.com/users/get_any_user_display_data/$userId',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
