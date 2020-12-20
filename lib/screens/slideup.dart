@@ -42,6 +42,7 @@ BorderRadiusGeometry radius = BorderRadius.only(
 class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   void initState() {
+    print(widget.roomName);
     isReady = false;
     userData.clear();
     getUsers();
