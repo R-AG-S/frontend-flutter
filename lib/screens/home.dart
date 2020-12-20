@@ -92,6 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
       desiredAccuracy: LocationAccuracy.high,
       distanceFilter: 1,
     ).listen((Position position) {
+      setState(() {
+        userLat = position.latitude;
+        userLong = position.longitude;
+      });
       print(position == null
           ? 'Unknown'
           : position.latitude.toString() +
