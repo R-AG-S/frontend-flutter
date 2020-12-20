@@ -46,12 +46,14 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
   }
 
   getUsers() async {
-    for (int i = 0; i < widget.membersList.length; i++) {
-      userData[i] = await getUserData(widget.membersList[i]);
-    }
-    setState(() {
-      isReady = true;
-    });
+    try {
+      for (int i = 0; i < widget.membersList.length; i++) {
+        userData[i] = await getUserData(widget.membersList[i]);
+      }
+      setState(() {
+        isReady = true;
+      });
+    } catch (e) {}
   }
 
   @override
