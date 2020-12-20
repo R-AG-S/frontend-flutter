@@ -469,12 +469,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 50,
                                       color: mainTextColor,
                                       onPressed: () {
-                                        _getLocation();
                                         final code = joinDrive(
                                             roomDetails[counter]['room_id'],
                                             userLat,
                                             userLong);
-                                        _getLocationStream();
+                                        if (code == 200 || code == 201) {
+                                          _getLocation();
+                                          setState(() {
+                                            isDriving = true;
+                                            isDriver = false;
+                                          });
+                                          _getLocationStream();
+                                        }
                                       },
                                       child: Text(
                                         'Join Drive',
