@@ -423,6 +423,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 50,
                                       color: mainTextColor,
                                       onPressed: () async {
+                                        setState(() {
+                                          distance = 0;
+                                        });
                                         final code = await startDrive(
                                             roomDetails[counter]['room_id'],
                                             'carData',
