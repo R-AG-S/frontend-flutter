@@ -10,6 +10,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/endDrive.dart';
+import 'package:payup/backend/getActiveData.dart';
 import 'package:payup/backend/joinDrive.dart';
 import 'package:payup/backend/leaveDrive.dart';
 import 'package:payup/backend/startDrive.dart';
@@ -103,8 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
     StreamSubscription<Position> positionStream = Geolocator.getPositionStream(
       desiredAccuracy: LocationAccuracy.high,
       distanceFilter: 1,
-    ).listen((Position position) {
+    ).listen((Position position) async {
       passengers.clear();
+      passengers = await getActiveData();
       setState(() {
         if (Geolocator.distanceBetween(
                 currentPosition.latitude,
