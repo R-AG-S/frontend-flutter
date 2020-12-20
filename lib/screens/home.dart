@@ -9,6 +9,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/userData.dart';
 import 'package:payup/backend/userRoomDetails.dart';
+import 'package:payup/screens/room.dart';
 import 'package:payup/screens/slideup.dart';
 import 'package:payup/screens/userSettings.dart';
 import 'package:payup/utilities/constants.dart';
@@ -428,7 +429,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         top: 15,
                       ),
                       child: SecondaryIcons(
-                          iconName: FontAwesomeIcons.plus, routeName: null),
+                        iconName: FontAwesomeIcons.plus,
+                        routeName: RoomOptions(),
+                      ),
                     );
                   } else if (index == 1) {
                     return Column(
