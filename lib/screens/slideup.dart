@@ -7,7 +7,6 @@ import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:payup/backend/getUserData.dart';
 import 'package:payup/screens/generalSettings.dart';
 import 'package:payup/utilities/constants.dart';
-import 'package:payup/utilities/data.dart';
 import 'package:payup/widgets/button.dart';
 
 bool isReady = false;
