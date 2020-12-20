@@ -13,7 +13,7 @@ userRoomDetails(String userId) async {
         "Authorization": authKey
       },
     );
-    return (jsonDecode(userDetails.body)['Rooms']);
+    return (jsonDecode(userDetails.body)['displayname']);
   } catch (e) {
     return [];
   }
