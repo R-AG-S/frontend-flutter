@@ -42,7 +42,10 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
     super.initState();
   }
 
-  getUsers() {}
+  getUsers() {
+    for (int i = 0; i < widget.membersList.length; i++) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
