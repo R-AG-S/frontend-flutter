@@ -113,8 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     _panelHeightOpen = MediaQuery.of(context).size.height * .80;
-    _panelHeightClosed =
-        isExpanded ? MediaQuery.of(context).size.height * .08 : 0.0;
+    _panelHeightClosed = MediaQuery.of(context).size.height * .08;
     if (isReady) {
       return SafeArea(
         child: Slidable(
@@ -165,9 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Radius.circular(20),
                                 ),
                               ),
-                              height: isExpanded
-                                  ? MediaQuery.of(context).size.height * 0.66
-                                  : MediaQuery.of(context).size.height * 0.969,
+                              height: MediaQuery.of(context).size.height * 0.66,
                               child: FlutterMap(
                                 options: new MapOptions(
                                   center: LatLng(userLat, userLong),
@@ -234,47 +231,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    right: 20,
-                                    left: 10,
-                                  ),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        isExpanded = isExpanded ? false : true;
-                                      });
-                                    },
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        shape: BoxShape.circle,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 1,
-                                            color: Colors.black26,
-                                            spreadRadius: 2,
-                                          ),
-                                        ],
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 25,
-                                        backgroundColor: whiteColor,
-                                        child: Icon(
-                                          FontAwesomeIcons.expand,
-                                          color: fadeTextColor,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                )
                               ],
                             ),
                             Padding(
                               padding: EdgeInsets.only(
-                                top: isExpanded
-                                    ? MediaQuery.of(context).size.height * 0.58
-                                    : MediaQuery.of(context).size.height * 0.8,
+                                top: MediaQuery.of(context).size.height * 0.58,
                               ),
                               child: Container(
                                 height: 100,
