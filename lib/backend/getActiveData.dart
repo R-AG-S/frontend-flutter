@@ -18,6 +18,7 @@ getActiveData(String roomId) async {
     );
     print(
         'Passenger : ' + json.decode(getActiveData.body)['passengers_in_car']);
+    print('Driver : ' + json.decode(getActiveData.body)['driver']);
     List passenger = json.decode(getActiveData.body)['passengers_in_car'];
     passenger.add(json.decode(getActiveData.body)['driver']);
     print(passenger);
