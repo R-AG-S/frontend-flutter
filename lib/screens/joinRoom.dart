@@ -74,6 +74,7 @@ class _QRScannerState extends State<QRScanner> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: 12,
+                    horizontal: 15,
                   ),
                   child: ButtonTheme(
                     minWidth: width,
