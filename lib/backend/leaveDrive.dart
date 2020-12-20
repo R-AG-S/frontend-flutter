@@ -17,5 +17,7 @@ joinRoom(String roomId, double lat, double long) async {
       ),
     );
     return (joinRoom.statusCode);
-  } catch (e) {}
+  } catch (e) {
+    return 400;
+  }
 }
