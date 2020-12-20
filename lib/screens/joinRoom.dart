@@ -43,8 +43,6 @@ class _QRScannerState extends State<QRScanner> {
             centerTitle: true,
           ),
           body: Container(
-            height: 500,
-            padding: EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -69,17 +67,20 @@ class _QRScannerState extends State<QRScanner> {
           Future.microtask(() => controller?.updateDimensions(qrKey));
           return false;
         },
-        child: SizeChangedLayoutNotifier(
-          key: const Key('qr-size-notifier'),
-          child: QRView(
-            key: qrKey,
-            onQRViewCreated: _onQRViewCreated,
-            overlay: QrScannerOverlayShape(
-              borderColor: Colors.red,
-              borderRadius: 10,
-              borderLength: 30,
-              borderWidth: 10,
-              cutOutSize: 300,
+        child: Container(
+          height: 500,
+          child: SizeChangedLayoutNotifier(
+            key: const Key('qr-size-notifier'),
+            child: QRView(
+              key: qrKey,
+              onQRViewCreated: _onQRViewCreated,
+              overlay: QrScannerOverlayShape(
+                borderColor: Colors.red,
+                borderRadius: 10,
+                borderLength: 30,
+                borderWidth: 10,
+                cutOutSize: 300,
+              ),
             ),
           ),
         ));
