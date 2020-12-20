@@ -30,6 +30,7 @@ GlobalKey<ScaffoldState> _registerSaffoldKey = GlobalKey();
 class _SignInScreenState extends State<SignInScreen> {
   @override
   void initState() {
+    getReady();
     super.initState();
   }
 
