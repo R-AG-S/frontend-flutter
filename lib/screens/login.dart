@@ -255,8 +255,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   ),
                                                 );
                                                 print(
-                                                  jsonDecode(response.body)[
-                                                      'refreshToken'],
+                                                  jsonDecode(response.body),
                                                 );
                                                 print(response.statusCode);
                                                 if (response.statusCode ==
