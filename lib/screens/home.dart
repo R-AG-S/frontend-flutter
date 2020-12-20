@@ -34,6 +34,7 @@ final int dataCount = 5;
 double _panelHeightOpen;
 double _panelHeightClosed;
 Map roomDetails = Map();
+bool isDriving = false;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
