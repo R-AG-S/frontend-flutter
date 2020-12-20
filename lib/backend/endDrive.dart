@@ -6,7 +6,7 @@ leaveDrive(String roomId, double lat, double long) async {
   try {
     final authKey = await refreshToken();
     final leaveDrive = await http.post(
-      'https://payup-backend.herokuapp.com/active/leave_drive',
+      'https://payup-backend.herokuapp.com/active/end_drive',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
