@@ -395,7 +395,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           height: 50,
                                           color: mainTextColor,
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            setState(() {
+                                              isDriving = false;
+                                            });
+                                          },
                                           child: Text(
                                             'Stop Drive',
                                             style: TextStyle(
