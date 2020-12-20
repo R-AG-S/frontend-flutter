@@ -378,14 +378,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       height: 50,
                                       color: mainTextColor,
-                                      onPressed: ()async {
+                                      onPressed: () {
                                         setState(() {
-                                          isWaiting = true;
                                           isDriving = false;
                                         });
                                         _getLocation();
                                         isDriver
-                                            ? final code = await endDrive(
+                                            ? endDrive(
                                                 roomDetails[counter]['room_id'],
                                                 userLat,
                                                 userLong,
@@ -426,6 +425,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: mainTextColor,
                                       onPressed: () async {
                                         setState(() {
+                                          isWaiting = true;
                                           distance = 0;
                                         });
                                         final code = await startDrive(
@@ -436,12 +436,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                         print(code);
                                         if (code == 200 || code == 201) {
                                           setState(() {
+                                            isWaiting = false;
                                             isDriving = true;
                                             isDriver = true;
                                           });
                                           _getLocation();
                                           _getLocationStream();
                                         } else {
+                                          setState(() {
+                                            isWaiting = false;
+                                          });
                                           Flushbar(
                                             backgroundColor: redColor,
                                             title: "Error",
