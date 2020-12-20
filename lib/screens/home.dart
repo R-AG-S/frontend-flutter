@@ -437,7 +437,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Flushbar(
                                             backgroundColor: redColor,
                                             title: "Error",
-                                            message: 'Error occurred.',
+                                            message:
+                                                'USER_ALREADY_JOINED_ACTIVE_SESSION',
                                             duration: Duration(seconds: 3),
                                           )..show(context);
                                         }
@@ -480,7 +481,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             isDriver = false;
                                           });
                                           _getLocationStream();
-                                        }
+                                        } else {}
                                       },
                                       child: Text(
                                         'Join Drive',
