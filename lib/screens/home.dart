@@ -84,6 +84,18 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  _getLocationStream() {
+    StreamSubscription<Position> positionStream =
+        Geolocator.getPositionStream(locationOptions)
+            .listen((Position position) {
+      print(position == null
+          ? 'Unknown'
+          : position.latitude.toString() +
+              ', ' +
+              position.longitude.toString());
+    });
+  }
+
   GlobalKey<SlidableState> _slidableKey = GlobalKey();
   final SlidableController slidableController = SlidableController();
   @override
