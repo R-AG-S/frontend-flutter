@@ -24,7 +24,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-int distance = 0;
+double distance = 0;
 int counter = 0;
 bool isReady = false;
 double userLat = 0.0;
@@ -35,6 +35,7 @@ double _panelHeightOpen;
 double _panelHeightClosed;
 Map roomDetails = Map();
 bool isDriving = false;
+Position currentPosition;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -93,9 +94,18 @@ class _HomeScreenState extends State<HomeScreen> {
       distanceFilter: 1,
     ).listen((Position position) {
       setState(() {
-        distance = distance + 1;
+        if (Geolocator.distanceBetween(
+                currentPosition.latitude,
+                currentPosition.longitude,
+                position.latitude,
+                position.longitude) >
+            0) {
+          distance = Geolocator.distanceBetween(currentPosition.latitude,
+              currentPosition.longitude, position.latitude, position.longitude);
+        }
         userLat = position.latitude;
         userLong = position.longitude;
+        currentPosition = position;
       });
       print(position == null
           ? 'Unknown'
