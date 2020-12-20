@@ -1,6 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-getFCMToken() {
+Future<String> getFCMToken() {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
   _firebaseMessaging.configure();
   _firebaseMessaging.getToken().then((String token) {
