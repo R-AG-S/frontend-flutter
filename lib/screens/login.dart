@@ -243,12 +243,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                                     // "Authorization": "Some token"
                                                   },
                                                   body: json.encode(
-                                                    <String, String>{
+                                                    <String, dynamic>{
                                                       "email":
                                                           _emailController.text,
                                                       "password":
                                                           _passwordController
                                                               .text,
+                                                      "auto_login": true,
                                                       "device_registeration_token":
                                                           fcmToken
                                                     },

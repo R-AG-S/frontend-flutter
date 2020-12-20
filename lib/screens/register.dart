@@ -288,7 +288,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                           "full_name":
                                                               _nameController
                                                                   .text,
-                                                          "auto_login": false,
+                                                          "auto_login": true,
                                                           "device_registeration_token":
                                                               fcmToken,
                                                           "phone_number": _phoneController
