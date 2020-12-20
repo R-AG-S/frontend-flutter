@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
+import 'package:payup/backend/getUserData.dart';
 import 'package:payup/screens/generalSettings.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
@@ -44,7 +45,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
   }
 
   getUsers() {
-    for (int i = 0; i < widget.membersList.length; i++) {}
+    for (int i = 0; i < widget.membersList.length; i++) {
+      var data = getUserData(widget.membersList[i]);
+    }
   }
 
   @override
