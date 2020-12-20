@@ -374,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fontFamily: 'Bambino',
                                         fontSize: 18,
                                         fontWeight: FontWeight.w400,
-                                        color: whiteColor,
+                                        color: mainTextColor,
                                       ),
                                     ),
                                   ),
