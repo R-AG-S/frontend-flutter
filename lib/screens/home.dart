@@ -378,14 +378,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       height: 50,
                                       color: mainTextColor,
-                                      onPressed: () {
+                                      onPressed: ()async {
                                         setState(() {
                                           isWaiting = true;
                                           isDriving = false;
                                         });
                                         _getLocation();
                                         isDriver
-                                            ? endDrive(
+                                            ? final code = await endDrive(
                                                 roomDetails[counter]['room_id'],
                                                 userLat,
                                                 userLong,
