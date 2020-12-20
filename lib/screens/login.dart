@@ -25,7 +25,6 @@ bool isWaiting = false;
 final TextEditingController _emailController = TextEditingController();
 final TextEditingController _passwordController = TextEditingController();
 final GlobalKey<ScaffoldState> _loginscaffoldKey = GlobalKey();
-final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
