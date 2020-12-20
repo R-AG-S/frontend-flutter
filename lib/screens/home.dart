@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/cupertino.dart';
@@ -77,7 +79,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _getLocation() async {
     Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
+      desiredAccuracy: LocationAccuracy.bestForNavigation,
+    );
     setState(() {
       userLat = position.latitude;
       userLong = position.longitude;
@@ -85,9 +88,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _getLocationStream() {
-    StreamSubscription<Position> positionStream =
-        Geolocator.getPositionStream(locationOptions)
-            .listen((Position position) {
+    StreamSubscription<Position> positionStream = Geolocator.getPositionStream(
+      desiredAccuracy: LocationAccuracy.high,
+      distanceFilter: 1,
+    ).listen((Position position) {
       print(position == null
           ? 'Unknown'
           : position.latitude.toString() +
