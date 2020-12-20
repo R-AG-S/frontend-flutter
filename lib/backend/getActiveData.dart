@@ -16,10 +16,17 @@ getActiveData(String roomId) async {
         <String, dynamic>{"room_id": roomId},
       ),
     );
+    print(json.decode(getActiveData.body));
     print(
         'Passenger : ' + json.decode(getActiveData.body)['passengers_in_car']);
     print('Driver : ' + json.decode(getActiveData.body)['driver']);
-    List passenger = json.decode(getActiveData.body)['passengers_in_car'];
+    List passenger = List();
+    passenger.clear();
+    try {
+      passenger = json.decode(getActiveData.body)['passengers_in_car'];
+    } catch (e) {
+      passenger = [];
+    }
     passenger.add(json.decode(getActiveData.body)['driver']);
     print(passenger);
     return (passenger);
