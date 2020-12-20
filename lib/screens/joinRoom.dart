@@ -100,6 +100,7 @@ class _QRScannerState extends State<QRScanner> {
     controller.scannedDataStream.listen((scanData) {
       setState(() {
         qrText = scanData;
+        _qrController.text = scanData;
       });
     });
   }
