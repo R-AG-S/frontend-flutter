@@ -111,7 +111,6 @@ class _QRScannerState extends State<QRScanner> {
                                     result[0].rawAddress.isNotEmpty) {
                                   try {
                                     if (_qrController.text.isNotEmpty) {
-                                      print(response.statusCode);
                                       if (response.statusCode == 200) {
                                         try {
                                           final SharedPreferences prefs =
