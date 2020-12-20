@@ -17,15 +17,19 @@ getActiveData(String roomId) async {
       ),
     );
     print(json.decode(getActiveData.body));
-    print('Driver : ' + json.decode(getActiveData.body)['driver']);
+    print('Driver : ' +
+        json
+            .decode(getActiveData.body)['SESSION_DETAILS']['driver']
+            .toString());
     List passenger = List();
     passenger.clear();
     try {
-      passenger = json.decode(getActiveData.body)['passengers_in_car'];
+      passenger = json.decode(getActiveData.body)['SESSION_DETAILS']
+          ['passengers_in_car'];
     } catch (e) {
       passenger = [];
     }
-    passenger.add(json.decode(getActiveData.body)['driver']);
+    passenger.add(json.decode(getActiveData.body)['SESSION_DETAILS']['driver']);
     print(passenger);
     return (passenger);
   } catch (e) {
