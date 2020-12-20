@@ -116,32 +116,13 @@ class _QRScannerState extends State<QRScanner> {
                                           joinRoom(_qrController.text);
                                       if (responseCode == 200) {
                                         try {
-                                          final SharedPreferences prefs =
-                                              await SharedPreferences
-                                                  .getInstance();
-                                          try {
-                                            prefs.setString(
-                                                'refreshToken',
-                                                jsonDecode(response.body)[
-                                                    'refreshToken']);
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    HomeScreen(),
-                                              ),
-                                            );
-                                          } catch (e) {
-                                            setState(() {
-                                              isWaiting = false;
-                                            });
-                                            Flushbar(
-                                              backgroundColor: redColor,
-                                              title: "Error",
-                                              message: 'An error occurred',
-                                              duration: Duration(seconds: 3),
-                                            )..show(context);
-                                          }
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomeScreen(),
+                                            ),
+                                          );
                                         } catch (e) {
                                           setState(() {
                                             isWaiting = false;
