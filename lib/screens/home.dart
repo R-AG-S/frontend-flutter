@@ -481,7 +481,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                             isDriver = false;
                                           });
                                           _getLocationStream();
-                                        } else {}
+                                        } else {
+                                          Flushbar(
+                                            backgroundColor: redColor,
+                                            title: "Error",
+                                            message:
+                                                'USER_ALREADY_JOINED_ACTIVE_SESSION',
+                                            duration: Duration(seconds: 3),
+                                          )..show(context);
+                                        }
                                       },
                                       child: Text(
                                         'Join Drive',
