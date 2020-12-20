@@ -22,5 +22,8 @@ startDrive(String roomId, String carData, double lat, double long) async {
       ),
     );
     print(jsonDecode(startDrive.body));
-  } catch (e) {}
+    return (startDrive.statusCode);
+  } catch (e) {
+    return 400;
+  }
 }
