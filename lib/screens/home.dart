@@ -423,38 +423,42 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       height: 50,
                                       color: mainTextColor,
-                                      onPressed: () async {
-                                        setState(() {
-                                          isWaiting = true;
-                                          distance = 0;
-                                        });
-                                        final code = await startDrive(
-                                            roomDetails[counter]['room_id'],
-                                            'carData',
-                                            userLat,
-                                            userLong);
-                                        print(code);
-                                        if (code == 200 || code == 201) {
-                                          setState(() {
-                                            isWaiting = false;
-                                            isDriving = true;
-                                            isDriver = true;
-                                          });
-                                          _getLocation();
-                                          _getLocationStream();
-                                        } else {
-                                          setState(() {
-                                            isWaiting = false;
-                                          });
-                                          Flushbar(
-                                            backgroundColor: redColor,
-                                            title: "Error",
-                                            message:
-                                                'USER_ALREADY_JOINED_ACTIVE_SESSION',
-                                            duration: Duration(seconds: 3),
-                                          )..show(context);
-                                        }
-                                      },
+                                      onPressed: isWaiting
+                                          ? null
+                                          : () async {
+                                              setState(() {
+                                                isWaiting = true;
+                                                distance = 0;
+                                              });
+                                              final code = await startDrive(
+                                                  roomDetails[counter]
+                                                      ['room_id'],
+                                                  'carData',
+                                                  userLat,
+                                                  userLong);
+                                              print(code);
+                                              if (code == 200 || code == 201) {
+                                                setState(() {
+                                                  isWaiting = false;
+                                                  isDriving = true;
+                                                  isDriver = true;
+                                                });
+                                                _getLocation();
+                                                _getLocationStream();
+                                              } else {
+                                                setState(() {
+                                                  isWaiting = false;
+                                                });
+                                                Flushbar(
+                                                  backgroundColor: redColor,
+                                                  title: "Error",
+                                                  message:
+                                                      'USER_ALREADY_JOINED_ACTIVE_SESSION',
+                                                  duration:
+                                                      Duration(seconds: 3),
+                                                )..show(context);
+                                              }
+                                            },
                                       child: Text(
                                         'Start Drive',
                                         style: TextStyle(
@@ -481,39 +485,43 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       height: 50,
                                       color: mainTextColor,
-                                      onPressed: () async {
-                                        setState(() {
-                                          isWaiting = true;
-                                          distance = 0;
-                                        });
-                                        final code = await joinDrive(
-                                            roomDetails[counter]['room_id'],
-                                            userLat,
-                                            userLong);
-                                        print(code);
-                                        if (code == 200 || code == 201) {
-                                          setState(() {
-                                            isWaiting = false;
-                                          });
-                                          _getLocation();
-                                          setState(() {
-                                            isDriving = true;
-                                            isDriver = false;
-                                          });
-                                          _getLocationStream();
-                                        } else {
-                                          setState(() {
-                                            isWaiting = false;
-                                          });
-                                          Flushbar(
-                                            backgroundColor: redColor,
-                                            title: "Error",
-                                            message:
-                                                'USER_ALREADY_JOINED_ACTIVE_SESSION',
-                                            duration: Duration(seconds: 3),
-                                          )..show(context);
-                                        }
-                                      },
+                                      onPressed: isWaiting
+                                          ? null
+                                          : () async {
+                                              setState(() {
+                                                isWaiting = true;
+                                                distance = 0;
+                                              });
+                                              final code = await joinDrive(
+                                                  roomDetails[counter]
+                                                      ['room_id'],
+                                                  userLat,
+                                                  userLong);
+                                              print(code);
+                                              if (code == 200 || code == 201) {
+                                                setState(() {
+                                                  isWaiting = false;
+                                                });
+                                                _getLocation();
+                                                setState(() {
+                                                  isDriving = true;
+                                                  isDriver = false;
+                                                });
+                                                _getLocationStream();
+                                              } else {
+                                                setState(() {
+                                                  isWaiting = false;
+                                                });
+                                                Flushbar(
+                                                  backgroundColor: redColor,
+                                                  title: "Error",
+                                                  message:
+                                                      'USER_ALREADY_JOINED_ACTIVE_SESSION',
+                                                  duration:
+                                                      Duration(seconds: 3),
+                                                )..show(context);
+                                              }
+                                            },
                                       child: Text(
                                         'Join Drive',
                                         style: TextStyle(
