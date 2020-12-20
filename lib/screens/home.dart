@@ -351,7 +351,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     child: Text(
                                       'Distance Travelled ' +
-                                          distance.toString(),
+                                          distance.toStringAsFixed(2),
                                       style: TextStyle(
                                         fontFamily: 'Bambino',
                                         fontSize: 18,
@@ -420,34 +420,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       height: 50,
                                       color: mainTextColor,
-                                      onPressed: isDriving
-                                          ? null
-                                          : () async {
-                                              final code = await startDrive(
-                                                  roomDetails[counter]
-                                                      ['room_id'],
-                                                  'carData',
-                                                  userLat,
-                                                  userLong);
-                                              print(code);
-                                              if (code == 200 || code == 201) {
-                                                setState(() {
-                                                  isDriving = true;
-                                                  isDriver = true;
-                                                });
-                                                _getLocation();
-                                                _getLocationStream();
-                                              } else {
-                                                Flushbar(
-                                                  backgroundColor: redColor,
-                                                  title: "Error",
-                                                  message:
-                                                      'USER_ALREADY_JOINED_ACTIVE_SESSION',
-                                                  duration:
-                                                      Duration(seconds: 3),
-                                                )..show(context);
-                                              }
-                                            },
+                                      onPressed: () async {
+                                        final code = await startDrive(
+                                            roomDetails[counter]['room_id'],
+                                            'carData',
+                                            userLat,
+                                            userLong);
+                                        print(code);
+                                        if (code == 200 || code == 201) {
+                                          setState(() {
+                                            isDriving = true;
+                                            isDriver = true;
+                                          });
+                                          _getLocation();
+                                          _getLocationStream();
+                                        } else {
+                                          Flushbar(
+                                            backgroundColor: redColor,
+                                            title: "Error",
+                                            message:
+                                                'USER_ALREADY_JOINED_ACTIVE_SESSION',
+                                            duration: Duration(seconds: 3),
+                                          )..show(context);
+                                        }
+                                      },
                                       child: Text(
                                         'Start Drive',
                                         style: TextStyle(
