@@ -9,6 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/backend/fcmToken.dart';
 import 'package:payup/screens/register.dart';
 import 'package:payup/screens/waitingRoom.dart';
 import 'package:payup/utilities/constants.dart';
@@ -29,22 +30,13 @@ final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
+    getReady();
     super.initState();
-    _firebaseMessaging.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        print("onMessage: $message");
-      },
-      onLaunch: (Map<String, dynamic> message) async {
-        print("onLaunch: $message");
-      },
-      onResume: (Map<String, dynamic> message) async {
-        print("onResume: $message");
-      },
-    );
-    _firebaseMessaging.getToken().then((String token) {
-      assert(token != null);
-      setState(() {});
-    });
+  }
+
+  getReady() async {
+    fcmToken = await getFCMToken();
+    print(fcmToken);
   }
 
   @override
