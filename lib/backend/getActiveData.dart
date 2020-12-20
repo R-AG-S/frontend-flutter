@@ -21,6 +21,6 @@ getActiveData(String roomId) async {
     print(passenger);
     return (passenger);
   } catch (e) {
-    return {};
+    return [];
   }
 }
