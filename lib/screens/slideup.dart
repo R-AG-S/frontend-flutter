@@ -10,6 +10,8 @@ import 'package:payup/screens/generalSettings.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
 import 'package:payup/widgets/button.dart';
+import 'package:payup/widgets/qr.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 bool isReady = false;
 Map userData = Map();
@@ -215,7 +217,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                         courseName: 'Share Code',
                         gradientKey: gradient2,
                         iconData: FontAwesomeIcons.share,
-                        route: null,
+                        route: QRScreen(
+                          message: widget.code,
+                        ),
                       ),
                       CircularKeys(
                         courseName: 'Settings',
