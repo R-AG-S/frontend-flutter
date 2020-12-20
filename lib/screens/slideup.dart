@@ -43,12 +43,11 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   void initState() {
     print(widget.roomName);
-    print(widget.roomName);
-    print(widget.roomName);
-    print(widget.roomName);
-    print(widget.roomName);
-    print(widget.roomName);
-    print(widget.roomName);
+    print(widget.creator);
+    print(widget.membCount);
+    print(widget.carCount);
+    print(widget.petrol);
+    print(widget.membersList);
     isReady = false;
     userData.clear();
     getUsers();
