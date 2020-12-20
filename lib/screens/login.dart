@@ -240,10 +240,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                                         'application/json',
                                                     'Accept':
                                                         'application/json',
-                                                    // "Authorization": "Some token"
                                                   },
                                                   body: json.encode(
-                                                    <String, dynamic>{
+                                                    <String, String>{
                                                       "email":
                                                           _emailController.text,
                                                       "password":
