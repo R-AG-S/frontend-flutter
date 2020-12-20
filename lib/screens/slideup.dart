@@ -17,6 +17,7 @@ String creator;
 
 class SlideUpPanel extends StatefulWidget {
   SlideUpPanel({
+    @required this.desc,
     @required this.roomName,
     @required this.creator,
     @required this.membCount,
@@ -25,6 +26,7 @@ class SlideUpPanel extends StatefulWidget {
     @required this.petrol,
   });
   final String roomName;
+  final String desc;
   final String creator;
   final int membCount;
   final int carCount;
