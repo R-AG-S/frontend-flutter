@@ -6,7 +6,7 @@ getActiveData(String roomId, double lat, double long) async {
   try {
     final authKey = await refreshToken();
     final getActiveData = await http.post(
-      'https://payup-backend.herokuapp.com/active/leave_drive',
+      'https://payup-backend.herokuapp.com/active/get_drive_data',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
