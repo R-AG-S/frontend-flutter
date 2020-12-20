@@ -7,6 +7,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/backend/userData.dart';
 import 'package:payup/backend/userRoomDetails.dart';
 import 'package:payup/screens/slideup.dart';
 import 'package:payup/screens/userSettings.dart';
@@ -57,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           duration: Duration(seconds: 3),
         )..show(context);
       } else {
+        final creator = await userData(roomDetails[counter]['data']['owner']);
         setState(() {
           isReady = true;
         });
