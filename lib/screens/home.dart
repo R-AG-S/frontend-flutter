@@ -100,7 +100,10 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  _getLocationStream() {
+  _getLocationStream() async {
+    passengers.clear();
+    final data = await getActiveData(roomDetails[counter]['room_id']);
+    passengers.addAll(data);
     StreamSubscription<Position> positionStream = Geolocator.getPositionStream(
       desiredAccuracy: LocationAccuracy.high,
       distanceFilter: 1,
