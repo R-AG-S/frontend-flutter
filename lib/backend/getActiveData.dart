@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/backend/refresh.dart';
 
-getActiveData(String roomId, double lat, double long) async {
+getActiveData(String roomId) async {
   try {
     final authKey = await refreshToken();
     final getActiveData = await http.post(
@@ -13,7 +13,7 @@ getActiveData(String roomId, double lat, double long) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, dynamic>{"room_id": roomId, "lat": lat, "lng": long},
+        <String, dynamic>{"room_id": roomId},
       ),
     );
     return (getActiveData.statusCode);
