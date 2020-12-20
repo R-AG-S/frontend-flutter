@@ -392,7 +392,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 userLong);
                                       },
                                       child: Text(
-                                        'Stop Drive',
+                                        isDriver ? 'End Drive' : "Leave Drive",
                                         style: TextStyle(
                                           fontFamily: 'Bambino',
                                           fontSize: 18,
@@ -421,17 +421,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 50,
                                       color: mainTextColor,
                                       onPressed: () {
-                                        setState(() {
-                                          isDriving = true;
-                                          isDriver = true;
-                                        });
-                                        _getLocation();
-                                        startDrive(
+                                        final code = startDrive(
                                             roomDetails[counter]['room_id'],
                                             'carData',
                                             userLat,
                                             userLong);
-                                        _getLocationStream();
+                                        if (code == 200 || code == 201) {
+                                          setState(() {
+                                            isDriving = true;
+                                            isDriver = true;
+                                          });
+                                          _getLocation();
+
+                                          _getLocationStream();
+                                        }
                                       },
                                       child: Text(
                                         'Start Drive',
