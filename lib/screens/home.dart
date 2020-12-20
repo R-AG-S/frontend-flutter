@@ -432,8 +432,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                             isDriver = true;
                                           });
                                           _getLocation();
-
                                           _getLocationStream();
+                                        } else {
+                                          Flushbar(
+                                            backgroundColor: redColor,
+                                            title: "Error",
+                                            message: 'Error occurred.',
+                                            duration: Duration(seconds: 3),
+                                          )..show(context);
                                         }
                                       },
                                       child: Text(
