@@ -5,6 +5,7 @@ import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/screens/home.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -125,7 +126,7 @@ class _QRScannerState extends State<QRScanner> {
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    WaitingScreen(),
+                                                    HomeScreen(),
                                               ),
                                             );
                                           } catch (e) {
