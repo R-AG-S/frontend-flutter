@@ -166,8 +166,8 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                       ),
                                       child: Text(
                                         'Owner ' +
-                                            (creator.length > 50
-                                                ? creator.substring(0, 30)
+                                            (creator.length > 25
+                                                ? creator.substring(0, 25)
                                                 : creator),
                                         overflow: TextOverflow.clip,
                                         style: GoogleFonts.openSans(
