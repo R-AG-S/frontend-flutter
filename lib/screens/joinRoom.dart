@@ -49,7 +49,7 @@ class _QRScannerState extends State<QRScanner> {
       home: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text("Scanner"),
+            title: Text("Scan Code To Join"),
             centerTitle: true,
           ),
           body: SingleChildScrollView(
