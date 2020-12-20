@@ -185,7 +185,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: MediaQuery.of(context).size.height * 0.66,
                               child: FlutterMap(
                                 options: new MapOptions(
-                                  center: LatLng(userLat, userLong),
+                                  center: LatLng(currentPosition.latitude,
+                                      currentPosition.longitude),
                                   zoom: 14.0,
                                 ),
                                 layers: [
