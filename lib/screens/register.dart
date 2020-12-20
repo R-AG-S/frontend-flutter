@@ -310,7 +310,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                                                       _phoneController
                                                                           .text,
                                                           "device_registeration_token":
-                                                              "string"
+                                                              fcmToken
                                                         },
                                                       ),
                                                     );
