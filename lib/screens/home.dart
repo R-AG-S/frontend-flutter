@@ -10,6 +10,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/joinDrive.dart';
+import 'package:payup/backend/leaveDrive.dart';
 import 'package:payup/backend/startDrive.dart';
 import 'package:payup/backend/userRoomDetails.dart';
 import 'package:payup/screens/room.dart';
@@ -376,8 +377,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                       onPressed: () {
                                         setState(() {
                                           isDriving = false;
-                                        });
-                                        isDriver?:;
+                                        });_getLocation();
+                                        isDriver?:leaveDrive(roomDetails[counter]['room_id'],
+                                            userLat,
+                                            userLong);
                                       },
                                       child: Text(
                                         'Stop Drive',
