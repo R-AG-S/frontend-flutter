@@ -483,6 +483,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: mainTextColor,
                                       onPressed: () async {
                                         setState(() {
+                                          isWaiting = true;
                                           distance = 0;
                                         });
                                         final code = await joinDrive(
@@ -491,6 +492,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             userLong);
                                         print(code);
                                         if (code == 200 || code == 201) {
+                                          isWaiting = false;
                                           _getLocation();
                                           setState(() {
                                             isDriving = true;
