@@ -351,7 +351,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     child: Text(
                                       'Distance Travelled ' +
-                                          distance.toStringAsFixed(2),
+                                          distance.toStringAsFixed(2) +
+                                          ' M',
                                       style: TextStyle(
                                         fontFamily: 'Bambino',
                                         fontSize: 18,
