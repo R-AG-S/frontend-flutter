@@ -14,5 +14,7 @@ findUserData(String userId) async {
       },
     );
     return (jsonDecode(userDetails.body)['displayname']);
-  } catch (e) {}
+  } catch (e) {
+    return 'Unknown';
+  }
 }
