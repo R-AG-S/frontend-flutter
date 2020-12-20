@@ -26,7 +26,7 @@ bool isReady = false;
 double userLat = 0.0;
 double userLong = 0.0;
 bool isExpanded = true;
-
+String creator;
 final int dataCount = 5;
 double _panelHeightOpen;
 double _panelHeightClosed;
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           duration: Duration(seconds: 3),
         )..show(context);
       } else {
-        final creator = await userData(roomDetails[counter]['data']['owner']);
+        creator = await userData(roomDetails[counter]['data']['owner']);
         setState(() {
           isReady = true;
         });
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
               panel: isReady
                   ? SlideUpPanel(
                       carCount: 12,
-                      creator: roomDetails[counter]['data']['owner'],
+                      creator: creator,
                       membCount: roomDetails[counter]['data']['members'].length,
                       membersList: roomDetails[counter]['data']['members'],
                       petrol: roomDetails[counter]['data']['petrol_price'],
