@@ -27,6 +27,12 @@ GlobalKey<ScaffoldState> _registerSaffoldKey = GlobalKey();
 
 class _SignInScreenState extends State<SignInScreen> {
   @override
+  void initState() {
+    getFCMToken();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
         designSize: Size(1080, 2400), allowFontScaling: false);
@@ -296,7 +302,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                                                           .text
                                                                   : '+91' +
                                                                       _phoneController
-                                                                          .text
+                                                                          .text,
+                                                          "device_registeration_token":
+                                                              "string"
                                                         },
                                                       ),
                                                     );
