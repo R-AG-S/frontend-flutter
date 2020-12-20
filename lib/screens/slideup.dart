@@ -56,9 +56,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
         userData[i] = await getUserData(widget.membersList[i]);
       }
       print(userData);
-      setState(() {
-        isReady = true;
-      });
+      // setState(() {
+      //   isReady = true;
+      // });
     } catch (e) {
       Flushbar(
         backgroundColor: redColor,
@@ -117,7 +117,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                           ),
                         ),
                         Text(
-                          'Created By ' + creator == null ? 'Unknown' : creator,
+                          'Created By ' + creator,
                           style: GoogleFonts.openSans(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
