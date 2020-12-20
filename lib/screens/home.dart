@@ -104,6 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
       desiredAccuracy: LocationAccuracy.high,
       distanceFilter: 1,
     ).listen((Position position) {
+      passengers.clear();
       setState(() {
         if (Geolocator.distanceBetween(
                 currentPosition.latitude,
