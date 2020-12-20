@@ -210,9 +210,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                         route: null,
                       ),
                       CircularKeys(
-                        courseName: 'Pick Me',
+                        courseName: 'Share Code',
                         gradientKey: gradient2,
-                        iconData: FontAwesomeIcons.mapMarkerAlt,
+                        iconData: FontAwesomeIcons.share,
                         route: null,
                       ),
                       CircularKeys(
