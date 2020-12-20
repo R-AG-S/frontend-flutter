@@ -331,7 +331,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
         ),
       );
     } else {
-      Container();
+      return Container();
     }
   }
 }
