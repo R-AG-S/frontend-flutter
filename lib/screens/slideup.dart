@@ -8,6 +8,8 @@ import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
 import 'package:payup/widgets/button.dart';
 
+bool isReady = false;
+
 class SlideUpPanel extends StatefulWidget {
   SlideUpPanel({
     @required this.roomName,
@@ -35,7 +37,7 @@ BorderRadiusGeometry radius = BorderRadius.only(
 class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   void initState() {
-    // TODO: implement initState
+    isReady = false;
     super.initState();
   }
 
