@@ -42,6 +42,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
     super.initState();
   }
 
+  getUsers() {}
   @override
   Widget build(BuildContext context) {
     return Container(
