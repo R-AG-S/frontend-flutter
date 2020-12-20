@@ -7,5 +7,6 @@ getFCMToken() {
     assert(token != null);
     final _homeScreenText = "Push Messaging token: $token";
     print(_homeScreenText);
+    return (token);
   });
 }
