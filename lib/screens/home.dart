@@ -426,6 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             'carData',
                                             userLat,
                                             userLong);
+                                        print(code);
                                         if (code == 200 || code == 201) {
                                           setState(() {
                                             isDriving = true;
@@ -474,6 +475,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             roomDetails[counter]['room_id'],
                                             userLat,
                                             userLong);
+                                        print(code);
                                         if (code == 200 || code == 201) {
                                           _getLocation();
                                           setState(() {
