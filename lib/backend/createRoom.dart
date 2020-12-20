@@ -20,6 +20,7 @@ Future<String> createRoom(String name, String details, String fuel) async {
         },
       ),
     );
+    print(response.statusCode);
     print(
       jsonDecode(response.body),
     );
