@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:payup/backend/getUserData.dart';
+import 'package:payup/backend/userData.dart';
 import 'package:payup/screens/generalSettings.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
@@ -49,7 +50,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
 
   getUsers() async {
     try {
-      final data = await getUserData(widget.creator);
+      final data = await findUserData(widget.creator);
       // setState(() {
       //   creator = data;
       // });
