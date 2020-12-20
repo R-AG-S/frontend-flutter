@@ -16,6 +16,6 @@ joinRoom(String roomId) async {
         <String, String>{"room_id": roomId},
       ),
     );
-    print(jsonDecode(joinRoom.body));
+    return (joinRoom.statusCode);
   } catch (e) {}
 }
