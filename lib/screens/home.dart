@@ -486,7 +486,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             backgroundColor: redColor,
                                             title: "Error",
                                             message:
-                                                'USER_ALREADY_JOINED_ACTIVE_SESSION',
+                                                'ROOM_ALREADY_HAS_ACTIVE_SESSION',
                                             duration: Duration(seconds: 3),
                                           )..show(context);
                                         }
