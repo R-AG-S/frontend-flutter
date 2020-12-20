@@ -268,7 +268,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                           ? ListView.builder(
                               physics: NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
-                              itemCount: iconData.length,
+                              itemCount: userData.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return Column(
                                   children: [
@@ -278,12 +278,12 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                       children: [
                                         FadeInImage.assetNetwork(
                                           fadeOutDuration: Duration(seconds: 1),
-                                          image: iconData[index],
+                                          image: userData[index]['dp'],
                                           placeholder: 'images/place.png',
                                           height: 45,
                                         ),
                                         Text(
-                                          'Demo User $index',
+                                          userData[index]['name'],
                                           style: GoogleFonts.openSans(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w400,
