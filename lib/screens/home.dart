@@ -361,47 +361,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         isDriving
-                            ? {
-                                isExpanded
-                                    ? Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 25,
-                                          vertical: 8,
-                                        ),
-                                        child: Text(
-                                          'Distance Travelled ',
-                                          style: TextStyle(
-                                            fontFamily: 'Bambino',
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w400,
-                                            color: whiteColor,
+                            ? Column(
+                                children: [
+                                  isExpanded
+                                      ? Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 25,
+                                            vertical: 8,
                                           ),
-                                        ),
-                                      )
-                                    : Container(),
-                                isExpanded
-                                    ? Padding(
-                                        padding: EdgeInsets.only(
-                                          left: 25,
-                                          right: 25,
-                                          bottom: 8,
-                                        ),
-                                        child: FlatButton(
-                                          minWidth:
-                                              MediaQuery.of(context).size.width,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                          ),
-                                          height: 50,
-                                          color: mainTextColor,
-                                          onPressed: () {
-                                            setState(() {
-                                              isDriving = false;
-                                            });
-                                          },
                                           child: Text(
-                                            'Stop Drive',
+                                            'Distance Travelled ',
                                             style: TextStyle(
                                               fontFamily: 'Bambino',
                                               fontSize: 18,
@@ -409,10 +378,44 @@ class _HomeScreenState extends State<HomeScreen> {
                                               color: whiteColor,
                                             ),
                                           ),
-                                        ),
-                                      )
-                                    : Container()
-                              }
+                                        )
+                                      : Container(),
+                                  isExpanded
+                                      ? Padding(
+                                          padding: EdgeInsets.only(
+                                            left: 25,
+                                            right: 25,
+                                            bottom: 8,
+                                          ),
+                                          child: FlatButton(
+                                            minWidth: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(5.0),
+                                            ),
+                                            height: 50,
+                                            color: mainTextColor,
+                                            onPressed: () {
+                                              setState(() {
+                                                isDriving = false;
+                                              });
+                                            },
+                                            child: Text(
+                                              'Stop Drive',
+                                              style: TextStyle(
+                                                fontFamily: 'Bambino',
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w400,
+                                                color: whiteColor,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : Container()
+                                ],
+                              )
                             : isExpanded
                                 ? Padding(
                                     padding: EdgeInsets.symmetric(
