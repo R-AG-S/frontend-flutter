@@ -18,6 +18,7 @@ class SignInScreen extends StatefulWidget {
   _SignInScreenState createState() => _SignInScreenState();
 }
 
+String fcmToken = '';
 bool isWaiting = false;
 final TextEditingController _emailController = TextEditingController();
 final TextEditingController _passwordController = TextEditingController();
@@ -33,6 +34,7 @@ class _SignInScreenState extends State<SignInScreen> {
     super.initState();
   }
 
+  getReady() async {}
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
