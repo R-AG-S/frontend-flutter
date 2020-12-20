@@ -9,6 +9,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/backend/startDrive.dart';
 import 'package:payup/backend/userData.dart';
 import 'package:payup/backend/userRoomDetails.dart';
 import 'package:payup/screens/room.dart';
@@ -434,6 +435,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                         setState(() {
                                           isDriving = true;
                                         });
+                                        _getLocation();
+                                        startDrive(
+                                            roomDetails[counter]['room_id'],
+                                            'carData',
+                                            userLat,
+                                            userLong);
                                         _getLocationStream();
                                       },
                                       child: Text(
