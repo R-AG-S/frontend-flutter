@@ -1,8 +1,8 @@
-import 'package:barcode_scan/barcode_scan.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class QRScanner extends StatefulWidget {
   @override
@@ -51,41 +51,6 @@ class _QRScannerState extends State<QRScanner> {
                   style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
-                Text(
-                  qrCodeResult,
-                  style: TextStyle(
-                    fontSize: 20.0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                FlatButton(
-                  padding: EdgeInsets.all(15.0),
-                  onPressed: () async {
-                    String codeSanner =
-                        await BarcodeScanner.scan(); //barcode scnner
-                    setState(() {
-                      qrCodeResult = codeSanner;
-                    });
-
-                    // try{
-                    //   BarcodeScanner.scan()    this method is used to scan the QR code
-                    // }catch (e){
-                    //   BarcodeScanner.CameraAccessDenied;   we can print that user has denied for the permisions
-                    //   BarcodeScanner.UserCanceled;   we can print on the page that user has cancelled
-                    // }
-                  },
-                  child: Text(
-                    "Open Scanner",
-                    style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold),
-                  ),
-                  shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.blue, width: 3.0),
-                      borderRadius: BorderRadius.circular(20.0)),
-                )
               ],
             ),
           ),
@@ -93,4 +58,28 @@ class _QRScannerState extends State<QRScanner> {
       ),
     );
   }
+}
+
+Widget _buildQrView(BuildContext context) {
+  // To ensure the Scanner view is properly sizes after rotation
+  // we need to listen for Flutter SizeChanged notification and update controller
+  return NotificationListener<SizeChangedLayoutNotification>(
+      onNotification: (notification) {
+        Future.microtask(() => controller?.updateDimensions(qrKey));
+        return false;
+      },
+      child: SizeChangedLayoutNotifier(
+        key: const Key('qr-size-notifier'),
+        child: QRView(
+          key: qrKey,
+          onQRViewCreated: _onQRViewCreated,
+          overlay: QrScannerOverlayShape(
+            borderColor: Colors.red,
+            borderRadius: 10,
+            borderLength: 30,
+            borderWidth: 10,
+            cutOutSize: 300,
+          ),
+        ),
+      ));
 }
