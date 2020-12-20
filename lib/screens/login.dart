@@ -9,7 +9,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:payup/backend/userData.dart';
 import 'package:payup/screens/register.dart';
 import 'package:payup/screens/waitingRoom.dart';
 import 'package:payup/utilities/constants.dart';
@@ -267,7 +266,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   jsonDecode(response.body)[
                                                       'refreshToken'],
                                                 );
-                                                getUserData();
                                                 print(response.statusCode);
                                                 if (response.statusCode ==
                                                     200) {
