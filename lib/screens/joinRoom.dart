@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:payup/utilities/constants.dart';
 
+import 'package:barcode_scan/barcode_scan.dart';
+
 class QRScanner extends StatefulWidget {
   @override
   _QRScannerState createState() => _QRScannerState();
