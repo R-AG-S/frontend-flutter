@@ -21,6 +21,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 bool isWaiting = false;
+String fcmToken = '';
 final TextEditingController _emailController = TextEditingController();
 final TextEditingController _passwordController = TextEditingController();
 final GlobalKey<ScaffoldState> _loginscaffoldKey = GlobalKey();
