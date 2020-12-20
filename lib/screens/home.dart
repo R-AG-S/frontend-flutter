@@ -41,10 +41,12 @@ Map roomDetails = Map();
 bool isDriving = false;
 Position currentPosition;
 bool isDriver = false;
+List passengers = List();
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
+    passengers.clear();
     isDriver = false;
     isReady = false;
     roomDetails.clear();
