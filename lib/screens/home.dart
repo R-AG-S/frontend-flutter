@@ -98,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ', ' +
               position.longitude.toString());
     });
+    print(positionStream);
   }
 
   GlobalKey<SlidableState> _slidableKey = GlobalKey();
@@ -367,7 +368,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                   height: 50,
                                   color: mainTextColor,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    _getLocationStream();
+                                  },
                                   child: Text(
                                     'Start Drive',
                                     style: TextStyle(
