@@ -304,9 +304,11 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                 );
                               },
                             )
-                          : CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(mainTextColor),
+                          : Center(
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    mainTextColor),
+                              ),
                             ),
                     ],
                   ),
