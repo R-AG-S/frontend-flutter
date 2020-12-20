@@ -109,25 +109,6 @@ class _QRScannerState extends State<QRScanner> {
                                     result[0].rawAddress.isNotEmpty) {
                                   try {
                                     if (_qrController.text.isNotEmpty) {
-                                      final response = await http.post(
-                                        'https://payup-backend.herokuapp.com/users/login/',
-                                        headers: <String, String>{
-                                          'Content-type': 'application/json',
-                                          'Accept': 'application/json',
-                                          // "Authorization": "Some token"
-                                        },
-                                        body: json.encode(
-                                          <String, String>{
-                                            "email": _emailController.text,
-                                            "password":
-                                                _passwordController.text,
-                                          },
-                                        ),
-                                      );
-                                      print(
-                                        jsonDecode(
-                                            response.body)['refreshToken'],
-                                      );
                                       print(response.statusCode);
                                       if (response.statusCode == 200) {
                                         try {
