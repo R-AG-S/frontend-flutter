@@ -492,7 +492,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                             userLong);
                                         print(code);
                                         if (code == 200 || code == 201) {
-                                          isWaiting = false;
+                                          setState(() {
+                                            isWaiting = false;
+                                          });
                                           _getLocation();
                                           setState(() {
                                             isDriving = true;
@@ -500,6 +502,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           });
                                           _getLocationStream();
                                         } else {
+                                          setState(() {
+                                            isWaiting = false;
+                                          });
                                           Flushbar(
                                             backgroundColor: redColor,
                                             title: "Error",
