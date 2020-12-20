@@ -53,7 +53,14 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
       setState(() {
         isReady = true;
       });
-    } catch (e) {}
+    } catch (e) {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: jsonDecode(response.body)['Message'].toString().split('(')[0],
+        duration: Duration(seconds: 3),
+      )..show(context);
+    }
   }
 
   @override
