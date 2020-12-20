@@ -53,6 +53,7 @@ class _QRScannerState extends State<QRScanner> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: 8,
+                    horizontal: 15,
                   ),
                   child: TextFormWidget(
                     hint: 'Enter QR Code',
