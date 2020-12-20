@@ -30,11 +30,13 @@ GlobalKey<ScaffoldState> _registerSaffoldKey = GlobalKey();
 class _SignInScreenState extends State<SignInScreen> {
   @override
   void initState() {
-    getFCMToken();
     super.initState();
   }
 
-  getReady() async {}
+  getReady() async {
+    fcmToken = await getFCMToken();
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
