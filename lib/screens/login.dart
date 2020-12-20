@@ -249,7 +249,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       "password":
                                                           _passwordController
                                                               .text,
-                                                      "auto_login": true,
                                                       "device_registeration_token":
                                                           fcmToken
                                                     },
