@@ -53,79 +53,115 @@ class _QRScannerState extends State<QRScanner> {
             title: Text("Scanner"),
             centerTitle: true,
           ),
-          body: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                _buildQrView(context),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 15,
-                  ),
-                  child: TextFormWidget(
-                    hint: 'Enter QR Code',
-                    firstNameController: _qrController,
-                    type: TextInputType.name,
-                    obscure: false,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 12,
-                    horizontal: 15,
-                  ),
-                  child: ButtonTheme(
-                    minWidth: width,
-                    height: 50.0,
-                    child: RaisedButton(
-                      color: whiteColor,
-                      child: isWaiting
-                          ? Container(
-                              height: 40,
-                              width: 40,
-                              padding: EdgeInsets.all(8),
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                    mainTextColor),
-                              ),
-                            )
-                          : Text(
-                              'Join Room',
-                              style: GoogleFonts.openSans(
-                                fontSize: 18,
-                                color: darkFadeTextColor,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                      onPressed: isWaiting
-                          ? null
-                          : () async {
-                              setState(() {
-                                isWaiting = true;
-                              });
-                              try {
-                                final result =
-                                    await InternetAddress.lookup('google.com');
-                                if (result.isNotEmpty &&
-                                    result[0].rawAddress.isNotEmpty) {
-                                  try {
-                                    if (_qrController.text.isNotEmpty) {
-                                      final responseCode =
-                                          joinRoom(_qrController.text);
-                                      if (responseCode == 200 ||
-                                          responseCode == 201) {
-                                        try {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  HomeScreen(),
-                                            ),
-                                          );
-                                        } catch (e) {
+          body: SingleChildScrollView(
+            reverse: false,
+            child: Container(
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom * 0.1,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        _buildQrView(context),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 8,
+                            horizontal: 15,
+                          ),
+                          child: TextFormWidget(
+                            hint: 'Enter QR Code',
+                            firstNameController: _qrController,
+                            type: TextInputType.name,
+                            obscure: false,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 12,
+                            horizontal: 15,
+                          ),
+                          child: ButtonTheme(
+                            minWidth: width,
+                            height: 50.0,
+                            child: RaisedButton(
+                              color: whiteColor,
+                              child: isWaiting
+                                  ? Container(
+                                      height: 40,
+                                      width: 40,
+                                      padding: EdgeInsets.all(8),
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                                mainTextColor),
+                                      ),
+                                    )
+                                  : Text(
+                                      'Join Room',
+                                      style: GoogleFonts.openSans(
+                                        fontSize: 18,
+                                        color: darkFadeTextColor,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                              onPressed: isWaiting
+                                  ? null
+                                  : () async {
+                                      setState(() {
+                                        isWaiting = true;
+                                      });
+                                      try {
+                                        final result =
+                                            await InternetAddress.lookup(
+                                                'google.com');
+                                        if (result.isNotEmpty &&
+                                            result[0].rawAddress.isNotEmpty) {
+                                          try {
+                                            if (_qrController.text.isNotEmpty) {
+                                              final responseCode =
+                                                  joinRoom(_qrController.text);
+                                              if (responseCode == 200 ||
+                                                  responseCode == 201) {
+                                                try {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          HomeScreen(),
+                                                    ),
+                                                  );
+                                                } catch (e) {
+                                                  setState(() {
+                                                    isWaiting = false;
+                                                  });
+                                                  Flushbar(
+                                                    backgroundColor: redColor,
+                                                    title: "Error",
+                                                    message:
+                                                        'An error occurred',
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
+                                                }
+                                              }
+                                            }
+                                          } catch (e) {
+                                            setState(() {
+                                              isWaiting = false;
+                                            });
+                                            Flushbar(
+                                              backgroundColor: redColor,
+                                              title: "Error",
+                                              message: 'An error occurred',
+                                              duration: Duration(seconds: 3),
+                                            )..show(context);
+                                          }
+                                        } else {
                                           setState(() {
                                             isWaiting = false;
                                           });
@@ -136,46 +172,26 @@ class _QRScannerState extends State<QRScanner> {
                                             duration: Duration(seconds: 3),
                                           )..show(context);
                                         }
+                                      } catch (e) {
+                                        setState(() {
+                                          isWaiting = false;
+                                        });
+                                        Flushbar(
+                                          backgroundColor: redColor,
+                                          title: "Error",
+                                          message: 'An error occurred',
+                                          duration: Duration(seconds: 3),
+                                        )..show(context);
                                       }
-                                    }
-                                  } catch (e) {
-                                    setState(() {
-                                      isWaiting = false;
-                                    });
-                                    Flushbar(
-                                      backgroundColor: redColor,
-                                      title: "Error",
-                                      message: 'An error occurred',
-                                      duration: Duration(seconds: 3),
-                                    )..show(context);
-                                  }
-                                } else {
-                                  setState(() {
-                                    isWaiting = false;
-                                  });
-                                  Flushbar(
-                                    backgroundColor: redColor,
-                                    title: "Error",
-                                    message: 'An error occurred',
-                                    duration: Duration(seconds: 3),
-                                  )..show(context);
-                                }
-                              } catch (e) {
-                                setState(() {
-                                  isWaiting = false;
-                                });
-                                Flushbar(
-                                  backgroundColor: redColor,
-                                  title: "Error",
-                                  message: 'An error occurred',
-                                  duration: Duration(seconds: 3),
-                                )..show(context);
-                              }
-                            },
+                                    },
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
