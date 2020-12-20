@@ -165,6 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       petrol: roomDetails[counter]['data']['petrol_price'],
                       roomName: roomDetails[counter]['data']['room_name'],
                       desc: roomDetails[counter]['data']['details'],
+                      code: roomDetails[counter]['room_id'],
                     )
                   : Container(),
               body: isReady
