@@ -401,6 +401,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: mainTextColor,
                                       onPressed: () {
                                         setState(() {
+                                          passengers.clear();
                                           isDriving = false;
                                         });
                                         _getLocation();
