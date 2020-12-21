@@ -14,7 +14,7 @@ import 'package:payup/widgets/qr.dart';
 
 bool isReady = false;
 Map passengerUserData = Map();
-String creator;
+Map creator = Map();
 
 class SlideUpPanel extends StatefulWidget {
   SlideUpPanel({
