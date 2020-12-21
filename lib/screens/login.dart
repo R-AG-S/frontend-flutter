@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 import 'package:device_preview/device_preview.dart';
 import 'package:flushbar/flushbar.dart';
@@ -13,7 +12,6 @@ import 'package:payup/screens/register.dart';
 import 'package:payup/screens/waitingRoom.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
