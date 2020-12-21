@@ -13,11 +13,12 @@ getCarData() async {
         "Authorization": authKey
       },
     );
-    return ({
-      'name': jsonDecode(carData.body)['displayname'],
-      'dp': jsonDecode(carData.body)['displaypic'],
-    });
+    print(carData.body);
+    // return ({
+    //   'name': jsonDecode(carData.body)['displayname'],
+    //   'dp': jsonDecode(carData.body)['displaypic'],
+    // });
   } catch (e) {
-    return {};
+    // return {};
   }
 }
