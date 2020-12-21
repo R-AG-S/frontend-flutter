@@ -11,6 +11,8 @@ import 'package:payup/widgets/qr.dart';
 final TextEditingController _nameController = TextEditingController();
 final TextEditingController _detailsController = TextEditingController();
 final TextEditingController _fuelController = TextEditingController();
+bool isWaiting = false;
+
 
 class CreateRoomScreen extends StatefulWidget {
   @override
