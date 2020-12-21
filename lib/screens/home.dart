@@ -741,7 +741,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             radius: 25,
                             backgroundColor: colorData[index - 2] == 0
                                 ? whiteColor
-                                : lightFadeText,
+                                : Colors.green,
                             child: Center(
                               child: Text(
                                 roomDetails[index - 2]['data']['room_name']
