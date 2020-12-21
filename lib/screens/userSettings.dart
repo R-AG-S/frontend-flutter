@@ -10,6 +10,12 @@ import 'package:payup/utilities/data.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class UserSettings extends StatefulWidget {
+  UserSettings({
+    @required this.dp,
+    @required this.username,
+  });
+  final String username;
+  final String dp;
   @override
   _UserSettingsState createState() => _UserSettingsState();
 }
@@ -18,6 +24,12 @@ String url =
     'https://firebasestorage.googleapis.com/v0/b/inout-776aa.appspot.com/o/avatar-png%2F63.png?alt=media&token=bbd3fdc4-f800-4ee9-ac58-173a395dbfa8';
 
 class _UserSettingsState extends State<UserSettings> {
+  @override
+  void initState() {
+    url = widget.dp;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
