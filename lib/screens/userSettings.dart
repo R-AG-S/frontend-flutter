@@ -342,11 +342,12 @@ class _UserSettingsState extends State<UserSettings> {
                                 height: 25,
                               ),
                             ),
-                            onTap: () {
+                            onTap: ()async {
                               setState(() {
                                 url = iconData[index];
                               });
-                              setNameDp(widget.username, url);
+                              final response = await setNameDp(widget.username, url);
+                              if()
                               Navigator.of(context).pop();
                               // Navigator.push(
                               //     context,
