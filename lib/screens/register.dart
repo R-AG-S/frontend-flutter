@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/fcmToken.dart';
 import 'package:payup/screens/carDetails.dart';
 import 'package:payup/screens/login.dart';
+import 'package:payup/screens/room.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
 import 'package:http/http.dart' as http;
@@ -340,7 +341,10 @@ class _SignInScreenState extends State<SignInScreen> {
                                                         context,
                                                         MaterialPageRoute(
                                                           builder: (context) =>
-                                                              CarDetailsScreen(),
+                                                              CarDetailsScreen(
+                                                            route:
+                                                                RoomOptions(),
+                                                          ),
                                                         ),
                                                       );
                                                     } else if (response
