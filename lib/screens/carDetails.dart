@@ -9,6 +9,8 @@ import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
 
 class CarDetailsScreen extends StatefulWidget {
+  CarDetailsScreen({@required this.route});
+  final Route route;
   @override
   _CarDetailsScreenState createState() => _CarDetailsScreenState();
 }
