@@ -80,10 +80,6 @@ class _HomeScreenState extends State<HomeScreen> {
           carDetails[i] = carData[i];
         });
       }
-      for (int i = 0; i < carDetails.length; i++) {
-        print(carDetails[i]['mileage']);
-        print(carDetails[i]['car_model']);
-      }
       if (roomDetails.isEmpty) {
         Flushbar(
           backgroundColor: redColor,
