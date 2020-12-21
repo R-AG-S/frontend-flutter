@@ -302,6 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         .length,
                                     itemBuilder:
                                         (BuildContext context, int index) {
+                                      getUsers();
                                       print(passengers);
                                       if (index == dataCount - 1) {
                                         return SizedBox(
