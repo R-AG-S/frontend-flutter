@@ -6,9 +6,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/endDrive.dart';
 import 'package:payup/backend/getActiveData.dart';
 import 'package:payup/backend/getCarDetails.dart';
@@ -861,26 +863,72 @@ class SecondaryIcons extends StatelessWidget {
         builder: (BuildContext bc) {
           return SafeArea(
             child: Container(
-                padding: EdgeInsets.all(5),
-                color: whiteColor,
-                child: DropdownButton(
-                  underline: SizedBox(),
-                  value: productDropDownValue,
-                  icon: Icon(Icons.arrow_drop_down),
-                  items: carDetails.map((value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(
-                        value,
-                        style: GoogleFonts.openSans(
-                          fontSize: ScreenUtil().setSp(38),
-                          fontWeight: FontWeight.w400,
-                          color: mainTextColor,
-                        ),
+              padding: EdgeInsets.all(5),
+              color: whiteColor,
+              child: DropdownButton(
+                underline: SizedBox(),
+                value: productDropDownValue,
+                icon: Icon(Icons.arrow_drop_down),
+                items: productCat.map((value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(
+                      value,
+                      style: GoogleFonts.openSans(
+                        fontSize: ScreenUtil().setSp(38),
+                        fontWeight: FontWeight.w400,
+                        color: mainTextColor,
                       ),
-                    );
-                  }).toList(),
-                )),
+                    ),
+                  );
+                }).toList(),
+                onChanged: (newValue) async {
+                  setState(() {
+                    productDropDownValue = newValue;
+                    deptBookCounter = 0;
+                    deptReady = false;
+                  });
+                  await _firestore
+                      .collection('books')
+                      .where('dept', isEqualTo: productDropDownValue)
+                      .get()
+                      .then((value) {
+                    deptBookData.clear();
+                    value.docs.forEach((element) {
+                      deptBookData[deptBookCounter] = new Map();
+                      deptBookData[deptBookCounter].addAll({
+                        'name': element.data()['name'],
+                        'author': element.data()['author'],
+                        'url': element.data()['url'],
+                        'copies': element.data()['copies'],
+                        'dept': element.data()['dept'] == null
+                            ? 'N/A'
+                            : element.data()['dept'],
+                        'desc': element.data()['desc'] == null
+                            ? 'N/A'
+                            : element.data()['desc'],
+                        'edition': element.data()['edition'] == null
+                            ? 'N/A'
+                            : element.data()['edition'],
+                        'pages': element.data()['pages'] == null
+                            ? 'N/A'
+                            : element.data()['pages'],
+                        'rating': element.data()['rating'] == null
+                            ? 0.0
+                            : element.data()['rating'],
+                        'date': element.data()['date'] == null
+                            ? 0.0
+                            : element.data()['date'],
+                      });
+                      deptBookCounter = deptBookCounter + 1;
+                    });
+                  });
+                  setState(() {
+                    deptReady = true;
+                  });
+                },
+              ),
+            ),
           );
         });
   }
