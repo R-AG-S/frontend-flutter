@@ -273,7 +273,20 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
-                  onPressed: () {},
+                  onPressed: () {
+                    final SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    try {
+                      final response = prefs.getBool('Logged');
+                      if (response == true) {
+                        return true;
+                      } else {
+                        return false;
+                      }
+                    } catch (e) {
+                      return false;
+                    }
+                  },
                   title: 'Logout',
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
