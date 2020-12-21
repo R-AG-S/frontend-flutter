@@ -287,7 +287,12 @@ class _UserSettingsState extends State<UserSettings> {
                         duration: Duration(seconds: 3),
                       )..show(context);
                     }
-                    return false;
+                    Flushbar(
+                      backgroundColor: redColor,
+                      title: "Error",
+                      message: 'An error occurred please try again.',
+                      duration: Duration(seconds: 3),
+                    )..show(context);
                   },
                   title: 'Logout',
                   titleTextStyle: GoogleFonts.openSans(
