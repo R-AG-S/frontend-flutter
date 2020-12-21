@@ -12,6 +12,7 @@ class CarDetailsScreen extends StatefulWidget {
 
 class _CarDetailsScreenState extends State<CarDetailsScreen> {
   @override
+  GlobalKey<ScaffoldState> _carDataScaffoldKey = GlobalKey();
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
         designSize: Size(1080, 2400), allowFontScaling: false);
@@ -35,7 +36,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
       ),
       home: SafeArea(
         child: Scaffold(
-          key: _registerSaffoldKey,
+          key: _carDataScaffoldKey,
           floatingActionButton: Padding(
             padding: EdgeInsets.all(ScreenUtil().setHeight(
               30,
