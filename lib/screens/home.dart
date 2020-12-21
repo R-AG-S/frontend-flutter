@@ -752,7 +752,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontFamily: 'KumbhSans',
                                   fontSize: 18,
                                   fontWeight: FontWeight.w400,
-                                  color: mainTextColor,
+                                  color: colorData[index - 2] == 0
+                                      ? mainTextColor
+                                      : whiteColor,
                                 ),
                               ),
                             ),
