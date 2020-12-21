@@ -17,5 +17,7 @@ setNameDp(String userName, String displayPic) async {
       ),
     );
     return (setNameDp.statusCode);
-  } catch (e) {}
+  } catch (e) {
+    return 400;
+  }
 }
