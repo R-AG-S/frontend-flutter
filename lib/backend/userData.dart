@@ -15,7 +15,7 @@ findUserData(String userId) async {
     );
     return ({
       'localId': jsonDecode(userDetails.body)['localId'],
-      'name': jsonDecode(userDetails.body)['displayname'],
+      'name': jsonDecode(userDetails.body)['displayName'],
       'dp': jsonDecode(userDetails.body)['displaypic'],
     });
   } catch (e) {
