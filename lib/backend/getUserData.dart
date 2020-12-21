@@ -14,7 +14,6 @@ getUserData(String userId) async {
       },
     );
     return ({
-      'localId': jsonDecode(userDetails.body)['localId'],
       'name': jsonDecode(userDetails.body)['displayname'],
       'dp': jsonDecode(userDetails.body)['displaypic'],
     });
