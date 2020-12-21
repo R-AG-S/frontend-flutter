@@ -6,7 +6,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_map/plugin_api.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
@@ -560,11 +559,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   isWaiting = true;
                                                   distance = 0;
                                                 });
-                                                await _showPicker(context);
+                                                final carId =
+                                                    await _showPicker(context);
                                                 final code = await startDrive(
                                                     roomDetails[counter]
                                                         ['room_id'],
-                                                    productDropDownValue,
+                                                    carId,
                                                     userLat,
                                                     userLong);
                                                 print(code);
@@ -824,7 +824,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  void _showPicker(context) {
+  _showPicker(context) {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
@@ -853,6 +853,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   setState(() {
                     productDropDownValue = newValue;
                   });
+                  return productDropDownValue;
                 },
               ),
             ),
