@@ -311,7 +311,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       }
                                       if (passengers.isNotEmpty &&
                                           userData.isNotEmpty &&
-                                          userData[index]['dp']) {
+                                          passengers.contains(
+                                              userData[index]['localId'])) {
                                         return Padding(
                                           padding: EdgeInsets.only(
                                             left: 15,
