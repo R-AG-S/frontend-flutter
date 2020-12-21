@@ -18,5 +18,7 @@ setCarDetails(String carModel, String milege) async {
     );
     print(jsonDecode(setCarDetails.body));
     return setCarDetails.statusCode;
-  } catch (e) {}
+  } catch (e) {
+    return 400;
+  }
 }
