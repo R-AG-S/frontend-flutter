@@ -21,8 +21,9 @@ endDrive(String roomId, double lat, double long, double distance) async {
         },
       ),
     );
-    return (endDrive.statusCode);
+    print(json.decode(endDrive.body));
   } catch (e) {
-    return 400;
+    // return 400;
+    print(e);
   }
 }
