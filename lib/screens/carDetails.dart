@@ -178,6 +178,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                           onPressed: isWaiting
                                               ? null
                                               : () async {
+                                                  setState(() {
+                                                    isWaiting = true;
+                                                  });
                                                   if (_carController
                                                           .text.isNotEmpty &&
                                                       _milegeController
@@ -189,8 +192,27 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                                 .text);
                                                     if (response == 200 ||
                                                         response == 201) {
-                                                    } else {}
+                                                      setState(() {
+                                                        isWaiting = false;
+                                                      });
+                                                    } else {
+                                                      setState(() {
+                                                        isWaiting = false;
+                                                      });
+                                                      Flushbar(
+                                                        backgroundColor:
+                                                            redColor,
+                                                        title: "Error",
+                                                        message:
+                                                            '''Input shouldn't be null.''',
+                                                        duration: Duration(
+                                                            seconds: 3),
+                                                      )..show(context);
+                                                    }
                                                   } else {
+                                                    setState(() {
+                                                      isWaiting = false;
+                                                    });
                                                     Flushbar(
                                                       backgroundColor: redColor,
                                                       title: "Error",
