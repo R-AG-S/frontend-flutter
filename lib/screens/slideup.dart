@@ -343,8 +343,12 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
       );
     } else {
       return Container(
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(mainTextColor),
+        padding: EdgeInsets.symmetric(horizontal: 50),
+        child: Center(
+          child: CircularProgressIndicator(
+            strokeWidth: 3,
+            valueColor: AlwaysStoppedAnimation<Color>(mainTextColor),
+          ),
         ),
       );
     }
