@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       final data = await userRoomDetails();
       myDetails[0] = await getMyData();
+      print(myDetails[0]);
       for (int i = 0; i < data.length; i++) {
         setState(() {
           roomDetails[i] = data[i];
