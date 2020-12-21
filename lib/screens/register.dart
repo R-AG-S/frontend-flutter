@@ -65,22 +65,6 @@ class _SignInScreenState extends State<SignInScreen> {
       home: SafeArea(
         child: Scaffold(
           key: _registerSaffoldKey,
-          floatingActionButton: Padding(
-            padding: EdgeInsets.all(ScreenUtil().setHeight(
-              30,
-            )),
-            child: FloatingActionButton(
-              mini: true,
-              heroTag: "btn1",
-              elevation: 0,
-              onPressed: () {},
-              child: Icon(
-                Icons.help_outline_rounded,
-                size: 26.0,
-              ),
-            ),
-          ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
           body: SingleChildScrollView(
             reverse: false,
             child: Container(
