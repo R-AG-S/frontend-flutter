@@ -357,17 +357,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                 mainTextColor,
                                                           ),
                                                         ),
-                                                        Text(
-                                                          'User Details',
-                                                          style: GoogleFonts
-                                                              .openSans(
-                                                            fontSize: 12,
-                                                            fontWeight:
-                                                                FontWeight.w400,
-                                                            color:
-                                                                mainTextColor,
-                                                          ),
-                                                        )
                                                       ],
                                                     ),
                                                     SizedBox(
