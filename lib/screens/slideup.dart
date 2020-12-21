@@ -342,7 +342,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
         ),
       );
     } else {
-      return Container();
+      return Container(
+        child: CircularProgressIndicator(valueColor: ,),
+      );
     }
   }
 }
