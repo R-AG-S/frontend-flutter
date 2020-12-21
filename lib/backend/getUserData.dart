@@ -13,10 +13,6 @@ getUserData(String userId) async {
         "Authorization": authKey
       },
     );
-    print(
-      jsonDecode(userDetails.body)['displayname'],
-    );
-    print(jsonDecode(userDetails.body)['displaypic']);
     return ({
       'name': jsonDecode(userDetails.body)['displayname'],
       'dp': jsonDecode(userDetails.body)['displaypic'],
