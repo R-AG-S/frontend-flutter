@@ -52,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
     passengers.clear();
     isDriver = false;
     isReady = false;
+    myDetails.clear();
     roomDetails.clear();
     _getLocation();
     super.initState();
