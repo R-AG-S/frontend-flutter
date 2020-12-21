@@ -177,6 +177,9 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                       _detailsController.text,
                                       _fuelController.text);
                                   if (qrCode != 'Error') {
+                                    setState(() {
+                                      isWaiting = false;
+                                    });
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
@@ -186,6 +189,9 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                     );
                                   }
                                 } else {
+                                  setState(() {
+                                    isWaiting = false;
+                                  });
                                   Flushbar(
                                     backgroundColor: redColor,
                                     title: "Error",
@@ -194,6 +200,9 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                   )..show(context);
                                 }
                               } catch (e) {
+                                setState(() {
+                                  isWaiting = false;
+                                });
                                 Flushbar(
                                   backgroundColor: redColor,
                                   title: "Error",
@@ -203,6 +212,9 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                               }
                             }
                           } catch (e) {
+                            setState(() {
+                              isWaiting = false;
+                            });
                             Flushbar(
                               backgroundColor: redColor,
                               title: "Error",
