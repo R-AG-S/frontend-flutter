@@ -6,6 +6,7 @@ import 'package:payup/backend/refresh.dart';
 import 'package:payup/screens/login.dart';
 import 'package:payup/screens/waitingRoom.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -41,11 +42,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<bool> checkReady() async {
-    final response = await refreshToken();
-    if (response == 'Error') {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    try {
+      final response = prefs.getBool('Logged');
+    } catch (e) {
       return false;
-    } else {
-      return true;
     }
   }
 
