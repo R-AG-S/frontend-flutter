@@ -6,7 +6,7 @@ joinRoom(String roomId) async {
   try {
     final authKey = await refreshToken();
     final joinRoom = await http.post(
-      'https://payup-backend.herokuapp.com/carpool/join_room',
+      'https://payup-backend.herokuapp.com/users/set_name_and_pic/',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
@@ -19,5 +19,3 @@ joinRoom(String roomId) async {
     return (joinRoom.statusCode);
   } catch (e) {}
 }
-
-/users/set_name_and_pic/
