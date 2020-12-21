@@ -15,6 +15,7 @@ import 'package:payup/backend/getUserData.dart';
 import 'package:payup/backend/joinDrive.dart';
 import 'package:payup/backend/leaveDrive.dart';
 import 'package:payup/backend/startDrive.dart';
+import 'package:payup/backend/userData.dart';
 import 'package:payup/backend/userRoomDetails.dart';
 import 'package:payup/screens/room.dart';
 import 'package:payup/screens/slideup.dart';
@@ -92,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       for (int i = 0; i < roomDetails[counter]['data']['members'].length; i++) {
         userData[i] =
-            await getUserData(roomDetails[counter]['data']['members'][i]);
+            await findUserData(roomDetails[counter]['data']['members'][i]);
       }
       setState(() {
         isReady = true;
