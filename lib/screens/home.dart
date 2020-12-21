@@ -46,6 +46,7 @@ Position currentPosition;
 bool isDriver = false;
 List passengers = List();
 Map myDetails = Map();
+List colorData = List();
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -54,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
     isDriver = false;
     isReady = false;
     myDetails.clear();
+    colorData.clear();
     roomDetails.clear();
     _getLocation();
     super.initState();
@@ -78,6 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
           duration: Duration(seconds: 3),
         )..show(context);
       } else {
+        for (int i = 0; i < roomDetails.length; i++) {}
         setState(() {
           isReady = true;
         });
