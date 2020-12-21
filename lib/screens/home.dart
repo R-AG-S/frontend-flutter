@@ -162,533 +162,554 @@ class _HomeScreenState extends State<HomeScreen> {
     _panelHeightOpen = MediaQuery.of(context).size.height * .80;
     _panelHeightClosed = MediaQuery.of(context).size.height * .08;
     if (isReady) {
-      return SafeArea(
-        child: Slidable(
-          key: _slidableKey,
-          controller: slidableController,
-          actionPane: SlidableDrawerActionPane(),
-          actionExtentRatio: 0.20,
-          child: Scaffold(
-            extendBodyBehindAppBar: true,
-            backgroundColor: whiteColor,
-            body: SlidingUpPanel(
-              backdropEnabled: true,
-              maxHeight: _panelHeightOpen,
-              minHeight: _panelHeightClosed,
-              collapsed: Container(
-                decoration: BoxDecoration(
-                  color: whiteColor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(5.0),
-                    topRight: Radius.circular(5.0),
-                  ),
-                ),
-                child: Center(
-                  child: FaIcon(
-                    FontAwesomeIcons.gripLines,
-                    color: fadeTextColor,
-                  ),
-                ),
-              ),
-              panel: isReady
-                  ? SlideUpPanel(
-                      carCount: 12,
-                      creator: roomDetails[counter]['data']['owner'],
-                      membCount: roomDetails[counter]['data']['members'].length,
-                      membersList: roomDetails[counter]['data']['members'],
-                      petrol: roomDetails[counter]['data']['petrol_price'],
-                      roomName: roomDetails[counter]['data']['room_name'],
-                      desc: roomDetails[counter]['data']['details'],
-                      code: roomDetails[counter]['room_id'],
-                    )
-                  : Container(),
-              body: isReady
-                  ? Column(
-                      children: [
-                        Stack(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                              ),
-                              height: MediaQuery.of(context).size.height * 0.66,
-                              child: FlutterMap(
-                                options: new MapOptions(
-                                  center: LatLng(currentPosition.latitude,
-                                      currentPosition.longitude),
-                                  zoom: 14.0,
-                                ),
-                                layers: [
-                                  new TileLayerOptions(
-                                    urlTemplate:
-                                        "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
-                                    subdomains: ['a', 'b', 'c'],
-                                  ),
-                                  new MarkerLayerOptions(
-                                    markers: [
-                                      new Marker(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        point: LatLng(userLat, userLong),
-                                        builder: (ctx) => new Container(
-                                          child: Container(
-                                            color: Colors.transparent,
-                                            child: Icon(
-                                              FontAwesomeIcons.mapMarkerAlt,
-                                              color: redColor,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(15.0),
-                                  child: GestureDetector(
-                                    onTap: () => _slidableKey
-                                                .currentState.renderingMode ==
-                                            SlidableRenderingMode.none
-                                        ? _slidableKey.currentState.open()
-                                        : _slidableKey.currentState.close(),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        shape: BoxShape.circle,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 1,
-                                            color: Colors.black26,
-                                            spreadRadius: 2,
-                                          )
-                                        ],
-                                      ),
-                                      child: CircleAvatar(
-                                        radius: 25,
-                                        backgroundColor: whiteColor,
-                                        child: Icon(
-                                          FontAwesomeIcons.bars,
-                                          color: fadeTextColor,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                top: MediaQuery.of(context).size.height * 0.58,
-                              ),
-                              child: Container(
-                                height: 100,
-                                child: Theme(
-                                  data: Theme.of(context).copyWith(
-                                    accentColor: whiteColor,
-                                  ),
-                                  child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: roomDetails[counter]['data']
-                                            ['members']
-                                        .length,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      getUsers();
-                                      if (index == dataCount - 1) {
-                                        return SizedBox(
-                                          width: 15,
-                                        );
-                                      }
-                                      if (passengers.isNotEmpty &&
-                                          userData.isNotEmpty &&
-                                          passengers.contains(
-                                              userData[index]['localId'])) {
-                                        return Padding(
-                                          padding: EdgeInsets.only(
-                                            left: 15,
-                                            bottom: 8,
-                                          ),
-                                          child: Card(
-                                            color: whiteColor,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 15,
-                                                    ),
-                                                    FadeInImage.assetNetwork(
-                                                      fadeOutDuration:
-                                                          Duration(seconds: 1),
-                                                      image: userData[index]
-                                                          ['dp'],
-                                                      placeholder:
-                                                          'images/place.png',
-                                                      height: 50,
-                                                    ),
-                                                    SizedBox(
-                                                      width: 15,
-                                                    ),
-                                                    Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Text(
-                                                          userData[index]
-                                                              ['name'],
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Bambino',
-                                                            fontSize: 18,
-                                                            fontWeight:
-                                                                FontWeight.w400,
-                                                            color:
-                                                                mainTextColor,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    SizedBox(
-                                                      width: 15,
-                                                    ),
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        );
-                                      } else {
-                                        return Container();
-                                      }
-                                    },
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        isDriving
-                            ? Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 25,
-                                      vertical: 8,
-                                    ),
-                                    child: Text(
-                                      'Distance Travelled ' +
-                                          distance.toStringAsFixed(2) +
-                                          ' M',
-                                      style: TextStyle(
-                                        fontFamily: 'Bambino',
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400,
-                                        color: mainTextColor,
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 25,
-                                      right: 25,
-                                      bottom: 8,
-                                    ),
-                                    child: FlatButton(
-                                      minWidth:
-                                          MediaQuery.of(context).size.width,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                      ),
-                                      height: 50,
-                                      color: mainTextColor,
-                                      onPressed: () {
-                                        setState(() {
-                                          passengers.clear();
-                                          userData.clear();
-                                          isDriving = false;
-                                        });
-                                        _getLocation();
-                                        slidableController.activeState
-                                            .initState();
-                                        isDriver
-                                            ? endDrive(
-                                                roomDetails[counter]['room_id'],
-                                                userLat,
-                                                userLong,
-                                                distance)
-                                            : leaveDrive(
-                                                roomDetails[counter]['room_id'],
-                                                userLat,
-                                                userLong);
-                                      },
-                                      child: Text(
-                                        isDriver ? 'End Drive' : "Leave Drive",
-                                        style: TextStyle(
-                                          fontFamily: 'Bambino',
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400,
-                                          color: whiteColor,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              )
-                            : Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 25,
-                                      vertical: 8,
-                                    ),
-                                    child: FlatButton(
-                                      minWidth:
-                                          MediaQuery.of(context).size.width,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                      ),
-                                      height: 50,
-                                      color: mainTextColor,
-                                      onPressed: isWaiting
-                                          ? () {
-                                              Flushbar(
-                                                backgroundColor: Colors.grey,
-                                                title: "Loading",
-                                                message: 'Please wait...',
-                                                duration: Duration(seconds: 3),
-                                              )..show(context);
-                                            }
-                                          : () async {
-                                              setState(() {
-                                                isWaiting = true;
-                                                distance = 0;
-                                              });
-                                              final code = await startDrive(
-                                                  roomDetails[counter]
-                                                      ['room_id'],
-                                                  'carData',
-                                                  userLat,
-                                                  userLong);
-                                              print(code);
-                                              if (code == 200 || code == 201) {
-                                                setState(() {
-                                                  isWaiting = false;
-                                                  isDriving = true;
-                                                  isDriver = true;
-                                                });
-                                                slidableController.activeState
-                                                    .close();
-                                                _getLocation();
-                                                _getLocationStream();
-                                              } else {
-                                                setState(() {
-                                                  isWaiting = false;
-                                                });
-                                                Flushbar(
-                                                  backgroundColor: redColor,
-                                                  title: "Error",
-                                                  message:
-                                                      'USER_ALREADY_JOINED_ACTIVE_SESSION',
-                                                  duration:
-                                                      Duration(seconds: 3),
-                                                )..show(context);
-                                              }
-                                            },
-                                      child: Text(
-                                        'Start Drive',
-                                        style: TextStyle(
-                                          fontFamily: 'Bambino',
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400,
-                                          color: whiteColor,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 25,
-                                      right: 25,
-                                      bottom: 8,
-                                    ),
-                                    child: FlatButton(
-                                      minWidth:
-                                          MediaQuery.of(context).size.width,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                      ),
-                                      height: 50,
-                                      color: mainTextColor,
-                                      onPressed: isWaiting
-                                          ? () {
-                                              Flushbar(
-                                                backgroundColor: Colors.grey,
-                                                title: "Loading",
-                                                message: 'Please wait...',
-                                                duration: Duration(seconds: 3),
-                                              )..show(context);
-                                            }
-                                          : () async {
-                                              setState(() {
-                                                isWaiting = true;
-                                                distance = 0;
-                                              });
-                                              final code = await joinDrive(
-                                                  roomDetails[counter]
-                                                      ['room_id'],
-                                                  userLat,
-                                                  userLong);
-                                              print(code);
-                                              if (code == 200 || code == 201) {
-                                                setState(() {
-                                                  isWaiting = false;
-                                                });
-                                                slidableController.activeState
-                                                    .close();
-                                                slidableController.activeState
-                                                    .dismiss();
-                                                _getLocation();
-                                                setState(() {
-                                                  isDriving = true;
-                                                  isDriver = false;
-                                                });
-                                                _getLocationStream();
-                                              } else {
-                                                setState(() {
-                                                  isWaiting = false;
-                                                });
-                                                Flushbar(
-                                                  backgroundColor: redColor,
-                                                  title: "Error",
-                                                  message:
-                                                      'AN_ERROR_OCCURRED_TRY_AGAIN_LATER',
-                                                  duration:
-                                                      Duration(seconds: 3),
-                                                )..show(context);
-                                              }
-                                            },
-                                      child: Text(
-                                        'Join Drive',
-                                        style: TextStyle(
-                                          fontFamily: 'Bambino',
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400,
-                                          color: whiteColor,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                      ],
-                    )
-                  : MaterialApp(
-                      builder: DevicePreview.appBuilder,
-                      debugShowCheckedModeBanner: false,
-                      theme: ThemeData(
-                        primarySwatch: white,
-                        accentColor: black,
-                      ),
-                      darkTheme: ThemeData(
-                        primarySwatch: black,
-                        accentColor: white,
-                        brightness: Brightness.dark,
-                        canvasColor: mainTextColor,
-                        primaryTextTheme: Typography.material2018().white,
-                        textTheme: Typography.material2018().white,
-                      ),
-                      home: SafeArea(
-                        child: Scaffold(
-                          body: Center(
-                            child: CircularProgressIndicator(),
-                          ),
-                        ),
-                      ),
+      return WillPopScope(
+        onWillPop: () async {
+          await SystemChannels.platform
+              .invokeMethod<void>('SystemNavigator.pop');
+          return false;
+        },
+        child: SafeArea(
+          child: Slidable(
+            key: _slidableKey,
+            controller: slidableController,
+            actionPane: SlidableDrawerActionPane(),
+            actionExtentRatio: 0.20,
+            child: Scaffold(
+              extendBodyBehindAppBar: true,
+              backgroundColor: whiteColor,
+              body: SlidingUpPanel(
+                backdropEnabled: true,
+                maxHeight: _panelHeightOpen,
+                minHeight: _panelHeightClosed,
+                collapsed: Container(
+                  decoration: BoxDecoration(
+                    color: whiteColor,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(5.0),
+                      topRight: Radius.circular(5.0),
                     ),
-            ),
-          ),
-          actions: <Widget>[
-            SlideAction(
-              child: ListView.builder(
-                itemCount: roomDetails.length + 2,
-                itemBuilder: (BuildContext context, int index) {
-                  if (index == 0) {
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        top: 15,
-                      ),
-                      child: SecondaryIcons(
-                        iconName: FontAwesomeIcons.plus,
-                        routeName: RoomOptions(),
-                      ),
-                    );
-                  } else if (index == 1) {
-                    return Column(
-                      children: [
-                        SecondaryIcons(
-                          iconName: FontAwesomeIcons.userCog,
-                          routeName: UserSettings(),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10,
-                          ),
-                          child: Divider(
-                            color: whiteColor,
-                            thickness: 1.0,
-                          ),
-                        ),
-                      ],
-                    );
-                  } else {
-                    return Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            counter = index - 2;
-                          });
-                        },
-                        child: CircleAvatar(
-                          radius: 25,
-                          backgroundColor: whiteColor,
-                          child: Center(
-                            child: Text(
-                              roomDetails[index - 2]['data']['room_name']
-                                  .toString()
-                                  .toUpperCase()
-                                  .substring(0, 2),
-                              style: TextStyle(
-                                fontFamily: 'KumbhSans',
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: mainTextColor,
+                  ),
+                  child: Center(
+                    child: FaIcon(
+                      FontAwesomeIcons.gripLines,
+                      color: fadeTextColor,
+                    ),
+                  ),
+                ),
+                panel: isReady
+                    ? SlideUpPanel(
+                        carCount: 12,
+                        creator: roomDetails[counter]['data']['owner'],
+                        membCount:
+                            roomDetails[counter]['data']['members'].length,
+                        membersList: roomDetails[counter]['data']['members'],
+                        petrol: roomDetails[counter]['data']['petrol_price'],
+                        roomName: roomDetails[counter]['data']['room_name'],
+                        desc: roomDetails[counter]['data']['details'],
+                        code: roomDetails[counter]['room_id'],
+                      )
+                    : Container(),
+                body: isReady
+                    ? Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.66,
+                                child: FlutterMap(
+                                  options: new MapOptions(
+                                    center: LatLng(currentPosition.latitude,
+                                        currentPosition.longitude),
+                                    zoom: 14.0,
+                                  ),
+                                  layers: [
+                                    new TileLayerOptions(
+                                      urlTemplate:
+                                          "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
+                                      subdomains: ['a', 'b', 'c'],
+                                    ),
+                                    new MarkerLayerOptions(
+                                      markers: [
+                                        new Marker(
+                                          width: 80.0,
+                                          height: 80.0,
+                                          point: LatLng(userLat, userLong),
+                                          builder: (ctx) => new Container(
+                                            child: Container(
+                                              color: Colors.transparent,
+                                              child: Icon(
+                                                FontAwesomeIcons.mapMarkerAlt,
+                                                color: redColor,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.all(15.0),
+                                    child: GestureDetector(
+                                      onTap: () => _slidableKey
+                                                  .currentState.renderingMode ==
+                                              SlidableRenderingMode.none
+                                          ? _slidableKey.currentState.open()
+                                          : _slidableKey.currentState.close(),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          shape: BoxShape.circle,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 1,
+                                              color: Colors.black26,
+                                              spreadRadius: 2,
+                                            )
+                                          ],
+                                        ),
+                                        child: CircleAvatar(
+                                          radius: 25,
+                                          backgroundColor: whiteColor,
+                                          child: Icon(
+                                            FontAwesomeIcons.bars,
+                                            color: fadeTextColor,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  top:
+                                      MediaQuery.of(context).size.height * 0.58,
+                                ),
+                                child: Container(
+                                  height: 100,
+                                  child: Theme(
+                                    data: Theme.of(context).copyWith(
+                                      accentColor: whiteColor,
+                                    ),
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: roomDetails[counter]['data']
+                                              ['members']
+                                          .length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        getUsers();
+                                        if (index == dataCount - 1) {
+                                          return SizedBox(
+                                            width: 15,
+                                          );
+                                        }
+                                        if (passengers.isNotEmpty &&
+                                            userData.isNotEmpty &&
+                                            passengers.contains(
+                                                userData[index]['localId'])) {
+                                          return Padding(
+                                            padding: EdgeInsets.only(
+                                              left: 15,
+                                              bottom: 8,
+                                            ),
+                                            child: Card(
+                                              color: whiteColor,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      SizedBox(
+                                                        width: 15,
+                                                      ),
+                                                      FadeInImage.assetNetwork(
+                                                        fadeOutDuration:
+                                                            Duration(
+                                                                seconds: 1),
+                                                        image: userData[index]
+                                                            ['dp'],
+                                                        placeholder:
+                                                            'images/place.png',
+                                                        height: 50,
+                                                      ),
+                                                      SizedBox(
+                                                        width: 15,
+                                                      ),
+                                                      Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            userData[index]
+                                                                ['name'],
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Bambino',
+                                                              fontSize: 18,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              color:
+                                                                  mainTextColor,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      SizedBox(
+                                                        width: 15,
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          );
+                                        } else {
+                                          return Container();
+                                        }
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          isDriving
+                              ? Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 25,
+                                        vertical: 8,
+                                      ),
+                                      child: Text(
+                                        'Distance Travelled ' +
+                                            distance.toStringAsFixed(2) +
+                                            ' M',
+                                        style: TextStyle(
+                                          fontFamily: 'Bambino',
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                          color: mainTextColor,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        left: 25,
+                                        right: 25,
+                                        bottom: 8,
+                                      ),
+                                      child: FlatButton(
+                                        minWidth:
+                                            MediaQuery.of(context).size.width,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
+                                        ),
+                                        height: 50,
+                                        color: mainTextColor,
+                                        onPressed: () {
+                                          setState(() {
+                                            passengers.clear();
+                                            userData.clear();
+                                            isDriving = false;
+                                          });
+                                          _getLocation();
+                                          slidableController.activeState
+                                              .initState();
+                                          isDriver
+                                              ? endDrive(
+                                                  roomDetails[counter]
+                                                      ['room_id'],
+                                                  userLat,
+                                                  userLong,
+                                                  distance)
+                                              : leaveDrive(
+                                                  roomDetails[counter]
+                                                      ['room_id'],
+                                                  userLat,
+                                                  userLong);
+                                        },
+                                        child: Text(
+                                          isDriver
+                                              ? 'End Drive'
+                                              : "Leave Drive",
+                                          style: TextStyle(
+                                            fontFamily: 'Bambino',
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400,
+                                            color: whiteColor,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              : Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 25,
+                                        vertical: 8,
+                                      ),
+                                      child: FlatButton(
+                                        minWidth:
+                                            MediaQuery.of(context).size.width,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
+                                        ),
+                                        height: 50,
+                                        color: mainTextColor,
+                                        onPressed: isWaiting
+                                            ? () {
+                                                Flushbar(
+                                                  backgroundColor: Colors.grey,
+                                                  title: "Loading",
+                                                  message: 'Please wait...',
+                                                  duration:
+                                                      Duration(seconds: 3),
+                                                )..show(context);
+                                              }
+                                            : () async {
+                                                setState(() {
+                                                  isWaiting = true;
+                                                  distance = 0;
+                                                });
+                                                final code = await startDrive(
+                                                    roomDetails[counter]
+                                                        ['room_id'],
+                                                    'carData',
+                                                    userLat,
+                                                    userLong);
+                                                print(code);
+                                                if (code == 200 ||
+                                                    code == 201) {
+                                                  setState(() {
+                                                    isWaiting = false;
+                                                    isDriving = true;
+                                                    isDriver = true;
+                                                  });
+                                                  slidableController.activeState
+                                                      .close();
+                                                  _getLocation();
+                                                  _getLocationStream();
+                                                } else {
+                                                  setState(() {
+                                                    isWaiting = false;
+                                                  });
+                                                  Flushbar(
+                                                    backgroundColor: redColor,
+                                                    title: "Error",
+                                                    message:
+                                                        'USER_ALREADY_JOINED_ACTIVE_SESSION',
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
+                                                }
+                                              },
+                                        child: Text(
+                                          'Start Drive',
+                                          style: TextStyle(
+                                            fontFamily: 'Bambino',
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400,
+                                            color: whiteColor,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        left: 25,
+                                        right: 25,
+                                        bottom: 8,
+                                      ),
+                                      child: FlatButton(
+                                        minWidth:
+                                            MediaQuery.of(context).size.width,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
+                                        ),
+                                        height: 50,
+                                        color: mainTextColor,
+                                        onPressed: isWaiting
+                                            ? () {
+                                                Flushbar(
+                                                  backgroundColor: Colors.grey,
+                                                  title: "Loading",
+                                                  message: 'Please wait...',
+                                                  duration:
+                                                      Duration(seconds: 3),
+                                                )..show(context);
+                                              }
+                                            : () async {
+                                                setState(() {
+                                                  isWaiting = true;
+                                                  distance = 0;
+                                                });
+                                                final code = await joinDrive(
+                                                    roomDetails[counter]
+                                                        ['room_id'],
+                                                    userLat,
+                                                    userLong);
+                                                print(code);
+                                                if (code == 200 ||
+                                                    code == 201) {
+                                                  setState(() {
+                                                    isWaiting = false;
+                                                  });
+                                                  slidableController.activeState
+                                                      .close();
+                                                  slidableController.activeState
+                                                      .dismiss();
+                                                  _getLocation();
+                                                  setState(() {
+                                                    isDriving = true;
+                                                    isDriver = false;
+                                                  });
+                                                  _getLocationStream();
+                                                } else {
+                                                  setState(() {
+                                                    isWaiting = false;
+                                                  });
+                                                  Flushbar(
+                                                    backgroundColor: redColor,
+                                                    title: "Error",
+                                                    message:
+                                                        'AN_ERROR_OCCURRED_TRY_AGAIN_LATER',
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
+                                                }
+                                              },
+                                        child: Text(
+                                          'Join Drive',
+                                          style: TextStyle(
+                                            fontFamily: 'Bambino',
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400,
+                                            color: whiteColor,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                        ],
+                      )
+                    : MaterialApp(
+                        builder: DevicePreview.appBuilder,
+                        debugShowCheckedModeBanner: false,
+                        theme: ThemeData(
+                          primarySwatch: white,
+                          accentColor: black,
+                        ),
+                        darkTheme: ThemeData(
+                          primarySwatch: black,
+                          accentColor: white,
+                          brightness: Brightness.dark,
+                          canvasColor: mainTextColor,
+                          primaryTextTheme: Typography.material2018().white,
+                          textTheme: Typography.material2018().white,
+                        ),
+                        home: SafeArea(
+                          child: Scaffold(
+                            body: Center(
+                              child: CircularProgressIndicator(),
                             ),
                           ),
                         ),
                       ),
-                    );
-                  }
-                },
               ),
-              color: mainTextColor,
-              onTap: () {},
             ),
-          ],
+            actions: <Widget>[
+              SlideAction(
+                child: ListView.builder(
+                  itemCount: roomDetails.length + 2,
+                  itemBuilder: (BuildContext context, int index) {
+                    if (index == 0) {
+                      return Padding(
+                        padding: EdgeInsets.only(
+                          top: 15,
+                        ),
+                        child: SecondaryIcons(
+                          iconName: FontAwesomeIcons.plus,
+                          routeName: RoomOptions(),
+                        ),
+                      );
+                    } else if (index == 1) {
+                      return Column(
+                        children: [
+                          SecondaryIcons(
+                            iconName: FontAwesomeIcons.userCog,
+                            routeName: UserSettings(),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10,
+                            ),
+                            child: Divider(
+                              color: whiteColor,
+                              thickness: 1.0,
+                            ),
+                          ),
+                        ],
+                      );
+                    } else {
+                      return Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              counter = index - 2;
+                            });
+                          },
+                          child: CircleAvatar(
+                            radius: 25,
+                            backgroundColor: whiteColor,
+                            child: Center(
+                              child: Text(
+                                roomDetails[index - 2]['data']['room_name']
+                                    .toString()
+                                    .toUpperCase()
+                                    .substring(0, 2),
+                                style: TextStyle(
+                                  fontFamily: 'KumbhSans',
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w400,
+                                  color: mainTextColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                ),
+                color: mainTextColor,
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
       );
     } else {
