@@ -343,7 +343,9 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
       );
     } else {
       return Container(
-        child: CircularProgressIndicator(valueColor: ,),
+        child: CircularProgressIndicator(
+          valueColor: AlwaysStoppedAnimation<Color>(mainTextColor),
+        ),
       );
     }
   }
