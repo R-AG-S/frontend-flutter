@@ -315,12 +315,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                                               'refreshToken']);
                                                       prefs.setBool(
                                                           'Logged', true);
-                                                      print(
-                                                        response.statusCode,
-                                                      );
-                                                      print(
-                                                        response.body,
-                                                      );
                                                       Flushbar(
                                                         backgroundColor:
                                                             greenColor,
