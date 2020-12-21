@@ -182,9 +182,14 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                           .text.isNotEmpty &&
                                                       _milegeController
                                                           .text.isNotEmpty) {
-                                                    setCarDetails(
-                                                        _carController.text,
-                                                        _milegeController.text);
+                                                    final response =
+                                                        await setCarDetails(
+                                                            _carController.text,
+                                                            _milegeController
+                                                                .text);
+                                                    if (response == 200 ||
+                                                        response == 201) {
+                                                    } else {}
                                                   } else {
                                                     Flushbar(
                                                       backgroundColor: redColor,
