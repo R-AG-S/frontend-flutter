@@ -11,8 +11,8 @@ Future<String> loginUser(String email, String password, String fcm) async {
       },
       body: json.encode(
         <String, String>{
-          "email": _emailController.text,
-          "password": _passwordController.text,
+          "email": email,
+          "password": password,
           "device_registeration_token": fcmToken
         },
       ),
