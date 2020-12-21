@@ -724,11 +724,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () {
                             setState(() {
                               counter = index - 2;
+                              for (int i = 0; i < roomDetails.length; i++) {
+                                if (i == counter) {
+                                  colorData[i] = 1;
+                                } else {
+                                  colorData[i] = 0;
+                                }
+                              }
                             });
                           },
                           child: CircleAvatar(
                             radius: 25,
-                            backgroundColor: whiteColor,
+                            backgroundColor: colorData[index - 2] == 0
+                                ? whiteColor
+                                : lightFadeText,
                             child: Center(
                               child: Text(
                                 roomDetails[index - 2]['data']['room_name']
