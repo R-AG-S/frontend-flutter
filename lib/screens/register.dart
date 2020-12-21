@@ -13,6 +13,7 @@ import 'package:payup/screens/login.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -308,6 +309,17 @@ class _SignInScreenState extends State<SignInScreen> {
                                                         .body)['refreshToken']);
                                                     if (response.statusCode ==
                                                         201) {
+                                                      final SharedPreferences
+                                                          prefs =
+                                                          await SharedPreferences
+                                                              .getInstance();
+                                                      prefs.setString(
+                                                          'refreshToken',
+                                                          jsonDecode(response
+                                                                  .body)[
+                                                              'refreshToken']);
+                                                      prefs.setBool(
+                                                          'Logged', true);
                                                       print(
                                                         response.statusCode,
                                                       );
