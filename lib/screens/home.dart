@@ -131,6 +131,13 @@ class _HomeScreenState extends State<HomeScreen> {
       permission = await Geolocator.requestPermission();
       if (permission != LocationPermission.whileInUse &&
           permission != LocationPermission.always) {
+        Flushbar(
+          backgroundColor: redColor,
+          title: "Error",
+          message:
+              'Location permissions are permantly denied, we cannot request permissions.',
+          duration: Duration(seconds: 3),
+        )..show(context);
         return Future.error(
             'Location permissions are denied (actual value: $permission).');
       }
