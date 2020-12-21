@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/backend/refresh.dart';
 
-joinRoom(String roomId) async {
+joinRoom(String userName, String displayPic) async {
   try {
     final authKey = await refreshToken();
     final joinRoom = await http.post(
