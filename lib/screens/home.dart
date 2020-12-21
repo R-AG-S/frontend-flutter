@@ -332,7 +332,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     FadeInImage.assetNetwork(
                                                       fadeOutDuration:
                                                           Duration(seconds: 1),
-                                                      image: iconData[index],
+                                                      image: userData[index]
+                                                          ['dp'],
                                                       placeholder:
                                                           'images/place.png',
                                                       height: 50,
@@ -346,7 +347,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'User Name $index',
+                                                          userData[index]
+                                                              ['localId'],
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Bambino',
