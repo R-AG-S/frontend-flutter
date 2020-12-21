@@ -13,7 +13,11 @@ findUserData(String userId) async {
         "Authorization": authKey
       },
     );
-    return (jsonDecode(userDetails.body)['displayname']);
+    return ({
+      'localId': jsonDecode(userDetails.body)['localId'],
+      'name': jsonDecode(userDetails.body)['displayname'],
+      'dp': jsonDecode(userDetails.body)['displaypic'],
+    });
   } catch (e) {
     return 'Unknown';
   }
