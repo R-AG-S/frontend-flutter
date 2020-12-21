@@ -44,6 +44,7 @@ bool isDriving = false;
 Position currentPosition;
 bool isDriver = false;
 List passengers = List();
+Map myDetails = Map();
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
