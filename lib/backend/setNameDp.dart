@@ -13,7 +13,7 @@ joinRoom(String roomId) async {
         "Authorization": authKey
       },
       body: json.encode(
-        <String, String>{"room_id": roomId},
+        <String, String>{"displayname": "string", "displaypic": "string"},
       ),
     );
     return (joinRoom.statusCode);
