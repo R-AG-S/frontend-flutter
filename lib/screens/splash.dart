@@ -6,7 +6,6 @@ import 'package:payup/backend/refresh.dart';
 import 'package:payup/screens/login.dart';
 import 'package:payup/screens/waitingRoom.dart';
 import 'package:payup/utilities/constants.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -48,23 +47,6 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       return true;
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    Firebase.initializeApp().whenComplete(() async {
-      print('Connected');
-      Timer(Duration(seconds: 3), () {
-        Navigator.pushNamed(context, 'login');
-        // if (isReady) {
-        //   Navigator.pushNamed(context, 'home');
-        // } else {
-        //   Navigator.pushNamed(context, 'login');
-        // }
-      });
-      setState(() {});
-    });
   }
 
   @override
