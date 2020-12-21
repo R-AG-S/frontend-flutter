@@ -11,6 +11,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:payup/backend/endDrive.dart';
 import 'package:payup/backend/getActiveData.dart';
+import 'package:payup/backend/getCarDetails.dart';
 import 'package:payup/backend/getMyDetails.dart';
 import 'package:payup/backend/joinDrive.dart';
 import 'package:payup/backend/leaveDrive.dart';
@@ -47,10 +48,12 @@ bool isDriver = false;
 List passengers = List();
 Map myDetails = Map();
 List colorData = List();
+Map carDetails = Map();
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
+    getCarData();
     passengers.clear();
     isDriver = false;
     isReady = false;
@@ -66,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       final data = await userRoomDetails();
       myDetails[0] = await getMyData();
-      print(myDetails[0]);
       for (int i = 0; i < data.length; i++) {
         setState(() {
           roomDetails[i] = data[i];
