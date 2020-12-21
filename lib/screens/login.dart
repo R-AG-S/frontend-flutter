@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:device_preview/device_preview.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/fcmToken.dart';
+import 'package:payup/backend/loginUser.dart';
 import 'package:payup/screens/register.dart';
 import 'package:payup/screens/waitingRoom.dart';
 import 'package:payup/utilities/constants.dart';
@@ -234,77 +234,35 @@ class _LoginScreenState extends State<LoginScreen> {
                                             try {
                                               if (checkStatus()) {
                                                 final response =
-                                                    await http.post(
-                                                  'https://payup-backend.herokuapp.com/users/login/',
-                                                  headers: <String, String>{
-                                                    'Content-type':
-                                                        'application/json',
-                                                    'Accept':
-                                                        'application/json',
-                                                  },
-                                                  body: json.encode(
-                                                    <String, String>{
-                                                      "email":
-                                                          _emailController.text,
-                                                      "password":
-                                                          _passwordController
-                                                              .text,
-                                                      "device_registeration_token":
-                                                          fcmToken
-                                                    },
-                                                  ),
-                                                );
-                                                print(
-                                                  jsonDecode(response.body),
-                                                );
-                                                print(response.statusCode);
-                                                if (response.statusCode ==
-                                                    200) {
-                                                  try {
-                                                    final SharedPreferences
-                                                        prefs =
-                                                        await SharedPreferences
-                                                            .getInstance();
-                                                    try {
-                                                      prefs.setString(
-                                                          'refreshToken',
-                                                          jsonDecode(response
-                                                                  .body)[
-                                                              'refreshToken']);
-                                                      Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              WaitingScreen(),
-                                                        ),
-                                                      );
-                                                    } catch (e) {
-                                                      setState(() {
-                                                        isWaiting = false;
-                                                      });
-                                                      Flushbar(
-                                                        backgroundColor:
-                                                            redColor,
-                                                        title: "Error",
-                                                        message:
-                                                            'An error occurred',
-                                                        duration: Duration(
-                                                            seconds: 3),
-                                                      )..show(context);
-                                                    }
-                                                  } catch (e) {
-                                                    setState(() {
-                                                      isWaiting = false;
-                                                    });
-                                                    Flushbar(
-                                                      backgroundColor: redColor,
-                                                      title: "Error",
-                                                      message:
-                                                          'An error occurred',
-                                                      duration:
-                                                          Duration(seconds: 3),
-                                                    )..show(context);
-                                                  }
+                                                    await loginUser(
+                                                        _emailController.text,
+                                                        _passwordController
+                                                            .text,
+                                                        fcmToken);
+                                                print(response);
+                                                if (response == 200) {
+                                                  setState(() {
+                                                    isWaiting = false;
+                                                  });
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          WaitingScreen(),
+                                                    ),
+                                                  );
+                                                } else {
+                                                  setState(() {
+                                                    isWaiting = false;
+                                                  });
+                                                  Flushbar(
+                                                    backgroundColor: redColor,
+                                                    title: "Error",
+                                                    message:
+                                                        'An error occurred',
+                                                    duration:
+                                                        Duration(seconds: 3),
+                                                  )..show(context);
                                                 }
                                               }
                                             } catch (e) {
