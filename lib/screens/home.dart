@@ -50,7 +50,7 @@ bool isDriver = false;
 List passengers = List();
 Map myDetails = Map();
 List colorData = List();
-Map carDetails = Map();
+List carDetails = List();
 String productDropDownValue;
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -869,7 +869,7 @@ class SecondaryIcons extends StatelessWidget {
                 underline: SizedBox(),
                 value: productDropDownValue,
                 icon: Icon(Icons.arrow_drop_down),
-                items: productCat.map((value) {
+                items: carDetails.map((value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(
@@ -885,46 +885,6 @@ class SecondaryIcons extends StatelessWidget {
                 onChanged: (newValue) async {
                   setState(() {
                     productDropDownValue = newValue;
-                    deptBookCounter = 0;
-                    deptReady = false;
-                  });
-                  await _firestore
-                      .collection('books')
-                      .where('dept', isEqualTo: productDropDownValue)
-                      .get()
-                      .then((value) {
-                    deptBookData.clear();
-                    value.docs.forEach((element) {
-                      deptBookData[deptBookCounter] = new Map();
-                      deptBookData[deptBookCounter].addAll({
-                        'name': element.data()['name'],
-                        'author': element.data()['author'],
-                        'url': element.data()['url'],
-                        'copies': element.data()['copies'],
-                        'dept': element.data()['dept'] == null
-                            ? 'N/A'
-                            : element.data()['dept'],
-                        'desc': element.data()['desc'] == null
-                            ? 'N/A'
-                            : element.data()['desc'],
-                        'edition': element.data()['edition'] == null
-                            ? 'N/A'
-                            : element.data()['edition'],
-                        'pages': element.data()['pages'] == null
-                            ? 'N/A'
-                            : element.data()['pages'],
-                        'rating': element.data()['rating'] == null
-                            ? 0.0
-                            : element.data()['rating'],
-                        'date': element.data()['date'] == null
-                            ? 0.0
-                            : element.data()['date'],
-                      });
-                      deptBookCounter = deptBookCounter + 1;
-                    });
-                  });
-                  setState(() {
-                    deptReady = true;
                   });
                 },
               ),
