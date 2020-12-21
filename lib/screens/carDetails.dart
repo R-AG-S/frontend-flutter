@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/utilities/constants.dart';
+import 'package:payup/widgets/textform.dart';
 
 class CarDetailsScreen extends StatefulWidget {
   @override
@@ -11,8 +12,11 @@ class CarDetailsScreen extends StatefulWidget {
 }
 
 class _CarDetailsScreenState extends State<CarDetailsScreen> {
-  @override
+  bool isWaiting = false;
   GlobalKey<ScaffoldState> _carDataScaffoldKey = GlobalKey();
+  final TextEditingController _carController = TextEditingController();
+  final TextEditingController _milegeController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
         designSize: Size(1080, 2400), allowFontScaling: false);
@@ -113,7 +117,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'ACCOUNT INFORMATION',
+                                            'CAR INFORMATION',
                                             style: GoogleFonts.openSans(
                                               fontWeight: FontWeight.w600,
                                               fontSize: ScreenUtil().setSp(35),
@@ -125,9 +129,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                   ScreenUtil().setHeight(24),
                                             ),
                                             child: TextFormWidget(
-                                              hint: 'Name',
+                                              hint: 'Car Name',
                                               firstNameController:
-                                                  _nameController,
+                                                  _carController,
                                               type: TextInputType.name,
                                               obscure: false,
                                             ),
@@ -138,66 +142,16 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                   ScreenUtil().setHeight(24),
                                             ),
                                             child: TextFormWidget(
-                                              hint: 'Email',
+                                              hint: 'Milege Details',
                                               firstNameController:
-                                                  _emailController,
-                                              type: TextInputType.emailAddress,
-                                              obscure: false,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              vertical:
-                                                  ScreenUtil().setHeight(24),
-                                            ),
-                                            child: TextFormWidget(
-                                              hint: 'Username',
-                                              firstNameController:
-                                                  _userNameController,
-                                              type: TextInputType.name,
-                                              obscure: false,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              vertical:
-                                                  ScreenUtil().setHeight(24),
-                                            ),
-                                            child: TextFormWidget(
-                                              hint: 'Phone Number',
-                                              firstNameController:
-                                                  _phoneController,
-                                              type: TextInputType.phone,
-                                              obscure: false,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              vertical:
-                                                  ScreenUtil().setHeight(24),
-                                            ),
-                                            child: TextFormWidget(
-                                              hint: 'Password',
-                                              firstNameController:
-                                                  _passwordController,
+                                                  _milegeController,
                                               type:
                                                   TextInputType.visiblePassword,
-                                              obscure: true,
+                                              obscure: false,
                                             ),
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    SignInButton(
-                                      Buttons.Google,
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: ScreenUtil().setHeight(22.5),
-                                        horizontal: ScreenUtil().setWidth(230),
-                                      ),
-                                      text: "Sign in with Google",
-                                      onPressed: () {
-                                        // Navigator.pushNamed(context, 'profile');
-                                      },
                                     ),
                                     Padding(
                                       padding: EdgeInsets.symmetric(
@@ -236,132 +190,10 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                           onPressed: isWaiting
                                               ? null
                                               : () async {
-                                                  if (checkStatus()) {
-                                                    final response =
-                                                        await http.post(
-                                                      'https://payup-backend.herokuapp.com/users/register/',
-                                                      headers: <String, String>{
-                                                        'Content-type':
-                                                            'application/json',
-                                                        'Accept':
-                                                            'application/json',
-                                                        // "Authorization": "Some token"
-                                                      },
-                                                      body: json.encode(
-                                                        <String, dynamic>{
-                                                          "email":
-                                                              _emailController
-                                                                  .text,
-                                                          "password":
-                                                              _passwordController
-                                                                  .text,
-                                                          "username":
-                                                              _userNameController
-                                                                  .text,
-                                                          "full_name":
-                                                              _nameController
-                                                                  .text,
-                                                          "auto_login": true,
-                                                          "device_registeration_token":
-                                                              fcmToken,
-                                                          "phone_number": _phoneController
-                                                                      .text
-                                                                      .toString()
-                                                                      .substring(
-                                                                          0,
-                                                                          3) ==
-                                                                  '+91'
-                                                              ? _phoneController
-                                                                  .text
-                                                              : _phoneController
-                                                                          .text
-                                                                          .toString()
-                                                                          .substring(
-                                                                              0,
-                                                                              2) ==
-                                                                      '91'
-                                                                  ? '+' +
-                                                                      _phoneController
-                                                                          .text
-                                                                  : '+91' +
-                                                                      _phoneController
-                                                                          .text
-                                                        },
-                                                      ),
-                                                    );
-                                                    print(
-                                                      response.statusCode,
-                                                    );
-                                                    print(
-                                                      response.body,
-                                                    );
-                                                    if (response.statusCode ==
-                                                        201) {
-                                                      print(
-                                                        response.statusCode,
-                                                      );
-                                                      print(
-                                                        response.body,
-                                                      );
-                                                      Flushbar(
-                                                        backgroundColor:
-                                                            greenColor,
-                                                        title:
-                                                            "Login Successful",
-                                                        message:
-                                                            '''You're now a member of PayUp.''',
-                                                        duration: Duration(
-                                                            seconds: 3),
-                                                      )..show(context);
-                                                      Navigator.pushNamed(
-                                                          context, 'room');
-                                                    } else if (response
-                                                            .statusCode ==
-                                                        400) {
-                                                      Flushbar(
-                                                        backgroundColor:
-                                                            redColor,
-                                                        title: "Error",
-                                                        message: jsonDecode(
-                                                                    response
-                                                                        .body)[
-                                                                'Message']
-                                                            .toString()
-                                                            .split('(')[0],
-                                                        duration: Duration(
-                                                            seconds: 3),
-                                                      )..show(context);
-                                                    } else if (response
-                                                            .statusCode ==
-                                                        409) {
-                                                      Flushbar(
-                                                        backgroundColor:
-                                                            redColor,
-                                                        title: "Error",
-                                                        message: jsonDecode(
-                                                                    response
-                                                                        .body)[
-                                                                'Message']
-                                                            .toString()
-                                                            .split('(')[0],
-                                                        duration: Duration(
-                                                            seconds: 3),
-                                                      )..show(context);
-                                                    } else {
-                                                      Flushbar(
-                                                        backgroundColor:
-                                                            redColor,
-                                                        title: "Error",
-                                                        message: jsonDecode(
-                                                                    response
-                                                                        .body)[
-                                                                'Message']
-                                                            .toString()
-                                                            .split('(')[0],
-                                                        duration: Duration(
-                                                            seconds: 3),
-                                                      )..show(context);
-                                                    }
+                                                  if (_carController
+                                                          .text.isNotEmpty &&
+                                                      _milegeController
+                                                          .text.isNotEmpty) {
                                                   } else {
                                                     Flushbar(
                                                       backgroundColor: redColor,
@@ -382,45 +214,6 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            top: ScreenUtil().setHeight(
-                              200,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                '''Already have an account?  ''',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.raleway(
-                                  fontSize: ScreenUtil().setSp(42),
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).pushReplacement(
-                                    CupertinoPageRoute<bool>(
-                                      builder: (BuildContext context) =>
-                                          LoginScreen(),
-                                    ),
-                                  );
-                                },
-                                child: Text(
-                                  '''Log in''',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.raleway(
-                                    fontSize: ScreenUtil().setSp(42),
-                                    fontWeight: FontWeight.w600,
-                                    color: redColor,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
                       ],
                     ),
                   ),
@@ -432,3 +225,4 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
       ),
     );
   }
+}
