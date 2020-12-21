@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   getUsers() async {
     try {
-      for (int i = 0; i < widget.membersList.length; i++) {
+      for (int i = 0; i < roomDetails[counter]['data']['members'].length; i++) {
         userData[i] = await getUserData(widget.membersList[i]);
       }
       setState(() {
