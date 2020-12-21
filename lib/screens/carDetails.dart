@@ -195,6 +195,13 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                       setState(() {
                                                         isWaiting = false;
                                                       });
+                                                      Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              RoomOptions(),
+                                                        ),
+                                                      );
                                                     } else {
                                                       setState(() {
                                                         isWaiting = false;
