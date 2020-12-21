@@ -187,6 +187,16 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                             QRScreen(message: qrCode),
                                       ),
                                     );
+                                  } else {
+                                    setState(() {
+                                      isWaiting = false;
+                                    });
+                                    Flushbar(
+                                      backgroundColor: redColor,
+                                      title: "Error",
+                                      message: 'An error occurred',
+                                      duration: Duration(seconds: 3),
+                                    )..show(context);
                                   }
                                 } else {
                                   setState(() {
