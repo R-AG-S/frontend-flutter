@@ -6,7 +6,7 @@ setCarDetails(String carModel, String milege) async {
   try {
     final authKey = await refreshToken();
     final setCarDetails = await http.post(
-      'https://payup-backend.herokuapp.com/carpool/join_room',
+      'https://payup-backend.herokuapp.com/users/set_car_details/',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
