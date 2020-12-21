@@ -19,6 +19,7 @@ import 'package:payup/backend/leaveDrive.dart';
 import 'package:payup/backend/startDrive.dart';
 import 'package:payup/backend/userData.dart';
 import 'package:payup/backend/userRoomDetails.dart';
+import 'package:payup/screens/carDetails.dart';
 import 'package:payup/screens/room.dart';
 import 'package:payup/screens/slideup.dart';
 import 'package:payup/screens/userSettings.dart';
@@ -554,43 +555,56 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       Duration(seconds: 3),
                                                 )..show(context);
                                               }
-                                            : () async {
-                                                setState(() {
-                                                  isWaiting = true;
-                                                  distance = 0;
-                                                });
-                                                final carId =
+                                            : carDetails.isNotEmpty
+                                                ? () async {
+                                                    setState(() {
+                                                      isWaiting = true;
+                                                      distance = 0;
+                                                    });
                                                     await _showPicker(context);
-                                                final code = await startDrive(
-                                                    roomDetails[counter]
-                                                        ['room_id'],
-                                                    carId,
-                                                    userLat,
-                                                    userLong);
-                                                print(code);
-                                                if (code == 200 ||
-                                                    code == 201) {
-                                                  setState(() {
-                                                    isWaiting = false;
-                                                    isDriving = true;
-                                                    isDriver = true;
-                                                  });
-                                                  _getLocation();
-                                                  _getLocationStream();
-                                                } else {
-                                                  setState(() {
-                                                    isWaiting = false;
-                                                  });
-                                                  Flushbar(
-                                                    backgroundColor: redColor,
-                                                    title: "Error",
-                                                    message:
-                                                        'USER_ALREADY_JOINED_ACTIVE_SESSION',
-                                                    duration:
-                                                        Duration(seconds: 3),
-                                                  )..show(context);
-                                                }
-                                              },
+                                                    final code =
+                                                        await startDrive(
+                                                            roomDetails[counter]
+                                                                ['room_id'],
+                                                            productDropDownValue,
+                                                            userLat,
+                                                            userLong);
+                                                    print(code);
+                                                    if (code == 200 ||
+                                                        code == 201) {
+                                                      setState(() {
+                                                        isWaiting = false;
+                                                        isDriving = true;
+                                                        isDriver = true;
+                                                      });
+                                                      _getLocation();
+                                                      _getLocationStream();
+                                                    } else {
+                                                      setState(() {
+                                                        isWaiting = false;
+                                                      });
+                                                      Flushbar(
+                                                        backgroundColor:
+                                                            redColor,
+                                                        title: "Error",
+                                                        message:
+                                                            'USER_ALREADY_JOINED_ACTIVE_SESSION',
+                                                        duration: Duration(
+                                                            seconds: 3),
+                                                      )..show(context);
+                                                    }
+                                                  }
+                                                : () {
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            CarDetailsScreen(
+                                                                route:
+                                                                    HomeScreen()),
+                                                      ),
+                                                    );
+                                                  },
                                         child: Text(
                                           'Start Drive',
                                           style: TextStyle(
@@ -853,7 +867,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   setState(() {
                     productDropDownValue = newValue;
                   });
-                  return productDropDownValue;
                 },
               ),
             ),
