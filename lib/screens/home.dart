@@ -138,8 +138,6 @@ class _HomeScreenState extends State<HomeScreen> {
               'Location permissions are denied (actual value: $permission).',
           duration: Duration(seconds: 3),
         )..show(context);
-        return Future.error(
-            'Location permissions are denied (actual value: $permission).');
       }
     }
 
