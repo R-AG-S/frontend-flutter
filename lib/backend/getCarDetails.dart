@@ -13,7 +13,6 @@ getCarData() async {
         "Authorization": authKey
       },
     );
-    print(carData.body);
     print(json.decode(carData.body)['cars']);
     // return ({
     //   'name': jsonDecode(carData.body)['displayname'],
