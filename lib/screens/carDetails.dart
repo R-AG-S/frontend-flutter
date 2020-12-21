@@ -90,7 +90,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                 padding: EdgeInsets.all(8.0),
                                 child: Center(
                                   child: Text(
-                                    '''Car Pool with friends. It's always fun!!!''',
+                                    '''You can fill this in later if you want.!!!''',
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.raleway(
                                       fontSize: ScreenUtil().setSp(40),
@@ -178,7 +178,62 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                   ),
                                                 )
                                               : Text(
-                                                  'Sign In',
+                                                  'Setup Car',
+                                                  style: GoogleFonts.openSans(
+                                                    fontSize:
+                                                        ScreenUtil().setSp(48),
+                                                    color: darkFadeTextColor,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                          onPressed: isWaiting
+                                              ? null
+                                              : () async {
+                                                  if (_carController
+                                                          .text.isNotEmpty &&
+                                                      _milegeController
+                                                          .text.isNotEmpty) {
+                                                  } else {
+                                                    Flushbar(
+                                                      backgroundColor: redColor,
+                                                      title: "Error",
+                                                      message:
+                                                          '''Input shouldn't be null.''',
+                                                      duration:
+                                                          Duration(seconds: 3),
+                                                    )..show(context);
+                                                  }
+                                                },
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: ScreenUtil().setHeight(36),
+                                      ),
+                                      child: ButtonTheme(
+                                        minWidth: ScreenUtil().setWidth(1080),
+                                        height: ScreenUtil().setHeight(150),
+                                        child: RaisedButton(
+                                          color: whiteColor,
+                                          child: isWaiting
+                                              ? Container(
+                                                  height: ScreenUtil()
+                                                      .setHeight(120),
+                                                  width: ScreenUtil()
+                                                      .setWidth(120),
+                                                  padding: EdgeInsets.all(8),
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    strokeWidth: 2,
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                                Color>(
+                                                            mainTextColor),
+                                                  ),
+                                                )
+                                              : Text(
+                                                  'Setup Car',
                                                   style: GoogleFonts.openSans(
                                                     fontSize:
                                                         ScreenUtil().setSp(48),
