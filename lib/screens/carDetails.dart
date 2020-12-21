@@ -3,6 +3,7 @@ import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/screens/room.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
 
@@ -152,6 +153,9 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                         ],
                                       ),
                                     ),
+                                    SizedBox(
+                                      height: ScreenUtil().setHeight(600),
+                                    ),
                                     Padding(
                                       padding: EdgeInsets.symmetric(
                                         vertical: ScreenUtil().setHeight(36),
@@ -233,7 +237,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                   ),
                                                 )
                                               : Text(
-                                                  'Setup Car',
+                                                  'Skip',
                                                   style: GoogleFonts.openSans(
                                                     fontSize:
                                                         ScreenUtil().setSp(48),
@@ -241,24 +245,15 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
-                                          onPressed: isWaiting
-                                              ? null
-                                              : () async {
-                                                  if (_carController
-                                                          .text.isNotEmpty &&
-                                                      _milegeController
-                                                          .text.isNotEmpty) {
-                                                  } else {
-                                                    Flushbar(
-                                                      backgroundColor: redColor,
-                                                      title: "Error",
-                                                      message:
-                                                          '''Input shouldn't be null.''',
-                                                      duration:
-                                                          Duration(seconds: 3),
-                                                    )..show(context);
-                                                  }
-                                                },
+                                          onPressed: () async {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    RoomOptions(),
+                                              ),
+                                            );
+                                          },
                                         ),
                                       ),
                                     ),
