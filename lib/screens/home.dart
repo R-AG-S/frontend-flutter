@@ -11,6 +11,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/endDrive.dart';
 import 'package:payup/backend/getActiveData.dart';
+import 'package:payup/backend/getUserData.dart';
 import 'package:payup/backend/joinDrive.dart';
 import 'package:payup/backend/leaveDrive.dart';
 import 'package:payup/backend/startDrive.dart';
