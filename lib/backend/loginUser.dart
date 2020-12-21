@@ -25,6 +25,7 @@ Future<int> loginUser(String email, String password, String fcm) async {
     try {
       prefs.setString(
           'refreshToken', jsonDecode(response.body)['refreshToken']);
+      prefs.setBool('Logged', true);
     } catch (e) {
       return 400;
     }
