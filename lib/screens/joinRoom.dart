@@ -130,7 +130,8 @@ class _QRScannerState extends State<QRScanner> {
                                           try {
                                             if (_qrController.text.isNotEmpty) {
                                               final responseCode =
-                                                  joinRoom(_qrController.text);
+                                                  await joinRoom(
+                                                      _qrController.text);
                                               if (responseCode == 200 ||
                                                   responseCode == 201) {
                                                 try {
