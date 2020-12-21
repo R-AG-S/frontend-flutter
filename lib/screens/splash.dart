@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:payup/backend/refresh.dart';
 import 'package:payup/screens/login.dart';
 import 'package:payup/screens/waitingRoom.dart';
 import 'package:payup/utilities/constants.dart';
