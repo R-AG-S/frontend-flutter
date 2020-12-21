@@ -79,8 +79,9 @@ class _HomeScreenState extends State<HomeScreen> {
       }
       final carData = await getCarData();
       for (int i = 0; i < carData.length; i++) {
+        print(carData[i]['car_model']);
         setState(() {
-          carDetails[i] = carData[i]['car_model'];
+          carDetails.add(carData[i]['car_model']);
         });
       }
       if (carDetails.isNotEmpty) {
@@ -109,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
         print(roomDetails);
       }
     } catch (e) {
+      print(e);
       Flushbar(
         backgroundColor: redColor,
         title: "Error",
@@ -840,7 +842,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Text(
                       value,
                       style: GoogleFonts.openSans(
-                        fontSize: ScreenUtil().setSp(38),
+                        fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: mainTextColor,
                       ),
