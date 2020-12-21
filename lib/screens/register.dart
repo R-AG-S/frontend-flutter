@@ -304,9 +304,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                                     print(
                                                       response.statusCode,
                                                     );
-                                                    print(
-                                                      response.body,
-                                                    );
+                                                    print(json.decode(response
+                                                        .body)['refreshToken']);
                                                     if (response.statusCode ==
                                                         201) {
                                                       print(
