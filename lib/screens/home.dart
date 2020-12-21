@@ -81,7 +81,11 @@ class _HomeScreenState extends State<HomeScreen> {
         )..show(context);
       } else {
         for (int i = 0; i < roomDetails.length; i++) {
-          colorData.add(0);
+          if (i == counter) {
+            colorData.add(1);
+          } else {
+            colorData.add(0);
+          }
         }
         setState(() {
           isReady = true;
