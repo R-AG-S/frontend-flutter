@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payup/backend/setNameDp.dart';
 import 'package:payup/screens/editpage.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
@@ -345,6 +346,7 @@ class _UserSettingsState extends State<UserSettings> {
                               setState(() {
                                 url = iconData[index];
                               });
+                              setNameDp(widget.username, url);
                               Navigator.of(context).pop();
                               // Navigator.push(
                               //     context,
