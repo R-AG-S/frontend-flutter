@@ -79,7 +79,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                             children: [
                               Center(
                                 child: Text(
-                                  'Sign up to PayUp',
+                                  'Enter Your Car Details',
                                   style: GoogleFonts.raleway(
                                     fontSize: ScreenUtil().setSp(65),
                                     fontWeight: FontWeight.w700,
