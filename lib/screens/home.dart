@@ -793,7 +793,7 @@ class SecondaryIcons extends StatelessWidget {
   });
   final Widget routeName;
   final IconData iconName;
-
+  final Color _color;
   @override
   Widget build(BuildContext context) {
     return Padding(
