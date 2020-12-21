@@ -13,6 +13,14 @@ findUserData(String userId) async {
         "Authorization": authKey
       },
     );
+    final response = await http.get(
+      'https://payup-backend.herokuapp.com/users/get_any_user_display_data/$userId',
+      headers: <String, String>{
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        "Authorization": authKey
+      },
+    );
     return ({
       'localId': jsonDecode(userDetails.body)['localId'],
       'name': jsonDecode(userDetails.body)['displayName'],
