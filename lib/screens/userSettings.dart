@@ -10,6 +10,7 @@ import 'package:payup/screens/editpage.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/utilities/data.dart';
 import 'package:settings_ui/settings_ui.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UserSettings extends StatefulWidget {
   UserSettings({
