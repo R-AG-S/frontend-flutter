@@ -49,6 +49,7 @@ List passengers = List();
 Map myDetails = Map();
 List colorData = List();
 Map carDetails = Map();
+String productDropDownValue;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -78,6 +79,11 @@ class _HomeScreenState extends State<HomeScreen> {
       for (int i = 0; i < carData.length; i++) {
         setState(() {
           carDetails[i] = carData[i];
+        });
+      }
+      if (carDetails.isNotEmpty) {
+        setState(() {
+          productDropDownValue = carDetails[0]['car_model'];
         });
       }
       if (roomDetails.isEmpty) {
