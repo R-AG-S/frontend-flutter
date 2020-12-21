@@ -790,10 +790,11 @@ class SecondaryIcons extends StatelessWidget {
   const SecondaryIcons({
     @required this.iconName,
     @required this.routeName,
+    @required this.color,
   });
   final Widget routeName;
   final IconData iconName;
-  final Color _color;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Padding(
