@@ -71,20 +71,6 @@ class _LoginScreenState extends State<LoginScreen> {
             key: _loginscaffoldKey,
             resizeToAvoidBottomInset: false,
             resizeToAvoidBottomPadding: false,
-            floatingActionButton: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: FloatingActionButton(
-                mini: true,
-                heroTag: "btn1",
-                elevation: 0,
-                onPressed: () {},
-                child: Icon(
-                  Icons.help_outline_rounded,
-                  size: 26.0,
-                ),
-              ),
-            ),
-            floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
             body: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
