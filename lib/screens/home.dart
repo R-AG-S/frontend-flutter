@@ -714,25 +714,32 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       );
     } else {
-      return MaterialApp(
-        builder: DevicePreview.appBuilder,
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: white,
-          accentColor: black,
-        ),
-        darkTheme: ThemeData(
-          primarySwatch: black,
-          accentColor: white,
-          brightness: Brightness.dark,
-          canvasColor: mainTextColor,
-          primaryTextTheme: Typography.material2018().white,
-          textTheme: Typography.material2018().white,
-        ),
-        home: SafeArea(
-          child: Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
+      return WillPopScope(
+        onWillPop: () async {
+          await SystemChannels.platform
+              .invokeMethod<void>('SystemNavigator.pop');
+          return false;
+        },
+        child: MaterialApp(
+          builder: DevicePreview.appBuilder,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: white,
+            accentColor: black,
+          ),
+          darkTheme: ThemeData(
+            primarySwatch: black,
+            accentColor: white,
+            brightness: Brightness.dark,
+            canvasColor: mainTextColor,
+            primaryTextTheme: Typography.material2018().white,
+            textTheme: Typography.material2018().white,
+          ),
+          home: SafeArea(
+            child: Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
             ),
           ),
         ),
