@@ -556,6 +556,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 });
                                                 slidableController.activeState
                                                     .close();
+                                                slidableController.activeState
+                                                    .dismiss();
                                                 _getLocation();
                                                 setState(() {
                                                   isDriving = true;
