@@ -145,8 +145,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                               hint: 'Milege Details',
                                               firstNameController:
                                                   _milegeController,
-                                              type:
-                                                  TextInputType.visiblePassword,
+                                              type: TextInputType.number,
                                               obscure: false,
                                             ),
                                           ),
