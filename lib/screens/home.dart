@@ -21,7 +21,6 @@ import 'package:payup/screens/slideup.dart';
 import 'package:payup/screens/userSettings.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:latlong/latlong.dart';
-import 'package:payup/utilities/data.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class HomeScreen extends StatefulWidget {
