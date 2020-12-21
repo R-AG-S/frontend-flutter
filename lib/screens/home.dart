@@ -419,6 +419,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           isDriving = false;
                                         });
                                         _getLocation();
+                                        slidableController.activeState
+                                            .initState();
                                         isDriver
                                             ? endDrive(
                                                 roomDetails[counter]['room_id'],
