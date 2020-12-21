@@ -309,7 +309,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           width: 15,
                                         );
                                       }
-                                      if (passengers.isNotEmpty) {
+                                      if (passengers.isNotEmpty &&
+                                          userData.isNotEmpty &&
+                                          userData[index]['dp']) {
                                         return Padding(
                                           padding: EdgeInsets.only(
                                             left: 15,
