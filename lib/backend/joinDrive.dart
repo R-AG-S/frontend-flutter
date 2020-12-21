@@ -16,7 +16,6 @@ joinDrive(String roomId, double lat, double long) async {
         <String, dynamic>{"room_id": roomId, "lat": lat, "lng": long},
       ),
     );
-    print(jsonDecode(joinDrive.body));
     return joinDrive.statusCode;
   } catch (e) {
     return 400;
