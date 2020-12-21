@@ -352,7 +352,13 @@ class _UserSettingsState extends State<UserSettings> {
                               if (response == 200 || response == 201) {
                                 Navigator.of(context).pop();
                               } else {
-                                Flushbar();
+                                Flushbar(
+                                  backgroundColor: redColor,
+                                  title: "Error",
+                                  message:
+                                      'An error occurred please try again.',
+                                  duration: Duration(seconds: 3),
+                                )..show(context);
                               }
 
                               // Navigator.push(
