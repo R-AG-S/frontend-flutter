@@ -80,12 +80,12 @@ class _HomeScreenState extends State<HomeScreen> {
       final carData = await getCarData();
       for (int i = 0; i < carData.length; i++) {
         setState(() {
-          carDetails[i] = carData[i];
+          carDetails[i] = carData[i]['car_model'];
         });
       }
       if (carDetails.isNotEmpty) {
         setState(() {
-          productDropDownValue = carDetails[0]['car_model'];
+          productDropDownValue = carDetails[0];
         });
       }
       if (roomDetails.isEmpty) {
@@ -820,42 +820,6 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
   }
-}
-
-class SecondaryIcons extends StatelessWidget {
-  const SecondaryIcons({
-    @required this.iconName,
-    @required this.routeName,
-  });
-  final Widget routeName;
-  final IconData iconName;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 10.5,
-        vertical: 4,
-      ),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            CupertinoPageRoute(
-              builder: (context) => routeName,
-            ),
-          );
-        },
-        child: CircleAvatar(
-          radius: 25,
-          backgroundColor: whiteColor,
-          child: Icon(
-            iconName,
-            color: darkFadeTextColor,
-          ),
-        ),
-      ),
-    );
-  }
 
   void _showPicker(context) {
     showModalBottomSheet(
@@ -891,5 +855,41 @@ class SecondaryIcons extends StatelessWidget {
             ),
           );
         });
+  }
+}
+
+class SecondaryIcons extends StatelessWidget {
+  const SecondaryIcons({
+    @required this.iconName,
+    @required this.routeName,
+  });
+  final Widget routeName;
+  final IconData iconName;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 10.5,
+        vertical: 4,
+      ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+              builder: (context) => routeName,
+            ),
+          );
+        },
+        child: CircleAvatar(
+          radius: 25,
+          backgroundColor: whiteColor,
+          child: Icon(
+            iconName,
+            color: darkFadeTextColor,
+          ),
+        ),
+      ),
+    );
   }
 }
