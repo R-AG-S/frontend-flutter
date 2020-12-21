@@ -17,5 +17,7 @@ joinRoom(String roomId) async {
       ),
     );
     return (joinRoom.statusCode);
-  } catch (e) {}
+  } catch (e) {
+    return 400;
+  }
 }
