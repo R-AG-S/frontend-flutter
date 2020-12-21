@@ -140,8 +140,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 position.latitude,
                 position.longitude) >
             0) {
-          distance = Geolocator.distanceBetween(currentPosition.latitude,
-              currentPosition.longitude, position.latitude, position.longitude);
+          distance = distance +
+              Geolocator.distanceBetween(
+                  currentPosition.latitude,
+                  currentPosition.longitude,
+                  position.latitude,
+                  position.longitude);
         }
         userLat = position.latitude;
         userLong = position.longitude;
