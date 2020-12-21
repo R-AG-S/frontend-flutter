@@ -427,6 +427,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       onPressed: () {
                                         setState(() {
                                           passengers.clear();
+                                          userData.clear();
                                           isDriving = false;
                                         });
                                         _getLocation();
