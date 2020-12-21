@@ -160,7 +160,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        onPressed: () async {
+                        onPressed:isWaiting?: () async {
                           try {
                             setState(() {
                               isWaiting = true;
