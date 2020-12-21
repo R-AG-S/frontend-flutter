@@ -57,6 +57,25 @@ class _HomeScreenState extends State<HomeScreen> {
     _getDetails();
   }
 
+  getUsers() async {
+    try {
+      creator = await findUserData(widget.creator);
+      for (int i = 0; i < widget.membersList.length; i++) {
+        userData[i] = await getUserData(widget.membersList[i]);
+      }
+      setState(() {
+        isReady = true;
+      });
+    } catch (e) {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: 'Error occurred.',
+        duration: Duration(seconds: 3),
+      )..show(context);
+    }
+  }
+
   _getDetails() async {
     try {
       final data = await userRoomDetails();
