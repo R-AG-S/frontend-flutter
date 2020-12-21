@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/backend/refresh.dart';
 
-getUserData() async {
+getCarData() async {
   try {
     final authKey = await refreshToken();
-    final userDetails = await http.get(
+    final carData = await http.get(
       'https://payup-backend.herokuapp.com/users/get_car_details/',
       headers: <String, String>{
         'Content-type': 'application/json',
@@ -14,8 +14,8 @@ getUserData() async {
       },
     );
     return ({
-      'name': jsonDecode(userDetails.body)['displayname'],
-      'dp': jsonDecode(userDetails.body)['displaypic'],
+      'name': jsonDecode(carData.body)['displayname'],
+      'dp': jsonDecode(carData.body)['displaypic'],
     });
   } catch (e) {
     return {};
