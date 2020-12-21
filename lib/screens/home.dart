@@ -558,10 +558,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   isWaiting = true;
                                                   distance = 0;
                                                 });
+                                                await _showPicker(context);
                                                 final code = await startDrive(
                                                     roomDetails[counter]
                                                         ['room_id'],
-                                                    'carData',
+                                                    productDropDownValue,
                                                     userLat,
                                                     userLong);
                                                 print(code);
