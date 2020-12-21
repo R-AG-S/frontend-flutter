@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:payup/backend/refresh.dart';
 
-joinRoom(String userName, String displayPic) async {
+setNameDp(String userName, String displayPic) async {
   try {
     final authKey = await refreshToken();
-    final joinRoom = await http.post(
+    final setNameDp = await http.post(
       'https://payup-backend.herokuapp.com/users/set_name_and_pic/',
       headers: <String, String>{
         'Content-type': 'application/json',
@@ -16,6 +16,6 @@ joinRoom(String userName, String displayPic) async {
         <String, String>{"displayname": userName, "displaypic": displayPic},
       ),
     );
-    return (joinRoom.statusCode);
+    return (setNameDp.statusCode);
   } catch (e) {}
 }
