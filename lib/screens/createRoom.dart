@@ -160,45 +160,77 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        onPressed:isWaiting?: () async {
-                          try {
-                            setState(() {
-                              isWaiting = true;
-                            });
-                            final result =
-                                await InternetAddress.lookup('google.com');
-                            if (result.isNotEmpty &&
-                                result[0].rawAddress.isNotEmpty) {
-                              try {
-                                final authKey = await refreshToken();
-                                if (authKey != 'Error') {
-                                  final qrCode = await createRoom(
-                                      _nameController.text,
-                                      _detailsController.text,
-                                      _fuelController.text);
-                                  if (qrCode != 'Error') {
-                                    setState(() {
-                                      isWaiting = false;
-                                    });
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            QRScreen(message: qrCode),
-                                      ),
-                                    );
-                                  } else {
-                                    setState(() {
-                                      isWaiting = false;
-                                    });
-                                    Flushbar(
-                                      backgroundColor: redColor,
-                                      title: "Error",
-                                      message: 'An error occurred',
-                                      duration: Duration(seconds: 3),
-                                    )..show(context);
+                        onPressed: isWaiting
+                            ? () {
+                                Flushbar(
+                                  backgroundColor: Colors.grey,
+                                  title: "Loading",
+                                  message: 'Please wait...',
+                                  duration: Duration(seconds: 3),
+                                )..show(context);
+                              }
+                            : () async {
+                                try {
+                                  setState(() {
+                                    isWaiting = true;
+                                  });
+                                  final result = await InternetAddress.lookup(
+                                      'google.com');
+                                  if (result.isNotEmpty &&
+                                      result[0].rawAddress.isNotEmpty) {
+                                    try {
+                                      final authKey = await refreshToken();
+                                      if (authKey != 'Error') {
+                                        final qrCode = await createRoom(
+                                            _nameController.text,
+                                            _detailsController.text,
+                                            _fuelController.text);
+                                        if (qrCode != 'Error') {
+                                          setState(() {
+                                            isWaiting = false;
+                                          });
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  QRScreen(message: qrCode),
+                                            ),
+                                          );
+                                        } else {
+                                          setState(() {
+                                            isWaiting = false;
+                                          });
+                                          Flushbar(
+                                            backgroundColor: redColor,
+                                            title: "Error",
+                                            message: 'An error occurred',
+                                            duration: Duration(seconds: 3),
+                                          )..show(context);
+                                        }
+                                      } else {
+                                        setState(() {
+                                          isWaiting = false;
+                                        });
+                                        Flushbar(
+                                          backgroundColor: redColor,
+                                          title: "Error",
+                                          message: 'An error occurred',
+                                          duration: Duration(seconds: 3),
+                                        )..show(context);
+                                      }
+                                    } catch (e) {
+                                      setState(() {
+                                        isWaiting = false;
+                                      });
+                                      Flushbar(
+                                        backgroundColor: redColor,
+                                        title: "Error",
+                                        message: 'An error occurred',
+                                        duration: Duration(seconds: 3),
+                                      )..show(context);
+                                    }
                                   }
-                                } else {
+                                } catch (e) {
                                   setState(() {
                                     isWaiting = false;
                                   });
@@ -209,30 +241,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                                     duration: Duration(seconds: 3),
                                   )..show(context);
                                 }
-                              } catch (e) {
-                                setState(() {
-                                  isWaiting = false;
-                                });
-                                Flushbar(
-                                  backgroundColor: redColor,
-                                  title: "Error",
-                                  message: 'An error occurred',
-                                  duration: Duration(seconds: 3),
-                                )..show(context);
-                              }
-                            }
-                          } catch (e) {
-                            setState(() {
-                              isWaiting = false;
-                            });
-                            Flushbar(
-                              backgroundColor: redColor,
-                              title: "Error",
-                              message: 'An error occurred',
-                              duration: Duration(seconds: 3),
-                            )..show(context);
-                          }
-                        },
+                              },
                       ),
                     ),
                   ),
