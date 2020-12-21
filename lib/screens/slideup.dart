@@ -171,11 +171,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                         horizontal: 10,
                                       ),
                                       child: Text(
-                                        'Owner ' +
-                                            (creator.length > 13
-                                                ? creator['name']
-                                                    .substring(0, 13)
-                                                : creator),
+                                        'Owner ' + (creator['name']),
                                         style: GoogleFonts.openSans(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w400,
