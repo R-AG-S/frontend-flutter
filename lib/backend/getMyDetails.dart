@@ -14,7 +14,7 @@ getMyData(String userId) async {
       },
     );
     final response = await http.get(
-      'https://payup-backend.herokuapp.com/users/get_any_user_display_data/$userId',
+      'https://payup-backend.herokuapp.com/users/get_any_user_display_data/${jsonDecode(userDetails.body)['localId']}',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
