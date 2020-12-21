@@ -108,6 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _getLocation() async {
+    await Geolocator.checkPermission();
     Position position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.bestForNavigation,
     );
