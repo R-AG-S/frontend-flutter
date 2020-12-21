@@ -13,7 +13,7 @@ import 'package:payup/widgets/button.dart';
 import 'package:payup/widgets/qr.dart';
 
 bool isReady = false;
-Map userData = Map();
+Map passengerUserData = Map();
 String creator;
 
 class SlideUpPanel extends StatefulWidget {
@@ -48,7 +48,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
   @override
   void initState() {
     isReady = false;
-    userData.clear();
+    passengerUserData.clear();
     getUsers();
     super.initState();
   }
@@ -57,7 +57,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
     try {
       creator = await findUserData(widget.creator);
       for (int i = 0; i < widget.membersList.length; i++) {
-        userData[i] = await getUserData(widget.membersList[i]);
+        passengerUserData[i] = await getUserData(widget.membersList[i]);
       }
       setState(() {
         isReady = true;
@@ -277,7 +277,7 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                             ? ListView.builder(
                                 physics: NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
-                                itemCount: userData.length,
+                                itemCount: passengerUserData.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   return Column(
                                     children: [
@@ -288,18 +288,24 @@ class _SlideUpPanelState extends State<SlideUpPanel> {
                                           FadeInImage.assetNetwork(
                                             fadeOutDuration:
                                                 Duration(seconds: 1),
-                                            image: userData[index]['dp'] ==
+                                            image: passengerUserData[index]
+                                                            ['dp'] ==
                                                         null ||
-                                                    userData[index]['dp'] == ''
+                                                    passengerUserData[index]
+                                                            ['dp'] ==
+                                                        ''
                                                 ? iconData[10]
-                                                : userData[index]['dp'],
+                                                : passengerUserData[index]
+                                                    ['dp'],
                                             placeholder: 'images/place.png',
                                             height: 45,
                                           ),
                                           Text(
-                                            userData[index]['name'] == null
+                                            passengerUserData[index]['name'] ==
+                                                    null
                                                 ? "Unknown"
-                                                : userData[index]['name'],
+                                                : passengerUserData[index]
+                                                    ['name'],
                                             style: GoogleFonts.openSans(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w400,
