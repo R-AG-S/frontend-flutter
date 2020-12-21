@@ -13,7 +13,7 @@ Future<String> loginUser(String email, String password, String fcm) async {
         <String, String>{
           "email": email,
           "password": password,
-          "device_registeration_token": fcmToken
+          "device_registeration_token": fcm
         },
       ),
     );
