@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -342,13 +343,18 @@ class _UserSettingsState extends State<UserSettings> {
                                 height: 25,
                               ),
                             ),
-                            onTap: ()async {
+                            onTap: () async {
                               setState(() {
                                 url = iconData[index];
                               });
-                              final response = await setNameDp(widget.username, url);
-                              if()
-                              Navigator.of(context).pop();
+                              final response =
+                                  await setNameDp(widget.username, url);
+                              if (response == 200 || response == 201) {
+                                Navigator.of(context).pop();
+                              } else {
+                                Flushbar();
+                              }
+
                               // Navigator.push(
                               //     context,
                               //     MaterialPageRoute(
