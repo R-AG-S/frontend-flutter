@@ -273,7 +273,7 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
-                  onTap: () {},
+                  onPressed: () {},
                   title: 'Logout',
                   titleTextStyle: GoogleFonts.openSans(
                     fontSize: ScreenUtil().setSp(45),
