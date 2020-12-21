@@ -128,7 +128,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                   ScreenUtil().setHeight(24),
                                             ),
                                             child: TextFormWidget(
-                                              hint: 'Milege Details',
+                                              hint: 'Milege Per Liter',
                                               firstNameController:
                                                   _milegeController,
                                               type: TextInputType.number,
