@@ -262,6 +262,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                                         Duration(seconds: 3),
                                                   )..show(context);
                                                 }
+                                              } else {
+                                                setState(() {
+                                                  isWaiting = false;
+                                                });
+                                                Flushbar(
+                                                  backgroundColor: redColor,
+                                                  title: "Error",
+                                                  message: 'An error occurred',
+                                                  duration:
+                                                      Duration(seconds: 3),
+                                                )..show(context);
                                               }
                                             } catch (e) {
                                               setState(() {
