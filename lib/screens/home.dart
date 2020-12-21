@@ -11,6 +11,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:payup/backend/endDrive.dart';
 import 'package:payup/backend/getActiveData.dart';
+import 'package:payup/backend/getMyDetails.dart';
 import 'package:payup/backend/joinDrive.dart';
 import 'package:payup/backend/leaveDrive.dart';
 import 'package:payup/backend/startDrive.dart';
@@ -62,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
   _getDetails() async {
     try {
       final data = await userRoomDetails();
+      myDetails[0] = await getMyData();
       for (int i = 0; i < data.length; i++) {
         setState(() {
           roomDetails[i] = data[i];
