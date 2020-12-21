@@ -45,6 +45,11 @@ class _SplashScreenState extends State<SplashScreen> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
       final response = prefs.getBool('Logged');
+      if (response == true) {
+        return true;
+      } else {
+        return false;
+      }
     } catch (e) {
       return false;
     }
