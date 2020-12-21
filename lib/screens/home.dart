@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: redColor,
           title: "Error",
           message:
-              'Location permissions are permantly denied, we cannot request permissions.',
+              'Location permissions are denied (actual value: $permission).',
           duration: Duration(seconds: 3),
         )..show(context);
         return Future.error(
