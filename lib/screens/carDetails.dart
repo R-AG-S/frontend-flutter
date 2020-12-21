@@ -204,7 +204,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                             redColor,
                                                         title: "Error",
                                                         message:
-                                                            '''Input shouldn't be null.''',
+                                                            '''An error occurred please try again.''',
                                                         duration: Duration(
                                                             seconds: 3),
                                                       )..show(context);
