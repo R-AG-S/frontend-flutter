@@ -274,19 +274,20 @@ class _UserSettingsState extends State<UserSettings> {
                   ),
                 ),
                 SettingsTile(
-                  onPressed: () {
+                  onPressed: (value) async {
                     final SharedPreferences prefs =
                         await SharedPreferences.getInstance();
                     try {
-                      final response = prefs.getBool('Logged');
-                      if (response == true) {
-                        return true;
-                      } else {
-                        return false;
-                      }
+                      prefs.setBool('Logged', false);
                     } catch (e) {
-                      return false;
+                      Flushbar(
+                        backgroundColor: redColor,
+                        title: "Error",
+                        message: 'An error occurred please try again.',
+                        duration: Duration(seconds: 3),
+                      )..show(context);
                     }
+                    return false;
                   },
                   title: 'Logout',
                   titleTextStyle: GoogleFonts.openSans(
