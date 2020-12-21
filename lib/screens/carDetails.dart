@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payup/backend/setCarDetails.dart';
-import 'package:payup/screens/room.dart';
 import 'package:payup/utilities/constants.dart';
 import 'package:payup/widgets/textform.dart';
 
 class CarDetailsScreen extends StatefulWidget {
   CarDetailsScreen({@required this.route});
-  final Route route;
+  final Widget route;
   @override
   _CarDetailsScreenState createState() => _CarDetailsScreenState();
 }
@@ -201,7 +200,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                         context,
                                                         MaterialPageRoute(
                                                           builder: (context) =>
-                                                              RoomOptions(),
+                                                              widget.route,
                                                         ),
                                                       );
                                                     } else {
@@ -274,7 +273,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    RoomOptions(),
+                                                    widget.route,
                                               ),
                                             );
                                           },
