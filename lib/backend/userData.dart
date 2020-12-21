@@ -23,7 +23,7 @@ findUserData(String userId) async {
     );
     return ({
       'localId': jsonDecode(userDetails.body)['localId'],
-      'name': jsonDecode(response.body)['displayName'],
+      'name': jsonDecode(response.body)['displayname'],
       'dp': jsonDecode(response.body)['displaypic'],
     });
   } catch (e) {
