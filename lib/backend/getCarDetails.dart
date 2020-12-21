@@ -6,7 +6,7 @@ getUserData(String userId) async {
   try {
     final authKey = await refreshToken();
     final userDetails = await http.get(
-      'https://payup-backend.herokuapp.com/users/get_any_user_display_data/$userId',
+      'https://payup-backend.herokuapp.com/users/get_car_details/',
       headers: <String, String>{
         'Content-type': 'application/json',
         'Accept': 'application/json',
