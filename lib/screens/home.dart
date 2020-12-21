@@ -348,7 +348,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       children: [
                                                         Text(
                                                           userData[index]
-                                                              ['localId'],
+                                                              ['name'],
                                                           style: TextStyle(
                                                             fontFamily:
                                                                 'Bambino',
