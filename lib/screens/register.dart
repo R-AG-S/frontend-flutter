@@ -302,11 +302,6 @@ class _SignInScreenState extends State<SignInScreen> {
                                                         },
                                                       ),
                                                     );
-                                                    print(
-                                                      response.statusCode,
-                                                    );
-                                                    print(json.decode(response
-                                                        .body)['refreshToken']);
                                                     if (response.statusCode ==
                                                         201) {
                                                       final SharedPreferences
