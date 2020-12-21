@@ -39,6 +39,7 @@ final int dataCount = 5;
 double _panelHeightOpen;
 double _panelHeightClosed;
 Map roomDetails = Map();
+Map userData = Map();
 bool isDriving = false;
 Position currentPosition;
 bool isDriver = false;
