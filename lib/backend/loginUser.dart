@@ -22,6 +22,6 @@ Future<String> loginUser(String email, String password, String fcm) async {
     );
     return (jsonDecode(refreshBody.body)['access_token']);
   } catch (e) {
-    return 'Error';
+    return '400';
   }
 }
