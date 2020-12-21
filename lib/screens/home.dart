@@ -665,7 +665,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           SecondaryIcons(
                             iconName: FontAwesomeIcons.userCog,
-                            routeName: UserSettings(),
+                            routeName: UserSettings(
+                              dp: null,
+                              username: null,
+                            ),
                           ),
                           Padding(
                             padding: EdgeInsets.symmetric(
