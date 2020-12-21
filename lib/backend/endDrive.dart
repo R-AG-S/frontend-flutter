@@ -21,7 +21,7 @@ endDrive(String roomId, double lat, double long, double distance) async {
         },
       ),
     );
-    print(json.decode(endDrive.body));
+    print(json.decode(endDrive.body)['SESSION_DETAILS']);
   } catch (e) {
     // return 400;
     print(e);
