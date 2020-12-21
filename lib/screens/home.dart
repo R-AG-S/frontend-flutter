@@ -53,7 +53,7 @@ Map carDetails = Map();
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-    getCarData();
+    carDetails.clear();
     passengers.clear();
     isDriver = false;
     isReady = false;
@@ -72,6 +72,12 @@ class _HomeScreenState extends State<HomeScreen> {
       for (int i = 0; i < data.length; i++) {
         setState(() {
           roomDetails[i] = data[i];
+        });
+      }
+      final carData = await getCarData();
+      for (int i = 0; i < carData.length; i++) {
+        setState(() {
+          carDetails[i] = carData[i];
         });
       }
       if (roomDetails.isEmpty) {
