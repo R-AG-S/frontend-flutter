@@ -474,8 +474,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                             isDriving = false;
                                           });
                                           _getLocation();
-                                          slidableController.activeState
-                                              .initState();
                                           isDriver
                                               ? endDrive(
                                                   roomDetails[counter]
@@ -549,8 +547,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     isDriving = true;
                                                     isDriver = true;
                                                   });
-                                                  slidableController.activeState
-                                                      .close();
                                                   _getLocation();
                                                   _getLocationStream();
                                                 } else {
@@ -619,10 +615,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   setState(() {
                                                     isWaiting = false;
                                                   });
-                                                  slidableController.activeState
-                                                      .close();
-                                                  slidableController.activeState
-                                                      .dismiss();
+
                                                   _getLocation();
                                                   setState(() {
                                                     isDriving = true;
