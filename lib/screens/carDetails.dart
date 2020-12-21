@@ -260,7 +260,7 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
-                                          onPressed: () async {
+                                          onPressed: () {
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(
