@@ -13,7 +13,6 @@ final TextEditingController _detailsController = TextEditingController();
 final TextEditingController _fuelController = TextEditingController();
 bool isWaiting = false;
 
-
 class CreateRoomScreen extends StatefulWidget {
   @override
   _CreateRoomScreenState createState() => _CreateRoomScreenState();
@@ -163,6 +162,9 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                         ),
                         onPressed: () async {
                           try {
+                            setState(() {
+                              isWaiting = true;
+                            });
                             final result =
                                 await InternetAddress.lookup('google.com');
                             if (result.isNotEmpty &&
