@@ -58,25 +58,6 @@ class _HomeScreenState extends State<HomeScreen> {
     _getDetails();
   }
 
-  getUsers() async {
-    try {
-      for (int i = 0; i < roomDetails[counter]['data']['members'].length; i++) {
-        userData[i] =
-            await getUserData(roomDetails[counter]['data']['members'][i]);
-      }
-      setState(() {
-        isReady = true;
-      });
-    } catch (e) {
-      Flushbar(
-        backgroundColor: redColor,
-        title: "Error",
-        message: 'Error occurred.',
-        duration: Duration(seconds: 3),
-      )..show(context);
-    }
-  }
-
   _getDetails() async {
     try {
       final data = await userRoomDetails();
@@ -103,6 +84,25 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: redColor,
         title: "Error",
         message: 'Some unexpected error occured. Try again.',
+        duration: Duration(seconds: 3),
+      )..show(context);
+    }
+  }
+
+  getUsers() async {
+    try {
+      for (int i = 0; i < roomDetails[counter]['data']['members'].length; i++) {
+        userData[i] =
+            await getUserData(roomDetails[counter]['data']['members'][i]);
+      }
+      setState(() {
+        isReady = true;
+      });
+    } catch (e) {
+      Flushbar(
+        backgroundColor: redColor,
+        title: "Error",
+        message: 'Error occurred.',
         duration: Duration(seconds: 3),
       )..show(context);
     }
